@@ -24,6 +24,9 @@ La aplicación web se desplegará en __AWS__ mediante el uso de máquinas virtua
 Este sería el esquema Entidad-Relación de la base de datos de __Freedom__:
 ![image](https://user-images.githubusercontent.com/45594459/162577621-4d779543-f16f-48f9-a5db-10b84dde27a4.png)
 
+### Mockup
+[Enlace a Figma](https://www.figma.com/file/DasYSEsry4s9fdErVVUXYh/Freedom?node-id=0%3A1).
+
 
 ## Desarrollo
 __Freedom__ constará de 2 caras, usuarios y moderadores. Los usuarios podrán subir a la red social cualquier tipo de publicación, dar me gustas a cualquier publicación, seguir a más usuarios, comentar publicaciones... e infinidad de cosas. Mientras que los moderadores, podrán realizar lo anteriormente comentado pero pudiendo eliminar y dar _"Toques de atención"_ a los usuarios con un comportamiento nefasto en la red social.
