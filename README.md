@@ -8,9 +8,9 @@ __Freedom__ es una red social de tipo publicación con el fin de llegar al máxi
 Las tecnologías que se van a usar para desarrollar __Freedom__ serán:
 
 ### Front-End
-  - Jquery _(JavaScript)_
-  - AJAX _(JavaScript)_
-  - HTML5 & CSS3
+  - HTML5
+  - SASS _(CSS3)_
+  - Jquery & AJAX _(JavaScript)_
   - _Angular JS (por determinar en un futuro)_
 
 ### Back-End
