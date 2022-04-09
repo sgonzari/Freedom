@@ -20,8 +20,9 @@ Las tecnologías que se van a usar para desarrollar __Freedom__ serán:
 ### Despliegue
 La aplicación web se desplegará en __AWS__ mediante el uso de máquinas virtuales EC2. La aplicación web constará de 2 servidores en los cuales en uno estará la aplicación web (FontEnd & BackEnd) y en el otro estará la base de datos. Esto se hará para aumentar la seguridad y privacidad de la información de __Freedom__.
 
-### Modelo Entidad-Relación
-![Entidad-Relaci__n](https://user-images.githubusercontent.com/45594459/161421339-5f3ff8e0-55fd-493b-b0ed-f61b2847d26d.svg)
+### Base de datos
+Este sería el esquema Entidad-Relación de la base de datos de __Freedom__
+![image](https://user-images.githubusercontent.com/45594459/162577621-4d779543-f16f-48f9-a5db-10b84dde27a4.png)
 
 
 ## Desarrollo
