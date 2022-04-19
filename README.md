@@ -22,7 +22,7 @@ La aplicación web se desplegará en __AWS__ mediante el uso de máquinas virtua
 
 ### Base de datos
 Este sería el esquema Entidad-Relación de la base de datos de __Freedom__:
-![image](https://user-images.githubusercontent.com/45594459/162577621-4d779543-f16f-48f9-a5db-10b84dde27a4.png)
+![image](https://user-images.githubusercontent.com/45594459/164092891-8c8b1108-2734-4800-a7b1-1d117ffab372.png)
 
 ### Mockup
 [Enlace a Figma](https://www.figma.com/file/DasYSEsry4s9fdErVVUXYh/Freedom?node-id=0%3A1).
