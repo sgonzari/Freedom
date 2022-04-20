@@ -17,6 +17,6 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', [AuthenticatedSessionController::class, 'create'])->middleware('guest') ;
 
-Route::view('/home', "home")->middleware(['auth'])->name("home") ;
+Route::view('/home', "home")->middleware('auth')->name("home") ;
 
 require __DIR__.'/auth.php';
