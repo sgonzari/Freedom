@@ -15,7 +15,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 |
 */
 
-Route::get('/', [AuthenticatedSessionController::class, 'create'])->middleware('guest') ;
+Route::get('/', [AuthenticatedSessionController::class, 'create'])->middleware('guest')->name("index") ;
 
 Route::view('/home', "home")->middleware('auth')->name("home") ;
 
