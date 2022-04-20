@@ -21,5 +21,8 @@ class RolTableSeeder extends Seeder
         DB::table("rols")->insert([
             "name" => "administrator"
         ]);
+        DB::table("rols")->insert([
+            "name" => "god"
+        ]);
     }
 }
