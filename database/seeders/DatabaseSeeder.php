@@ -17,7 +17,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolTableSeeder::class,
             UserTableSeeder::class,
-            PostTableSeeder::class
+            PostTableSeeder::class,
+            LikeTableSeeder::class,
+            RepostTableSeeder::class,
+            BookmarkTableSeeder::class
         ]);
     }
 }
