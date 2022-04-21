@@ -11,11 +11,25 @@
         <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
     </div>
 
+    <!-- Username -->
+    <div class="mt-4">
+        <x-label for="username" :value="__('Username')" />
+
+        <x-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required />
+    </div>
+
     <!-- Email Address -->
     <div class="mt-4">
         <x-label for="email" :value="__('Email')" />
 
         <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+    </div>
+
+    <!-- Confirm Email Address -->
+    <div class="mt-4">
+        <x-label for="email_confirmation" :value="__('Confirm Email')" />
+
+        <x-input id="email_confirmation" class="block mt-1 w-full" type="email" name="email_confirmation" required />
     </div>
 
     <!-- Password -->
@@ -42,8 +56,8 @@
             {{ __('Back') }}
         </a>
 
-        <x-button class="ml-4">
+        <x-button-submit class="ml-4">
             {{ __('Register') }}
-        </x-button>
+        </x-button-submit>
     </div>
 </form>
