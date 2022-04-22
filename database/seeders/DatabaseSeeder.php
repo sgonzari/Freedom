@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             PostTableSeeder::class,
             LikeTableSeeder::class,
             RepostTableSeeder::class,
-            BookmarkTableSeeder::class
+            BookmarkTableSeeder::class,
+            FollowTableSeeder::class
         ]);
     }
 }
