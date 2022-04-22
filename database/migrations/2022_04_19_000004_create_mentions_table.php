@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('mentions', function (Blueprint $table) {
+            $table->increments("id_mention");
             $table->integer("fk_user")->unsigned();
             $table->integer("fk_post")->unsigned();
             $table->timestamps();
