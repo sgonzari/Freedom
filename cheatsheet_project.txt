@@ -4,6 +4,7 @@
 npm install
 npm run dev
 composer update
+cp .env.example .env
 
 
 ////////////////////////////////////////////
