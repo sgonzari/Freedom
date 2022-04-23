@@ -25,4 +25,19 @@ class Post extends Model
         'fk_post',
         'fk_user',
     ] ;
+
+    public function user () {
+        return $this->hasMany("App\Models\User", "id_user", "fk_user") ;
+    }
+
+    public function likes () {
+        return $this->belongsToMany("App\Models\User", "likes", "fk_post", "fk_user") ;
+
+    }
+    public function reposts () {
+        return $this->belongsToMany("App\Models\User", "reposts", "fk_post", "fk_user") ;
+    }
+    public function comments () {
+        return $this->belongsTo("App\Models\Post", "id_post", "fk_post") ;
+    }
 }

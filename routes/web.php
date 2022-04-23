@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 
@@ -17,6 +18,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', [AuthenticatedSessionController::class, 'create'])->middleware('guest')->name("index") ;
 
-Route::view('/home', "home")->middleware('auth')->name("home") ;
+Route::get('/home', [UserController::class, "home"])->middleware('auth')->name("home") ;
+Route::get('/profile', [UserController::class, "profile"])->middleware('auth')->name("profile") ;
 
 require __DIR__.'/auth.php';

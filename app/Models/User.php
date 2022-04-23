@@ -30,7 +30,27 @@ class User extends Authenticatable
         'password',
     ] ;
 
-    public function rol() {
+    public function rol () {
         return $this->hasMany("App\Models\Rol", "id_rol", "fk_rol") ;
+    }
+
+    public function posts () {
+        return $this->belongsTo("App\Models\Post", "id_user", "fk_user") ;
+    }
+    public function likes () {
+        return $this->belongsToMany("App\Models\Post", "likes", "fk_user", "fk_post") ;
+    }
+    public function reposts () {
+        return $this->belongsToMany("App\Models\Post", "reposts", "fk_user", "fk_post") ;
+    }
+    public function bookmarks () {
+        return $this->belongsToMany("App\Models\Post", "bookmarks", "fk_user", "fk_post") ;
+    }
+
+    public function followers () {
+        return $this->belongsToMany("App\Models\User", "follows", "fk_follow", "fk_user") ;
+    }
+    public function followings () {
+        return $this->belongsToMany("App\Models\User", "follows", "fk_user", "fk_follow") ;
     }
 }
