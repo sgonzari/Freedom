@@ -13,8 +13,6 @@ class UserController extends Controller
     }
 
     public function profile () {
-        return view("profile", [
-            "posts" => User::find(Auth::user()->id_user)->posts()->get()
-        ]) ;
+        return view("profile") ;
     }
 }

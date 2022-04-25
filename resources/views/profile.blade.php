@@ -5,5 +5,6 @@
         </h2>
     </x-slot>
 
-    <x-post-profile :posts="$posts"/>
+    <livewire:post-create/>
+    <livewire:post-profile/>
 </x-app-layout>
