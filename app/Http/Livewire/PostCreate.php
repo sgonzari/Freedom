@@ -16,13 +16,15 @@ class PostCreate extends Component
     }
 
     public function store () {
-        Post::create([
-            'fk_user' => Auth::user()->id_user,
-            'content' => $this->content
-        ]);
-
-        $this->reset('content') ;
-
-        $this->emit('render') ;
+        if (!is_null($this->content)) {
+            Post::create([
+                'fk_user' => Auth::user()->id_user,
+                'content' => $this->content
+            ]);
+    
+            $this->reset('content') ;
+    
+            $this->emit('render') ;
+        }
     }
 }
