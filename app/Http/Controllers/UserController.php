@@ -15,4 +15,10 @@ class UserController extends Controller
     public function profile () {
         return view("profile") ;
     }
+
+    public function user ($user) {
+        return view("user", [
+            "user" => $user
+        ]) ;
+    }
 }
