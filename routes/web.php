@@ -20,6 +20,6 @@ Route::get('/', [AuthenticatedSessionController::class, 'create'])->middleware('
 
 Route::get('/home', [UserController::class, "home"])->middleware('auth')->name("home") ;
 Route::get('/profile', [UserController::class, "profile"])->middleware('auth')->name("profile") ;
-Route::get('/{user}', [UserController::class, "user"])->middleware('auth') ;
+Route::get('/{username}', [UserController::class, "user"])->middleware('auth') ;
 
 require __DIR__.'/auth.php';

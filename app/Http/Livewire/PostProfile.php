@@ -30,6 +30,8 @@ class PostProfile extends Component
     }
 
     public function delete (Post $post) {
-        $post->delete() ;
+        if ((Auth::user()->id_user == $post->fk_user) OR (Auth::user()->rol->first()->id_rol > 1)) {
+            $post->delete() ;
+        }
     }
 }

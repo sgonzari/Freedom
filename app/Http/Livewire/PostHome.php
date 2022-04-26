@@ -15,7 +15,7 @@ class PostHome extends Component
     public function render() {
         $posts = [] ;
 
-        $followers = User::find(Auth::user()->id_user)->followers()->get() ;
+        $followers = User::find(Auth::user()->id_user)->followings()->get() ;
         foreach ($followers as $follower) {
             foreach ($follower->posts()->get() as $followerPost) {
                 array_push($posts, $followerPost) ;
@@ -30,11 +30,13 @@ class PostHome extends Component
         usort($posts, function($x, $y) {
             return $x['created_at'] < $y['created_at'];
         });
-
+        
         return view('components.post-home', compact('posts'));
     }
 
     public function delete (Post $post) {
-        $post->delete() ;
+        if ((Auth::user()->id_user == $post->fk_user) OR (Auth::user()->rol->first()->id_rol > 1)) {
+            $post->delete() ;
+        }
     }
 }

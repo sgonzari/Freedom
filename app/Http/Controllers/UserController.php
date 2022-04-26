@@ -16,7 +16,9 @@ class UserController extends Controller
         return view("profile") ;
     }
 
-    public function user ($user) {
+    public function user (string $username) {
+        $user = User::where('username', $username)->first() ;
+
         return view("user", [
             "user" => $user
         ]) ;
