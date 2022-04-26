@@ -22,6 +22,10 @@ class PostUser extends Component
             array_push($posts, $userPost) ;
         }
 
+        usort($posts, function($x, $y) {
+            return $x['created_at'] < $y['created_at'];
+        });
+
         return view('components.post-user', compact("posts"));
     }
 

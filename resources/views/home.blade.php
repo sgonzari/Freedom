@@ -5,5 +5,6 @@
         </h2>
     </x-slot>
 
+    <livewire:post-create/>
     <livewire:post-home/>
 </x-app-layout>
