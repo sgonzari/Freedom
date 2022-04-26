@@ -4,4 +4,6 @@
             {{ __('Home') }}
         </h2>
     </x-slot>
+
+    <livewire:post-home/>
 </x-app-layout>
