@@ -24,6 +24,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string("profile_image");
             $table->string("description")->nullable();
+            $table->softDeletes();
             $table->boolean("banned")->default(false);
         });
 

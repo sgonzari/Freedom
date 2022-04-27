@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("content");
             $table->string("images")->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::table('posts', function (Blueprint $table) {
