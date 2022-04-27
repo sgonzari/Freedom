@@ -12,7 +12,8 @@ class PostUser extends Component
     public User $user ;
 
     protected $listeners = ['render' => 'render',
-                            'delete' => 'delete'] ;
+                            'deletePost' => 'deletePost',
+                            'deleteUser' => 'deleteUser'] ;
 
     public function render() {
         $posts = [] ;
@@ -29,9 +30,18 @@ class PostUser extends Component
         return view('components.post-user', compact("posts"));
     }
 
-    public function delete (Post $post) {
+    public function deletePost (Post $post) {
         if ((Auth::user()->id_user == $post->fk_user) OR (Auth::user()->rol->first()->id_rol > 1)) {
             $post->delete() ;
         }
+    }
+
+    public function follow (User $user) {
+    }
+
+    public function unfollow (User $user) {
+    }
+
+    public function deleteUser (User $user) {
     }
 }
