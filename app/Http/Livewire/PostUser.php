@@ -12,8 +12,7 @@ class PostUser extends Component
     public User $user ;
 
     protected $listeners = ['render' => 'render',
-                            'deletePost' => 'deletePost',
-                            'deleteUser' => 'deleteUser'] ;
+                            'deletePost' => 'deletePost'] ;
 
     public function render() {
         $posts = [] ;
@@ -40,8 +39,5 @@ class PostUser extends Component
     }
 
     public function unfollow (User $user) {
-    }
-
-    public function deleteUser (User $user) {
     }
 }
