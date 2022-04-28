@@ -10,8 +10,7 @@ use Livewire\Component;
 class PostHome extends Component
 {
     protected $listeners = ['render' => 'render',
-                            'deletePost' => 'deletePost',
-                            'deleteUser' => 'deleteUser'] ;
+                            'deletePost' => 'deletePost'] ;
 
     public function render() {
         $posts = [] ;
