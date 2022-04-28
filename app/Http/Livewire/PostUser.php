@@ -12,12 +12,15 @@ class PostUser extends Component
     public User $user ;
 
     protected $listeners = ['render' => 'render',
-                            'deletePost' => 'deletePost'] ;
+                            'deletePost' => 'deletePost',
+                            'followUser' => 'followUser',
+                            'unfollowUser' => 'unfollowUser'] ;
 
     public function render() {
         $posts = [] ;
+        $user = $this->user ;
 
-        $userPosts = $this->user->posts()->get() ;
+        $userPosts = $user->posts()->get() ;
         foreach ($userPosts as $userPost) {
             array_push($posts, $userPost) ;
         }
@@ -26,7 +29,7 @@ class PostUser extends Component
             return $x['created_at'] < $y['created_at'];
         });
 
-        return view('components.post-user', compact("posts"));
+        return view('components.post-user', compact(["posts", "user"]));
     }
 
     public function deletePost (Post $post) {
@@ -35,9 +38,10 @@ class PostUser extends Component
         }
     }
 
-    public function follow (User $user) {
+    public function followUser () {
+        Auth::user()->followings()->attach($this->user) ;
     }
 
-    public function unfollow (User $user) {
+    public function unfollowUser () {
     }
 }

@@ -25,4 +25,12 @@
     <h1>No tiene posts</h1>
 @endif
 
-<h1>Buttons</h1>
+@if ($user->id_user != Auth::user()->id_user) 
+    <h1>Buttons</h1>
+    <h2>{{ $user->username }} : {{ $user->id_user }}</h2>
+    @if (Auth::user()->followings()->find($user->id_user))
+        <button wire:click="$emit('unfollowUser')">Dejar de seguir</button>
+    @else
+        <button wire:click="$emit('followUser')">Seguir</button>
+    @endif
+@endif
