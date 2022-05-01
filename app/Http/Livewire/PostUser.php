@@ -39,9 +39,14 @@ class PostUser extends Component
     }
 
     public function followUser () {
-        Auth::user()->followings()->attach($this->user) ;
+        if (!Auth::user()->followings()->find($this->user->id_user)) {
+            Auth::user()->followings()->attach($this->user) ;
+        }
     }
 
     public function unfollowUser () {
+        if (Auth::user()->followings()->find($this->user->id_user)) {
+            Auth::user()->followings()->detach($this->user) ;
+        }
     }
 }
