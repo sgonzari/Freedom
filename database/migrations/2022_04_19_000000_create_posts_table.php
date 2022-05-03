@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("content");
             $table->string("images")->nullable();
             $table->timestamps();
+            $table->boolean("pinged")->default(false);
             $table->softDeletes();
         });
 
