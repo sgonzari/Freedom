@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer("fk_author")->unsigned();
             $table->integer("fk_user")->unsigned();
             $table->string("reason");
+            $table->boolean("opened")->default(false);
             $table->timestamps();
         });
 
