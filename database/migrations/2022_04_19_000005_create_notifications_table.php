@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('notifications', function (Blueprint $table) {
-            $table->increments("id_mention");
+            $table->increments("id_notification");
             $table->integer("fk_user")->unsigned();
             $table->integer("fk_notifier")->unsigned();
             $table->integer("fk_post")->unsigned();
