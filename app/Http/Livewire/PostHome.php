@@ -11,6 +11,7 @@ class PostHome extends Component
 {
     protected $listeners = ['render' => 'render',
                             'addBookmark' => 'addBookmark',
+                            'deleteBookmark' => 'deleteBookmark',
                             'deletePost' => 'deletePost'] ;
 
     public function render() {
@@ -38,6 +39,11 @@ class PostHome extends Component
     public function addBookmark (Post $post) {
         if (!Auth::user()->bookmarks()->find($post->id_post)) {
             Auth::user()->bookmarks()->attach($post) ;
+        }
+    }
+    public function deleteBookmark (Post $post) {
+        if (Auth::user()->bookmarks()->find($post->id_post)) {
+            Auth::user()->bookmarks()->detach($post) ;
         }
     }
 
