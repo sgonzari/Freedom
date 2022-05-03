@@ -10,6 +10,7 @@ use Livewire\Component;
 class PostHome extends Component
 {
     protected $listeners = ['render' => 'render',
+                            'addBookmark' => 'addBookmark',
                             'deletePost' => 'deletePost'] ;
 
     public function render() {
@@ -32,6 +33,12 @@ class PostHome extends Component
         });
         
         return view('components.post-home', compact('posts'));
+    }
+
+    public function addBookmark (Post $post) {
+        if (!Auth::user()->bookmarks()->find($post->id_post)) {
+            Auth::user()->bookmarks()->attach($post) ;
+        }
     }
 
     public function deletePost (Post $post) {
