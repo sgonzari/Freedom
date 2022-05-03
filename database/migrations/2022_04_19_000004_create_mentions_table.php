@@ -17,6 +17,7 @@ return new class extends Migration
             $table->increments("id_mention");
             $table->integer("fk_user")->unsigned();
             $table->integer("fk_post")->unsigned();
+            $table->boolean("watched")->default(false);
             $table->timestamps();
         });
 
