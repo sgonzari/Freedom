@@ -13,17 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mentions', function (Blueprint $table) {
+        Schema::create('notifications', function (Blueprint $table) {
             $table->increments("id_mention");
             $table->integer("fk_user")->unsigned();
+            $table->integer("fk_notifier")->unsigned();
             $table->integer("fk_post")->unsigned();
+            $table->integer("fk_typeNot")->unsigned();
             $table->boolean("watched")->default(false);
             $table->timestamps();
         });
 
-        Schema::table('mentions', function (Blueprint $table) {
+        Schema::table('notifications', function (Blueprint $table) {
             $table->foreign("fk_user")->references("id_user")->on("users")->constrained()->onUpdate("cascade")->onDelete("cascade");
+            $table->foreign("fk_notifier")->references("id_user")->on("users")->constrained()->onUpdate("cascade")->onDelete("cascade");
             $table->foreign("fk_post")->references("id_post")->on("posts")->constrained()->onUpdate("cascade")->onDelete("cascade");
+            $table->foreign("fk_typeNot")->references("id_typeNot")->on("types-notifications")->constrained()->onUpdate("cascade")->onDelete("cascade");
         });
     }
 
@@ -34,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mentions');
+        Schema::dropIfExists('notifications');
     }
 };
