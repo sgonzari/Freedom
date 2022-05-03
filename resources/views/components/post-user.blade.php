@@ -34,5 +34,12 @@
         @else
             <button wire:click="$emit('followUser')">Seguir</button>
         @endif
+    @else
+        @if (!is_null($user->notifications()->get()->where("watched", false)->first()))
+            <h2>Tienes {{ $user->notifications()->get()->where("watched", false)->count() }} notificaciones pendientes.</h2>
+        @else
+            <h2>No tienes notificaciones pendientes.</h2>
+        @endif
     @endif
+    
 </div>
