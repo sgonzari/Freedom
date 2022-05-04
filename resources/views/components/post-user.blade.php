@@ -13,7 +13,7 @@
                 @foreach ($posts as $post)
                     <tr>
                         <td>{{ $post->user->first()->username }}</td>
-                        <td>{{ $post->content }}</td>
+                        <td><a href="/{{ $post->user->first()->username }}/post/{{ $post->id_post }}">{{ $post->content }}</a></td>
                         <td>{{ $post->created_at->format('d/m/Y') }}</td>
                         @if (($post->user->first()->id_user == Auth::user()->id_user) OR (Auth::user()->rol->first()->id_rol > 1))
                         <td><button wire:click="$emit('deletePost', {{ $post->id_post }})">Eliminar</button></td>

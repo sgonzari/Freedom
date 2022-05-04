@@ -21,6 +21,7 @@ Route::get('/', [AuthenticatedSessionController::class, 'create'])->middleware('
 Route::get('/home', [UserController::class, "home"])->middleware('auth')->name("home") ;
 Route::view('/notification', "notification")->middleware('auth')->name("notification") ;
 Route::view('/bookmark', "bookmark")->middleware('auth')->name("bookmark") ;
+Route::get('/{username}/post/{id_post}', [UserController::class, "post"])->middleware('auth')->name("post") ;
 require __DIR__.'/auth.php';
 Route::get('/{username}', [UserController::class, "user"])->middleware('auth')->name("profile") ;
 
