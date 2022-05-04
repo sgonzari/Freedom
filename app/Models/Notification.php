@@ -24,8 +24,6 @@ class Notification extends Model
         'id_notification'
     ] ;
 
-    public $timestamps = false ;
-
     public function post () {
         return $this->belongsTo("App\Models\Post", "fk_post", "id_post") ;
     }

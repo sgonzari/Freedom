@@ -19,6 +19,9 @@ class TypesNotificationTableSeeder extends Seeder
             "name" => "mention"
         ]);
         DB::table("types-notifications")->insert([
+            "name" => "comment"
+        ]);
+        DB::table("types-notifications")->insert([
             "name" => "repost"
         ]);
         DB::table("types-notifications")->insert([
