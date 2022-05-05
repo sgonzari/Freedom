@@ -20,14 +20,10 @@ class PostUser extends Component
         $posts = [] ;
         $user = $this->user ;
 
-        $userPosts = $user->posts()->get() ;
+        $userPosts = $user->posts()->orderBy('created_at') ;
         foreach ($userPosts as $userPost) {
             array_push($posts, $userPost) ;
         }
-
-        usort($posts, function($x, $y) {
-            return $x['created_at'] < $y['created_at'];
-        });
 
         return view('components.post-user', compact(["posts", "user"]));
     }

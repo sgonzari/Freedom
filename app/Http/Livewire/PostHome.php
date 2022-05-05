@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Notification;
 use App\Models\User;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
@@ -23,15 +24,10 @@ class PostHome extends Component
                 array_push($posts, $followerPost) ;
             }
         }
-        $userPosts = User::find(Auth::user()->id_user)->posts()->get() ;
+        $userPosts = User::find(Auth::user()->id_user)->posts()->orderBy('created_at')->get() ;
         foreach ($userPosts as $userPost) {
             array_push($posts, $userPost) ;
         }
-
-        // Ordena los resultados de Mayor a Menos.
-        usort($posts, function($x, $y) {
-            return $x['created_at'] < $y['created_at'];
-        });
         
         return view('components.post-home', compact('posts'));
     }
@@ -49,6 +45,11 @@ class PostHome extends Component
 
     public function deletePost (Post $post) {
         if ((Auth::user()->id_user == $post->fk_user) OR (Auth::user()->rol->first()->id_rol > 1)) {
+            if (!is_null(Notification::where('fk_post', $post->id_post)->get()->first())) {
+                foreach (Notification::where('fk_post', $post->id_post)->get() as $notification) {
+                    $notification->delete() ;
+                }
+            }
             $post->delete() ;
         }
     }
