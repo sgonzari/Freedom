@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer("fk_typeNot")->unsigned();
             $table->boolean("watched")->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::table('notifications', function (Blueprint $table) {
