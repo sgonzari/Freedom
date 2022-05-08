@@ -29,5 +29,26 @@
             </tbody>
         </table>
     </div>
-    <div></div>
+
+    <div>
+        <h1>WARNING</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Opción</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($users as $user)
+                    @if (Auth::user()->id_user != $user->id_user)
+                        <tr>
+                            <td>{{ $user->username }}</td>
+                            <td>@livewire('report-create', ['user' => $user], key($user->id_user))</td>
+                        </tr>
+                    @endif
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </div>
