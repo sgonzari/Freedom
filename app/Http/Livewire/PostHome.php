@@ -13,7 +13,11 @@ class PostHome extends Component
     protected $listeners = ['render' => 'render',
                             'addBookmark' => 'addBookmark',
                             'deleteBookmark' => 'deleteBookmark',
-                            'deletePost' => 'deletePost'] ;
+                            'deletePost' => 'deletePost',
+                            'addLike' => 'addLike',
+                            'deleteLike' => 'deleteLike',
+                            'addRepost' => 'addRepost',
+                            'deleteRepost' => 'deleteRepost'] ;
 
     public function render() {
         $posts = [] ;
@@ -51,6 +55,28 @@ class PostHome extends Component
                 }
             }
             $post->delete() ;
+        }
+    }
+
+    public function addLike (Post $post) {
+        if (!Auth::user()->likes()->find($post->id_post)) {
+            Auth::user()->likes()->attach($post) ;
+        }
+    }
+    public function deleteLike (Post $post) {
+        if (Auth::user()->likes()->find($post->id_post)) {
+            Auth::user()->likes()->detach($post) ;
+        }
+    }
+
+    public function addRepost (Post $post) {
+        if (!Auth::user()->reposts()->find($post->id_post)) {
+            Auth::user()->reposts()->attach($post) ;
+        }
+    }
+    public function deleteRepost (Post $post) {
+        if (Auth::user()->reposts()->find($post->id_post)) {
+            Auth::user()->reposts()->detach($post) ;
         }
     }
 }

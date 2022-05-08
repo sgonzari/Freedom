@@ -8,6 +8,8 @@
                     <th>Creación</th>
                     <th>Bookmark</th>
                     <th>Eliminar</th>
+                    <th>Me gusta</th>
+                    <th>Repost</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,8 +23,21 @@
                         @else
                             <td><button wire:click="$emit('deleteBookmark', {{ $post->id_post }})">Eliminar</button></td>
                         @endif
+
                         @if (($post->user->first()->id_user == Auth::user()->id_user) OR (Auth::user()->rol->first()->id_rol > 1))
                             <td><button wire:click="$emit('deletePost', {{ $post->id_post }})">Eliminar</button></td>
+                        @endif
+
+                        @if (is_null(Auth::user()->likes()->find($post->id_post)))
+                            <td><button wire:click="$emit('addLike', {{ $post->id_post }})">Gustar</button></td>
+                        @else
+                            <td><button wire:click="$emit('deleteLike', {{ $post->id_post }})">Me gusta</button></td>
+                        @endif
+
+                        @if (is_null(Auth::user()->reposts()->find($post->id_post)))
+                            <td><button wire:click="$emit('addRepost', {{ $post->id_post }})">Repostear</button></td>
+                        @else
+                            <td><button wire:click="$emit('deleteRepost', {{ $post->id_post }})">Reposteado</button></td>
                         @endif
                     </tr>
                 @endforeach
