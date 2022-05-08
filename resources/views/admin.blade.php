@@ -4,4 +4,6 @@
             {{ __('Admin Panel') }}
         </h2>
     </x-slot>
+
+    <livewire:admin-tools/>
 </x-app-layout>
