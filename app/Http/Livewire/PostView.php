@@ -20,7 +20,7 @@ class PostView extends Component
         $post = $this->post ;
         $comments = [] ;
         
-        foreach ($post->comments()->orderBy('created_at') as $comment) {
+        foreach ($post->comments()->orderBy('created_at')->get() as $comment) {
             array_push($comments, $comment) ;
         }
 
