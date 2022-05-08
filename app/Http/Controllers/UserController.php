@@ -33,6 +33,15 @@ class UserController extends Controller
                     "user" => $user,
                     "post" => $post
                 ]) ;
+            } else {
+                $post = $user->posts()->withTrashed()->find($id_post) ;
+                if (!is_null($post)) {
+                    return view("post", [
+                        "post" => $post
+                    ]) ;
+                } else {
+                    return view("post") ;
+                }
             }
         }
     }
