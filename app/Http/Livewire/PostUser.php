@@ -20,7 +20,7 @@ class PostUser extends Component
         $posts = [] ;
         $user = $this->user ;
 
-        $userPosts = $user->posts()->orderBy('created_at') ;
+        $userPosts = $user->posts()->orderBy('created_at')->get() ;
         foreach ($userPosts as $userPost) {
             array_push($posts, $userPost) ;
         }

@@ -2,9 +2,9 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             @if (!is_null($user))
-            {{ __('Profile of') }} {{ $user->name }}
+                {{ __('Profile of') }} {{ $user->name }}
             @else
-            {{ __('Non-Existent User') }}
+                {{ __('Non-Existent User') }}
             @endif
         </h2>
     </x-slot>
