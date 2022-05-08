@@ -20,3 +20,5 @@ git commit						-> Guarda localmente los cambios con un comentario.
 git reset HEAD^					-> Elimina localmentos el último commit realizado.
 git reset HEAD~2				-> Elimina localmentos los 2 últimos commits realizados.
 git push {origin main}			-> Manda a la nube los cambios.
+git rebase -i [id_commit]       -> Modifica el estado de los commits superiores a este.
+git push {origin main} --force  -> Fuerza a realizar el pusheo aunque la rama local esté anterior a la remota.
