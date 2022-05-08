@@ -18,6 +18,6 @@ class MiddlewareAdmin
     public function handle(Request $request, Closure $next)
     {
         if (Auth::user()->rol()->get()->first()->id_rol >= 2) return $next($request) ;
-        else redirect(RouteServiceProvider::HOME) ;
+        else abort(403) ;
     }
 }
