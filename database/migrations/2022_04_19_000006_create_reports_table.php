@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("reason");
             $table->boolean("opened")->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::table('reports', function (Blueprint $table) {
