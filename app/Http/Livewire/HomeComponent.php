@@ -8,7 +8,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class Home extends Component
+class HomeComponent extends Component
 {
     public function render() {
         $posts = [] ;
@@ -24,6 +24,6 @@ class Home extends Component
             array_push($posts, $userPost) ;
         }
         
-        return view('components.home', compact('posts'));
+        return view('components.home-component', compact('posts'));
     }
 }

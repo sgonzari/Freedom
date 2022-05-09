@@ -24,5 +24,5 @@ Route::view('/bookmark', "bookmark")->middleware('auth')->name("bookmark") ;
 Route::get('/{username}/post/{id_post}', [UserController::class, "post"])->middleware('auth')->name("post") ;
 Route::view('/admin', "admin")->middleware(['auth', 'admin'])->name("admin") ;
 require __DIR__.'/auth.php';
-Route::get('/{username}', [UserController::class, "user"])->middleware('auth')->name("profile") ;
+Route::get('/{username}', [UserController::class, "profile"])->middleware('auth')->name("profile") ;
 

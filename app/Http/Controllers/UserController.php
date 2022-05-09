@@ -12,14 +12,10 @@ class UserController extends Controller
         return view("home") ;
     }
 
-    public function profile () {
-        return view("profile") ;
-    }
-
-    public function user (string $username) {
+    public function profile (string $username) {
         $user = User::where('username', $username)->first() ;
 
-        return view("user", [
+        return view("profile", [
             "user" => $user
         ]) ;
     }
