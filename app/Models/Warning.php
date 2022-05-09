@@ -6,20 +6,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-class Report extends Model
+class Warning extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = "reports" ;
+    protected $table = "warnings" ;
 
     protected $fillable = [
-        'fk_author',
+        'fk_admin',
         'fk_user',
         'reason',
         'opened'
     ] ;
 
     protected $hidden = [
-        'id_report'
+        'id_warning'
     ] ;
 }

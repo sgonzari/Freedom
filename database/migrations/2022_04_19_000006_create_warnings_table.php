@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reports', function (Blueprint $table) {
-            $table->increments("id_report");
-            $table->integer("fk_author")->unsigned();
+        Schema::create('warnings', function (Blueprint $table) {
+            $table->increments("id_warning");
+            $table->integer("fk_admin")->unsigned();
             $table->integer("fk_user")->unsigned();
             $table->string("reason");
             $table->boolean("opened")->default(false);
@@ -23,9 +23,9 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        Schema::table('reports', function (Blueprint $table) {
+        Schema::table('warnings', function (Blueprint $table) {
             $table->foreign("fk_user")->references("id_user")->on("users")->constrained()->onUpdate("cascade")->onDelete("cascade");
-            $table->foreign("fk_author")->references("id_user")->on("users")->constrained()->onUpdate("cascade")->onDelete("cascade");
+            $table->foreign("fk_admin")->references("id_user")->on("users")->constrained()->onUpdate("cascade")->onDelete("cascade");
         });
     }
 
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reports');
+        Schema::dropIfExists('warnings');
     }
 };

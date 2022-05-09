@@ -11,7 +11,7 @@
                 <input name="username" type="text" value="{{ $user->username }}" disabled/>
                 <br/>
                 <label for="message">Aviso:</label>
-                <input name="message" wire:model.defer="message" type="text"/>
+                <input name="message" wire:model.defer="message" type="text" autofocus/>
                 <input type="submit" style="display:none"/>
             </form>
         </x-slot>

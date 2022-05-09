@@ -58,4 +58,8 @@ class User extends Authenticatable
     public function notifications () {
         return $this->hasMany("App\Models\Notification", "fk_notifier", "id_user") ;
     }
+    
+    public function warnings () {
+        return $this->hasMany("App\Models\Warning", "fk_user", "id_user") ;
+    }
 }
