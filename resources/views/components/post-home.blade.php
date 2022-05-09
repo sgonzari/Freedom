@@ -1,49 +1,13 @@
-<div>
-    @if (!empty($posts))
-        <table>
-            <thead>
-                <tr>
-                    <th>Usuario</th>
-                    <th>Content</th>
-                    <th>Creación</th>
-                    <th>Bookmark</th>
-                    <th>Eliminar</th>
-                    <th>Me gusta</th>
-                    <th>Repost</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($posts as $post)
-                    <tr>
-                        <td>{{ $post->user->first()->username }}</td>
-                        <td><a href="/{{ $post->user->first()->username }}/post/{{ $post->id_post }}">{{ $post->content }}</a></td>
-                        <td>{{ $post->created_at->format('d/m/Y') }}</td>
-                        @if (is_null(Auth::user()->bookmarks()->find($post->id_post)))
-                            <td><button wire:click="$emit('addBookmark', {{ $post->id_post }})">Agregar</button></td>
-                        @else
-                            <td><button wire:click="$emit('deleteBookmark', {{ $post->id_post }})">Eliminar</button></td>
-                        @endif
-
-                        @if (($post->user->first()->id_user == Auth::user()->id_user) OR (Auth::user()->rol->first()->id_rol > 1))
-                            <td><button wire:click="$emit('deletePost', {{ $post->id_post }})">Eliminar</button></td>
-                        @endif
-
-                        @if (is_null(Auth::user()->likes()->find($post->id_post)))
-                            <td><button wire:click="$emit('addLike', {{ $post->id_post }})">Gustar</button></td>
-                        @else
-                            <td><button wire:click="$emit('deleteLike', {{ $post->id_post }})">Me gusta</button></td>
-                        @endif
-
-                        @if (is_null(Auth::user()->reposts()->find($post->id_post)))
-                            <td><button wire:click="$emit('addRepost', {{ $post->id_post }})">Repostear</button></td>
-                        @else
-                            <td><button wire:click="$emit('deleteRepost', {{ $post->id_post }})">Reposteado</button></td>
-                        @endif
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    @else
-        <h1>No hay publicaciones</h1>
-    @endif
+<div style="margin: 0 0 50px 0; width: 500px">
+    <div style="display:flex; flex-direction:row; justify-content: space-between;">
+        <h1>{{ $post->user()->first()->username }}</h1>
+        @livewire('post-delete', ['post' => $post], key($post->id_post))
+    </div>
+    <p> {{ $post->content }}</p>
+    <div style="display:flex; flex-direction:row; justify-content: space-around;">
+        <a href="{{ route('post', ['username' => $post->user()->first()->username, 'id_post' => $post->id_post]) }}">{{ __('Comments') }}</a>
+        @livewire('like-status', ['post' => $post], key($post->id_post))
+        @livewire('repost-status', ['post' => $post], key($post->id_post))
+        @livewire('bookmark-status', ['post' => $post], key($post->id_post))
+    </div>
 </div>
