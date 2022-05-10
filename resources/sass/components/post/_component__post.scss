@@ -1,0 +1,50 @@
+.post {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid gray;
+    padding: 0 0 10px 0;
+
+    &__profile {
+        padding: 20px;
+
+        &--image {
+            border-radius: 50%;
+            height: 40px;
+        }
+    }
+    &__main {
+        flex: 1;
+        padding: 10px;
+
+        &--header {
+            .post__header {
+                &--name {
+                    font-size: 15px;
+                    margin: 0 0 5px 0;
+                }
+                &--username {
+                    font-weight: 600;
+                    font-size: 12px;
+                    color: gray;
+                }
+            }
+        }
+        &--body {
+            .post__body {
+                &--content {
+                    .post__content--text {
+
+                    }
+                }
+                &--image {
+                    // POR HACER GRID 2X2 RESPONSIVE
+                }
+            }
+        }
+        &--footer {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0 0 0;
+        }
+    }
+}

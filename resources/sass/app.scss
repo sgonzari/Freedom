@@ -1,9 +1,15 @@
 //////////////////////////////////////
 // # GENERIC
 //////////////////////////////////////
-@import 'generic/reset.scss';
+@import 'generic/_generic__reset.scss';
 
 
 //////////////////////////////////////
 // # COMPONENTS
 //////////////////////////////////////
+@import 'components/body/_component__body.scss';
+@import 'components/header/_component__header.scss';
+@import 'components/main/_component__main.scss';
+@import 'components/post/_component__post.scss';
+@import 'components/widget/_component__widget.scss';
+@import 'components/search/_component__search.scss';

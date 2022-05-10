@@ -8,8 +8,8 @@
 
         <title>{{ config('app.name', 'Freedom') }} - {{ $title }}</title>
 
-        <!-- Font Awesome -->
-        <script src="https://kit.fontawesome.com/bb31b4fc60.js" crossorigin="anonymous"></script>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -22,12 +22,26 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-        <header>
-            {{ $header }}
+        <header class="header"> 
+            <div class="header__top">
+                <x-application-logo class="header__logo"/>
+                <x-application-nav class="header__nav"/>
+            </div>
+            <div class="header__bottom">
+                <h1>header__bottom</h1>
+            </div>
         </header>
-        <div>
-            {{ $slot }}
-        </div>
+        <main class="main">
+            <div class="main__header">
+                {{ $header }}
+            </div>
+            <div class="main__container">
+                {{ $slot }}
+            </div>
+        </main>
+        <section class="widgets">
+            <livewire:search/>
+        </section>
 
         @livewireScripts
         <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>

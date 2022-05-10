@@ -1,0 +1,68 @@
+.main {
+    flex: 0.5;
+    border-right: 1px solid gray;
+    min-width: fit-content;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &__header {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 100;
+        border: 1px solid gray;
+        padding: 15px 20px;
+
+        &--title {
+            font-size: 20px;
+            font-weight: 800;
+        }
+    }
+    &__container {
+
+        &--input {
+            padding: 0 10px 10px 0;
+            border-bottom: 8px solid gray;
+
+            .main__input {
+                &--form {
+                    display: flex;
+                    flex-direction: column;
+    
+                    .main__form {
+                        display: flex;
+                        padding: 20px;
+    
+                        &--image {
+                            border-radius: 50%;
+                            height: 40px;
+                        }
+                        &--input {
+                            flex: 1;
+                            margin: 0 0 0 20px;
+                            font-size: 20px;
+                            border: none;
+                            outline: none;
+                        }
+                    }
+                }
+                &--submit {
+                    background-color: cyan;
+                    border: none;
+                    font-weight: 900;
+                    border-radius: 30px;
+                    width: 80px;
+                    height: 40px;
+                    margin: 20px 0 0 auto;
+                }
+            }
+        }
+        &--posts {
+            max-width: 600px;
+        }
+    }
+}

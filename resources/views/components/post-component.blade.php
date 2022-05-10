@@ -1,13 +1,34 @@
-<div style="margin: 0 0 50px 0; width: 500px; border: 1px solid black">
-    <div style="display:flex; flex-direction:row; justify-content: space-between;">
-        <h1>{{ $post->user()->first()->username }}</h1>
-        @livewire('post-delete', ['post' => $post], key($post->id_post))
+<div class="post">
+    <div class="post__profile">
+        <img class="post__profile--image" src="" alt=""/>
     </div>
-    <p> {{ $post->content }}</p>
-    <div style="display:flex; flex-direction:row; justify-content: space-around;">
-        <a href="{{ route('post', ['username' => $post->user()->first()->username, 'id_post' => $post->id_post]) }}">{{ __('Comments') }}</a>
-        @livewire('like-status', ['post' => $post], key($post->id_post))
-        @livewire('repost-status', ['post' => $post], key($post->id_post))
-        @livewire('bookmark-status', ['post' => $post], key($post->id_post))
+    <div class="post__main">
+        <div class="post__main--header">
+            <div class="post__header">
+                <h3 class="post__header--name">{{ $post->user()->first()->name }}
+                    <span class="post__header--username">{{ __('@') }}{{ $post->user()->first()->username }}</span>
+                </h3>
+            </div>
+        </div>
+        <div class="post__main--body">
+            <div class="post__body--content">
+                <p class="post__content--text">{{ $post->content }}</p>
+            </div>
+            @if (!is_null($post->images))
+                <div class="post__body--image">
+                    post__body--image
+                </div>
+            @endif
+        </div>
+        <div class="post__main--footer">
+            <a href="{{ route('post', ['username' => $post->user()->first()->username, 'id_post' => $post->id_post]) }}">
+                <button>
+                    <span class="material-icons"> chat_bubble </span>
+                </button>
+            </a>
+            @livewire('repost-status', ['post' => $post], key($post->id_post))
+            @livewire('like-status', ['post' => $post], key($post->id_post))
+            @livewire('bookmark-status', ['post' => $post], key($post->id_post))
+        </div>
     </div>
 </div>

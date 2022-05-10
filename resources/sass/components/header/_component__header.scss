@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid gray;
+    flex: 0.2;
+    min-width: 250px;
+    padding: 20px;
+
+    &__logo {
+        padding: 20px;
+        height: 3rem;
+    }
+    &__nav {
+
+        &--element.active {
+            color: cyan;
+        }
+        &--element {
+            display: flex;
+            align-items: center;
+
+            .nav__element--icon {
+                font-size: 2.5rem;
+                padding: 20px;
+            }
+            .nav__element--text {
+                font-weight: 800;
+                font-size: 20px;
+                margin: 0 20px 0 0;
+            }
+            &:hover {
+                background-color: rgba(0, 0, 0, .2);
+                border-radius: 30px;
+                color: cyan;
+                transition: color 100ms ease-out;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.search {
+    display: flex;
+
+    &__main {
+        background-color: gray;
+        padding: 10px;
+        border-radius: 20px;
+        margin: 10px 0 0 20px;
+        
+        &--form {
+            display: flex;
+            align-items: center;
+            
+            .search__form {
+                &--icon {
+                    color: gray;
+                }
+                &--input {
+                    border: none;
+                    background-color: gray;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
