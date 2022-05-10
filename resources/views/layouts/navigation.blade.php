@@ -23,7 +23,7 @@
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('notification')" :active="request()->routeIs('notification')">
-                        {{ __('Notification') }} - {{ Auth::user()->notifications()->count() }}
+                        {{ __('Notification') }} - {{ Auth::user()->notifications()->get()->where("watched", false)->count() }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -95,7 +95,7 @@
         </div>
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('notification')" :active="request()->routeIs('notification')">
-                {{ __('Notification') }} - {{ Auth::user()->notifications()->count() }}
+                {{ __('Notification') }} - {{ Auth::user()->notifications()->get()->where("watched", false)->count() }}
             </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
