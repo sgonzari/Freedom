@@ -1,3 +1,10 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+/*
+    # GENERIC
+*/
+@import url('generic/reset.scss');
+
+/*
+    # COMPONENTS
+*/
+@import url('components/body.scss');
+@import url('components/header.scss');
