@@ -1,4 +1,10 @@
 //////////////////////////////////////
+// # SETTINGS
+//////////////////////////////////////
+@import 'settings/_setting__color.scss';
+
+
+//////////////////////////////////////
 // # GENERIC
 //////////////////////////////////////
 @import 'generic/_generic__reset.scss';
@@ -13,3 +19,4 @@
 @import 'components/post/_component__post.scss';
 @import 'components/widget/_component__widget.scss';
 @import 'components/search/_component__search.scss';
+@import 'components/button/_component__button--action.scss';

@@ -1,0 +1,23 @@
+.button__action {
+    align-items: center;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+
+    &--icon {
+        font-size: 22px;
+        
+    }
+
+    .liked {
+        font-variation-settings: 'FILL' 1;
+        color: red;
+    }
+    .reposted {
+        font-variation-settings: 'FILL' 1;
+        color: green;
+    }
+        
+}

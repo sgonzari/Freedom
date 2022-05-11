@@ -1,8 +1,7 @@
 .search {
-    display: flex;
 
     &__main {
-        background-color: gray;
+        background-color: $border__color;
         padding: 10px;
         border-radius: 20px;
         margin: 10px 0 0 20px;
@@ -17,8 +16,54 @@
                 }
                 &--input {
                     border: none;
-                    background-color: gray;
+                    background-color: $border__color;
                     outline: none;
+                    width: 100%;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    &__main--results {
+        position: relative;
+        left: 20px;
+
+        .search__results {
+            border-radius: 8px;
+            position: absolute;
+            box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
+            width: 374px;
+
+            .search__result {
+                display: flex;
+                padding: 12px 0;
+
+                &--image {
+                    border-radius: 50%;
+                    height: 40px;
+                }
+                &--info {
+                    font-size: 16px;
+                    overflow: hidden;
+
+                    .search__info {
+                        &--name {
+                            font-weight: 700;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                        &--username {
+                            color: $secundary__color;
+                            white-space: nowrap;
+                        }
+                        &--description {
+                            color: $secundary__color;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                    }
                 }
             }
         }

@@ -2,19 +2,25 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-right: 1px solid gray;
+    border-right: 1px solid $border__color;
     flex: 0.2;
     min-width: 250px;
     padding: 20px;
 
+    &__top {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     &__logo {
-        padding: 20px;
+        padding: 10px;
         height: 3rem;
     }
     &__nav {
 
         &--element.active {
-            color: cyan;
+            font-weight: 700;
         }
         &--element {
             display: flex;
@@ -22,17 +28,15 @@
 
             .nav__element--icon {
                 font-size: 2.5rem;
-                padding: 20px;
+                padding: 10px;
             }
             .nav__element--text {
-                font-weight: 800;
                 font-size: 20px;
                 margin: 0 20px 0 0;
             }
             &:hover {
-                background-color: rgba(0, 0, 0, .2);
-                border-radius: 30px;
-                color: cyan;
+                background-color: $background__color;
+                border-radius: 9999px;
                 transition: color 100ms ease-out;
             }
         }

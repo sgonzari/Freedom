@@ -9,7 +9,7 @@
         <title>{{ config('app.name', 'Freedom') }} - {{ $title }}</title>
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">

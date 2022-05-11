@@ -60,6 +60,7 @@ a:visited {
 
 body {
   display: flex;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   height: 100vh;
   max-width: 1300px;
   margin: 0 auto;
@@ -70,17 +71,22 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-right: 1px solid gray;
+  border-right: 1px solid rgb(239, 243, 244);
   flex: 0.2;
   min-width: 250px;
   padding: 20px;
 }
+.header__top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .header__logo {
-  padding: 20px;
+  padding: 10px;
   height: 3rem;
 }
 .header__nav--element.active {
-  color: cyan;
+  font-weight: 700;
 }
 .header__nav--element {
   display: flex;
@@ -88,26 +94,21 @@ body {
 }
 .header__nav--element .nav__element--icon {
   font-size: 2.5rem;
-  padding: 20px;
+  padding: 10px;
 }
 .header__nav--element .nav__element--text {
-  font-weight: 800;
   font-size: 20px;
   margin: 0 20px 0 0;
 }
 .header__nav--element:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  color: cyan;
+  background-color: rgba(15, 20, 25, 0.1);
+  border-radius: 9999px;
   transition: color 100ms ease-out;
 }
 
 .main {
   flex: 0.5;
-  border-right: 1px solid gray;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
+  border-right: 1px solid rgb(239, 243, 244);
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -119,9 +120,9 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: white;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   z-index: 100;
-  border: 1px solid gray;
   padding: 15px 20px;
 }
 .main__header--title {
@@ -130,7 +131,7 @@ body {
 }
 .main__container--input {
   padding: 0 10px 10px 0;
-  border-bottom: 8px solid gray;
+  border-bottom: 1px solid rgb(239, 243, 244);
 }
 .main__container--input .main__input--form {
   display: flex;
@@ -152,26 +153,21 @@ body {
   outline: none;
 }
 .main__container--input .main__input--submit {
-  background-color: cyan;
+  background-color: rgb(29, 155, 240);
   border: none;
+  color: white;
   font-weight: 900;
   border-radius: 30px;
   width: 80px;
   height: 40px;
   margin: 20px 0 0 auto;
 }
-.main__container--posts {
-  max-width: 600px;
-}
 
 .post {
   display: flex;
   align-items: flex-start;
-  border-bottom: 1px solid gray;
-  padding: 0 0 10px 0;
-}
-.post__profile {
-  padding: 20px;
+  border-bottom: 1px solid rgb(239, 243, 244);
+  padding: 12px 16px;
 }
 .post__profile--image {
   border-radius: 50%;
@@ -179,7 +175,6 @@ body {
 }
 .post__main {
   flex: 1;
-  padding: 10px;
 }
 .post__main--header .post__header--name {
   font-size: 15px;
@@ -200,11 +195,8 @@ body {
   flex: 0.3;
 }
 
-.search {
-  display: flex;
-}
 .search__main {
-  background-color: gray;
+  background-color: rgb(239, 243, 244);
   padding: 10px;
   border-radius: 20px;
   margin: 10px 0 0 20px;
@@ -218,6 +210,66 @@ body {
 }
 .search__main--form .search__form--input {
   border: none;
-  background-color: gray;
+  background-color: rgb(239, 243, 244);
   outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+.search__main--results {
+  position: relative;
+  left: 20px;
+}
+.search__main--results .search__results {
+  border-radius: 8px;
+  position: absolute;
+  box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
+  width: 374px;
+}
+.search__main--results .search__results .search__result {
+  display: flex;
+  padding: 12px 0;
+}
+.search__main--results .search__results .search__result--image {
+  border-radius: 50%;
+  height: 40px;
+}
+.search__main--results .search__results .search__result--info {
+  font-size: 16px;
+  overflow: hidden;
+}
+.search__main--results .search__results .search__result--info .search__info--name {
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.search__main--results .search__results .search__result--info .search__info--username {
+  color: rgb(83, 100, 113);
+  white-space: nowrap;
+}
+.search__main--results .search__results .search__result--info .search__info--description {
+  color: rgb(83, 100, 113);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.button__action {
+  align-items: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+}
+.button__action--icon {
+  font-size: 22px;
+}
+.button__action .liked {
+  font-variation-settings: "FILL" 1;
+  color: red;
+}
+.button__action .reposted {
+  font-variation-settings: "FILL" 1;
+  color: green;
 }

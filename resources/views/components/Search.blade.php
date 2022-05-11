@@ -1,20 +1,25 @@
 <div class="search">
-    <div class="search__main relative">
+    <div class="search__main">
         <form class="search__main--form" wire:submit.prevent="search">
-            <span class="search__form--icon material-icons"> search </span>
+            <span class="search__form--icon material-symbols-rounded"> search </span>
             <input class="search__form--input" type="text" placeholder="search Freedom" wire:model="query">
         </form>
 
-        @if (!empty($query))
-            <div class="search__main--results absolute z-10 w-full bg-white rounded-t-none shadow-lg list-group">
+    </div>
+    @if (!empty($query))
+        <div class="search__main--results">
+            <div class="search__results">
                 @foreach ($results as $result) 
-                    <div class="search__result">
-                        <a href="{{ route('profile', $result->username) }}">
-                            <span>{{ $result->username }}</span>
-                        </a>
-                    </div>
+                    <a class="search__result" href="{{ route('profile', $result->username) }}">
+                        <img class="search__result--image" src="{{ $result->profile_image }}"/>
+                        <div class="search__result--info">
+                            <h3 class="search__info--name">{{ $result->name }}</h3>
+                            <span class="search__info--username">{{ __('@') }}{{ $result->username }}</span>
+                            <p class="search__info--description">{{ $result->description }}</p>
+                        </div>
+                    </a>
                 @endforeach
             </div>
-        @endif
-    </div>
+        </div>
+    @endif
 </div>

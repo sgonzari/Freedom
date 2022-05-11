@@ -1,7 +1,6 @@
 .main {
     flex: 0.5;
-    border-right: 1px solid gray;
-    min-width: fit-content;
+    border-right: 1px solid $border__color;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -12,9 +11,8 @@
     &__header {
         position: sticky;
         top: 0;
-        background-color: white;
+        backdrop-filter: blur(20px);
         z-index: 100;
-        border: 1px solid gray;
         padding: 15px 20px;
 
         &--title {
@@ -26,7 +24,7 @@
 
         &--input {
             padding: 0 10px 10px 0;
-            border-bottom: 8px solid gray;
+            border-bottom: 1px solid $border__color;
 
             .main__input {
                 &--form {
@@ -51,8 +49,9 @@
                     }
                 }
                 &--submit {
-                    background-color: cyan;
+                    background-color: $main__color;
                     border: none;
+                    color: white;
                     font-weight: 900;
                     border-radius: 30px;
                     width: 80px;
@@ -60,9 +59,6 @@
                     margin: 20px 0 0 auto;
                 }
             }
-        }
-        &--posts {
-            max-width: 600px;
         }
     }
 }

@@ -22,13 +22,17 @@
         </div>
         <div class="post__main--footer">
             <a href="{{ route('post', ['username' => $post->user()->first()->username, 'id_post' => $post->id_post]) }}">
-                <button>
-                    <span class="material-icons"> chat_bubble </span>
+                <button class="button__action">
+                <span class="button__action--icon material-symbols-rounded"> chat_bubble </span>
+                <span class="button__action--count"> {{ $post->comments()->count() }} </span>
                 </button>
             </a>
             @livewire('repost-status', ['post' => $post], key($post->id_post))
             @livewire('like-status', ['post' => $post], key($post->id_post))
-            @livewire('bookmark-status', ['post' => $post], key($post->id_post))
+            <button class="button__action">
+                <span class="button__action--icon material-symbols-rounded"> publish </span>
+            </button>
+         {{-- @livewire('bookmark-status', ['post' => $post], key($post->id_post)) --}}
         </div>
     </div>
 </div>
