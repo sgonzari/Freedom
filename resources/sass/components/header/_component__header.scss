@@ -15,7 +15,14 @@
 
     &__logo {
         padding: 10px;
-        height: 3rem;
+        border-radius: 9999px;
+
+        &--svg {
+            height: 2.5rem;
+        }
+        &:hover {
+            background-color: $background__color;
+        }
     }
     &__nav {
 
@@ -39,6 +46,42 @@
                 border-radius: 9999px;
                 transition: color 100ms ease-out;
             }
+        }
+    }
+
+    &__profile {
+        align-items: center;
+        display: flex;
+        padding: 12px;
+        border-radius: 9999px;
+
+        &--image {
+            height: 40px;
+            border-radius: 50%;
+        }
+        &--info {
+            .header__info {
+                &--name {
+                    font-weight: 700;
+                    font-size: 15px;
+                }
+                &--username {
+                    color: $secundary__color;
+                }
+            }
+        }
+        &--option {
+            flex-grow: 1;
+            text-align: right;
+
+            .header__profile {
+                &--icon {
+
+                }
+            }
+        }
+        &:hover {
+            background-color: $background__color;
         }
     }
 }

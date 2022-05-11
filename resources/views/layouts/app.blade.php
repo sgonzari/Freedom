@@ -24,11 +24,11 @@
     <body>
         <header class="header"> 
             <div class="header__top">
-                <x-application-logo class="header__logo"/>
+                <x-application-logo class="header__logo" href="{{ route('home') }}"/>
                 <x-application-nav class="header__nav"/>
             </div>
             <div class="header__bottom">
-                <h1>header__bottom</h1>
+                <x-application-profile class="header__profile"/>
             </div>
         </header>
         <main class="main">

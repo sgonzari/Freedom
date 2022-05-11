@@ -83,7 +83,13 @@ body {
 }
 .header__logo {
   padding: 10px;
-  height: 3rem;
+  border-radius: 9999px;
+}
+.header__logo--svg {
+  height: 2.5rem;
+}
+.header__logo:hover {
+  background-color: rgba(15, 20, 25, 0.1);
 }
 .header__nav--element.active {
   font-weight: 700;
@@ -104,6 +110,30 @@ body {
   background-color: rgba(15, 20, 25, 0.1);
   border-radius: 9999px;
   transition: color 100ms ease-out;
+}
+.header__profile {
+  align-items: center;
+  display: flex;
+  padding: 12px;
+  border-radius: 9999px;
+}
+.header__profile--image {
+  height: 40px;
+  border-radius: 50%;
+}
+.header__profile--info .header__info--name {
+  font-weight: 700;
+  font-size: 15px;
+}
+.header__profile--info .header__info--username {
+  color: rgb(83, 100, 113);
+}
+.header__profile--option {
+  flex-grow: 1;
+  text-align: right;
+}
+.header__profile:hover {
+  background-color: rgba(15, 20, 25, 0.1);
 }
 
 .main {
@@ -127,7 +157,7 @@ body {
 }
 .main__header--title {
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 700;
 }
 .main__container--input {
   padding: 0 10px 10px 0;
