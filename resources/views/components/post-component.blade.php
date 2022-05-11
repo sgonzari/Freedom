@@ -1,6 +1,6 @@
 <div class="post">
     <div class="post__profile">
-        <img class="post__profile--image" src="" alt=""/>
+        <img class="post__profile--image" src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="Image profile"/>
     </div>
     <div class="post__main">
         <div class="post__main--header">

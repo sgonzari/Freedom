@@ -11,7 +11,7 @@
             <div class="search__results">
                 @foreach ($results as $result) 
                     <a class="search__result" href="{{ route('profile', $result->username) }}">
-                        <img class="search__result--image" src="{{ $result->profile_image }}"/>
+                        <img class="search__result--image" src="http://localhost/freedom/public/storage/{{ $result->profile_image }}"/>
                         <div class="search__result--info">
                             <h3 class="search__info--name">{{ $result->name }}</h3>
                             <span class="search__info--username">{{ __('@') }}{{ $result->username }}</span>

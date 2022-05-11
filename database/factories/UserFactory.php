@@ -25,7 +25,7 @@ class UserFactory extends Factory
             "email" => $this->faker->unique()->safeEmail(),
             "password" => Hash::make("usuario"),
             "birthday" => date('Y-m-d H:i:s', strtotime($this->faker->date())),
-            "profile_image" => "a",
+            "profile_image" => 'users/' . $this->faker->image('public/storage/users', 50, 50, null, false),
             "description" => $this->faker->text(50)
         ];
     }
