@@ -2954,13 +2954,50 @@ Turbolinks.start();
 
 /***/ }),
 
+/***/ "./resources/js/components/HeaderProfileButtons.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/HeaderProfileButtons.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var HeaderProfileButtons = function HeaderProfileButtons() {
+  var modal = document.getElementById("profileOptions");
+  var btn = document.getElementById('profileButton');
+
+  btn.onclick = function () {
+    modal.style.display = "block";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderProfileButtons);
+
+/***/ }),
+
 /***/ "./resources/js/main.js":
 /*!******************************!*\
   !*** ./resources/js/main.js ***!
   \******************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_HeaderProfileButtons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/HeaderProfileButtons */ "./resources/js/components/HeaderProfileButtons.js");
 
 
+window.onload = function () {
+  _components_HeaderProfileButtons__WEBPACK_IMPORTED_MODULE_0__["default"];
+};
 
 /***/ }),
 
