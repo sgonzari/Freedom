@@ -4,8 +4,8 @@
             <span class="search__form--icon material-symbols-rounded"> search </span>
             <input class="search__form--input" type="text" placeholder="search Freedom" wire:model="query">
         </form>
-
     </div>
+    
     @if (!empty($query))
         <div class="search__main--results">
             <div class="search__results">

@@ -50,38 +50,63 @@
     }
 
     &__profile {
-        align-items: center;
-        display: flex;
-        padding: 12px;
-        border-radius: 9999px;
+        position: relative;
+        
+        &--options {
+            position: absolute;
+            bottom: 64px;
+            border: 1px solid black;
+            width: 250px;
 
-        &--image {
-            height: 40px;
-            border-radius: 50%;
-        }
-        &--info {
-            .header__info {
-                &--name {
-                    font-weight: 700;
-                    font-size: 15px;
-                }
-                &--username {
-                    color: $secundary__color;
+            .header__option {
+                display: flex;
+                padding: 12px 16px;
+
+                &:hover {
+                    background-color: $background__color;
                 }
             }
         }
-        &--option {
-            flex-grow: 1;
-            text-align: right;
+        &--container {
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            padding: 12px;
+            border-radius: 9999px;
 
             .header__profile {
-                &--icon {
 
+                &--image {
+                    height: 40px;
+                    border-radius: 50%;
+                }
+                &--info {
+                    margin: 0 12px;
+
+                    .header__info {
+                        &--name {
+                            font-weight: 700;
+                            font-size: 15px;
+                        }
+                        &--username {
+                            color: $secundary__color;
+                        }
+                    }
+                }
+                &--option {
+                    flex-grow: 1;
+                    text-align: right;
+        
+                    .header__profile {
+                        &--icon {
+        
+                        }
+                    }
                 }
             }
-        }
-        &:hover {
-            background-color: $background__color;
+            &:hover {
+                background-color: $background__color;
+            }
         }
     }
 }
