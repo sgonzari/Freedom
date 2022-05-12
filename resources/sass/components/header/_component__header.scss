@@ -54,20 +54,35 @@
     }
 
     &__profile {
-        position: relative;
         
         &--options {
-            padding: 12px 0;
-            border-radius: 16px;
-            bottom: 80px;
-            box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
-            position: absolute;
-            width: 250px;
+            display: none;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
 
             .header__option {
-                display: flex;
-                padding: 12px 16px;
-                
+                bottom: 93px;
+                left: 332px;
+                position: absolute;
+                width: 250px;
+                padding: 12px 0;
+                border-radius: 16px;
+                background-color: white;
+                box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
+
+                &--logout {
+                    display: flex;
+                    padding: 12px 16px;
+                    
+                    &:hover {
+                        background-color: $background__color;
+                    }
+                }
                 &--signal {
                     position: absolute;
                     bottom: -10px;
@@ -76,9 +91,6 @@
                     transform: rotate(180deg);
                     left: calc(50% - 14px / 2);
                     filter: drop-shadow(rgb(207, 217, 222) 1px -1px 1px);
-                }
-                &:hover {
-                    background-color: $background__color;
                 }
             }
         }
