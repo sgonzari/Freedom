@@ -23,7 +23,6 @@ class UserTableSeeder extends Seeder
             "email" => "sebastiangr456@gmail.com",
             "password" => Hash::make("usuario"),
             "birthday" => date('Y-m-d H:i:s', strtotime("03 December 2001")),
-            "profile_image" => "a",
             "description" => "Only SrCbas.",
         ]);
 
