@@ -2,8 +2,8 @@
 
 @php
 $classes = ($active ?? false)
-            ? 'header__nav--element active'
-            : 'header__nav--element';
+            ? 'active'
+            : '';
 @endphp
 
 <a {{ $attributes->merge(['class' => $classes]) }}>

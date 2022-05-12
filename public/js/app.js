@@ -2954,10 +2954,10 @@ Turbolinks.start();
 
 /***/ }),
 
-/***/ "./resources/js/components/HeaderProfileButtons.js":
-/*!*********************************************************!*\
-  !*** ./resources/js/components/HeaderProfileButtons.js ***!
-  \*********************************************************/
+/***/ "./resources/js/components/HeaderNavMore.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/HeaderNavMore.js ***!
+  \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2965,7 +2965,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-var HeaderProfileButtons = function HeaderProfileButtons() {
+var HeaderNavMore = function HeaderNavMore() {
+  var modalMore = document.getElementById("navMore");
+  var btnMore = document.getElementById("navButton");
+
+  btnMore.onclick = function () {
+    modalMore.style.display = "block";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modalMore.style.display = "none";
+    }
+  };
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderNavMore);
+
+/***/ }),
+
+/***/ "./resources/js/components/HeaderProfileButton.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/HeaderProfileButton.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var HeaderProfileButton = function HeaderProfileButton() {
   var modal = document.getElementById("profileOptions");
   var btn = document.getElementById('profileButton');
 
@@ -2974,13 +3004,17 @@ var HeaderProfileButtons = function HeaderProfileButtons() {
   };
 
   window.onclick = function (event) {
+    console.log(event.target);
+    console.log(modal);
+    console.log("-----------------");
+
     if (event.target == modal) {
       modal.style.display = "none";
     }
   };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderProfileButtons);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderProfileButton);
 
 /***/ }),
 
@@ -2992,11 +3026,14 @@ var HeaderProfileButtons = function HeaderProfileButtons() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_HeaderProfileButtons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/HeaderProfileButtons */ "./resources/js/components/HeaderProfileButtons.js");
+/* harmony import */ var _components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/HeaderNavMore */ "./resources/js/components/HeaderNavMore.js");
+/* harmony import */ var _components_HeaderProfileButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/HeaderProfileButton */ "./resources/js/components/HeaderProfileButton.js");
+
 
 
 window.onload = function () {
-  _components_HeaderProfileButtons__WEBPACK_IMPORTED_MODULE_0__["default"];
+  (0,_components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_components_HeaderProfileButton__WEBPACK_IMPORTED_MODULE_1__["default"])();
 };
 
 /***/ }),

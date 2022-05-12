@@ -1,5 +1,7 @@
-import HeaderProfileButtons from './components/HeaderProfileButtons';
+import HeaderNavMore from './components/HeaderNavMore';
+import HeaderProfileButton from './components/HeaderProfileButton';
 
 window.onload = () => {
-    HeaderProfileButtons;
+    HeaderNavMore();
+    HeaderProfileButton();
 }

@@ -38,7 +38,7 @@
             .post__body {
                 &--content {
                     .post__content--text {
-
+                        overflow-wrap: anywhere;
                     }
                 }
                 &--image {
