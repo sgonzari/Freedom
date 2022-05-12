@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('password');
             $table->date("birthday")->nullable();
             $table->timestamps();
-            $table->string("profile_image")->default("a");
+            $table->string("profile_image");
             $table->string("description")->nullable();
             $table->softDeletes();
             $table->boolean("banned")->default(false);
