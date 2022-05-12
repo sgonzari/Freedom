@@ -158,8 +158,16 @@ body {
   border-radius: 9999px;
 }
 .header__profile--container .header__profile--image {
-  height: 40px;
-  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+.header__profile--container .header__profile--image .profile__image {
+  height: 48px;
 }
 .header__profile--container .header__profile--info {
   margin: 0 12px;
@@ -215,8 +223,16 @@ body {
   padding: 20px;
 }
 .main__container--input .main__input--form .main__form--image {
-  border-radius: 50%;
-  height: 40px;
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+.main__container--input .main__input--form .main__form--image .form__image {
+  height: 48px;
 }
 .main__container--input .main__input--form .main__form--input {
   flex: 1;
@@ -244,10 +260,16 @@ body {
 }
 .post__profile {
   margin: 0 12px 0 0;
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
 }
 .post__profile--image {
-  border-radius: 50%;
-  height: 40px;
+  height: 48px;
 }
 .post__main {
   flex: 1;
@@ -306,9 +328,17 @@ body {
   padding: 12px 16px;
 }
 .search__main--results .search__results .search__result--image {
-  border-radius: 50%;
-  height: 50px;
   margin: 0 12px 0 0;
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+.search__main--results .search__results .search__result--image .search__image {
+  height: 48px;
 }
 .search__main--results .search__results .search__result--info {
   font-size: 16px;

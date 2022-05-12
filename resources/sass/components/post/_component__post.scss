@@ -6,10 +6,16 @@
 
     &__profile {
         margin: 0 12px 0 0;
+        height: $image__height;
+        width: $image__width;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 9999px;
 
         &--image {
-            border-radius: 50%;
-            height: 40px;
+            height: $image__height;
         }
     }
     &__main {

@@ -104,8 +104,17 @@
             .header__profile {
 
                 &--image {
-                    height: 40px;
-                    border-radius: 50%;
+                    height: $image__height;
+                    width: $image__width;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 9999px;
+
+                    .profile__image {
+                        height: $image__height;
+                    }
                 }
                 &--info {
                     margin: 0 12px;

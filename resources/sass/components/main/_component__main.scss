@@ -36,8 +36,16 @@
                         padding: 20px;
     
                         &--image {
-                            border-radius: 50%;
-                            height: 40px;
+                            height: $image__height;
+                            width: $image__width;
+                            overflow: hidden;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 9999px;
+                            .form__image {
+                                height: $image__height;
+                            }
                         }
                         &--input {
                             flex: 1;

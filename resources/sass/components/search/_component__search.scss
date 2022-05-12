@@ -39,9 +39,18 @@
                 padding: 12px 16px;
 
                 &--image {
-                    border-radius: 50%;
-                    height: 50px;
                     margin: 0 12px 0 0;
+                    height: $image__height;
+                    width: $image__width;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 9999px;
+
+                    .search__image {
+                        height: $image__height;
+                    }
                 }
                 &--info {
                     font-size: 16px;
