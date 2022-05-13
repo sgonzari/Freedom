@@ -9,13 +9,31 @@
         display: none;
     }
     &__header {
+        display: flex;
         position: sticky;
+        padding: 0 12px;
         top: 0;
         backdrop-filter: blur(20px);
         z-index: 100;
-        padding: 15px 20px;
 
+        &--back {
+            border-radius: 9999px;
+            padding: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 6px 20px 6px 0;
+
+            .main__header--icon {
+                width: 24px;
+
+            }
+            &:hover {
+                background-color: $background__color;
+            }
+        }
         &--title {
+            margin: 15px 0;
             font-size: 20px;
             font-weight: 700;
         }
