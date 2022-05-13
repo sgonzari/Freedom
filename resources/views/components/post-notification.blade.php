@@ -1,5 +1,20 @@
 <div>
     @if (!empty($notifications))
+        <div class="notification">
+            
+        </div>
+    @else
+        <h1>No tienes notificaciones.</h1>
+    @endif
+
+
+
+
+
+
+
+
+    @if (!empty($notifications))
         <table>
             <thead>
                 <tr>
