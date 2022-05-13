@@ -53,6 +53,10 @@ table {
   border-spacing: 0;
 }
 
+a {
+  color: black;
+}
+
 a:visited {
   color: black;
   text-decoration: none;
@@ -307,6 +311,7 @@ body {
 }
 
 .post {
+  cursor: pointer;
   display: flex;
   align-items: flex-start;
   border-bottom: 1px solid rgb(239, 243, 244);
@@ -329,6 +334,7 @@ body {
   flex: 1;
 }
 .post__main--header .post__header--name {
+  font-weight: 700;
   font-size: 15px;
   margin: 0 0 5px 0;
 }
@@ -344,6 +350,9 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 10px 0 0 0;
+}
+.post:hover {
+  background-color: rgba(15, 20, 25, 0.1);
 }
 
 .profile {
@@ -521,9 +530,21 @@ body {
   cursor: pointer;
   display: flex;
   font-size: 14px;
+  padding: 0;
 }
 .button__action--icon {
   font-size: 22px;
+  border-radius: 999px;
+  padding: 6px;
+}
+.button__action--default:hover {
+  background-color: rgba(29, 155, 240, 0.1);
+}
+.button__action--like:hover {
+  background-color: rgba(249, 24, 128, 0.1);
+}
+.button__action--repost:hover {
+  background-color: rgba(0, 186, 124, 0.1);
 }
 .button__action .liked {
   font-variation-settings: "FILL" 1;

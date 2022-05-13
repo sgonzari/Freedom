@@ -5,10 +5,21 @@
     cursor: pointer;
     display: flex;
     font-size: 14px;
+    padding: 0;
 
     &--icon {
         font-size: 22px;
-        
+        border-radius: 999px;
+        padding: 6px;
+    }
+    &--default:hover {
+        background-color: $background__color--cyan;
+    }
+    &--like:hover {
+        background-color: $background__color--red;
+    }
+    &--repost:hover {
+        background-color: $background__color--green;
     }
 
     .liked {
@@ -18,6 +29,5 @@
     .reposted {
         font-variation-settings: 'FILL' 1;
         color: green;
-    }
-        
+    }        
 }
