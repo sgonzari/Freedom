@@ -99,6 +99,19 @@ body {
   display: flex;
   align-items: center;
 }
+.header__nav--element .nav__element--alert {
+  position: absolute;
+  top: 15px;
+  left: 32px;
+  background-color: rgb(29, 155, 240);
+  padding: 2px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6px;
+  height: 6px;
+}
 .header__nav--element .nav__element--icon {
   font-size: 2.5rem;
   padding: 10px;
@@ -120,6 +133,9 @@ body {
 }
 .header__nav--element:last-child {
   cursor: pointer;
+}
+.header__nav--notification {
+  position: relative;
 }
 .header__nav--more {
   display: none;
@@ -377,6 +393,9 @@ body {
 }
 .notification__type .notification__type--default {
   color: rgb(29, 155, 240);
+}
+.notification__main {
+  width: 100%;
 }
 .notification__main .notification__main--header .notification__header--image {
   display: flex;

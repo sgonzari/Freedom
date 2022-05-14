@@ -11,11 +11,7 @@ class PostNotification extends Component
 {
     public function render()
     {
-        $notifications = [] ;
-
-        foreach (Auth::user()->notifications()->get() as $notification) {
-            array_push($notifications, $notification) ;
-        }
+        $notifications = Auth::user()->notifications()->orderBy('created_at', 'desc')->get() ;
 
         foreach (Auth::user()->notifications()->get()->where("watched", false) as $notification) {
             $notification->watched = true ;

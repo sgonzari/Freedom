@@ -19,7 +19,10 @@
         <span class="nav__element--icon material-symbols-rounded"> perm_identity </span>
         <h2 class="nav__element--text">{{ _('Profile') }}</h2>
     </x-nav-link>
-    <x-nav-link class="header__nav--element" :href="route('notification')" :active="request()->routeIs('notification')">
+    <x-nav-link class="header__nav--element header__nav--notification" :href="route('notification')" :active="request()->routeIs('notification')">
+        @if (Auth::user()->notifications()->get()->where("watched", false)->count())
+            <div class="nav__element--alert"></div>
+        @endif
         <span class="nav__element--icon material-symbols-rounded"> notifications_none </span>
         <h2 class="nav__element--text">{{ _('Notification') }}</h2>
     </x-nav-link>
