@@ -132,7 +132,7 @@ body {
   overflow: auto;
 }
 .header__nav--more .header__more {
-  bottom: 174px;
+  top: 390px;
   left: 332px;
   position: absolute;
   width: 250px;
@@ -373,6 +373,7 @@ body {
   border-radius: 50%;
   align-items: center;
   border: 4px solid white;
+  background-color: rgba(15, 20, 25, 0.1);
 }
 .profile__header--image .profile__image {
   height: 120px;
