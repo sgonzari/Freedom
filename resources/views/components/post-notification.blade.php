@@ -14,22 +14,22 @@
                 <div class="notification__main">
                     <div class="notification__main--header">
                         <div class="notification__header--image">
-                            <img />
+                            <img class="notification__image" src="http://localhost/freedom/public/storage/{{ $notification->user()->first()->profile_image }}" alt="Imagen de perfil"/>
                         </div>
                         <div class="notification__header--text">
-                            <h3 class="notification__text--username">
-                                {{ $notification->user()->get()->first()->username }} 
-                                <span class="notification__text--type">
-                                    @if ($notification->typeOf()->get()->first()->name == 'like')
-                                        le ha gustado tu post.
-                                    @elseif ($notification->typeOf()->get()->first()->name == 'repost')
-                                        ha reposteado tu post.
-                                    @elseif ($notification->typeOf()->get()->first()->name == 'comment')
-                                        ha comentado tu post.
-                                    @else
-                                        te ha mencionado en un post.
-                                    @endif
+                            <h3 class="notification__text">
+                                <span class="notification__text--username">
+                                    {{ $notification->user()->get()->first()->username }} 
                                 </span>
+                                @if ($notification->typeOf()->get()->first()->name == 'like')
+                                    le ha gustado tu post.
+                                @elseif ($notification->typeOf()->get()->first()->name == 'repost')
+                                    ha reposteado tu post.
+                                @elseif ($notification->typeOf()->get()->first()->name == 'comment')
+                                    ha comentado tu post.
+                                @else
+                                    te ha mencionado en un post.
+                                @endif
                             </h3>
                         </div>
                     </div>
@@ -54,37 +54,5 @@
         @endforeach
     @else
         <h1 class="notification--not">No tienes notificaciones.</h1>
-    @endif
-
-
-
-
-
-
-
-
-    @if (!empty($notifications))
-        <table>
-            <thead>
-                <tr>
-                    <th>Usuario</th>
-                    <th>Post</th>
-                    <th>Content Post</th>
-                    <th>Tipo de post</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($notifications as $notification)
-                    <tr>
-                        <td>{{ $notification->user()->get()->first()->username }}</td>
-                        <td>{{ $notification->fk_post }}</td>
-                        <td>{{ $notification->post()->get()->first()->content }}</td>
-                        <td>{{ $notification->typeOf()->get()->first()->name }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    @else
-        <h1>No hay notificaciones</h1>
     @endif
 </div>

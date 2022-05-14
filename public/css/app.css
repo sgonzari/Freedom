@@ -355,6 +355,54 @@ body {
   background-color: rgba(15, 20, 25, 0.1);
 }
 
+.notification {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid rgb(239, 243, 244);
+  padding: 12px 16px;
+}
+.notification__type {
+  margin: 0 12px 0 0;
+}
+.notification__type .notification__type--icon {
+  font-variation-settings: "FILL" 1;
+  font-size: 32px;
+}
+.notification__type .notification__type--like {
+  color: red;
+}
+.notification__type .notification__type--repost {
+  color: green;
+}
+.notification__type .notification__type--default {
+  color: rgb(29, 155, 240);
+}
+.notification__main .notification__main--header .notification__header--image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  overflow: hidden;
+  width: 48px;
+  height: 48px;
+  margin: 0 0 12px 0;
+}
+.notification__main .notification__main--header .notification__header--image .notification__image {
+  height: 48px;
+}
+.notification__main .notification__main--header .notification__header--text .notification__text--username {
+  font-weight: 700;
+}
+.notification__main .notification__main--body {
+  margin: 12px 0 0 0;
+}
+.notification__main .notification__main--footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 0 0;
+}
+
 .profile {
   border-bottom: 1px solid rgb(239, 243, 244);
 }
