@@ -34,3 +34,6 @@ Este sería el esquema Entidad-Relación de la base de datos de __Freedom__:
 ## Desarrollo
 __Freedom__ constará de 2 caras, usuarios y moderadores. Los usuarios podrán subir a la red social cualquier tipo de publicación, dar me gustas a cualquier publicación, seguir a más usuarios, comentar publicaciones... e infinidad de cosas. Mientras que los moderadores, podrán realizar lo anteriormente comentado pero pudiendo eliminar y dar _"Toques de atención"_ a los usuarios con un comportamiento nefasto en la red social.
 __Freedom__ tendrá en cuenta a los usuarios que solo busquen _"el mal"_ en la red social y estos serán sancionados.
+
+## Checkpoint - 13/05/2022
+[Enlace a YouTube](https://youtu.be/-D9dt_9zRuU)
