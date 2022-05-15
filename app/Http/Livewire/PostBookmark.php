@@ -15,11 +15,7 @@ class PostBookmark extends Component
 
     public function render()
     {
-        $bookmarks = [] ;
-
-        foreach (User::find(Auth::user()->id_user)->bookmarks()->get() as $bookmark) {
-            array_push($bookmarks, $bookmark) ;
-        }
+        $bookmarks = User::find(Auth::user()->id_user)->bookmarks()->get() ;
 
         return view('components.post-bookmark', compact("bookmarks"));
     }
