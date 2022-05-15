@@ -16,7 +16,24 @@ class UserController extends Controller
         $user = User::where('username', $username)->first() ;
 
         return view("profile", [
-            "user" => $user
+            "user" => $user,
+            "option" => "posts"
+        ]) ;
+    }
+    public function profileReposts (string $username) {
+        $user = User::where('username', $username)->first() ;
+
+        return view("profile", [
+            "user" => $user,
+            "option" => "reposts"
+        ]) ;
+    }
+    public function profileLikes (string $username) {
+        $user = User::where('username', $username)->first() ;
+
+        return view("profile", [
+            "user" => $user,
+            "option" => "likes"
         ]) ;
     }
 

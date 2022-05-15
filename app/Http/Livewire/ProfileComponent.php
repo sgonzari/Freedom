@@ -10,15 +10,28 @@ use Livewire\Component;
 class ProfileComponent extends Component
 {
     public User|Null $user ;
+    public string $option ;
 
     public function render() {
         $user = $this->user ;
-        $posts = [];
-        
-        if (!is_null($user)) {
-            $posts = $user->posts()->orderBy('created_at')->get() ;
+        $option = $this->option ;
+        $posts = [] ;
+
+        switch ($this->option) {
+            case "posts":
+                $posts = $this->user->posts()->orderBy('created_at')->get() ;
+                break;
+            case "reposts":
+                $posts = $this->user->reposts()->get() ;
+                break;
+            case "likes":
+                $posts = $this->user->likes()->get() ;
+                break;
+            default:
+                $posts = [] ;
+                break;
         }
 
-        return view('components.profile-component', compact(["posts", "user"]));
+        return view('components.profile-component', compact(["posts", "user", "option"]));
     }
 }

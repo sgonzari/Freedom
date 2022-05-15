@@ -25,4 +25,5 @@ Route::get('/{username}/post/{id_post}', [UserController::class, "post"])->middl
 Route::view('/admin', "admin")->middleware(['auth', 'admin'])->name("admin") ;
 require __DIR__.'/auth.php';
 Route::get('/{username}', [UserController::class, "profile"])->middleware('auth')->name("profile") ;
-
+Route::get('/{username}/reposts', [UserController::class, "profileReposts"])->middleware('auth')->name("profile-reposts") ;
+Route::get('/{username}/likes', [UserController::class, "profileLikes"])->middleware('auth')->name("profile-likes") ;

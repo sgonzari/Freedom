@@ -8,12 +8,14 @@ use Livewire\Component;
 
 class ProfileInfo extends Component
 {
-    public $user ;
+    public $user, $option ;
 
     public function render()
     {
         $user = $this->user ;
-        return view('components.profile-info', compact(['user']));
+        $option = $this->option ;
+
+        return view('components.profile-info', compact(['user', 'option']));
     }
 
     public function followUser () {

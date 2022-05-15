@@ -13,5 +13,5 @@
         <h2 class="main__header--title">{{ __('Profile') }}</h2>
     </x-slot>
 
-    <livewire:profile-component :user="$user"/>
+    <livewire:profile-component :user="$user" :option="$option" />
 </x-app-layout>

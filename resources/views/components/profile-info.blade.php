@@ -48,14 +48,8 @@
         </div>
     </div>
     <div class="profile__footer">
-        <a class="profile__footer--element active" href="{{ route('home') }}">
-            Posts
-        </a>
-        <a class="profile__footer--element" href="{{ route('home') }}">
-            Reposts
-        </a>
-        <a class="profile__footer--element" href="{{ route('home') }}">
-            Likes
-        </a>
+        <a class="profile__footer--element @if ($option == 'posts') active @endif" href="{{ route('profile', $user->username) }}">Posts</a>
+        <a class="profile__footer--element @if ($option == 'reposts') active @endif" href="{{ route('profile-reposts', ['username' => $user->username]) }}">Reposts</a>
+        <a class="profile__footer--element @if ($option == 'likes') active @endif" href="{{ route('profile-likes', ['username' => $user->username]) }}">Likes</a>
     </div>
 </div>
