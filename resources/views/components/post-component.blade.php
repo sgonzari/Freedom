@@ -4,13 +4,14 @@
             <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="Imagen de perfil" class="post__profile--image" />
         </a>
         <div class="post__main">
-            <a class="post__main--header" href="{{ route('profile', ['username' => $post->user()->first()->username]) }}">
+            <div class="post__main--header">
                 <div class="post__header">
-                    <h3 class="post__header--name">{{ $post->user()->first()->name }}
+                    <a class="post__header--name" href="{{ route('profile', ['username' => $post->user()->first()->username]) }}">{{ $post->user()->first()->name }}
                         <span class="post__header--username">{{ __('@') }}{{ $post->user()->first()->username }}</span>
-                    </h3>
+                    </a>
+                    <span class="post__header--icon material-symbols-rounded"> more_horiz </span>
                 </div>
-            </a>
+            </div>
             <a class="post__main--body" href="{{ route('post', ['username' => $post->user()->first()->username, 'id_post' => $post->id_post]) }}">
                 <div class="post__body--content">
                     <p class="post__content--text">{{ $post->content }}</p>

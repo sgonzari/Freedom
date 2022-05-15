@@ -24,6 +24,9 @@
 
         &--header {
             .post__header {
+                display: flex;
+                justify-content: space-between;
+
                 &--name {
                     font-weight: 700;
                     font-size: 15px;
@@ -33,6 +36,13 @@
                     font-weight: 600;
                     font-size: 12px;
                     color: gray;
+                }
+                &--icon {
+                    border-radius: 9999px;
+                    
+                    &:hover {
+                        background-color: $background__color;
+                    }
                 }
             }
         }
