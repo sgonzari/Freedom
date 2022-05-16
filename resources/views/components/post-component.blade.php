@@ -9,7 +9,7 @@
                     <a class="post__header--name" href="{{ route('profile', ['username' => $post->user()->first()->username]) }}">{{ $post->user()->first()->name }}
                         <span class="post__header--username">{{ __('@') }}{{ $post->user()->first()->username }}</span>
                     </a>
-                    <span class="post__header--icon material-symbols-rounded"> more_horiz </span>
+                    @livewire('post-modal', ['post' => $post], key($post->id_post))
                 </div>
             </div>
             <a class="post__main--body" href="{{ route('post', ['username' => $post->user()->first()->username, 'id_post' => $post->id_post]) }}">
