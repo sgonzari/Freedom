@@ -552,6 +552,10 @@ body {
 .notification__main {
   width: 100%;
 }
+.notification__main .notification__main--header {
+  display: flex;
+  align-items: center;
+}
 .notification__main .notification__main--header .notification__header--image {
   display: flex;
   align-items: center;
@@ -560,13 +564,24 @@ body {
   overflow: hidden;
   width: 48px;
   height: 48px;
-  margin: 0 0 12px 0;
+  margin: 0 12px 0 0;
 }
 .notification__main .notification__main--header .notification__header--image .notification__image {
   height: 48px;
 }
+.notification__main .notification__main--header .notification__header--text {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+}
 .notification__main .notification__main--header .notification__header--text .notification__text--username {
   font-weight: 700;
+}
+.notification__main .notification__main--header .notification__header--text .notification__text--username:hover {
+  text-decoration: underline;
+}
+.notification__main .notification__main--header .notification__header--text .notification__date {
+  color: gray;
 }
 .notification__main .notification__main--body {
   margin: 12px 0 0 0;

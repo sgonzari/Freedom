@@ -31,9 +31,10 @@
         .notification__main {
 
             &--header {
+                display: flex;
+                align-items: center;
                 
                 .notification__header {
-
                     &--image {
                         display: flex;
                         align-items: center;
@@ -42,18 +43,29 @@
                         overflow: hidden;
                         width: $image__width;
                         height: $image__height;
-                        margin: 0 0 12px 0;
+                        margin: 0 12px 0 0;
     
                         .notification__image {
                             height: $image__height;
                         }
                     }
                     &--text {
+                        flex-grow: 1;
+                        display: flex;
+                        justify-content: space-between;
 
-                        .notification__text {
+                        .notification {
+                            &__text {
+                                &--username {
+                                    font-weight: 700;
 
-                            &--username {
-                                font-weight: 700;
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                            &__date {
+                                color: gray;
                             }
                         }
                     }

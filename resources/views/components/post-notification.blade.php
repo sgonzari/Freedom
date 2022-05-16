@@ -13,14 +13,16 @@
                 </a>
                 <div class="notification__main">
                     <div class="notification__main--header">
-                        <div class="notification__header--image">
+                        <a class="notification__header--image" href="{{ route('profile', ['username' => $notification->user()->first()->username]) }}">
                             <img class="notification__image" src="http://localhost/freedom/public/storage/{{ $notification->user()->first()->profile_image }}" alt="Imagen de perfil"/>
-                        </div>
+                        </a>
                         <div class="notification__header--text">
                             <h3 class="notification__text">
-                                <span class="notification__text--username">
-                                    {{ $notification->user()->get()->first()->username }} 
-                                </span>
+                                <a href="{{ route('profile', ['username' => $notification->user()->first()->username]) }}">
+                                    <span class="notification__text--username">
+                                        {{ $notification->user()->get()->first()->name }} 
+                                    </span>
+                                </a>
                                 @if ($notification->typeOf()->get()->first()->name == 'like')
                                     le ha gustado tu post.
                                 @elseif ($notification->typeOf()->get()->first()->name == 'repost')
@@ -31,11 +33,14 @@
                                     te ha mencionado en un post.
                                 @endif
                             </h3>
+                            <p class="notification__date">{{ $notification->created_at->format('M-d') }}</p>
                         </div>
                     </div>
-                    <div class="notification__main--body">
-                        <p class="notification__body--text">{{ $notification->post()->get()->first()->content }}</p>
-                    </div>
+                    <a href="{{ route('post', ['username' => $notification->post()->get()->first()->user()->get()->first()->username, 'id_post' => $notification->post()->get()->first()->id_post]) }}">
+                        <div class="notification__main--body">
+                            <p class="notification__body--text">{{ $notification->post()->get()->first()->content }}</p>
+                        </div>
+                    </a>
                     @if (($notification->typeOf()->get()->first()->name != 'like') AND ($notification->typeOf()->get()->first()->name != 'repost'))
                         <div class="notification__main--footer">
                             <button class="button__action">
