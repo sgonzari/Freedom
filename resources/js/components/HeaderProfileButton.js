@@ -2,17 +2,14 @@ const HeaderProfileButton = () => {
     var modal = document.getElementById("profileOptions");
     var btn = document.getElementById('profileButton');
 
-    btn.onclick = function () {
+    btn.addEventListener("click", () => {
         modal.style.display = "block";
-    }
-    window.onclick = function (event) {
-        console.log(event.target) ;
-        console.log(modal) ;
-        console.log("-----------------");
+    });
+    window.addEventListener("click", (event) => {
         if (event.target == modal) {
             modal.style.display = "none";
         }
-    }
+    })
 }
 
 export default HeaderProfileButton;

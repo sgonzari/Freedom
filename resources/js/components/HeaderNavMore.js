@@ -1,15 +1,15 @@
 const HeaderNavMore = () => {
-    const modalMore = document.getElementById("navMore");
-    const btnMore = document.getElementById("navButton");
+    var modal = document.getElementById("navMore");
+    var btn = document.getElementById('navButton');
 
-    btnMore.onclick = function () {
-        modalMore.style.display = "block";
-    }
-    window.onclick = function (event) {
+    btn.addEventListener("click", () => {
+        modal.style.display = "block";
+    });
+    window.addEventListener("click", (event) => {
         if (event.target == modal) {
-            modalMore.style.display = "none";
+            modal.style.display = "none";
         }
-    }
+    })
 }
 
 export default HeaderNavMore;

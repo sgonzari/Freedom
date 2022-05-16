@@ -23,17 +23,4 @@
             <span class="header__option--icon material-symbols-rounded"> more_horiz </span>
         </div>
     </div>
-    <script>
-        var modal = document.getElementById("profileOptions");
-        var btn = document.getElementById('profileButton');
-    
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 </div>

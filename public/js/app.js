@@ -2966,18 +2966,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var HeaderNavMore = function HeaderNavMore() {
-  var modalMore = document.getElementById("navMore");
-  var btnMore = document.getElementById("navButton");
-
-  btnMore.onclick = function () {
-    modalMore.style.display = "block";
-  };
-
-  window.onclick = function (event) {
+  var modal = document.getElementById("navMore");
+  var btn = document.getElementById('navButton');
+  btn.addEventListener("click", function () {
+    modal.style.display = "block";
+  });
+  window.addEventListener("click", function (event) {
     if (event.target == modal) {
-      modalMore.style.display = "none";
+      modal.style.display = "none";
     }
-  };
+  });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderNavMore);
@@ -2998,20 +2996,14 @@ __webpack_require__.r(__webpack_exports__);
 var HeaderProfileButton = function HeaderProfileButton() {
   var modal = document.getElementById("profileOptions");
   var btn = document.getElementById('profileButton');
-
-  btn.onclick = function () {
+  btn.addEventListener("click", function () {
     modal.style.display = "block";
-  };
-
-  window.onclick = function (event) {
-    console.log(event.target);
-    console.log(modal);
-    console.log("-----------------");
-
+  });
+  window.addEventListener("click", function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
-  };
+  });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderProfileButton);
@@ -3032,8 +3024,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.onload = function () {
-  (0,_components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_components_HeaderProfileButton__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  document.addEventListener('turbolinks:load', function () {
+    (0,_components_HeaderProfileButton__WEBPACK_IMPORTED_MODULE_1__["default"])();
+    (0,_components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  });
 };
 
 /***/ }),
