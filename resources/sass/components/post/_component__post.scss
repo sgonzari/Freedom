@@ -38,6 +38,7 @@
                     color: gray;
                 }
                 &--icon {
+                    user-select: none;
                     border-radius: 9999px;
                     
                     &:hover {

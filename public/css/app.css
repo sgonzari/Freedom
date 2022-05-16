@@ -509,6 +509,10 @@ body {
   color: gray;
 }
 .post__main--header .post__header--icon {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   border-radius: 9999px;
 }
 .post__main--header .post__header--icon:hover {
