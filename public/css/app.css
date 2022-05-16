@@ -215,6 +215,10 @@ body {
   flex: 0.2;
   min-width: 250px;
   padding: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .header__top {
   display: flex;
@@ -452,6 +456,7 @@ body {
   outline: none;
 }
 .main__container--input .main__input--submit {
+  cursor: pointer;
   background-color: rgb(29, 155, 240);
   border: none;
   color: white;
@@ -460,6 +465,10 @@ body {
   width: 80px;
   height: 40px;
   margin: 20px 0 0 auto;
+}
+.main__container--input .disabled {
+  cursor: auto;
+  background-color: rgba(29, 155, 240, 0.5);
 }
 
 .post {
@@ -669,6 +678,12 @@ body {
   flex: 0.3;
 }
 
+.search {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
 .search__main {
   background-color: rgb(239, 243, 244);
   padding: 10px;
