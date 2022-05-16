@@ -4,8 +4,8 @@
             <div class="main__form--image">
                 <img class="form__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Image profile"/>
             </div>
-            <input class="main__form--input" type="text" placeholder="What's happening?" wire:model.defer="content"/>
+            <input class="main__form--input" type="text" placeholder="What's happening?" wire:model="content"/>
         </div>
-        <button class="main__input--submit" type="submit">Postear</button>
+        <button class="main__input--submit @if (!$content) disabled @endif" type="submit" @if (!$content) disabled @endif>Postear</button>
     </form>
 </div>
