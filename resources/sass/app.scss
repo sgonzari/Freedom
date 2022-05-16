@@ -14,6 +14,8 @@
 //////////////////////////////////////
 // # COMPONENTS
 //////////////////////////////////////
+@import 'components/auth/component__auth';
+@import 'components/card/component__card';
 @import 'components/body/_component__body.scss';
 @import 'components/header/_component__header.scss';
 @import 'components/main/_component__main.scss';

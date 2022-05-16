@@ -21,10 +21,10 @@
         <!-- Ajax -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
-    <body>
+    <body class="body__app">
         <header class="header"> 
             <div class="header__top">
-                <x-application-logo class="header__logo" href="{{ route('home') }}"/>
+                <x-application-logo :class="'header__logo'" href="{{ route('home') }}"/>
                 <x-application-nav class="header__nav"/>
             </div>
             <div class="header__bottom">

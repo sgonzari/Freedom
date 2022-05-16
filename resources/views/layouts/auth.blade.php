@@ -13,22 +13,17 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased">
-            <x-auth-card>
-                <x-slot name="logo">
-                    <a href="/">
-                        <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                    </a>
-                </x-slot>
-
-                {{ $slot }}
-                    
-            </x-auth-card>
+        <div class="auth__container">
+            {{ $slot }}
         </div>
+        
+        @livewireScripts
+        <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
     </body>
 </html>

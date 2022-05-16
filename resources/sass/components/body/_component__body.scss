@@ -1,6 +1,9 @@
 body {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;    
+}
+
+.body__app {
     display: flex;
-    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     height: 100vh;
     max-width: 1300px;
     margin: 0 auto;

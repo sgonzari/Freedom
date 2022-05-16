@@ -62,9 +62,144 @@ a:visited {
   text-decoration: none;
 }
 
-body {
+.auth__container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(http://localhost/freedom/public/storage/new_sky.jpg);
+  background-size: auto;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-animation: moveSky 30s infinite ease-in-out;
+          animation: moveSky 30s infinite ease-in-out;
+}
+
+@-webkit-keyframes moveSky {
+  0% {
+    background-position: 0;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+
+@keyframes moveSky {
+  0% {
+    background-position: 0;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+.card {
+  background-color: rgba(240, 235, 230, 0.5);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  min-width: 500px;
+}
+.card__logo--svg {
+  height: 6em;
+}
+.card__error {
+  padding: 16px 0;
+  color: red;
+  text-align: center;
+  font-weight: 700;
+}
+.card__error--title {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+}
+.card__error--list {
+  font-size: 16px;
+}
+.card__main--form .card__form--element {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 16px 0;
+}
+.card__main--form .card__form--element .card__element--label {
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+.card__main--form .card__form--element .card__element--input {
+  border-radius: 9999px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 12px;
+}
+.card__main--form .card__form--buttons {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 0 16px 0;
+}
+.card__main--form .card__form--buttons .card__button {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: none;
+  font-size: 15px;
+  text-align: center;
+  background: none;
+  padding: 12px 16px;
+  border-radius: 9999px;
+  font-weight: 700;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.card__main--form .card__form--buttons .card__button--register {
+  background-color: rgba(29, 240, 155, 0.5);
+}
+.card__main--form .card__form--buttons .card__button--register:hover {
+  background-color: rgb(29, 240, 155);
+}
+.card__main--form .card__form--buttons .card__button--login {
+  background-color: rgba(29, 155, 240, 0.5);
+}
+.card__main--form .card__form--buttons .card__button--login:hover {
+  background-color: rgb(29, 155, 240);
+}
+.card__main--form .card__form--buttons .card__button--back {
+  background-color: rgb(83, 100, 113);
+}
+.card__main--form .card__form--buttons .card__button--back:hover {
+  background-color: red;
+}
+.card__main--form .card__form--forgotPassword {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card__main--form .card__form--forgotPassword .card__forgotPassword {
+  color: rgb(83, 100, 113);
+  font-weight: 700;
+  transition: color 0.2s;
+}
+.card__main--form .card__form--forgotPassword .card__forgotPassword:hover {
+  color: red;
+}
+
+body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.body__app {
+  display: flex;
   height: 100vh;
   max-width: 1300px;
   margin: 0 auto;
