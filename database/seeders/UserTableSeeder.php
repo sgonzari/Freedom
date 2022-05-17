@@ -27,6 +27,6 @@ class UserTableSeeder extends Seeder
             "created_at" => date('Y-m-d H:i:s', strtotime("today"))
         ]);
 
-        \App\Models\User::factory(4)->create() ;
+        \App\Models\User::factory(30)->create() ;
     }
 }

@@ -5,7 +5,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 16px 0;
+            padding: 8px 0;
+            border-top: 1px solid $border__color;
+            border-bottom: 1px solid $border__color;
 
             .admin__main {
                 &--profile{
@@ -49,9 +51,44 @@
                 &--options {
                     display: flex;
                     flex-direction: column;
+
+                    .admin__option {
+
+                        &--element {
+                            display: flex;
+                            align-items: center;
+                            background: none;
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+
+                            .admin__element {
+                                &--icon {
+                                    border-radius: 9999px;
+                                    
+                                    &:hover {
+                                        background-color: $background__color;
+                                    }
+                                }
+                            }
+                            .disable {
+                                color: gray;
+                                cursor: auto;
+
+                                &:hover {
+                                    background: none;
+                                }
+                            }
+                        }
+                    }
                 }
             }
-
+            &:nth-child(1){
+                border-top: none;
+            }
+            &:nth-last-child(1){
+                border-bottom: none;
+            }
         }
     }
 }

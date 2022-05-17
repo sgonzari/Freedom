@@ -76,14 +76,21 @@ a:visited {
   font-size: 20px;
   font-weight: 700;
   padding: 0 0 6px 0;
+  margin: 0 0 6px 0;
   border-bottom: 1px solid rgb(239, 243, 244);
+}
+.admin__tool--element .admin__element--main {
+  max-height: 350px;
+  overflow-y: scroll;
 }
 
 .admin__tool--element .admin__group--main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 16px 0;
+  padding: 8px 0;
+  border-top: 1px solid rgb(239, 243, 244);
+  border-bottom: 1px solid rgb(239, 243, 244);
 }
 .admin__tool--element .admin__group--main .admin__main--profile {
   display: flex;
@@ -116,6 +123,33 @@ a:visited {
 .admin__tool--element .admin__group--main .admin__main--options {
   display: flex;
   flex-direction: column;
+}
+.admin__tool--element .admin__group--main .admin__main--options .admin__option--element {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.admin__tool--element .admin__group--main .admin__main--options .admin__option--element .admin__element--icon {
+  border-radius: 9999px;
+}
+.admin__tool--element .admin__group--main .admin__main--options .admin__option--element .admin__element--icon:hover {
+  background-color: rgba(15, 20, 25, 0.1);
+}
+.admin__tool--element .admin__group--main .admin__main--options .admin__option--element .disable {
+  color: gray;
+  cursor: auto;
+}
+.admin__tool--element .admin__group--main .admin__main--options .admin__option--element .disable:hover {
+  background: none;
+}
+.admin__tool--element .admin__group--main:nth-child(1) {
+  border-top: none;
+}
+.admin__tool--element .admin__group--main:nth-last-child(1) {
+  border-bottom: none;
 }
 
 .auth__container {
