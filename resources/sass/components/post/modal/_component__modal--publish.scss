@@ -1,4 +1,4 @@
-.post__modal {
+.post__modal--publish {
     position: relative;
 
     .post__modal {
@@ -6,7 +6,7 @@
         &--container {
             cursor: auto;
             z-index: 3;
-            top: 0;
+            bottom: 0;
             right: 0;
             position: absolute;
             width: 250px;
@@ -18,8 +18,8 @@
         &--element {
             font-size: 16px;
             cursor: pointer;
-            display: flex;
             align-items: center;
+            display: flex;
             padding: 12px 16px;
             width: 100%;
             background: none;
@@ -29,25 +29,19 @@
             .post__modal--icon {
                 margin: 0 12px 0 0;
             }
+            
             &:hover {
                 background-color: $background__color;
             }
         }
-        &--delete {
-            
-            &:hover {
-                font-weight: 700;
-                color: red;
-            }
+        &--close {
+            cursor: auto;
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            z-index: 2;
         }
-    }
-    &--close {
-        cursor: auto;
-        position: fixed;
-        height: 100vh;
-        width: 100vw;
-        top: 0;
-        left: 0;
-        z-index: 2;
     }
 }

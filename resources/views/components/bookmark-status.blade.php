@@ -1,7 +1,7 @@
 <div>
     @if (!Auth::user()->bookmarks()->find($this->post->id_post))
-        <button wire:click="addBookmark"><span class="material-icons"> bookmark_added </span></button>
+        <button class="post__modal--element" wire:click="addBookmark"><span class=" post__modal--icon material-symbols-rounded"> bookmark_added </span> Agregar bookmark </button>
     @else
-        <button wire:click="deleteBookmark"><span class="material-icons"> bookmark_remove </span></button>
+        <button class="post__modal--element" wire:click="deleteBookmark"><span class=" post__modal--icon material-symbols-rounded"> bookmark_remove </span> Eliminar bookmark </button>
     @endif
 </div>

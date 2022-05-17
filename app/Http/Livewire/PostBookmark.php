@@ -9,26 +9,12 @@ use Livewire\Component;
 
 class PostBookmark extends Component
 {
-    protected $listeners = ['render' => 'render',
-                            'deleteBookmark' => 'deleteBookmark',
-                            'deletePost' => 'deletePost'] ;
+    protected $listeners = ['render' => 'render'] ;
 
     public function render()
     {
-        $bookmarks = User::find(Auth::user()->id_user)->bookmarks()->get() ;
+        $bookmarks = User::find(Auth::user()->id_user)->bookmarks()->orderBy('created_at')->get() ;
 
         return view('components.post-bookmark', compact("bookmarks"));
-    }
-
-    public function deleteBookmark (Post $post) {
-        if (Auth::user()->bookmarks()->find($post->id_post)) {
-            Auth::user()->bookmarks()->detach($post) ;
-        }
-    }
-
-    public function deletePost (Post $post) {
-        if ((Auth::user()->id_user == $post->fk_user) OR (Auth::user()->rol->first()->id_rol > 1)) {
-            $post->delete() ;
-        }
     }
 }

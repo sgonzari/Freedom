@@ -3,9 +3,7 @@
 
     @if ($opened)
         <div class="post__modal--container">
-            <button class="post__modal--element" wire:click="">Añadir bookmark</button>
-            <button class="post__modal--element" wire:click="">Eliminar bookmark</button>
-            <button class="post__modal--element" wire:click="">Eliminar post</button>
+            @livewire('post-delete', ['post' => $post], key($post->id_post))
         </div>
         <div class="post__modal--close" wire:click="$set('opened', false)"></div>
     @endif

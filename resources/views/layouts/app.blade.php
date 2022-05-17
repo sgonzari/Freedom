@@ -21,27 +21,29 @@
         <!-- Ajax -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
-    <body class="body__app">
-        <header class="header"> 
-            <div class="header__top">
-                <x-application-logo :class="'header__logo'" href="{{ route('home') }}"/>
-                <x-application-nav class="header__nav"/>
-            </div>
-            <div class="header__bottom">
-                <x-application-profile class="header__profile"/>
-            </div>
-        </header>
-        <main class="main">
-            <div class="main__header">
-                {{ $header }}
-            </div>
-            <div class="main__container">
-                {{ $slot }}
-            </div>
-        </main>
-        <section class="widgets">
-            <livewire:search/>
-        </section>
+    <body>
+        <div class="body__app">
+            <header class="header"> 
+                <div class="header__top">
+                    <x-application-logo :class="'header__logo'" href="{{ route('home') }}"/>
+                    <x-application-nav class="header__nav"/>
+                </div>
+                <div class="header__bottom">
+                    <x-application-profile class="header__profile"/>
+                </div>
+            </header>
+            <main class="main">
+                <div class="main__header">
+                    {{ $header }}
+                </div>
+                <div class="main__container">
+                    {{ $slot }}
+                </div>
+            </main>
+            <section class="widgets">
+                <livewire:search/>
+            </section>
+        </div>
 
         @livewireScripts
         <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>

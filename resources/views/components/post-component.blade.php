@@ -21,15 +21,10 @@
                 @endif
             </a>
             <div class="post__main--footer">
-            <button class="button__action">
-                <span class="button__action--icon button__action--default material-symbols-rounded"> chat_bubble </span>
-                <span class="button__action--count"> {{ $post->comments()->count() }} </span>
-            </button>
-            @livewire('repost-status', ['post' => $post], key($post->id_post))
-            @livewire('like-status', ['post' => $post], key($post->id_post))
-            <button class="button__action">
-                <span class="button__action--icon button__action--default material-symbols-rounded"> publish </span>
-            </button>
+                @livewire('post-modal-comment', ['post' => $post], key($post->id_post))
+                @livewire('repost-status', ['post' => $post], key($post->id_post))
+                @livewire('like-status', ['post' => $post], key($post->id_post))
+                @livewire('post-modal-publish', ['post' => $post], key($post->id_post))
             </div>
         </div>
     </div>
