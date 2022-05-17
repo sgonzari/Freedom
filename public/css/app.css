@@ -535,7 +535,7 @@ body {
 }
 .post__modal--container {
   cursor: auto;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   right: 0;
   position: absolute;
@@ -546,6 +546,7 @@ body {
   box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
 }
 .post__modal--element {
+  font-size: 16px;
   cursor: pointer;
   display: flex;
   padding: 12px 16px;
@@ -564,6 +565,7 @@ body {
   width: 100vw;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 
 .notification {
