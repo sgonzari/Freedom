@@ -1,0 +1,20 @@
+.admin__tool {
+    display: flex;
+    flex-wrap: wrap;
+
+    &--element {
+        flex: 1 1;
+        margin: 25px;
+        padding: 12px;
+
+        .admin__element {
+            &--header {
+                text-align: center;
+                font-size: 20px;
+                font-weight: 700;
+                padding: 0 0 6px 0;
+                border-bottom: 1px solid $border__color;
+            }
+        }
+    }
+}

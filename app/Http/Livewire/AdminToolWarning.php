@@ -7,12 +7,12 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class AdminTools extends Component
+class AdminToolWarning extends Component
 {
     public function render()
     {
         $users = User::all() ;
 
-        return view('components.admin-tools', compact(["users"]));
+        return view('components.admin-tool-warning', compact(['users']));
     }
 }

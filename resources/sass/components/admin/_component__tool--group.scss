@@ -1,0 +1,57 @@
+.admin__tool--element {
+    .admin__group {
+
+        &--main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 16px 0;
+
+            .admin__main {
+                &--profile{
+                    display: flex;
+                    align-items: center;
+                    width: 200px;
+
+                    .admin__profile {
+
+                        &--image {
+                            margin: 0 12px;
+                            min-height: $image__height;
+                            min-width: $image__width;
+                            overflow: hidden;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 9999px;
+
+                            .admin__image {
+                                height: $image__height;
+                            }
+                        }
+                        &--text {
+                            .admin__text {
+
+                                &--name {
+                                    font-weight: 700;
+                                }
+                                &--username {
+                                    color: $secundary__color;
+                                }
+                            }
+                        }
+                    }
+                }
+                &--rol {
+                    font-weight: 700;
+                    font-style: italic;
+                }
+                &--options {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+        }
+    }
+}

@@ -1,11 +1,9 @@
-<x-app-layout>
-    <x-slot name="title">{{ __('Admin') }}</x-slot>
+<x-admin-layout>
+    <x-slot name="title">{{ __('Admin Panel') }}</x-slot>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Admin Panel') }}
-        </h2>
+        <h2 class="main__header--title">{{ __('Admin Panel') }}</h2>
     </x-slot>
 
     <livewire:admin-tools/>
-</x-app-layout>
+</x-admin-layout>

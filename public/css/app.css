@@ -62,6 +62,62 @@ a:visited {
   text-decoration: none;
 }
 
+.admin__tool {
+  display: flex;
+  flex-wrap: wrap;
+}
+.admin__tool--element {
+  flex: 1 1;
+  margin: 25px;
+  padding: 12px;
+}
+.admin__tool--element .admin__element--header {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 0 6px 0;
+  border-bottom: 1px solid rgb(239, 243, 244);
+}
+
+.admin__tool--element .admin__group--main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
+}
+.admin__tool--element .admin__group--main .admin__main--profile {
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+.admin__tool--element .admin__group--main .admin__main--profile .admin__profile--image {
+  margin: 0 12px;
+  min-height: 48px;
+  min-width: 48px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+.admin__tool--element .admin__group--main .admin__main--profile .admin__profile--image .admin__image {
+  height: 48px;
+}
+.admin__tool--element .admin__group--main .admin__main--profile .admin__profile--text .admin__text--name {
+  font-weight: 700;
+}
+.admin__tool--element .admin__group--main .admin__main--profile .admin__profile--text .admin__text--username {
+  color: rgb(83, 100, 113);
+}
+.admin__tool--element .admin__group--main .admin__main--rol {
+  font-weight: 700;
+  font-style: italic;
+}
+.admin__tool--element .admin__group--main .admin__main--options {
+  display: flex;
+  flex-direction: column;
+}
+
 .auth__container {
   width: 100vw;
   height: 100vh;
@@ -469,6 +525,9 @@ body {
 .main__container--input .disabled {
   cursor: auto;
   background-color: rgba(29, 155, 240, 0.5);
+}
+.main--admin {
+  flex: 1;
 }
 
 .post {
