@@ -15,10 +15,13 @@ class BookmarkTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = \Faker\Factory::create() ;
+
         for ($i = 1 ; $i <= 5; $i++):
             DB::table("bookmarks")->insert([
                 "fk_user" => 1,
-                "fk_post" => $i
+                "fk_post" => $i,
+                "created_at" => $faker->date(),
             ]);
         endfor;
     }

@@ -24,6 +24,7 @@ class UserTableSeeder extends Seeder
             "password" => Hash::make("usuario"),
             "birthday" => date('Y-m-d H:i:s', strtotime("03 December 2001")),
             "description" => "Only SrCbas.",
+            "created_at" => date('Y-m-d H:i:s', strtotime("today"))
         ]);
 
         \App\Models\User::factory(4)->create() ;

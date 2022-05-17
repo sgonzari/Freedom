@@ -15,14 +15,18 @@ class FollowTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = \Faker\Factory::create() ;
+
         for ($i = 2 ; $i <= 5; $i++):
             DB::table("follows")->insert([
                 "fk_user" => 1,
-                "fk_follow" => $i
+                "fk_follow" => $i,
+                "created_at" => $faker->date()
             ]);
             DB::table("follows")->insert([
                 "fk_user" => $i,
-                "fk_follow" => 1
+                "fk_follow" => 1,
+                "created_at" => $faker->date()
             ]);
         endfor;
     }
