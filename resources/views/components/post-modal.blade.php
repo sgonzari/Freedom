@@ -3,7 +3,10 @@
 
     @if ($opened)
         <div class="post__modal--container">
-            @livewire('post-delete', ['post' => $post], key($post->id_post))
+            @if ((Auth::user()->id_user == $post->user()->first()->id_user) OR (Auth::user()->fk_rol > 1))
+                @livewire('post-delete', ['post' => $post], key($post->id_post))
+            @endif
+            INFORMAR
         </div>
         <div class="post__modal--close" wire:click="$set('opened', false)"></div>
     @endif
