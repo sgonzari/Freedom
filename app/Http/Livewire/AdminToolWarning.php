@@ -9,6 +9,8 @@ use Livewire\Component;
 
 class AdminToolWarning extends Component
 {
+    protected $listeners = ['render' => 'render'] ;
+
     public function render()
     {
         $users = User::all() ;

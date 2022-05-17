@@ -1,27 +1,26 @@
 <div class="admin__tool--element">
-    <h1>Warnings</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Usuario</th>
-                <th>Avisar</th>
-                <th>Avisos</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($users as $user)
-                @if (Auth::user()->id_user != $user->id_user)
-                    <tr>
-                        <td>{{ $user->username }}</td>
-                        <td>
-                            @if ($user->warnings()->count() < 3)
-                                @livewire('warning-create', ['user' => $user], key($user->id_user))
-                            @endif
-                        </td>
-                        <td>{{ $user->warnings()->count() }} / 3</td>
-                    </tr>
-                @endif
-            @endforeach
-        </tbody>
-    </table>
+    <div class="admin__element--header">
+        <h1>Warnings</h1>
+    </div>
+    <div class="admin__element--main">
+        @foreach ($users as $user)
+            <div class="admin__warning--main">
+                <div class="admin__main--profile">
+                    <div class="admin__profile--image">
+                        <img class="admin__image" src="http://localhost/freedom/public/storage/{{ $user->profile_image }}" alt="Profile Image" />
+                    </div>
+                    <div class="admin__profile--text">
+                        <h2 class="admin__text--name">{{ $user->name }}</h2>
+                        <span class="admin__text--username">{{ __('@') }}{{ $user->username }}</span>
+                    </div>
+                </div>
+                <div class="admin__main--count">
+                    <p class="admin__count--text admin__count--{{ $user->warnings()->count() }}">{{ $user->warnings()->count() }}/3 warnings</p>
+                </div>
+                <div class="admin__main--options">
+                    @livewire('warning-create', ['user' => $user], key($user->id_user))
+                </div>
+            </div>
+        @endforeach
+    </div>
 </div>

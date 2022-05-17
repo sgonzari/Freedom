@@ -152,6 +152,114 @@ a:visited {
   border-bottom: none;
 }
 
+.admin__tool--element .admin__warning--main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-top: 1px solid rgb(239, 243, 244);
+  border-bottom: 1px solid rgb(239, 243, 244);
+}
+.admin__tool--element .admin__warning--main .admin__main--profile {
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+.admin__tool--element .admin__warning--main .admin__main--profile .admin__profile--image {
+  margin: 0 12px;
+  min-height: 48px;
+  min-width: 48px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+.admin__tool--element .admin__warning--main .admin__main--profile .admin__profile--image .admin__image {
+  height: 48px;
+}
+.admin__tool--element .admin__warning--main .admin__main--profile .admin__profile--text .admin__text--name {
+  font-weight: 700;
+}
+.admin__tool--element .admin__warning--main .admin__main--profile .admin__profile--text .admin__text--username {
+  color: rgb(83, 100, 113);
+}
+.admin__tool--element .admin__warning--main .admin__main--count {
+  font-weight: 700;
+  font-style: italic;
+}
+.admin__tool--element .admin__warning--main .admin__main--count .admin__count--2 {
+  color: orange;
+}
+.admin__tool--element .admin__warning--main .admin__main--count .admin__count--3 {
+  color: red;
+}
+.admin__tool--element .admin__warning--main .admin__main--options {
+  display: flex;
+  flex-direction: column;
+}
+.admin__tool--element .admin__warning--main .admin__main--options .admin__option--element {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.admin__tool--element .admin__warning--main .admin__main--options .admin__option--element .admin__element--icon {
+  padding: 6px;
+  border-radius: 9999px;
+}
+.admin__tool--element .admin__warning--main .admin__main--options .admin__option--element .admin__element--icon:hover {
+  color: orange;
+  background-color: rgba(15, 20, 25, 0.1);
+}
+.admin__tool--element .admin__warning--main .admin__main--options .admin__option--element .disable {
+  color: gray;
+  cursor: auto;
+}
+.admin__tool--element .admin__warning--main .admin__main--options .admin__option--element .disable:hover {
+  background: none;
+}
+.admin__tool--element .admin__warning--main:nth-child(1) {
+  border-top: none;
+}
+.admin__tool--element .admin__warning--main:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.warning__modal--main {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.warning__modal--main .warning__modal--container {
+  min-width: 600px;
+  cursor: auto;
+  z-index: 3;
+  width: 250px;
+  padding: 12px 0;
+  border-radius: 16px;
+  background-color: white;
+  box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
+}
+.warning__modal--main .warning__modal--close {
+  background-color: rgba(0, 0, 0, 0.25);
+  cursor: auto;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
 .auth__container {
   width: 100vw;
   height: 100vh;
