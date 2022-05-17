@@ -7,7 +7,7 @@
                     </path>
                 </g>
             </svg>
-            <a class="header__more--admin" href="{{ route('admin') }}"> Menú administración</a>
+            <a id="navMore2" class="header__more--admin" href="{{ route('admin') }}"> Menú administración</a>
         </div>
     </div>
 

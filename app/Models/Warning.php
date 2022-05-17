@@ -22,4 +22,11 @@ class Warning extends Model
     protected $hidden = [
         'id_warning'
     ] ;
+
+    public function user () {
+        return $this->belongsTo("App\Models\User", "fk_user", "id_user") ;
+    }
+    public function reportedBy () {
+        return $this->belongsTo("App\Models\User", "fk_admin", "id_user") ;
+    }
 }

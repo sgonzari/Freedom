@@ -83,6 +83,9 @@
                     }
                 }
             }
+            &:hover {
+                background-color: $background__color;
+            }
             &:nth-child(1){
                 border-top: none;
             }

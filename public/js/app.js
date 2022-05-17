@@ -2967,12 +2967,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var HeaderNavMore = function HeaderNavMore() {
   var modal = document.getElementById("navMore");
+  var modal2 = document.getElementById("navMore2");
   var btn = document.getElementById('navButton');
   btn.addEventListener("click", function () {
     modal.style.display = "block";
   });
   window.addEventListener("click", function (event) {
-    if (event.target == modal) {
+    if (event.target == modal || event.target == modal2) {
       modal.style.display = "none";
     }
   });
