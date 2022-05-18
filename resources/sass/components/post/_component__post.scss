@@ -1,72 +1,88 @@
 .post {
-    cursor: pointer;
-    display: flex;
-    align-items: flex-start;
-    border-bottom: 1px solid $border__color;
-    padding: 12px 16px;
 
-    &__profile {
-        margin: 0 12px 0 0;
-        height: $image__height;
-        width: $image__width;
-        overflow: hidden;
+    &__from {
+        padding: 4px 16px;
+        
+        &--content {
+            color: gray;
+            font-size: 12px;
+        }
+    }
+    &__container {
+        cursor: pointer;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 9999px;
-
-        &--image {
-            height: $image__height;
-        }
-    }
-    &__main {
-        flex: 1;
-
-        &--header {
-            .post__header {
+        align-items: flex-start;
+        border-bottom: 1px solid $border__color;
+        padding: 12px 16px;
+        .post {
+            &__profile {
+                margin: 0 12px 0 0;
+                height: $image__height;
+                width: $image__width;
+                overflow: hidden;
                 display: flex;
-                justify-content: space-between;
-
-                &--name {
-                    font-weight: 700;
-                    font-size: 15px;
-                    margin: 0 0 5px 0;
-                }
-                &--username {
-                    font-weight: 600;
-                    font-size: 12px;
-                    color: gray;
-                }
-                &--icon {
-                    user-select: none;
-                    border-radius: 9999px;
-                    
-                    &:hover {
-                        background-color: $background__color;
-                    }
-                }
-            }
-        }
-        &--body {
-            .post__body {
-                &--content {
-                    .post__content--text {
-                        overflow-wrap: anywhere;
-                    }
-                }
+                justify-content: center;
+                align-items: center;
+                border-radius: 9999px;
+        
                 &--image {
-                    // POR HACER GRID 2X2 RESPONSIVE
+                    height: $image__height;
                 }
             }
+            &__main {
+                flex: 1;
+        
+                &--header {
+                    .post__header {
+                        display: flex;
+                        justify-content: space-between;
+        
+                        &--name {
+                            font-weight: 700;
+                            font-size: 15px;
+                            margin: 0 0 5px 0;
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                        &--username {
+                            font-weight: 600;
+                            font-size: 12px;
+                            color: gray;
+                        }
+                        &--icon {
+                            user-select: none;
+                            border-radius: 9999px;
+                            
+                            &:hover {
+                                background-color: $background__color;
+                            }
+                        }
+                    }
+                }
+                &--body {
+                    .post__body {
+                        &--content {
+                            .post__content--text {
+                                overflow-wrap: anywhere;
+                            }
+                        }
+                        &--image {
+                            // POR HACER GRID 2X2 RESPONSIVE
+                        }
+                    }
+                }
+                &--footer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 10px 0 0 0;
+                }
+            }
+            &:hover {
+                background-color: $background__color;
+            }
         }
-        &--footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 10px 0 0 0;
-        }
-    }
-    &:hover {
-        background-color: $background__color;
     }
 }
