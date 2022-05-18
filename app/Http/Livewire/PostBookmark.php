@@ -13,7 +13,7 @@ class PostBookmark extends Component
 
     public function render()
     {
-        $bookmarks = User::find(Auth::user()->id_user)->bookmarks()->orderBy('created_at')->get() ;
+        $bookmarks = User::find(Auth::user()->id_user)->bookmarks()->get() ;
 
         return view('components.post-bookmark', compact("bookmarks"));
     }

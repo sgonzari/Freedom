@@ -39,20 +39,20 @@ class User extends Authenticatable
         return $this->belongsTo("App\Models\Post", "id_user", "fk_user") ;
     }
     public function likes () {
-        return $this->belongsToMany("App\Models\Post", "likes", "fk_user", "fk_post") ;
+        return $this->belongsToMany("App\Models\Post", "likes", "fk_user", "fk_post")->withTimestamps() ;
     }
     public function reposts () {
-        return $this->belongsToMany("App\Models\Post", "reposts", "fk_user", "fk_post") ;
+        return $this->belongsToMany("App\Models\Post", "reposts", "fk_user", "fk_post")->withTimestamps() ;
     }
     public function bookmarks () {
-        return $this->belongsToMany("App\Models\Post", "bookmarks", "fk_user", "fk_post") ;
+        return $this->belongsToMany("App\Models\Post", "bookmarks", "fk_user", "fk_post")->withTimestamps()->withPivot('created_at')->orderBy('bookmarks.created_at', 'desc') ;
     }
 
     public function followers () {
-        return $this->belongsToMany("App\Models\User", "follows", "fk_follow", "fk_user") ;
+        return $this->belongsToMany("App\Models\User", "follows", "fk_follow", "fk_user")->withTimestamps() ;
     }
     public function followings () {
-        return $this->belongsToMany("App\Models\User", "follows", "fk_user", "fk_follow") ;
+        return $this->belongsToMany("App\Models\User", "follows", "fk_user", "fk_follow")->withTimestamps() ;
     }
 
     public function notifications () {
