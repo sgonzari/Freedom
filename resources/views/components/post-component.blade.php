@@ -19,14 +19,16 @@
                         @livewire('post-modal', ['post' => $post], key($post->id_post))
                     </div>
                 </div>
-                <a class="post__main--body" href="{{ route('post', ['username' => $post->user()->first()->username, 'id_post' => $post->id_post]) }}">
-                    <div class="post__body--content">
+                <div class="post__main--body">
+                    <a class="post__body--content" href="{{ route('post', ['username' => $post->user()->first()->username, 'id_post' => $post->id_post]) }}">
                         <p class="post__content--text">{{ $post->content }}</p>
-                    </div>
-                    @if (!is_null($post->images))
-                        <div class="post__body--image"></div>
+                    </a>
+                    @if (!is_null($post->image))
+                        <div class="post__body--image">
+                            <img class="post__image" src="http://localhost/freedom/public/storage/{{ $post->image }}" alt="Imagen del post">
+                        </div>
                     @endif
-                </a>
+                </div>
                 <div class="post__main--footer">
                     @livewire('post-modal-comment', ['post' => $post], key($post->id_post))
                     @livewire('repost-status', ['post' => $post], key($post->id_post))

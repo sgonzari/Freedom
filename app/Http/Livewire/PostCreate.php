@@ -7,10 +7,18 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class PostCreate extends Component
 {
-    public $content ;
+    use WithFileUploads ;
+
+    public $content, $image ;
+
+    protected $rules = [
+        'content' => 'required',
+        'image' => 'required|image|max:2048'
+    ] ;
 
     public function render()
     {
@@ -22,6 +30,7 @@ class PostCreate extends Component
             $post = new Post() ;
             $post->fk_user = Auth::user()->id_user ;
             $post->content = $this->content ;
+            $post->image = $this->image->store('posts') ;
 
             if ($post->save()) {
                 if (str_contains($this->content, "@")) {
@@ -42,6 +51,7 @@ class PostCreate extends Component
                 }
         
                 $this->reset('content') ;
+                $this->reset('image') ;
                 
                 $this->emit('render') ;
             }

@@ -876,14 +876,47 @@ body {
 .main__container--input .main__input--form .main__form--image .form__image {
   height: 48px;
 }
-.main__container--input .main__input--form .main__form--input {
+.main__container--input .main__input--form .main__form--container {
   flex: 1;
   margin: 0 0 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+.main__container--input .main__input--form .main__form--container .main__container--input {
+  flex: 1;
   font-size: 20px;
   border: none;
   outline: none;
 }
-.main__container--input .main__input--submit {
+.main__container--input .main__input--form .main__form--container .main__container--image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.main__container--input .main__input--form .main__form--container .main__container--image .main__icon {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  position: absolute;
+  font-size: 26px;
+  top: 6px;
+  left: 6px;
+  color: white;
+  background-color: rgba(15, 20, 25, 0.8);
+  padding: 2px;
+  border-radius: 9999px;
+}
+.main__container--input .main__input--form .main__form--container .main__container--image .main__image {
+  max-width: 100%;
+}
+.main__container--input .main__input--form .main__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main__container--input .main__input--form .main__buttons .main__button--submit {
   cursor: pointer;
   background-color: rgb(29, 155, 240);
   border: none;
@@ -894,7 +927,7 @@ body {
   height: 40px;
   margin: 20px 0 0 auto;
 }
-.main__container--input .disabled {
+.main__container--input .main__input--form .main__buttons .main__button .disabled {
   cursor: auto;
   background-color: rgba(29, 155, 240, 0.5);
 }
@@ -910,7 +943,6 @@ body {
   font-size: 12px;
 }
 .post__container {
-  cursor: pointer;
   display: flex;
   align-items: flex-start;
   border-bottom: 1px solid rgb(239, 243, 244);
@@ -960,7 +992,15 @@ body {
   background-color: rgba(15, 20, 25, 0.1);
 }
 .post__container .post__main--body .post__body--content .post__content--text {
+  margin: 0 0 12px 0;
   overflow-wrap: anywhere;
+}
+.post__container .post__main--body .post__body--image {
+  overflow: hidden;
+  border-radius: 16px;
+}
+.post__container .post__main--body .post__body--image .post__image {
+  max-width: 100%;
 }
 .post__container .post__main--footer {
   display: flex;
@@ -1019,6 +1059,7 @@ body {
 }
 
 .post__modal--comment {
+  cursor: pointer;
   position: relative;
   display: flex;
   align-items: center;
@@ -1367,6 +1408,11 @@ body {
   padding: 0;
 }
 .button__action--icon {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
   font-size: 22px;
   border-radius: 999px;
   padding: 6px;

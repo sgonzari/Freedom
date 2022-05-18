@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer("fk_user")->unsigned();
             $table->integer("fk_post")->unsigned()->nullable();
             $table->string("content");
-            $table->string("images")->nullable();
+            $table->string("image")->nullable();
             $table->timestamps();
             $table->boolean("pinged")->default(false);
             $table->softDeletes();

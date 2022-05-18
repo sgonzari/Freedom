@@ -9,7 +9,6 @@
         }
     }
     &__container {
-        cursor: pointer;
         display: flex;
         align-items: flex-start;
         border-bottom: 1px solid $border__color;
@@ -64,12 +63,19 @@
                 &--body {
                     .post__body {
                         &--content {
+                            
                             .post__content--text {
+                                margin: 0 0 12px 0;
                                 overflow-wrap: anywhere;
                             }
                         }
                         &--image {
-                            // POR HACER GRID 2X2 RESPONSIVE
+                            overflow: hidden;
+                            border-radius: 16px;
+                            
+                            .post__image {
+                                max-width: 100%;
+                            }
                         }
                     }
                 }

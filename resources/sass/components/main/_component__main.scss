@@ -65,30 +65,77 @@
                                 height: $image__height;
                             }
                         }
-                        &--input {
+                        &--container {
                             flex: 1;
                             margin: 0 0 0 20px;
-                            font-size: 20px;
-                            border: none;
-                            outline: none;
+                            display: flex;
+                            flex-direction: column;
+
+                            .main__container {
+                                &--input {
+                                    flex: 1;
+                                    font-size: 20px;
+                                    border: none;
+                                    outline: none;
+                                }
+                                &--image {
+                                    position: relative;
+                                    overflow: hidden;
+                                    border-radius: 16px;
+
+                                    .main__icon {
+                                        user-select: none;
+                                        cursor: pointer;
+                                        position: absolute;
+                                        font-size: 26px;
+                                        top: 6px;
+                                        left: 6px;
+                                        color: white;
+                                        background-color: rgba(15, 20, 25, .8);
+                                        padding: 2px;
+                                        border-radius: 9999px;
+                                    }
+                                    .main__image {
+                                        max-width: 100%;
+                                    }
+                                }
+                            }
                         }
                     }
+                    .main__buttons {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+    
+                        .main__button {
+                            &--container {
+    
+                                .main__button {
+                                    &--element {
+    
+                                    }
+                                }
+                            }
+                            &--submit {
+                                cursor: pointer;
+                                background-color: $main__color;
+                                border: none;
+                                color: white;
+                                font-weight: 900;
+                                border-radius: 30px;
+                                width: 80px;
+                                height: 40px;
+                                margin: 20px 0 0 auto;
+                            }
+                            .disabled {
+                                cursor: auto;
+                                background-color: $main__color--disable;
+                            }
+                        }
+    
+                    }
                 }
-                &--submit {
-                    cursor: pointer;
-                    background-color: $main__color;
-                    border: none;
-                    color: white;
-                    font-weight: 900;
-                    border-radius: 30px;
-                    width: 80px;
-                    height: 40px;
-                    margin: 20px 0 0 auto;
-                }
-            }
-            .disabled {
-                cursor: auto;
-                background-color: $main__color--disable;
+                
             }
         }
     }

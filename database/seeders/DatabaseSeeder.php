@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Storage::makeDirectory('users') ;
+        Storage::makeDirectory('posts') ;
 
         $this->call([
             RolTableSeeder::class,
