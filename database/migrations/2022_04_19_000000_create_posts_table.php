@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments("id_post");
             $table->integer("fk_user")->unsigned();
             $table->integer("fk_post")->unsigned()->nullable();
-            $table->string("content");
+            $table->string("content")->nullable();
             $table->string("image")->nullable();
             $table->timestamps();
             $table->boolean("pinged")->default(false);

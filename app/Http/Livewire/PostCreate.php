@@ -26,11 +26,11 @@ class PostCreate extends Component
     }
 
     public function store () {
-        if (!is_null($this->content)) {
+        if ((!is_null($this->content)) OR (!is_null($this->image))) {
             $post = new Post() ;
             $post->fk_user = Auth::user()->id_user ;
-            $post->content = $this->content ;
-            $post->image = $this->image->store('posts') ;
+            if ($this->content) $post->content = $this->content ;
+            if ($this->image) $post->image = $this->image->store('posts') ;
 
             if ($post->save()) {
                 if (str_contains($this->content, "@")) {

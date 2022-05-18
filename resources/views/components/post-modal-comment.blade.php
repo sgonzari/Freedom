@@ -5,25 +5,39 @@
     @if ($opened)
         <div class="post__modal--main">
             <div class="post__modal--container">
-                <div class="post">
-                    <div class="post__profile">
+            <div class="post">
+                @if (!is_null($post->fk_post))
+                <a class="post__from" href="{{ route('post', ['username' => App\Models\Post::where('id_post', $post->fk_post)->first()->user()->first()->username, 'id_post' => App\Models\Post::where('id_post', $post->fk_post)->first()->id_post]) }}">
+                    <span class="post__from--content">replied to {{ App\Models\Post::where('id_post', $post->fk_post)->first()->user()->first()->username }}</span>
+                </a>
+                @endif
+                <div class="post__container">
+                    <a class="post__profile" href="{{ route('profile', ['username' => $post->user()->first()->username]) }}">
                         <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="Imagen de perfil" class="post__profile--image" />
-                    </div>
+                    </a>
                     <div class="post__main">
                         <div class="post__main--header">
                             <div class="post__header">
-                                <div class="post__header--name">{{ $post->user()->first()->name }}
+                                <a class="post__header--info" href="{{ route('profile', ['username' => $post->user()->first()->username]) }}">
+                                    <span class="post__header--name">{{ $post->user()->first()->name }}</span>
                                     <span class="post__header--username">{{ __('@') }}{{ $post->user()->first()->username }}</span>
-                                </div>
+                                </a>
+                                @livewire('post-modal', ['post' => $post], key($post->id_post))
                             </div>
                         </div>
                         <div class="post__main--body">
-                            <div class="post__body--content">
+                            <a class="post__body--content" href="{{ route('post', ['username' => $post->user()->first()->username, 'id_post' => $post->id_post]) }}">
                                 <p class="post__content--text">{{ $post->content }}</p>
-                            </div>
+                            </a>
+                            @if (!is_null($post->image))
+                                <div>
+                                    {{ $post->image }}
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
+            </div>
                 <div class="main__container--input">
                     <form class="main__input--form" wire:submit.prevent="store">
                         <div class="main__form">

@@ -5,10 +5,10 @@
                 <img class="form__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Image profile"/>
             </div>
             <div class="main__form--container">
-                <input class="main__container--input" type="text" placeholder="What's happening?" wire:model="content"/>
+                <textarea class="main__container--input" name="content" id="content" placeholder="What's happening?" wire:model="content"></textarea>
                 @if ($image)
                     <div class="main__container--image">
-                        <span class="main__icon material-symbols-rounded" wire:click="$set('image', '')"> close </span>
+                        <span class="main__icon material-symbols-rounded" wire:click="$set('image', null)"> close </span>
                         <img class="main__image" src="{{ $image->temporaryUrl() }}" alt="Imagen subida">
                     </div>
                 @endif
@@ -16,12 +16,15 @@
         </div>
         <div class="main__buttons">
             <div class="main__button--container">
-                <input class="main__button--element" type="file" wire:model="image" />
+                <label for="uploadImage">
+                    <span class="main__button--icon material-symbols-rounded">image</span>
+                </label>
+                <input class="main__button--element main__button--image" id="uploadImage" type="file" wire:model="image" />
                 @error($image)
                     <p>{{ $message }}</p>
                 @enderror
             </div>
-            <button class="main__button--submit @if (!$content) disabled @endif" type="submit" @if (!$content) disabled @endif wire:target="image">Postear</button>
+            <button class="main__button--submit @if ((!$content) AND (!$image)) disabled @endif" type="submit" @if ((!$content) AND (!$image)) disabled @endif >Postear</button>
         </div>
     </form>
 </div>

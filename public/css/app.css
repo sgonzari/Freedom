@@ -62,6 +62,10 @@ a:visited {
   text-decoration: none;
 }
 
+textarea {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
 .admin__tool {
   display: flex;
   flex-wrap: wrap;
@@ -883,6 +887,7 @@ body {
   flex-direction: column;
 }
 .main__container--input .main__input--form .main__form--container .main__container--input {
+  resize: none;
   flex: 1;
   font-size: 20px;
   border: none;
@@ -916,6 +921,22 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.main__container--input .main__input--form .main__buttons .main__button--container {
+  padding: 0 16px;
+}
+.main__container--input .main__input--form .main__buttons .main__button--container .main__button--icon {
+  color: rgb(29, 155, 240);
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 9999px;
+  padding: 4px;
+}
+.main__container--input .main__input--form .main__buttons .main__button--container .main__button--icon:hover {
+  background-color: rgba(15, 20, 25, 0.1);
+}
+.main__container--input .main__input--form .main__buttons .main__button--container .main__button--image {
+  display: none;
+}
 .main__container--input .main__input--form .main__buttons .main__button--submit {
   cursor: pointer;
   background-color: rgb(29, 155, 240);
@@ -925,9 +946,8 @@ body {
   border-radius: 30px;
   width: 80px;
   height: 40px;
-  margin: 20px 0 0 auto;
 }
-.main__container--input .main__input--form .main__buttons .main__button .disabled {
+.main__container--input .main__input--form .main__buttons .disabled {
   cursor: auto;
   background-color: rgba(29, 155, 240, 0.5);
 }
@@ -982,6 +1002,7 @@ body {
   color: gray;
 }
 .post__container .post__main--header .post__header--icon {
+  cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;

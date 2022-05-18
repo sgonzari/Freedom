@@ -73,6 +73,7 @@
 
                             .main__container {
                                 &--input {
+                                    resize: none;
                                     flex: 1;
                                     font-size: 20px;
                                     border: none;
@@ -109,10 +110,25 @@
     
                         .main__button {
                             &--container {
+                                padding: 0 16px;
     
                                 .main__button {
+                                    &--icon {
+                                        color: $main__color;
+                                        font-size: 25px;
+                                        cursor: pointer;
+                                        border-radius: 9999px;
+                                        padding: 4px;
+
+                                        &:hover {
+                                            background-color: $background__color;
+                                        }
+                                    }
                                     &--element {
     
+                                    }
+                                    &--image {
+                                        display: none;
                                     }
                                 }
                             }
@@ -125,12 +141,11 @@
                                 border-radius: 30px;
                                 width: 80px;
                                 height: 40px;
-                                margin: 20px 0 0 auto;
                             }
-                            .disabled {
-                                cursor: auto;
-                                background-color: $main__color--disable;
-                            }
+                        }
+                        .disabled {
+                            cursor: auto;
+                            background-color: $main__color--disable;
                         }
     
                     }
