@@ -13,7 +13,7 @@ class AdminToolWarning extends Component
 
     public function render()
     {
-        $users = User::all() ;
+        $users = User::all()->sortBy('username') ;
 
         return view('components.admin-tool-warning', compact(['users']));
     }
