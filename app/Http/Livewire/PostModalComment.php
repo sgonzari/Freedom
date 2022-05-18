@@ -13,6 +13,8 @@ class PostModalComment extends Component
     public Post $post;
     public $opened, $contentComment;
 
+    protected $listeners = ['renderComment' => 'render'] ;
+
     public function render()
     {
         $post = $this->post ;

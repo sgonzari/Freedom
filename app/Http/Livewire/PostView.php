@@ -12,31 +12,43 @@ class PostView extends Component
 {
     public $post ;
     public $user ;
-    public $contentComment ;
+    public $commentText ;
+
+    protected $listeners = ['render' => 'render'] ;
 
     public function render()
     {
         $user = $this->user ;
         $post = $this->post ;
-        $comments = [] ;
-        
-        foreach ($post->comments()->orderBy('created_at')->get() as $comment) {
-            array_push($comments, $comment) ;
+        $comments = $post->comments()->orderBy('created_at')->get() ;
+        $fromPosts = [] ;
+
+        if (!is_null($post->fk_post)) {
+            $fk_post = $post->fk_post ;
+            do {
+                $upPost = Post::where('id_post', $fk_post)->first() ;
+                array_push($fromPosts, $upPost) ;
+                $fk_post = $upPost->fk_post ;
+            } while (!is_null($fk_post)) ;
+            
+            usort($fromPosts, function($x, $y) {
+                return $x['created_at'] > $y['created_at'];
+            });
         }
 
-        return view('components.post-view', compact(["user", "post", "comments"]));
+        return view('components.post-view', compact(["user", "post", "comments", "fromPosts"]));
     }
 
     public function store () {
-        if (!is_null($this->contentComment)) {
+        if (!is_null($this->commentText)) {
             $post = new Post() ;
             $post->fk_user = Auth::user()->id_user ;
-            $post->content = $this->contentComment ;
+            $post->content = $this->commentText ;
             $post->fk_post = $this->post->id_post ;
             
             if ($post->save()) {
-                if (str_contains($this->contentComment, "@")) {
-                    $phrases = explode("@", $this->contentComment) ;
+                if (str_contains($this->commentText, "@")) {
+                    $phrases = explode("@", $this->commentText) ;
                     for ($i = 1 ; $i <= count($phrases) ; $i++) {
                         if (($i == count($phrases)) OR ($i % 2 == 0)) {
                             $username = explode(" ", $phrases[$i-1]) ;
@@ -61,7 +73,9 @@ class PostView extends Component
                     ]);
                 }
     
-                $this->reset('contentComment') ;
+                $this->reset('commentText') ;
+                $this->emit('render') ;
+                $this->emit('renderComment') ;
             }
         }
     }

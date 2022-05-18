@@ -1,0 +1,55 @@
+.comment__create {
+    padding: 16px 12px;
+    border-bottom: 1px solid $border__color;
+
+    &--form {
+        .comment__form {
+            &--body {
+                display: flex;
+                .comment__body {
+                    &--image {
+                        margin: 0 12px 0 0;
+                        height: $image__height;
+                        width: $image__width;
+                        overflow: hidden;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 9999px;
+
+                        .comment__image {
+                            height: $image__height;
+                        }
+                    }
+                    &--input {
+                        flex: 1;
+                        font-size: 20px;
+                        border: none;
+                        outline: none;
+                    }
+                }
+            }
+            &--footer {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                .comment__footer {
+                    &--submit {
+                        cursor: pointer;
+                        background-color: $main__color;
+                        border: none;
+                        color: white;
+                        font-weight: 900;
+                        border-radius: 30px;
+                        width: 80px;
+                        height: 40px;
+                    }
+                }
+                .disabled {
+                    background-color: $main__color--disable;
+                    cursor: auto;
+                }
+            }
+        }
+    }
+}
