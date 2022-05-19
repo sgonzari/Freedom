@@ -16,7 +16,6 @@ class PostCreate extends Component
     public $content, $image ;
 
     protected $rules = [
-        'content' => 'required',
         'image' => 'required|image|max:2048'
     ] ;
 

@@ -7,13 +7,20 @@ use App\Models\Notification;
 use App\Models\Post;
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class PostModalComment extends Component
 {
+    use WithFileUploads ;
+
     public Post $post;
-    public $opened, $contentComment;
+    public $opened, $contentComment, $imageComment;
 
     protected $listeners = ['renderComment' => 'render'] ;
+
+    protected $rules = [
+        'imageComment' => 'required|image|max:2048'
+    ] ;
 
     public function render()
     {
@@ -22,11 +29,12 @@ class PostModalComment extends Component
     }
 
     public function store () {
-        if (!is_null($this->contentComment)) {
+        if ((!is_null($this->contentComment)) OR (!is_null($this->imageComment))) {
             $post = new Post() ;
             $post->fk_user = Auth::user()->id_user ;
-            $post->content = $this->contentComment ;
+            if ($this->contentComment) $post->content = $this->contentComment ;
             $post->fk_post = $this->post->id_post ;
+            if ($this->imageComment) $post->image = $this->imageComment->store('posts') ;
             
             if ($post->save()) {
                 if (str_contains($this->contentComment, "@")) {

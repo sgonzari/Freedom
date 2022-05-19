@@ -44,9 +44,28 @@
                             <div class="main__form--image">
                                 <img class="form__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Image profile"/>
                             </div>
-                            <input class="main__form--input" type="text" placeholder="Post your reply" wire:model="contentComment"/>
+                            <div class="main__form--container">
+                                <textarea class="main__container--input" name="contentComment" id="contentComment" placeholder="What's happening?" wire:model="contentComment"></textarea>
+                                @if ($imageComment)
+                                    <div class="main__container--image">
+                                        <span class="main__icon material-symbols-rounded" wire:click="$set('imageComment', null)"> close </span>
+                                        <img class="main__image" src="{{ $imageComment->temporaryUrl() }}" alt="Imagen subida">
+                                    </div>
+                                @endif
+                            </div>
                         </div>
-                        <button class="main__input--submit @if (!$contentComment) disabled @endif" type="submit" @if (!$contentComment) disabled @endif>Reply</button>
+                        <div class="main__buttons">
+                            <div class="main__button--container">
+                                <label for="uploadImageComment">
+                                    <span class="main__button--icon material-symbols-rounded">image</span>
+                                </label>
+                                <input class="main__button--element main__button--image" id="uploadImageComment" type="file" wire:model="imageComment" />
+                                @error($imageComment)
+                                    <p>{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <button class="main__button--submit @if ((!$contentComment) AND (!$imageComment)) disabled @endif" type="submit" @if ((!$contentComment) AND (!$imageComment)) disabled @endif >Postear</button>
+                        </div>
                     </form>
                 </div>
             </div>
