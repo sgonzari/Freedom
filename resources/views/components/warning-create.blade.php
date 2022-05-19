@@ -29,7 +29,7 @@
                                 </div>
                             </div>
                             <div class="warning__element--delete">
-                                <span class="warning__delete--icon material-symbols-rounded">delete</span>
+                                @livewire('warning-delete', ['warning' => $warning], key($warning->id_warning))
                             </div>
                         </div>
                     @endforeach
