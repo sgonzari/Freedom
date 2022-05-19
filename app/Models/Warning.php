@@ -12,6 +12,8 @@ class Warning extends Model
 
     protected $table = "warnings" ;
 
+    protected $primaryKey = "id_warning" ;
+
     protected $fillable = [
         'fk_admin',
         'fk_user',

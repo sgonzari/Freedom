@@ -14,7 +14,7 @@
                     
                 </div>
             </div>
-            <div class="warning__modal--close">
+            <div class="warning__modal--close" wire:click="$set('modal', false)">
 
             </div>
         </div>
