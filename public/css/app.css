@@ -1086,6 +1086,9 @@ body {
 .post__container .post:hover {
   background-color: rgba(15, 20, 25, 0.1);
 }
+.post:hover {
+  background-color: rgba(15, 20, 25, 0.1);
+}
 
 .post__modal {
   position: relative;
