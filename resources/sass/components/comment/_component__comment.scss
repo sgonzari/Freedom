@@ -57,11 +57,17 @@
                 &--content {
                     .comment__content--text {
                         font-size: 23px;
+                        margin: 0 0 12px 0;
                         overflow-wrap: anywhere;
                     }
                 }
                 &--image {
-                    // POR HACER GRID 2X2 RESPONSIVE
+                    overflow: hidden;
+                    border-radius: 16px;
+
+                    .comment__image {
+                        width: 100%;
+                    }
                 }
             }
         }

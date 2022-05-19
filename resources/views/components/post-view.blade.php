@@ -21,8 +21,10 @@
                 <div class="comment__body--content">
                     <p class="comment__content--text">{{ $post->content }}</p>
                 </div>
-                @if (!is_null($post->images))
-                    <div class="comment__body--image"></div>
+                @if (!is_null($post->image))
+                    <div class="comment__body--image">
+                        <img class="comment__image" src="http://localhost/freedom/public/storage/{{ $post->image }}" alt="Imagen del post">
+                    </div>
                 @endif
             </div>
             <div class="comment__main--footer">
@@ -40,10 +42,27 @@
                 <div class="comment__body--image">
                     <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="Imagen de perfil" class="comment__image" />
                 </div>
-                <input type="text" class="comment__body--input" placeholder="Post your reply" wire:model="commentText" />
+                <div class="comment__body--container">
+                    <textarea class="comment__container--input" name="commentText" id="commentText" placeholder="What's happening?" wire:model="commentText"></textarea>                    
+                    @if ($commentImage)
+                        <div class="comment__container--image">
+                            <span class="container__icon material-symbols-rounded" wire:click="$set('commentImage', null)"> close </span>
+                            <img class="container__image" src="{{ $commentImage->temporaryUrl() }}" alt="Imagen subida">
+                        </div>
+                    @endif
+                </div>
             </div>
             <div class="comment__form--footer">
-                <button class="comment__footer--submit @if (!$commentText) disabled @endif" type="submit">Reply</button>
+                <div class="comment__footer--container">
+                    <label for="uploadImage">
+                        <span class="main__button--icon material-symbols-rounded">image</span>
+                    </label>
+                    <input class="main__button--element main__button--image" id="uploadImage" type="file" wire:model="commentImage" />
+                    @error($commentImage)
+                        <p>{{ $message }}</p>
+                    @enderror
+                </div>
+                <button class="comment__footer--submit @if ((!$commentText) AND (!$commentImage)) disabled @endif" type="submit" @if ((!$commentText) AND (!$commentImage)) disabled @endif>Reply</button>
             </div>
         </form>
     </div>

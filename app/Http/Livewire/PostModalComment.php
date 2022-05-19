@@ -64,6 +64,7 @@ class PostModalComment extends Component
                 }
     
                 $this->reset('contentComment') ;
+                $this->reset('imageComment') ;
                 $this->emit('render') ;
                 $this->opened = false ;
             }

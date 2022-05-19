@@ -7,20 +7,27 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class PostView extends Component
 {
+    use WithFileUploads ;
+
     public $post ;
     public $user ;
-    public $commentText ;
+    public $commentText, $commentImage ;
 
     protected $listeners = ['render' => 'render'] ;
+
+    protected $rules = [
+        'commentImage' => 'required|image|max:2048'
+    ] ;
 
     public function render()
     {
         $user = $this->user ;
         $post = $this->post ;
-        $comments = $post->comments()->orderBy('created_at')->get() ;
+        $comments = $post->comments()->orderBy('created_at', 'desc')->get() ;
         $fromPosts = [] ;
 
         if (!is_null($post->fk_post)) {
@@ -40,11 +47,12 @@ class PostView extends Component
     }
 
     public function store () {
-        if (!is_null($this->commentText)) {
+        if ((!is_null($this->commentText)) OR (!is_null($this->commentImage))) {
             $post = new Post() ;
             $post->fk_user = Auth::user()->id_user ;
-            $post->content = $this->commentText ;
+            if ($this->commentText) $post->content = $this->commentText ;
             $post->fk_post = $this->post->id_post ;
+            if ($this->commentImage) $post->image = $this->commentImage->store('posts') ;
             
             if ($post->save()) {
                 if (str_contains($this->commentText, "@")) {
@@ -74,6 +82,7 @@ class PostView extends Component
                 }
     
                 $this->reset('commentText') ;
+                $this->reset('commentImage') ;
                 $this->emit('render') ;
                 $this->emit('renderComment') ;
             }

@@ -21,19 +21,76 @@
                             height: $image__height;
                         }
                     }
-                    &--input {
+                    &--container {
                         flex: 1;
-                        font-size: 20px;
-                        border: none;
-                        outline: none;
+                        display: flex;
+                        flex-direction: column;
+
+                        .comment__container {
+                            &--input {
+                                flex: 1;
+                                font-size: 20px;
+                                border: none;
+                                outline: none;
+                                margin: 0 0 10px 0;
+                                resize: none;
+                            }
+                            &--image {
+                                position: relative;
+                                overflow: hidden;
+                                border-radius: 16px;
+                                
+                                .container {
+                                    &__icon {
+                                        user-select: none;
+                                        cursor: pointer;
+                                        position: absolute;
+                                        font-size: 26px;
+                                        top: 6px;
+                                        left: 6px;
+                                        color: white;
+                                        background-color: rgba(15, 20, 25, .8);
+                                        padding: 2px;
+                                        border-radius: 9999px;
+                                    }
+                                    &__image {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
             &--footer {
                 display: flex;
                 align-items: center;
-                justify-content: flex-end;
+                justify-content: space-between;
+
                 .comment__footer {
+                    &--container {
+                        padding: 0 16px;
+
+                        .main__button {
+                            &--icon {
+                                color: $main__color;
+                                font-size: 25px;
+                                cursor: pointer;
+                                border-radius: 9999px;
+                                padding: 4px;
+
+                                &:hover {
+                                    background-color: $background__color;
+                                }
+                            }
+                            &--element {
+
+                            }
+                            &--image {
+                                display: none;
+                            }
+                        }
+                    }
                     &--submit {
                         cursor: pointer;
                         background-color: $main__color;
