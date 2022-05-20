@@ -1110,6 +1110,9 @@ body {
   color: gray;
   font-size: 12px;
 }
+.post__from--content:hover {
+  text-decoration: underline;
+}
 .post__container {
   display: flex;
   align-items: flex-start;
