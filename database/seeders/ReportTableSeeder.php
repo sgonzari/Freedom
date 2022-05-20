@@ -3,9 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
-class PostTableSeeder extends Seeder
+class ReportTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +15,6 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Post::factory(30)->create() ;
+        \App\Models\Report::factory(10)->create() ;
     }
 }

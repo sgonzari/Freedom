@@ -1,0 +1,97 @@
+.admin__tool--element {
+    .admin__repost {
+
+        &--main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-top: 1px solid $border__color;
+            border-bottom: 1px solid $border__color;
+
+            .admin__main {
+                &--profile{
+                    display: flex;
+                    align-items: center;
+                    width: 200px;
+                    margin: 0 12px 0 0;
+
+                    .admin__profile {
+
+                        &--image {
+                            margin: 0 12px;
+                            min-height: $image__height;
+                            min-width: $image__width;
+                            overflow: hidden;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 9999px;
+
+                            .admin__image {
+                                height: $image__height;
+                            }
+                        }
+                        &--text {
+                            .admin__text {
+
+                                &--name {
+                                    font-weight: 700;
+                                }
+                                &--username {
+                                    color: $secundary__color;
+                                }
+                            }
+                        }
+                    }
+                }
+                &--reason {
+                    flex: 1;
+
+                    .admin__reason {
+                        &--text {
+                            text-align: justify;
+                        }
+                    }
+                }
+                &--options {
+                    display: flex;
+                    flex-direction: column;
+
+                    .admin__option {
+
+                        &--element {
+                            display: flex;
+                            align-items: center;
+                            background: none;
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+
+                            .admin__element {
+                                &--icon {
+                                    padding: 6px;
+                                    border-radius: 9999px;
+                                    
+                                    &:hover {
+                                        color: $main__color;
+                                        background-color: $background__color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &:hover {
+                background-color: $background__color;
+            }
+            &:nth-child(1){
+                border-top: none;
+            }
+            &:nth-last-child(1){
+                border-bottom: none;
+            }
+        }
+    }
+}

@@ -5,7 +5,7 @@
     <div class="warning__modal--main">
         <div class="warning__modal--container">
             <div class="warning__main--header">
-                <h1>Warning | {{ $user->username }}</h1>
+                <h1>Warning | {{ __('@') }}{{ $user->username }}</h1>
             </div>
             <div class="warning__main--body">
                 <div class="warning__list">

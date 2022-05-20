@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
             BookmarkTableSeeder::class,
             TypesNotificationTableSeeder::class,
             NotificationTableSeeder::class,
-            FollowTableSeeder::class
+            FollowTableSeeder::class,
+            ReportTableSeeder::class
         ]);
     }
 }

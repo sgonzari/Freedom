@@ -159,6 +159,75 @@ textarea {
   border-bottom: none;
 }
 
+.admin__tool--element .admin__repost--main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-top: 1px solid rgb(239, 243, 244);
+  border-bottom: 1px solid rgb(239, 243, 244);
+}
+.admin__tool--element .admin__repost--main .admin__main--profile {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  margin: 0 12px 0 0;
+}
+.admin__tool--element .admin__repost--main .admin__main--profile .admin__profile--image {
+  margin: 0 12px;
+  min-height: 48px;
+  min-width: 48px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+.admin__tool--element .admin__repost--main .admin__main--profile .admin__profile--image .admin__image {
+  height: 48px;
+}
+.admin__tool--element .admin__repost--main .admin__main--profile .admin__profile--text .admin__text--name {
+  font-weight: 700;
+}
+.admin__tool--element .admin__repost--main .admin__main--profile .admin__profile--text .admin__text--username {
+  color: rgb(83, 100, 113);
+}
+.admin__tool--element .admin__repost--main .admin__main--reason {
+  flex: 1;
+}
+.admin__tool--element .admin__repost--main .admin__main--reason .admin__reason--text {
+  text-align: justify;
+}
+.admin__tool--element .admin__repost--main .admin__main--options {
+  display: flex;
+  flex-direction: column;
+}
+.admin__tool--element .admin__repost--main .admin__main--options .admin__option--element {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.admin__tool--element .admin__repost--main .admin__main--options .admin__option--element .admin__element--icon {
+  padding: 6px;
+  border-radius: 9999px;
+}
+.admin__tool--element .admin__repost--main .admin__main--options .admin__option--element .admin__element--icon:hover {
+  color: rgb(29, 155, 240);
+  background-color: rgba(15, 20, 25, 0.1);
+}
+.admin__tool--element .admin__repost--main:hover {
+  background-color: rgba(15, 20, 25, 0.1);
+}
+.admin__tool--element .admin__repost--main:nth-child(1) {
+  border-top: none;
+}
+.admin__tool--element .admin__repost--main:nth-last-child(1) {
+  border-bottom: none;
+}
+
 .admin__tool--element .admin__warning--main {
   display: flex;
   justify-content: space-between;
@@ -467,6 +536,38 @@ textarea {
   background-color: rgba(29, 155, 240, 0.5);
 }
 .warning__modal--main .warning__modal--close {
+  background-color: rgba(0, 0, 0, 0.25);
+  cursor: auto;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.report__modal--main {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.report__modal--main .report__modal--container {
+  min-width: 600px;
+  cursor: auto;
+  z-index: 3;
+  width: 250px;
+  padding: 12px 0;
+  border-radius: 16px;
+  background-color: white;
+  box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
+}
+.report__modal--main .report__modal--close {
   background-color: rgba(0, 0, 0, 0.25);
   cursor: auto;
   position: fixed;
