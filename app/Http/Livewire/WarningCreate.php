@@ -12,6 +12,8 @@ class WarningCreate extends Component
     public $interfaceWarning = false ;
     public $user, $message ;
 
+    protected $listeners = ['renderWarning' => 'render'] ;
+
     public function mount (User $user) {
         $this->user = $user ;
     }
@@ -30,9 +32,10 @@ class WarningCreate extends Component
             $warning->reason = $this->message ;
 
             if ($warning->save()) {
-                $this->reset(['interfaceWarning', 'message']) ;
+                $this->reset(['message']) ;
             }
         }
         $this->emit('render') ;
+        $this->emit('renderWarning') ;
     }
 }

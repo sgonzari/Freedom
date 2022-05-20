@@ -331,8 +331,84 @@ textarea {
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding: 20px 0 0 0;
   justify-content: center;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--header {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 16px 0;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 12px;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--body .warning__container--profile {
+  margin: 0 12px 0 0;
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--body .warning__container--profile .warning__image {
+  height: 48px;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--body .warning__container--main {
+  flex: 1;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--body .warning__container--main .warning__container--header .warning__header--name {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0 0 5px 0;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--body .warning__container--main .warning__container--header .warning__header--username {
+  font-weight: 600;
+  font-size: 12px;
+  color: gray;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--body .warning__container--main .warning__container--body .warning__body--content .warning__content--text {
+  overflow-wrap: anywhere;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 16px 12px;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--footer .warning__footer--element {
+  cursor: pointer;
+  background-color: rgb(29, 155, 240);
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  width: 80px;
+  height: 40px;
+  margin: 0 8px;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--footer .warning__footer--delete {
+  transition: 1s;
+  color: black;
+  background-color: rgba(15, 20, 25, 0.1);
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--footer .warning__footer--delete:hover {
+  color: white;
+  background-color: red;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--footer .warning__footer--cancel {
+  transition: 0.5s;
+  color: black;
+  background-color: rgba(15, 20, 25, 0.1);
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--footer .warning__footer--cancel:hover {
+  background-color: rgba(15, 20, 25, 0.25);
 }
 .warning__modal--main .warning__modal--container .warning__main--body .warning__list--element:hover {
   background-color: rgba(15, 20, 25, 0.1);
@@ -384,8 +460,7 @@ textarea {
   background-color: rgba(15, 20, 25, 0.1);
 }
 .warning__modal--main .warning__modal--container .warning__main--footer .warning__footer--cancel:hover {
-  color: white;
-  background-color: red;
+  background-color: rgba(15, 20, 25, 0.25);
 }
 .warning__modal--main .warning__modal--container .warning__main--footer .disabled {
   cursor: auto;

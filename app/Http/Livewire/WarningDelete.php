@@ -19,4 +19,12 @@ class WarningDelete extends Component
         $warning = $this->warning ;
         return view('components.warning-delete', compact(['warning']));
     }
+
+    public function deleteWarning () {
+        if ($this->warning->delete()) {
+            $this->reset('modal') ;
+            $this->emit('render') ;
+            $this->emit('renderWarning') ;
+        }
+    }
 }
