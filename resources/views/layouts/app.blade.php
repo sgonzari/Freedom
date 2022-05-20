@@ -22,6 +22,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
+        @if (Auth::user()->warnings()->where('opened', false)->count() > 0)
+            @livewire('warning-view-user', ['user' => Auth::user()], key(Auth::user()->id_user))
+        @endif
         <div class="body__app">
             <header class="header"> 
                 <div class="header__top">
