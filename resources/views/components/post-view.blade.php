@@ -5,14 +5,14 @@
         @endforeach
     </div>
 
-    <div class="comment">
+    <div class="comment" id="comment">
         <div class="comment__profile">
             <a href="{{ route('profile', ['username' => $post->user()->first()->username]) }}" class="comment__profile--image">
                 <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="Imagen de perfil" class="comment__image">
             </a>
             <a href="{{ route('profile', ['username' => $post->user()->first()->username]) }}" class="comment__profile--info">
                 <h2 class="comment__info--name">{{ $user->name }}</h2>
-                <span class="comment__info--username">{{ $user->username }}</span>
+                <span class="comment__info--username">{{ __('@') }}{{ $user->username }}</span>
             </a>
             @livewire('post-modal', ['post' => $post], key($post->id_post))
         </div>

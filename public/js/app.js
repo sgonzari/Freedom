@@ -3011,6 +3011,29 @@ var HeaderProfileButton = function HeaderProfileButton() {
 
 /***/ }),
 
+/***/ "./resources/js/components/ScrollToComment.js":
+/*!****************************************************!*\
+  !*** ./resources/js/components/ScrollToComment.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var ScrollToComment = function ScrollToComment() {
+  if ($('#comment').length) {
+    $('#main').animate({
+      scrollTop: $('#comment').offset().top - 50
+    }, 'slow');
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ScrollToComment);
+
+/***/ }),
+
 /***/ "./resources/js/main.js":
 /*!******************************!*\
   !*** ./resources/js/main.js ***!
@@ -3021,15 +3044,19 @@ var HeaderProfileButton = function HeaderProfileButton() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/HeaderNavMore */ "./resources/js/components/HeaderNavMore.js");
 /* harmony import */ var _components_HeaderProfileButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/HeaderProfileButton */ "./resources/js/components/HeaderProfileButton.js");
+/* harmony import */ var _components_ScrollToComment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ScrollToComment */ "./resources/js/components/ScrollToComment.js");
+
 
 
 
 window.onload = function () {
   (0,_components_HeaderProfileButton__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_components_ScrollToComment__WEBPACK_IMPORTED_MODULE_2__["default"])();
   document.addEventListener('turbolinks:load', function () {
     (0,_components_HeaderProfileButton__WEBPACK_IMPORTED_MODULE_1__["default"])();
     (0,_components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    (0,_components_ScrollToComment__WEBPACK_IMPORTED_MODULE_2__["default"])();
   });
 };
 

@@ -8,6 +8,7 @@
                 display: flex;
                 .comment__body {
                     &--image {
+                        cursor: pointer;
                         margin: 0 12px 0 0;
                         height: $image__height;
                         width: $image__width;
@@ -16,9 +17,14 @@
                         justify-content: center;
                         align-items: center;
                         border-radius: 9999px;
+                        transition: .2s;
 
                         .comment__image {
+                            z-index: -1;
                             height: $image__height;
+                        }
+                        &:hover {
+                            background-color: rgba(0, 0, 0, .1);
                         }
                     }
                     &--container {

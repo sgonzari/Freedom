@@ -1,6 +1,6 @@
 <div>
     <div class="post">
-        @if (!is_null($post->fk_post))
+        @if ((!is_null($post->fk_post)) AND (request()->routeIs('home')))
         <a class="post__from" href="{{ route('post', ['username' => App\Models\Post::where('id_post', $post->fk_post)->first()->user()->first()->username, 'id_post' => App\Models\Post::where('id_post', $post->fk_post)->first()->id_post]) }}">
             <span class="post__from--content">replied to {{ App\Models\Post::where('id_post', $post->fk_post)->first()->user()->first()->username }}</span>
         </a>

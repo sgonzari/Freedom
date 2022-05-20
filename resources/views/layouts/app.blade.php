@@ -32,7 +32,7 @@
                     <x-application-profile class="header__profile"/>
                 </div>
             </header>
-            <main class="main">
+            <main class="main" id="main">
                 <div class="main__header">
                     {{ $header }}
                 </div>

@@ -27,9 +27,14 @@
                 justify-content: center;
                 align-items: center;
                 border-radius: 9999px;
+                transition: .2s;
         
                 &--image {
+                    z-index: -1;
                     height: $image__height;
+                }
+                &:hover {
+                    background-color: rgba(0, 0, 0, .1);
                 }
             }
             &__main {
