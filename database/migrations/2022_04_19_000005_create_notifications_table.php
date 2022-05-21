@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments("id_notification");
             $table->integer("fk_user")->unsigned();
             $table->integer("fk_notifier")->unsigned();
-            $table->integer("fk_post")->unsigned();
+            $table->integer("fk_post")->unsigned()->nullable();
             $table->integer("fk_typeNot")->unsigned();
             $table->boolean("watched")->default(false);
             $table->timestamps();

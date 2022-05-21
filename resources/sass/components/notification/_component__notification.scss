@@ -1,5 +1,4 @@
 .notification {
-    cursor: pointer;
     display: flex;
     align-items: flex-start;
     border-bottom: 1px solid $border__color;
@@ -84,5 +83,8 @@
                 margin: 10px 0 0 0;
             }
         }
+    }
+    &:hover {
+        background-color: $background__color;
     }
 }

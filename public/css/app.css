@@ -1714,7 +1714,6 @@ body {
 }
 
 .notification {
-  cursor: pointer;
   display: flex;
   align-items: flex-start;
   border-bottom: 1px solid rgb(239, 243, 244);
@@ -1777,6 +1776,9 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 10px 0 0 0;
+}
+.notification:hover {
+  background-color: rgba(15, 20, 25, 0.1);
 }
 
 .profile {

@@ -27,5 +27,8 @@ class TypesNotificationTableSeeder extends Seeder
         DB::table("types-notifications")->insert([
             "name" => "like"
         ]);
+        DB::table("types-notifications")->insert([
+            "name" => "follow"
+        ]);
     }
 }
