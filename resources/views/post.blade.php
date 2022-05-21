@@ -12,13 +12,5 @@
         <h2 class="main__header--title">{{ __('Post') }}</h2>
     </x-slot>
 
-    @if (isset($user)) 
-        <livewire:post-view :post="$post" :user="$user"/>
-    @else
-        @if (isset($post))
-            <h1>Este post ha sido eliminado</h1>
-        @else
-            <h1>Este post no existe</h1>
-        @endif
-    @endif
+    <livewire:post-view :post="$post" :user="$user"/>
 </x-app-layout>

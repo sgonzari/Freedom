@@ -1054,7 +1054,7 @@ body {
 }
 
 .comment__list {
-  height: 100px;
+  height: 666px;
 }
 
 .header {
@@ -1401,7 +1401,6 @@ body {
   transition: 0.1s;
 }
 .post__container .post__profile--image {
-  z-index: -1;
   height: 48px;
 }
 .post__container .post__profile:hover {

@@ -41,7 +41,7 @@ class PostCreate extends Component
                                 Notification::create([
                                     'fk_user' => Auth::user()->id_user,
                                     'fk_notifier' => User::where('username', $username[0])->first()->id_user,
-                                    'fk_post' => Post::withTrashed()->count(),
+                                    'fk_post' => Post::all()->last()->id_post,
                                     'fk_typeNot' => 1
                                 ]);
                             }

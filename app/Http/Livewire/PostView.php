@@ -33,7 +33,7 @@ class PostView extends Component
         if (!is_null($post->fk_post)) {
             $fk_post = $post->fk_post ;
             do {
-                $upPost = Post::where('id_post', $fk_post)->first() ;
+                $upPost = Post::withTrashed()->where('id_post', $fk_post)->first() ;
                 array_push($fromPosts, $upPost) ;
                 $fk_post = $upPost->fk_post ;
             } while (!is_null($fk_post)) ;
@@ -64,7 +64,7 @@ class PostView extends Component
                                 Notification::create([
                                     'fk_user' => Auth::user()->id_user,
                                     'fk_notifier' => User::where('username', $username[0])->first()->id_user,
-                                    'fk_post' => Post::withTrashed()->count(),
+                                    'fk_post' => Post::all()->last()->id_post,
                                     'fk_typeNot' => 1
                                 ]);
                             }
@@ -76,7 +76,7 @@ class PostView extends Component
                     Notification::create([
                         'fk_user' => Auth::user()->id_user,
                         'fk_notifier' => $this->user->id_user,
-                        'fk_post' => Post::withTrashed()->count(),
+                        'fk_post' => Post::all()->last()->id_post,
                         'fk_typeNot' => 2
                     ]);
                 }

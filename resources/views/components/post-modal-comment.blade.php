@@ -7,8 +7,8 @@
             <div class="post__modal--container">
             <div class="post">
                 @if (!is_null($post->fk_post))
-                <a class="post__from" href="{{ route('post', ['username' => App\Models\Post::where('id_post', $post->fk_post)->first()->user()->first()->username, 'id_post' => App\Models\Post::where('id_post', $post->fk_post)->first()->id_post]) }}">
-                    <span class="post__from--content">replied to {{ App\Models\Post::where('id_post', $post->fk_post)->first()->user()->first()->username }}</span>
+                <a class="post__from" href="{{ route('post', ['username' => App\Models\Post::withTrashed()->where('id_post', $post->fk_post)->first()->user()->first()->username, 'id_post' => App\Models\Post::withTrashed()->where('id_post', $post->fk_post)->first()->id_post]) }}">
+                    <span class="post__from--content">replied to {{ App\Models\Post::withTrashed()->where('id_post', $post->fk_post)->first()->user()->first()->username }}</span>
                 </a>
                 @endif
                 <div class="post__container">

@@ -30,7 +30,6 @@
                 transition: .1s;
         
                 &--image {
-                    z-index: -1;
                     height: $image__height;
                 }
                 &:hover {

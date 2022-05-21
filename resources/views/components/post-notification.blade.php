@@ -38,20 +38,15 @@
                     </div>
                     <a href="{{ route('post', ['username' => $notification->post()->get()->first()->user()->get()->first()->username, 'id_post' => $notification->post()->get()->first()->id_post]) }}">
                         <div class="notification__main--body">
-                            <p class="notification__body--text">{{ $notification->post()->get()->first()->content }}</p>
+                            <p class="notification__body--text">{{ $notification->post()->first()->content }}</p>
                         </div>
                     </a>
                     @if (($notification->typeOf()->get()->first()->name != 'like') AND ($notification->typeOf()->get()->first()->name != 'repost'))
                         <div class="notification__main--footer">
-                            <button class="button__action">
-                                <span class="button__action--icon button__action--default material-symbols-rounded"> chat_bubble </span>
-                                <span class="button__action--count"> {{ $notification->post()->get()->first()->comments()->count() }} </span>
-                            </button>
-                            @livewire('repost-status', ['post' => $notification->post()->get()->first()], key($notification->post()->get()->first()->id_post))
-                            @livewire('like-status', ['post' => $notification->post()->get()->first()], key($notification->post()->get()->first()->id_post))
-                            <button class="button__action">
-                                <span class="button__action--icon button__action--default material-symbols-rounded"> publish </span>
-                            </button>
+                            @livewire('post-modal-comment', ['post' => $notification->post()->first()], key($notification->post()->first()->id_post))
+                            @livewire('repost-status', ['post' => $notification->post()->first()], key($notification->post()->first()->id_post))
+                            @livewire('like-status', ['post' => $notification->post()->first()], key($notification->post()->first()->id_post))
+                            @livewire('post-modal-publish', ['post' => $notification->post()->first()], key($notification->post()->first()->id_post))
                         </div>
                     @endif
                 </div>
