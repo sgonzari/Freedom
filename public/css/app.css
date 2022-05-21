@@ -568,6 +568,12 @@ textarea {
   background-color: white;
   box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
 }
+.report__modal--main .report__modal--container .report__main--header {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 16px 0;
+}
 .report__modal--main .report__modal--container .report__main--body {
   padding: 16px 12px;
 }
@@ -1585,6 +1591,69 @@ body {
   border-radius: 16px;
   background-color: white;
   box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
+}
+.post__modal--main .post__modal--container .post__container--header {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 16px 0;
+}
+.post__modal--main .post__modal--container .post__container--form {
+  padding: 16px 12px;
+}
+.post__modal--main .post__modal--container .post__container--form .post__form--body {
+  display: flex;
+  align-items: center;
+}
+.post__modal--main .post__modal--container .post__container--form .post__form--body .post__body--image {
+  margin: 0 12px 0 0;
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+.post__modal--main .post__modal--container .post__container--form .post__form--body .post__body--image .post__image {
+  height: 48px;
+}
+.post__modal--main .post__modal--container .post__container--form .post__form--body .post__body--input {
+  flex: 1;
+  margin: 0 0 0 20px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+}
+.post__modal--main .post__modal--container .post__container--options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.post__modal--main .post__modal--container .post__container--options .post__option--element {
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  width: 80px;
+  height: 40px;
+  margin: 0 8px;
+}
+.post__modal--main .post__modal--container .post__container--options .post__option--cancel {
+  transition: 1s;
+  color: black;
+  background-color: rgba(15, 20, 25, 0.1);
+}
+.post__modal--main .post__modal--container .post__container--options .post__option--cancel:hover {
+  background-color: rgba(15, 20, 25, 0.25);
+}
+.post__modal--main .post__modal--container .post__container--options .post__option--report {
+  background-color: red;
+}
+.post__modal--main .post__modal--container .post__container--options .disabled {
+  cursor: auto;
+  background-color: rgba(249, 24, 128, 0.1);
 }
 .post__modal--main .post__modal--close {
   background-color: rgba(0, 0, 0, 0.25);

@@ -24,7 +24,7 @@ class PostModalReport extends Component
     }
 
     public function reportPost () {
-        if (!is_null($this->reason)) {
+        if ($this->reason) {
             $report = new Report () ;
             $report->fk_user = Auth::user()->id_user ;
             $report->fk_post = $this->post->id_post ;
@@ -33,6 +33,7 @@ class PostModalReport extends Component
             if ($report->save()) {
                 $this->reset('reason') ;
                 $this->reset('interfaceReport') ;
+                $this->emit('closePostModal') ;
             }
         }
     }

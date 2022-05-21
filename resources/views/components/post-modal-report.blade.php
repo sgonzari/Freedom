@@ -12,17 +12,15 @@
                 <form class="post__container--form" wire:submit.prevent="reportPost">
                     <div class="post__form--body">
                         <div class="post__body--image">
-                            <img class="post__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Imagen de perfil">
+                            <img class="post__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Imagen de perfil" />
                         </div>
-                        <div class="post__body--main">
-                            <textarea class="main__container--input" name="content" id="content" placeholder="What's happening?" wire:model="reason"></textarea>
-                        </div>
-                    </div>
-                    <div class="post__form--options">
-                        <button class="post__option--element post__option--cancel" wire:click="$set('interfaceReport', false)">Cancelar</button>
-                        <button class="post__option--element post__option--report @if (!$reason) disabled @endif" wire:click="reportPost">Reportar</button>
+                        <input class="post__body--input" placeholder="Write your report" name="message" wire:model="reason" type="text" autofocus>
                     </div>
                 </form>
+                <div class="post__container--options">
+                    <button class="post__option--element post__option--cancel" wire:click="$set('interfaceReport', false)">Cancelar</button>
+                    <button class="post__option--element post__option--report @if (!$reason) disabled @endif" wire:click="reportPost" @if (!$reason) disabled @endif>Reportar</button>
+                </div>
             </div>
             <div class="post__modal--close" wire:click="$set('interfaceReport', false)"></div>
         </div>

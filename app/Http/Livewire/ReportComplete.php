@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Report;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class ReportComplete extends Component
@@ -23,6 +24,7 @@ class ReportComplete extends Component
 
     public function completeReport () {
         $this->report->completed = true ;
+        $this->report->fk_completedBy = Auth::user()->id_user ;
         if ($this->report->save()) {
             $this->emit('render');
         }
