@@ -18,7 +18,7 @@
                     <p class="admin__reason--text">{{ $report->reason }}</p>
                 </div>
                 <div class="admin__main--options">
-                    @livewire('report-complete', ['report' => $report])
+                    @livewire('report-complete', ['report' => $report], key($report->id_report))
                 </div>
             </div>
         @endforeach

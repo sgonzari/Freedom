@@ -547,6 +547,7 @@ textarea {
 }
 
 .report__modal--main {
+  overflow-y: scroll;
   z-index: 1;
   position: fixed;
   top: 0;
@@ -566,6 +567,98 @@ textarea {
   border-radius: 16px;
   background-color: white;
   box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
+}
+.report__modal--main .report__modal--container .report__main--body {
+  padding: 16px 12px;
+}
+.report__modal--main .report__modal--container .report__main--body .report__body--post {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--image {
+  margin: 0 12px 0 0;
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+.report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--image .report__image {
+  height: 48px;
+}
+.report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--main {
+  flex: 1;
+}
+.report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--main .report__post--profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--main .report__post--profile .report__profile--name {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0 0 5px 0;
+}
+.report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--main .report__post--profile .report__profile--username {
+  font-weight: 600;
+  font-size: 12px;
+  color: gray;
+}
+.report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--main .report__post--content .report__content--text {
+  overflow-wrap: anywhere;
+  margin: 0 0 12px 0;
+}
+.report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--main .report__post--content .report__content--image {
+  overflow: hidden;
+  width: 75%;
+  border-radius: 16px;
+}
+.report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--main .report__post--content .report__content--image .content__image {
+  max-width: 100%;
+}
+.report__modal--main .report__modal--container .report__main--footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 12px;
+}
+.report__modal--main .report__modal--container .report__main--footer .report__footer--left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.report__modal--main .report__modal--container .report__main--footer .report__footer--right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.report__modal--main .report__modal--container .report__main--footer .report__footer--right .admin__element--icon:hover {
+  color: orange;
+}
+.report__modal--main .report__modal--container .report__main--footer .report__footer--element {
+  cursor: pointer;
+  background-color: rgb(29, 155, 240);
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  height: 40px;
+  margin: 0 8px;
+  padding: 0 16px;
+}
+.report__modal--main .report__modal--container .report__main--footer .report__footer--cancel {
+  transition: 1s;
+  color: black;
+  background-color: rgba(15, 20, 25, 0.1);
+}
+.report__modal--main .report__modal--container .report__main--footer .report__footer--cancel:hover {
+  background-color: rgba(15, 20, 25, 0.25);
+}
+.report__modal--main .report__modal--container .report__main--footer .report__footer--uncomplete {
+  background-color: red;
 }
 .report__modal--main .report__modal--close {
   background-color: rgba(0, 0, 0, 0.25);
@@ -1310,6 +1403,17 @@ body {
 
 .post__modal {
   position: relative;
+}
+.post__modal .post__header--icon {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 9999px;
+}
+.post__modal .post__header--icon:hover {
+  background-color: rgba(15, 20, 25, 0.1);
 }
 .post__modal .post__modal--container {
   cursor: auto;

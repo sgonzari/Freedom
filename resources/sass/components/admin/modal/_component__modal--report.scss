@@ -1,4 +1,5 @@
 .report__modal--main {
+    overflow-y: scroll;
     z-index: 1;
     position: fixed;
     top: 0;
@@ -19,6 +20,130 @@
             border-radius: 16px;
             background-color: white;
             box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
+
+            .report__main {
+                &--header {
+
+                }
+                &--body {
+                    padding: 16px 12px;
+
+                    .report__body{
+                        &--post {
+                            display: flex;
+                            align-items: flex-start;
+                            justify-content: flex-start;
+
+                            .report__post{
+                                &--image {
+                                    margin: 0 12px 0 0;
+                                    height: $image__height;
+                                    width: $image__width;
+                                    overflow: hidden;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 9999px;
+
+                                    .report__image {
+                                        height: $image__height;
+                                    }
+                                }
+                                &--main {
+                                    flex: 1;
+
+                                    .report__post{
+                                        &--profile {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;
+
+                                            .report__profile {
+                                                &--name {
+                                                    font-weight: 700;
+                                                    font-size: 15px;
+                                                    margin: 0 0 5px 0;
+                                                }
+                                                &--username {
+                                                    font-weight: 600;
+                                                    font-size: 12px;
+                                                    color: gray;
+                                                }
+                                            }
+                                        }
+                                        &--content {
+
+                                            .report__content {
+                                                &--text {
+                                                    overflow-wrap: anywhere;
+                                                    margin: 0 0 12px 0;
+                                                }
+                                                &--image {
+                                                    overflow: hidden;
+                                                    width: 75%;
+                                                    border-radius: 16px;
+
+                                                    .content__image {
+                                                        max-width: 100%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &--footer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 16px 12px;
+
+                    .report__footer {
+                        &--left {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                        }
+                        &--right {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+
+                            .admin__element--icon {
+                                &:hover {
+                                    color: orange;
+                                }
+                            }
+                        }
+                        &--element {
+                            cursor: pointer;
+                            background-color: rgb(29, 155, 240);
+                            border: none;
+                            color: white;
+                            font-weight: 900;
+                            border-radius: 30px;
+                            height: 40px;
+                            margin: 0 8px;
+                            padding: 0 16px;
+                        }
+                        &--cancel {
+                            transition: 1s;
+                            color: black;
+                            background-color: rgba(15, 20, 25, 0.1);
+
+                            &:hover {
+                                background-color: $background__color--hover;
+                            }
+                        }
+                        &--uncomplete {
+                            background-color: red;
+                        }
+                    }
+                }
+            }
         }
         &--close {
             background-color: rgba(0, 0, 0, 0.25);

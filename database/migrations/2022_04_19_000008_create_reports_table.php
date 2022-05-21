@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean('completed')->default(false);
             $table->integer('fk_completedBy')->unsigned()->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::table('reports', function (Blueprint $table) {

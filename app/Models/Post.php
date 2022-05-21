@@ -41,4 +41,7 @@ class Post extends Model
     public function comments () {
         return $this->belongsTo("App\Models\Post", "id_post", "fk_post") ;
     }
+    public function reports () {
+        return $this->belongsTo("App\Models\Report", 'id_post', 'fk_post') ;
+    }
 }

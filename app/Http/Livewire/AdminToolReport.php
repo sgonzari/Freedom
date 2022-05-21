@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class AdminToolReport extends Component
 {
+    protected $listeners = ['renderReport' => 'render'];
+
     public function render()
     {
         $reports = Report::all() ;

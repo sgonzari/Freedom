@@ -1,6 +1,17 @@
 .post__modal {
     position: relative;
 
+    .post__header {
+        &--icon {
+            cursor: pointer;
+            user-select: none;
+            border-radius: 9999px;
+            
+            &:hover {
+                background-color: $background__color;
+            }
+        }
+    }
     .post__modal {
 
         &--container {

@@ -20,4 +20,22 @@ class ReportComplete extends Component
         $post = $report->post()->first();
         return view('components.report-complete', compact(['report', 'post']));
     }
+
+    public function completeReport () {
+        $this->report->completed = true ;
+        if ($this->report->save()) {
+            $this->emit('render');
+        }
+    }
+    public function uncompleteReport () {
+        $this->report->completed = false ;
+        if ($this->report->save()) {
+            $this->emit('render');
+        }
+    }
+
+    public function closeReportModal () {
+        $this->reset('interfaceReport') ;
+        $this->emit('renderReport') ;
+    }
 }
