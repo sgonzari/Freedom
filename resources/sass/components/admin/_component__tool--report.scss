@@ -27,9 +27,13 @@
                             justify-content: center;
                             align-items: center;
                             border-radius: 9999px;
+                            transition: .1s;
 
                             .admin__image {
                                 height: $image__height;
+                            }
+                            &:hover {
+                                background-color: rgba(0, 0, 0, .1);
                             }
                         }
                         &--text {
@@ -37,6 +41,10 @@
 
                                 &--name {
                                     font-weight: 700;
+
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
                                 }
                                 &--username {
                                     color: $secundary__color;

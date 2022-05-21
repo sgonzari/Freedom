@@ -27,6 +27,12 @@
                     font-weight: 700;
                     font-size: 20px;
                     margin: 0 0 16px 0;
+
+                    .report__header--username {
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
                 }
                 &--body {
                     padding: 16px 12px;
@@ -47,9 +53,13 @@
                                     justify-content: center;
                                     align-items: center;
                                     border-radius: 9999px;
+                                    transition: .1s;
 
                                     .report__image {
                                         height: $image__height;
+                                    }
+                                    &:hover {
+                                        background-color: rgba(0, 0, 0, .1);
                                     }
                                 }
                                 &--main {
@@ -66,6 +76,10 @@
                                                     font-weight: 700;
                                                     font-size: 15px;
                                                     margin: 0 0 5px 0;
+
+                                                    &:hover {
+                                                        text-decoration: underline;
+                                                    }
                                                 }
                                                 &--username {
                                                     font-weight: 600;

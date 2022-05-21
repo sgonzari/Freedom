@@ -8,13 +8,14 @@
                     Confirmación
                 </div>
                 <div class="warning__modal--body">
-                    <div class="warning__container--profile">
+                    <a class="warning__container--profile" href="{{ route('profile', $warning->reportedBy()->first()->username) }}" target="_blank">
                         <img class="warning__image" src="http://localhost/freedom/public/storage/{{ $warning->reportedBy()->first()->profile_image }}" alt="Profile Image" />
-                    </div>
+                    </a>
                     <div class="warning__container--main">
                         <div class="warning__container--header">
                             <div class="warning__header">
-                                <div class="warning__header--name">{{ $warning->reportedBy()->first()->name }} <span class="warning__header--username">{{ __('@') }}{{ $warning->reportedBy()->first()->username }}</span></div>
+                                <a class="warning__header--name" href="{{ route('profile', $warning->reportedBy()->first()->username) }}" target="_blank">{{ $warning->reportedBy()->first()->name }} </a>
+                                <span class="warning__header--username">{{ __('@') }}{{ $warning->reportedBy()->first()->username }}</span>
                             </div>
                         </div>
                         <div class="warning__container--body">

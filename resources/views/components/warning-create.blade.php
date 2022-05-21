@@ -5,20 +5,21 @@
     <div class="warning__modal--main">
         <div class="warning__modal--container">
             <div class="warning__main--header">
-                <h1>Warning | {{ __('@') }}{{ $user->username }}</h1>
+                <h1>Warning | <a class="warning__header--username" href="{{ route('profile', $user->username) }}" target="_blank">{{ __('@') }}{{ $user->username }}</a></h1>
             </div>
             <div class="warning__main--body">
                 <div class="warning__list">
                     @foreach ($user->warnings()->get() as $warning)
                         <div class="warning__list--element">
                             <div class="warning__element--container">
-                                <div class="warning__container--profile">
-                                    <img class="warning__image" src="http://localhost/freedom/public/storage/{{ $user->profile_image }}" alt="Profile Image" />
-                                </div>
+                                <a class="warning__container--profile" href="{{ route('profile', $warning->reportedBy()->first()->username) }}" target="_blank">
+                                    <img class="warning__image" src="http://localhost/freedom/public/storage/{{ $warning->reportedBy()->first()->profile_image }}" alt="Profile Image" />
+                                </a>
                                 <div class="warning__container--main">
                                     <div class="warning__container--header">
                                         <div class="warning__header">
-                                            <div class="warning__header--name">{{ $warning->reportedBy()->first()->name }} <span class="warning__header--username">{{ __('@') }}{{ $warning->reportedBy()->first()->username }}</span></div>
+                                            <a class="warning__header--name" href="{{ route('profile', $warning->reportedBy()->first()->username) }}" target="_blank">{{ $warning->reportedBy()->first()->name }}</a>
+                                            <span class="warning__header--username">{{ __('@') }}{{ $warning->reportedBy()->first()->username }}</span>
                                         </div>
                                     </div>
                                     <div class="warning__container--body">

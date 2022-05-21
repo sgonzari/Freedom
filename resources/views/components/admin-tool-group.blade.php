@@ -6,11 +6,11 @@
         @foreach ($users as $user)
             <div class="admin__group--main">
                 <div class="admin__main--profile">
-                    <div class="admin__profile--image">
+                    <a class="admin__profile--image" href="{{ route('profile', $user->username) }}" target="_blank">
                         <img class="admin__image" src="http://localhost/freedom/public/storage/{{ $user->profile_image }}" alt="Profile Image" />
-                    </div>
+                    </a>
                     <div class="admin__profile--text">
-                        <h2 class="admin__text--name">{{ $user->name }}</h2>
+                        <a class="admin__text--name" href="{{ route('profile', $user->username) }}" target="_blank">{{ $user->name }}</a>
                         <span class="admin__text--username">{{ __('@') }}{{ $user->username }}</span>
                     </div>
                 </div>

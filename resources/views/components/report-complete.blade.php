@@ -5,17 +5,17 @@
         <div class="report__modal--main">
             <div class="report__modal--container">
                 <div class="report__main--header">
-                    <h1>{{ $report->id_report }} | Report by: {{ __('@') }}{{ $report->user()->first()->username }}</h1>
+                    <h1>{{ $report->id_report }} | Report by: <a class="report__header--username" href="{{ route('profile', $report->user()->first()->username) }}" target="_blank">{{ __('@') }}{{ $report->user()->first()->username }}</a></h1>
                 </div>
                 <div class="report__main--body">
                     <div class="report__body--post">
-                        <div class="report__post--image">
+                        <a class="report__post--image" href="{{ route('profile', $post->user()->first()->username) }}" target="_blank">
                             <img class="report__image" src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="Imagen de perfil">
-                        </div>
+                        </a>
                         <div class="report__post--main">
                             <div class="report__post--profile">
                                 <div class="report__profile--info">
-                                    <span class="report__profile--name">{{ $post->user()->first()->name }}</span>
+                                    <a class="report__profile--name" href="{{ route('profile', $post->user()->first()->username) }}" target="_blank">{{ $post->user()->first()->name }}</a>
                                     <span class="report__profile--username">{{ __('@') }}{{ $post->user()->first()->username }}</span>
                                 </div>
                             </div>

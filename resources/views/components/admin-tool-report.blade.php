@@ -6,11 +6,11 @@
         @foreach ($reports->where('completed', false) as $report)
             <div class="admin__repost--main">
                 <div class="admin__main--profile">
-                    <div class="admin__profile--image">
+                    <a class="admin__profile--image" href="{{ route('profile', $report->user()->first()->username) }}" target="_blank">
                         <img class="admin__image" src="http://localhost/freedom/public/storage/{{ $report->user()->first()->profile_image }}" alt="Profile Image" />
-                    </div>
+                    </a>
                     <div class="admin__profile--text">
-                        <h2 class="admin__text--name">{{ $report->user()->first()->name }}</h2>
+                        <a class="admin__text--name" href="{{ route('profile', $report->user()->first()->username) }}" target="_blank">{{ $report->user()->first()->name }}</a>
                         <span class="admin__text--username">{{ __('@') }}{{ $report->user()->first()->username }}</span>
                     </div>
                 </div>

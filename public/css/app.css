@@ -110,12 +110,19 @@ textarea {
   justify-content: center;
   align-items: center;
   border-radius: 9999px;
+  transition: 0.1s;
 }
 .admin__tool--element .admin__group--main .admin__main--profile .admin__profile--image .admin__image {
   height: 48px;
 }
+.admin__tool--element .admin__group--main .admin__main--profile .admin__profile--image:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 .admin__tool--element .admin__group--main .admin__main--profile .admin__profile--text .admin__text--name {
   font-weight: 700;
+}
+.admin__tool--element .admin__group--main .admin__main--profile .admin__profile--text .admin__text--name:hover {
+  text-decoration: underline;
 }
 .admin__tool--element .admin__group--main .admin__main--profile .admin__profile--text .admin__text--username {
   color: rgb(83, 100, 113);
@@ -182,12 +189,19 @@ textarea {
   justify-content: center;
   align-items: center;
   border-radius: 9999px;
+  transition: 0.1s;
 }
 .admin__tool--element .admin__repost--main .admin__main--profile .admin__profile--image .admin__image {
   height: 48px;
 }
+.admin__tool--element .admin__repost--main .admin__main--profile .admin__profile--image:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 .admin__tool--element .admin__repost--main .admin__main--profile .admin__profile--text .admin__text--name {
   font-weight: 700;
+}
+.admin__tool--element .admin__repost--main .admin__main--profile .admin__profile--text .admin__text--name:hover {
+  text-decoration: underline;
 }
 .admin__tool--element .admin__repost--main .admin__main--profile .admin__profile--text .admin__text--username {
   color: rgb(83, 100, 113);
@@ -250,12 +264,19 @@ textarea {
   justify-content: center;
   align-items: center;
   border-radius: 9999px;
+  transition: 0.1s;
 }
 .admin__tool--element .admin__warning--main .admin__main--profile .admin__profile--image .admin__image {
   height: 48px;
 }
+.admin__tool--element .admin__warning--main .admin__main--profile .admin__profile--image:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 .admin__tool--element .admin__warning--main .admin__main--profile .admin__profile--text .admin__text--name {
   font-weight: 700;
+}
+.admin__tool--element .admin__warning--main .admin__main--profile .admin__profile--text .admin__text--name:hover {
+  text-decoration: underline;
 }
 .admin__tool--element .admin__warning--main .admin__main--profile .admin__profile--text .admin__text--username {
   color: rgb(83, 100, 113);
@@ -334,6 +355,12 @@ textarea {
   font-size: 20px;
   margin: 0 0 16px 0;
 }
+.warning__modal--main .warning__modal--container .warning__main--header .warning__header--username {
+  cursor: pointer;
+}
+.warning__modal--main .warning__modal--container .warning__main--header .warning__header--username:hover {
+  text-decoration: underline;
+}
 .warning__modal--main .warning__modal--container .warning__main--body .warning__list--element {
   display: flex;
   align-items: center;
@@ -354,17 +381,27 @@ textarea {
   justify-content: center;
   align-items: center;
   border-radius: 9999px;
+  transition: 0.1s;
 }
 .warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--container .warning__container--profile .warning__image {
   height: 48px;
 }
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--container .warning__container--profile:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 .warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--container .warning__container--main {
   flex: 1;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--container .warning__container--main .warning__container--header {
+  display: flex;
 }
 .warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--container .warning__container--main .warning__container--header .warning__header--name {
   font-weight: 700;
   font-size: 15px;
   margin: 0 0 5px 0;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--container .warning__container--main .warning__container--header .warning__header--name:hover {
+  text-decoration: underline;
 }
 .warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--container .warning__container--main .warning__container--header .warning__header--username {
   font-weight: 600;
@@ -425,9 +462,13 @@ textarea {
   justify-content: center;
   align-items: center;
   border-radius: 9999px;
+  transform: 0.1s;
 }
 .warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--body .warning__container--profile .warning__image {
   height: 48px;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--body .warning__container--profile:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--body .warning__container--main {
   flex: 1;
@@ -436,6 +477,9 @@ textarea {
   font-weight: 700;
   font-size: 15px;
   margin: 0 0 5px 0;
+}
+.warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--body .warning__container--main .warning__container--header .warning__header--name:hover {
+  text-decoration: underline;
 }
 .warning__modal--main .warning__modal--container .warning__main--body .warning__list--element .warning__element--delete .warning__delete--modal .warning__modal--container .warning__modal--body .warning__container--main .warning__container--header .warning__header--username {
   font-weight: 600;
@@ -574,6 +618,9 @@ textarea {
   font-size: 20px;
   margin: 0 0 16px 0;
 }
+.report__modal--main .report__modal--container .report__main--header .report__header--username:hover {
+  text-decoration: underline;
+}
 .report__modal--main .report__modal--container .report__main--body {
   padding: 16px 12px;
 }
@@ -591,9 +638,13 @@ textarea {
   justify-content: center;
   align-items: center;
   border-radius: 9999px;
+  transition: 0.1s;
 }
 .report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--image .report__image {
   height: 48px;
+}
+.report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--image:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--main {
   flex: 1;
@@ -607,6 +658,9 @@ textarea {
   font-weight: 700;
   font-size: 15px;
   margin: 0 0 5px 0;
+}
+.report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--main .report__post--profile .report__profile--name:hover {
+  text-decoration: underline;
 }
 .report__modal--main .report__modal--container .report__main--body .report__body--post .report__post--main .report__post--profile .report__profile--username {
   font-weight: 600;
@@ -1343,7 +1397,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 9999px;
-  transition: 0.2s;
+  transition: 0.1s;
 }
 .post__container .post__profile--image {
   z-index: -1;
