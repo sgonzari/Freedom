@@ -62,4 +62,8 @@ class User extends Authenticatable
     public function warnings () {
         return $this->hasMany("App\Models\Warning", "fk_user", "id_user") ;
     }
+
+    public function reports () {
+        return $this->belongsTo("App\Models\Report", 'id_user', 'fk_user') ;
+    }
 }
