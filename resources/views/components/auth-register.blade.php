@@ -14,6 +14,10 @@
                 <input class="card__element--input" id="username" name="username" type="text" placeholder="username" required />
             </div>
             <div class="card__form--element">
+                <label class="card__element--label" for="birthday">Birthday: </label>
+                <input class="card__element--input" id="birthday" name="birthday" type="date" placeholder="birthday" />
+            </div>
+            <div class="card__form--element">
                 <label class="card__element--label" for="email">Email: </label>
                 <input class="card__element--input" id="email" name="email" type="email" placeholder="email@domain.es" required />
             </div>
