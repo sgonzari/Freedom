@@ -25,19 +25,24 @@
                             <img class="profile__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Imagen de perfil">
                         </div>
                         <div class="profile__info--text">
-                            <h2 class="profile__text--name">{{ Auth::user()->name }}</h2>
-                            <p class="profile__text--username">{{ __('@') }}{{ Auth::user()->username }}</p>
+                            <input class="profile__input profile__input--name" value="{{ Auth::user()->name }}" id="name" name="name" />
+                            <div>
+                                <label class="profile__label--username" for="username">{{ __('@') }}</label>
+                                <input class="profile__input profile__input--username" value="{{ Auth::user()->username }}" id="username" name="username" />
+                            </div>
                         </div>
                     </div>
-                    <div class="profile__body--description">
-                        <div class="profile__description--text">{{ Auth::user()->description }}</div>
+                    <div class="profile__body--element">
+                        <label class="profile__body--label" for="description">Description:</label>
+                        <input class="profile__body--input" type="text" value="{{ Auth::user()->description }}" id="description" name="description" />
                     </div>
-                    <div class="profile__body--birthday">
-                        <div class="profile__birthday--text">{{ Auth::user()->birthday }}</div>
+                    <div class="profile__body--element">
+                        <label class="profile__body--label" for="birthday">Birthday:</label>
+                        <input class="profile__body--input" type="date" value="{{ Auth::user()->birthday }}" id="birthday" name="birthday" />
                     </div>
                 </form>
                 <div class="profile__container--footer">
-                    <button>Guardar</button>
+                    <button class="profile__footer--element" wire:click="editProfile">Guardar</button>
                 </div>
             </div>
             <div class="profile__modal--close" wire:click="$set('profileModal', false)"></div>

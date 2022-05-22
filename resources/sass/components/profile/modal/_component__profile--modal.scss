@@ -52,6 +52,12 @@
                                 align-items: center;
                                 justify-content: center;
                             }
+                            &--title {
+                                text-align: center;
+                                font-weight: 700;
+                                font-size: 20px;
+                                margin: 0 0 16px 0;
+                            }
                         }
                     }
                     &--body {
@@ -61,6 +67,7 @@
                             &--info {
                                 display: flex;
                                 align-items: center;
+                                margin: 0 0 16px 0;
 
                                 .profile__info {
                                     &--image {
@@ -81,12 +88,21 @@
                                         flex: 1;
                                         text-align: left;
 
-                                        .profile__text {
+                                        .profile__input {
+                                            border: none;
+                                            outline: none;
+
                                             &--name {
                                                 font-weight: 700;
                                                 font-size: 24px;
-                                                margin: 12px 0;
                                             }
+                                            &--username {
+                                                font-weight: 600;
+                                                color: gray;
+                                                font-size: 20px;
+                                            }
+                                        }
+                                        .profile__label {
                                             &--username {
                                                 font-weight: 600;
                                                 color: gray;
@@ -97,11 +113,29 @@
                                     }
                                 }
                             }
-                            &--description {
+                            &--element {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                justify-content: flex-start;
+                                margin: 0 0 16px 0;
 
-                            }
-                            &--birthday {
-
+                                .profile__body {
+                                    &--label {
+                                        margin: 0 0 6px 0;
+                                        font-weight: 700;
+                                        font-size: 15px;
+                                    }
+                                    &--input {
+                                        align-self: center;
+                                        width: 50%;
+                                        border: 1px solid gray;
+                                        outline: none;
+                                        border-radius: 16px;
+                                        font-size: 15px;
+                                        padding: 12px 16px;
+                                    }
+                                }
                             }
                         }
                     }
@@ -109,6 +143,23 @@
                         display: flex;
                         align-items: center;
                         justify-content: flex-end;
+                        padding: 16px 12px;
+                        
+                        .profile__footer {
+                            &--element {
+                                cursor: pointer;
+                                background-color: rgb(29, 155, 240);
+                                border: none;
+                                color: white;
+                                font-weight: 900;
+                                border-radius: 30px;
+                                width: 80px;
+                                height: 40px;
+                                margin: 0 8px;
+                                flex-grow: 0;
+                                padding: 0;
+                            }
+                        }
                     }
                 }
             }

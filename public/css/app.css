@@ -66,6 +66,10 @@ textarea {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+input {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
 .admin__tool {
   display: flex;
   flex-wrap: wrap;
@@ -1927,12 +1931,19 @@ body {
   align-items: center;
   justify-content: center;
 }
+.profile__modal--main .profile__modal--container .profile__container--header .profile__header--title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 16px 0;
+}
 .profile__modal--main .profile__modal--container .profile__container--body {
   padding: 16px 12px;
 }
 .profile__modal--main .profile__modal--container .profile__container--body .profile__body--info {
   display: flex;
   align-items: center;
+  margin: 0 0 16px 0;
 }
 .profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--image {
   width: 120px;
@@ -1951,21 +1962,64 @@ body {
   flex: 1;
   text-align: left;
 }
-.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--name {
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__input {
+  border: none;
+  outline: none;
+}
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__input--name {
   font-weight: 700;
   font-size: 24px;
-  margin: 12px 0;
 }
-.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--username {
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__input--username {
+  font-weight: 600;
+  color: gray;
+  font-size: 20px;
+}
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__label--username {
   font-weight: 600;
   color: gray;
   font-size: 20px;
   margin: 12px 0;
 }
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--element {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0 0 16px 0;
+}
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--element .profile__body--label {
+  margin: 0 0 6px 0;
+  font-weight: 700;
+  font-size: 15px;
+}
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--element .profile__body--input {
+  align-self: center;
+  width: 50%;
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 16px;
+  font-size: 15px;
+  padding: 12px 16px;
+}
 .profile__modal--main .profile__modal--container .profile__container--footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding: 16px 12px;
+}
+.profile__modal--main .profile__modal--container .profile__container--footer .profile__footer--element {
+  cursor: pointer;
+  background-color: rgb(29, 155, 240);
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  width: 80px;
+  height: 40px;
+  margin: 0 8px;
+  flex-grow: 0;
+  padding: 0;
 }
 .profile__modal--main .profile__modal--close {
   background-color: rgba(0, 0, 0, 0.25);
