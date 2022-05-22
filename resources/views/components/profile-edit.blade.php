@@ -19,8 +19,25 @@
                         </h2>
                     </div>
                 </div>
-                <div class="profile--container__body">
-
+                <form class="profile__container--body">
+                    <div class="profile__body--info">
+                        <div class="profile__info--image">
+                            <img class="profile__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Imagen de perfil">
+                        </div>
+                        <div class="profile__info--text">
+                            <h2 class="profile__text--name">{{ Auth::user()->name }}</h2>
+                            <p class="profile__text--username">{{ __('@') }}{{ Auth::user()->username }}</p>
+                        </div>
+                    </div>
+                    <div class="profile__body--description">
+                        <div class="profile__description--text">{{ Auth::user()->description }}</div>
+                    </div>
+                    <div class="profile__body--birthday">
+                        <div class="profile__birthday--text">{{ Auth::user()->birthday }}</div>
+                    </div>
+                </form>
+                <div class="profile__container--footer">
+                    <button>Guardar</button>
                 </div>
             </div>
             <div class="profile__modal--close" wire:click="$set('profileModal', false)"></div>
