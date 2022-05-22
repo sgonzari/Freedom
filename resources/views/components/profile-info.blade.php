@@ -15,7 +15,7 @@
         <div class="profile__header--buttons">
             <div class="profile__button">
                 @if (Auth::user()->id_user === $user->id_user)
-                    <button class="profile__button--element" wire:click="editProfile">{{ __('Edit Profile') }}</button>
+                    @livewire('profile-edit')
                 @else
                     @if (Auth::user()->followings()->find($user->id_user))
                         <button class="profile__button--element" wire:click="unfollowUser">Dejar de seguir</button>
