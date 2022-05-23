@@ -1515,6 +1515,10 @@ body {
   max-width: 600px;
   margin: 12px auto;
   width: 100%;
+  color: white;
+}
+.image__interface--container .image__container--left .image__left--options .button__action {
+  color: white;
 }
 .image__interface--container .image__container--left .image__left--close {
   background-color: rgba(0, 0, 0, 0.8);
