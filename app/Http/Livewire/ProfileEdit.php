@@ -33,6 +33,8 @@ class ProfileEdit extends Component
     }
 
     public function store () {
+        if ($this->image) $this->user->profile_image = $this->image->store('users') ;
+
         if ($this->user->save()) {
             $this->reset('profileModal') ;
             $this->emit('renderProfile') ;
