@@ -24,9 +24,7 @@
                         <p class="post__content--text">{{ $post->content }}</p>
                     </a>
                     @if (!is_null($post->image))
-                        <div class="post__body--image">
-                            <img class="post__image" src="http://localhost/freedom/public/storage/{{ $post->image }}" alt="Imagen del post">
-                        </div>
+                        @livewire('image-view', ['post' => $post])
                     @endif
                 </div>
                 <div class="post__main--footer">

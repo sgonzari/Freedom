@@ -1445,13 +1445,6 @@ body {
   margin: 0 0 12px 0;
   overflow-wrap: anywhere;
 }
-.post__container .post__main--body .post__body--image {
-  overflow: hidden;
-  border-radius: 16px;
-}
-.post__container .post__main--body .post__body--image .post__image {
-  width: 100%;
-}
 .post__container .post__main--footer {
   display: flex;
   align-items: center;
@@ -1463,6 +1456,81 @@ body {
 }
 .post:hover {
   background-color: rgba(15, 20, 25, 0.1);
+}
+
+.image {
+  position: relative;
+}
+.image__post {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.image__post .post__image {
+  width: 100%;
+}
+.image__interface {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image__interface--container {
+  cursor: auto;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.image__interface--container .image__container--left {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.image__interface--container .image__container--left .image__left--image {
+  z-index: 4;
+  align-self: center;
+  height: 100%;
+}
+.image__interface--container .image__container--left .image__left--image .image__image {
+  height: 100%;
+}
+.image__interface--container .image__container--left .image__left--options {
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 12px auto;
+  width: 100%;
+}
+.image__interface--container .image__container--left .image__left--close {
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: auto;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.image__interface--container .image__container--right {
+  z-index: 4;
+  width: 350px;
+  height: 100%;
+  background-color: white;
 }
 
 .post__modal {
