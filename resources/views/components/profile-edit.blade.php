@@ -22,27 +22,37 @@
                 <form class="profile__container--body">
                     <div class="profile__body--info">
                         <div class="profile__info--image">
-                            <img class="profile__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Imagen de perfil">
+                            @if ($image)
+                                <img class="profile__image" src="{{ $image->temporaryUrl() }}" alt="Imagen de perfil">
+                            @else
+                                <img class="profile__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Imagen de perfil">
+                            @endif
+                            <label class="profile__image--label" for="image">
+                                <span class="profile__image--icon material-symbols-rounded">add_a_photo</span>
+                            </label>
+                            <input class="profile__image--input" type="file" id="image" name="image" wire:model="image" />
                         </div>
                         <div class="profile__info--text">
-                            <input class="profile__input profile__input--name" value="{{ Auth::user()->name }}" id="name" name="name" />
-                            <div>
-                                <label class="profile__label--username" for="username">{{ __('@') }}</label>
-                                <input class="profile__input profile__input--username" value="{{ Auth::user()->username }}" id="username" name="username" />
+                            <div class="profile__text--name">
+                                <input class="profile__name--input" id="name" name="name" wire:model="user.name" />
+                            </div>
+                            <div class="profile__text--username">
+                                <label class="profile__username--label" for="username">{{ __('@') }}</label>
+                                <input class="profile__username--input" id="username" name="username" wire:model="user.username" />
                             </div>
                         </div>
                     </div>
                     <div class="profile__body--element">
                         <label class="profile__body--label" for="description">Description:</label>
-                        <input class="profile__body--input" type="text" value="{{ Auth::user()->description }}" id="description" name="description" />
+                        <textarea class="profile__body--input" id="description" name="description" wire:model="user.description"></textarea>
                     </div>
                     <div class="profile__body--element">
                         <label class="profile__body--label" for="birthday">Birthday:</label>
-                        <input class="profile__body--input" type="date" value="{{ Auth::user()->birthday }}" id="birthday" name="birthday" />
+                        <input class="profile__body--input profile__body--birthday" type="date" id="birthday" name="birthday" wire:model="user.birthday" />
                     </div>
                 </form>
                 <div class="profile__container--footer">
-                    <button class="profile__footer--element" wire:click="editProfile">Guardar</button>
+                    <button class="profile__footer--element" wire:click="store">Guardar</button>
                 </div>
             </div>
             <div class="profile__modal--close" wire:click="$set('profileModal', false)"></div>

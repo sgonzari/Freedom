@@ -11,6 +11,8 @@ class ProfileInfo extends Component
 {
     public $user, $option ;
 
+    protected $listeners = ['renderProfile' => 'render'] ;
+
     public function render()
     {
         $user = $this->user ;

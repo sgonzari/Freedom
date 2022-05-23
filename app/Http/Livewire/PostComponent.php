@@ -10,6 +10,8 @@ class PostComponent extends Component
 {
     public $post ;
 
+    protected $listeners = ['renderPost' => 'render'] ;
+
     public function render()
     {
         $post = $this->post ;

@@ -1,4 +1,4 @@
-<div {{ $attributes }}>
+<div class="header__profile">
     <div id="profileOptions" class="header__profile--options">
         <div class="header__option">
             <svg class="header__option--signal"viewBox="0 0 24 24" aria-hidden="true">
