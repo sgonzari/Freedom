@@ -9,6 +9,7 @@ use Livewire\Component;
 
 class PostDelete extends Component
 {
+    public $interfaceDelete = false ;
     public $post ;
 
     public function render()
@@ -23,6 +24,7 @@ class PostDelete extends Component
                     $notification->delete() ;
                 }
             }
+            $this->reset('interfaceDelete') ;
             $this->post->delete() ;
             $this->emit('render') ;
         }

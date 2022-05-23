@@ -1,0 +1,26 @@
+.post__modal--remove {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .post__modal--main {
+
+        .post__modal {
+            &--container {
+                min-width: 320px;
+
+                .post__container {
+                    &--main {
+                        padding: 12px 16px;
+
+                        .post__main--warning {
+                            font-weight: 600;
+                            color: gray;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
