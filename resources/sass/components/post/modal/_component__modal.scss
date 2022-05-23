@@ -51,6 +51,12 @@
                 color: red;
             }
         }
+        &--pin {
+
+            &:hover {
+                font-weight: 700;
+            }
+        }
     }
     &--close {
         cursor: auto;

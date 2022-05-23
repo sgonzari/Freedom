@@ -12,7 +12,7 @@ class Search extends Component
 
     public function render()
     {
-        $results = User::where('username', 'like', $this->query . '%')->cursorPaginate(3) ;
+        $results = User::where('username', 'like', '%' . $this->query . '%')->orWhere('name', 'like', '%' . $this->query . '%')->get() ;
 
         return view('components.search', compact('results'));
     }

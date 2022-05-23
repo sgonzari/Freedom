@@ -1,12 +1,8 @@
 <div>
     <div class="post">
-        @if (request()->routeIs('home'))
-            @if (!is_null($post->fk_post))
-            <a class="post__from" href="{{ route('post', ['username' => App\Models\Post::withTrashed()->where('id_post', $post->fk_post)->first()->user()->first()->username, 'id_post' => App\Models\Post::withTrashed()->where('id_post', $post->fk_post)->first()->id_post]) }}">
-                <span class="post__from--content">replied to {{ App\Models\Post::withTrashed()->where('id_post', $post->fk_post)->first()->user()->first()->username }}</span>
-            </a>
-            @endif
-        @endif
+        <a class="post__from" href="{{ route('post', ['username' => $post->user()->first()->username, 'id_post' => $post->id_post]) }}">
+            <span class="post__from--content post__from--pin"><span class=" post__modal--icon material-symbols-rounded"> push_pin </span> Mensaje pineado</span>
+        </a>
         <div class="post__container">
             <a class="post__profile" href="{{ route('profile', ['username' => $post->user()->first()->username]) }}">
                 <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="Imagen de perfil" class="post__profile--image" />

@@ -3,6 +3,9 @@
 
     @if ($opened)
         <div class="post__modal--container">
+            @if (Auth::user()->id_user == $post->user()->first()->id_user)
+                @livewire('post-modal-pin', ['post' => $post])
+            @endif
             @if (Auth::user()->reports()->where('fk_post', $post->id_post)->count() < 1)
                 @livewire('post-modal-report', ['post' => $post])
             @endif

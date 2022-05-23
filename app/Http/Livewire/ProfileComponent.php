@@ -12,6 +12,8 @@ class ProfileComponent extends Component
     public User|Null $user ;
     public string $option ;
 
+    protected $listeners = ['renderProfile' => 'render'] ;
+
     public function render() {
         $user = $this->user ;
         $option = $this->option ;

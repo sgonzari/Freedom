@@ -1,7 +1,9 @@
 .post {
 
     &__from {
+        cursor: pointer;
         padding: 4px 16px;
+        display: block;
         
         &--content {
             color: gray;
@@ -9,6 +11,14 @@
 
             &:hover {
                 text-decoration: underline;
+            }
+        }
+        &--pin {
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                text-decoration: none;
             }
         }
     }
