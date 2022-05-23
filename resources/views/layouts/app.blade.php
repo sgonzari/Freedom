@@ -23,7 +23,7 @@
     </head>
     <body>
         @if (Auth::user()->warnings()->where('opened', false)->count() > 0)
-            @livewire('warning-view-user', ['user' => Auth::user()], key(Auth::user()->id_user))
+            @livewire('warning-view-user', ['user' => Auth::user()])
         @endif
         <div class="body__app">
             <header class="header"> 

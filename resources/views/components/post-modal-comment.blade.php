@@ -22,7 +22,7 @@
                                         <span class="post__header--name">{{ $post->user()->first()->name }}</span>
                                         <span class="post__header--username">{{ __('@') }}{{ $post->user()->first()->username }}</span>
                                     </a>
-                                    @livewire('post-modal', ['post' => $post], key($post->id_post))
+                                    @livewire('post-modal', ['post' => $post])
                                 </div>
                             </div>
                             <div class="post__main--body">

@@ -35,7 +35,7 @@
                         <button class="report__footer--element report__footer--cancel" wire:click="closeReportModal">Cerrar</button>
                     </div>
                     <div class="report__footer--right">
-                        @livewire('warning-create', ['user' => $post->user()->first()], key($post->user()->first()->id_user))
+                        @livewire('warning-create', ['user' => $post->user()->first()])
                         @if (!$report->completed)
                         <button class="report__footer--element report__footer--uncomplete" wire:click="completeReport">No Completado</button>
                         @else

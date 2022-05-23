@@ -19,7 +19,7 @@
                     <h2 class="comment__info--name">{{ $user->name }}</h2>
                     <span class="comment__info--username">{{ __('@') }}{{ $user->username }}</span>
                 </a>
-                @livewire('post-modal', ['post' => $post], key($post->id_post))
+                @livewire('post-modal', ['post' => $post])
             </div>
             <div class="comment__main">
                 <div class="comment__main--body">

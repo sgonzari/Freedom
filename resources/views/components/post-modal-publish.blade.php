@@ -3,7 +3,7 @@
 
     @if ($opened)
         <div class="post__modal--container">
-            @livewire('bookmark-status', ['post' => $post], key($post->id_post))
+            @livewire('bookmark-status', ['post' => $post])
         </div>
         <div class="post__modal--close" wire:click="closeModal"></div>
     @endif
