@@ -59,10 +59,10 @@
                 </div>
                 <div class="comment__form--footer">
                     <div class="comment__footer--container">
-                        <label for="uploadImage">
+                        <label for="uploadImageComment">
                             <span class="main__button--icon material-symbols-rounded">image</span>
                         </label>
-                        <input class="main__button--element main__button--image" id="uploadImage" type="file" wire:model="commentImage" />
+                        <input class="main__button--element main__button--image" id="uploadImageComment" type="file" wire:model="commentImage" />
                         @error($commentImage)
                             <p>{{ $message }}</p>
                         @enderror
