@@ -7,7 +7,9 @@
                     </path>
                 </g>
             </svg>
-            <a id="navMore2" class="header__more--admin" href="{{ route('admin') }}"> Menú administración</a>
+            @if (Auth::user()->fk_rol > 1)
+                <a id="navMore2" class="header__more--admin" href="{{ route('admin') }}"> Menú administración</a>
+            @endif
         </div>
     </div>
 
