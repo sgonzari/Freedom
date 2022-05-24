@@ -42,9 +42,9 @@
         </div>
         <div class="profile__main--count">
             <p class="profile__count--element">
-                <span class="profile__element--count">{{ $user->followings()->count() }}</span> following</p>
+                @livewire('following-component', ['user' => $user])
             <p class="profile__count--element">
-                <span class="profile__element--count">{{ $user->followers()->count() }}</span> followers</p>
+                @livewire('follower-component', ['user' => $user])
         </div>
     </div>
     <div class="profile__footer">
