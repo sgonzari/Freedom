@@ -99,7 +99,12 @@
 
             .profile__count {
                 &--element {
+                    border: none;
+                    outline: none;
+                    background: none;
+                    font-size: 15px;
                     margin: 0 20px 0 0;
+                    cursor: pointer;
 
                     .profile__element {
                         &--count {

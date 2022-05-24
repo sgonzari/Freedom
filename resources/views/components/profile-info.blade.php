@@ -41,10 +41,8 @@
             </div>
         </div>
         <div class="profile__main--count">
-            <p class="profile__count--element">
-                @livewire('following-component', ['user' => $user])
-            <p class="profile__count--element">
-                @livewire('follower-component', ['user' => $user])
+            @livewire('following-component', ['user' => $user])
+            @livewire('follower-component', ['user' => $user])
         </div>
     </div>
     <div class="profile__footer">

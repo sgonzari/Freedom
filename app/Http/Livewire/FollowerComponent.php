@@ -8,6 +8,7 @@ use Livewire\Component;
 class FollowerComponent extends Component
 {
     public $user ;
+    public $interfaceFollower = false ;
 
     public function mount (User $user) {
         $this->user = $user ;
