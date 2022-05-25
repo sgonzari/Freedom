@@ -1,6 +1,6 @@
-<div class="admin__tool--element">
+<div class="admin__tool--element admin__tool--report">
     <div class="admin__element--header">
-        <h1>Reports</h1>
+        <h1>{{ __('admin.Reports') }}</h1>
     </div>
     <div class="admin__element--main">
         @foreach ($reports->where('completed', false) as $report)

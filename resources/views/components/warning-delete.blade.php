@@ -5,7 +5,7 @@
         <div class="warning__delete--modal">
             <div class="warning__modal--container">
                 <div class="warning__modal--header">
-                    Confirmación
+                    {{ __('admin.Confirmation') }}
                 </div>
                 <div class="warning__modal--body">
                     <a class="warning__container--profile" href="{{ route('profile', $warning->reportedBy()->first()->username) }}" target="_blank">
@@ -26,8 +26,8 @@
                     </div>
                 </div>
                 <div class="warning__modal--footer">
-                    <button class="warning__footer--element warning__footer--cancel" wire:click="$set('modal', false)">Cerrar</button>
-                    <button class="warning__footer--element warning__footer--delete" wire:click="deleteWarning">Eliminar</button>
+                    <button class="warning__footer--element warning__footer--cancel" wire:click="$set('modal', false)">{{ __('admin.Close') }}</button>
+                    <button class="warning__footer--element warning__footer--delete" wire:click="deleteWarning">{{ __('admin.Delete') }}</button>
                 </div>
             </div>
             <div class="warning__modal--close" wire:click="$set('modal', false)">

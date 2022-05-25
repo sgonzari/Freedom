@@ -5,7 +5,7 @@
     <div class="warning__modal--main">
         <div class="warning__modal--container">
             <div class="warning__main--header">
-                <h1>Warning | <a class="warning__header--username" href="{{ route('profile', $user->username) }}" target="_blank">{{ __('@') }}{{ $user->username }}</a></h1>
+                <h1>{{ __('admin.Warning') }} | <a class="warning__header--username" href="{{ route('profile', $user->username) }}" target="_blank">{{ __('@') }}{{ $user->username }}</a></h1>
             </div>
             <div class="warning__main--body">
                 <div class="warning__list">
@@ -40,14 +40,14 @@
                         <div class="warning__form--image">
                             <img class="warning__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Profile Image"/>
                         </div>
-                        <input class="warning__form--input" placeholder="Write your warning" name="message" wire:model="message" type="text" autofocus/>
+                        <input class="warning__form--input" placeholder="{{ __('admin.Write your warning') }}" name="message" wire:model="message" type="text" autofocus/>
                     </form>
                 @endif
             </div>
             <div class="warning__main--footer">
-                <button class="warning__footer--element warning__footer--cancel" wire:click="$set('interfaceWarning', false)">Cerrar</button>
+                <button class="warning__footer--element warning__footer--cancel" wire:click="$set('interfaceWarning', false)">{{ __('admin.Close') }}</button>
                 @if ($user->warnings()->count() < 3)
-                    <button class="warning__footer--element @if (!$message) disabled @endif" wire:click="storeWarning">Enviar</button>
+                    <button class="warning__footer--element @if (!$message) disabled @endif" wire:click="storeWarning">{{ __('admin.Send') }}</button>
                 @endif
             </div>
         </div>

@@ -5,7 +5,7 @@
         <div class="report__modal--main">
             <div class="report__modal--container">
                 <div class="report__main--header">
-                    <h1>{{ $report->id_report }} | Report by: <a class="report__header--username" href="{{ route('profile', $report->user()->first()->username) }}" target="_blank">{{ __('@') }}{{ $report->user()->first()->username }}</a></h1>
+                    <h1>{{ $report->id_report }} | {{ __('admin.Report by') }}: <a class="report__header--username" href="{{ route('profile', $report->user()->first()->username) }}" target="_blank">{{ __('@') }}{{ $report->user()->first()->username }}</a></h1>
                 </div>
                 <div class="report__main--body">
                     <div class="report__body--post">
@@ -32,14 +32,14 @@
                 </div>
                 <div class="report__main--footer">
                     <div class="report__footer--left">
-                        <button class="report__footer--element report__footer--cancel" wire:click="closeReportModal">Cerrar</button>
+                        <button class="report__footer--element report__footer--cancel" wire:click="closeReportModal">{{ __('admin.Close') }}</button>
                     </div>
                     <div class="report__footer--right">
                         @livewire('warning-create', ['user' => $post->user()->first()])
                         @if (!$report->completed)
-                        <button class="report__footer--element report__footer--uncomplete" wire:click="completeReport">No Completado</button>
+                        <button class="report__footer--element report__footer--uncomplete" wire:click="completeReport">{{ __('admin.Uncompleted') }}</button>
                         @else
-                        <button class="report__footer--element report__footer--complete" wire:click="uncompleteReport">Completado</button>
+                        <button class="report__footer--element report__footer--complete" wire:click="uncompleteReport">{{ __('admin.Completed') }}</button>
                         @endif
                     </div>
                 </div>

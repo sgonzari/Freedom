@@ -75,7 +75,7 @@ input {
   flex-wrap: wrap;
 }
 .admin__tool--element {
-  flex: 1 1;
+  flex: 1 1 200px;
   margin: 25px;
   padding: 12px;
 }
@@ -90,6 +90,9 @@ input {
 .admin__tool--element .admin__element--main {
   max-height: 350px;
   overflow-y: scroll;
+}
+.admin__tool--report {
+  flex: 1 1 100%;
 }
 
 .admin__tool--element .admin__group--main {

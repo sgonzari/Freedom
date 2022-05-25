@@ -1,6 +1,6 @@
 <div class="admin__tool--element">
     <div class="admin__element--header">
-        <h1>Warnings</h1>
+        <h1>{{ __('admin.Warnings') }}</h1>
     </div>
     <div class="admin__element--main">
         @foreach ($users as $user)
@@ -15,7 +15,13 @@
                     </div>
                 </div>
                 <div class="admin__main--count">
-                    <p class="admin__count--text admin__count--{{ $user->warnings()->count() }}">{{ $user->warnings()->count() }}/3 warnings</p>
+                    <p class="admin__count--text admin__count--{{ $user->warnings()->count() }}">{{ $user->warnings()->count() }}/3 
+                        @if ($user->warnings()->count() > 1)
+                            {{ __('admin.warnings') }}
+                        @else
+                            {{ __('admin.warning') }}
+                        @endif
+                    </p>
                 </div>
                 <div class="admin__main--options">
                     @livewire('warning-create', ['user' => $user], key($user->id_user))
