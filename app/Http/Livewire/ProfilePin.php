@@ -8,6 +8,8 @@ class ProfilePin extends Component
 {
     public $user ;
 
+    protected $listeners = ['renderPinPost' => 'render'] ;
+
     public function render()
     {
         $user = $this->user ;

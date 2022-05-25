@@ -16,7 +16,9 @@
                 <h2 class="following__header--title">Followings</h2>
             </div>
             <div class="following__container--body">
-
+                @foreach ($user->followings()->get() as $following) 
+                    @livewire('follow-component', ['user' => $following], key($following->id_user))
+                @endforeach
             </div>
         </div>
         <div class="following__modal--close" wire:click="$set('interfaceFollowing', false)"></div>

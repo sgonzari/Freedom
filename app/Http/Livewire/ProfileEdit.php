@@ -39,6 +39,7 @@ class ProfileEdit extends Component
             $this->reset('profileModal') ;
             $this->emit('renderProfile') ;
             $this->emit('renderHeaderProfile') ;
+            $this->emit('renderPinPost') ;
             $this->emit('renderPost') ;
         }
     }

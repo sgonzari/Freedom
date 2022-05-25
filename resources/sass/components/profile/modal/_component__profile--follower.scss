@@ -1,4 +1,4 @@
-.following {
+.follower {
     position: relative;
     display: flex;
     align-items: center;
@@ -24,13 +24,13 @@
             background-color: white;
             box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
 
-            .following__container {
+            .follower__container {
                 &--header {
                     display: flex;
                     align-items: center;
                     padding: 0 12px;
 
-                    .following__header{
+                    .follower__header{
                         &--back {
                             cursor: pointer;
                             border-radius: 9999px;

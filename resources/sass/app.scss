@@ -26,10 +26,12 @@
 @import 'components/comment/_component__comment';
 @import 'components/comment/create/component__comment--create';
 @import 'components/comment/list/component__comment--list';
+@import 'components/follow/component__follow';
+@import 'components/follow/button/component__follow--button';
 @import 'components/header/_component__header';
+@import 'components/image/_component__image';
 @import 'components/main/_component__main';
 @import 'components/post/_component__post';
-@import 'components/image/_component__image';
 @import 'components/post/modal/_component__modal';
 @import 'components/post/modal/_component__modal--comment';
 @import 'components/post/modal/_component__modal--publish';
@@ -40,6 +42,7 @@
 @import 'components/profile/_component__profile';
 @import 'components/profile/modal/_component__profile--modal';
 @import 'components/profile/modal/_component__profile--following';
+@import 'components/profile/modal/_component__profile--follower';
 @import 'components/search/_component__search';
 @import 'components/button/_component__button--action';
 @import 'components/warning/component__warning--view';
