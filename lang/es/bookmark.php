@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'Bookmarks' => 'Bookmarks',
-    'You havent bookmark' => 'No tienes bookmarks.'
+    'Bookmarks' => 'Guardados',
+    'You havent bookmark' => 'No tienes post guardados.'
 ];

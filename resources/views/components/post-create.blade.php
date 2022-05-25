@@ -5,7 +5,7 @@
                 <img class="form__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Image profile"/>
             </div>
             <div class="main__form--container">
-                <textarea class="main__container--input" name="content" id="content" placeholder="What's happening?" wire:model="content"></textarea>
+                <textarea class="main__container--input" name="content" id="content" placeholder="{{ __('home.Whats happening?') }}" wire:model="content"></textarea>
                 @if ($image)
                     <div class="main__container--image">
                         <span class="main__icon material-symbols-rounded" wire:click="$set('image', null)"> close </span>
@@ -24,7 +24,7 @@
                     <p>{{ $message }}</p>
                 @enderror
             </div>
-            <button class="main__button--submit @if ((!$content) AND (!$image)) disabled @endif" type="submit" @if ((!$content) AND (!$image)) disabled @endif >Postear</button>
+            <button class="main__button--submit @if ((!$content) AND (!$image)) disabled @endif" type="submit" @if ((!$content) AND (!$image)) disabled @endif >{{ __('home.Post') }}</button>
         </div>
     </form>
 </div>
