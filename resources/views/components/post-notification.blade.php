@@ -30,15 +30,15 @@
                                     </span>
                                 </a>
                                 @if ($notification->typeOf()->get()->first()->name == 'like')
-                                    le ha gustado tu post.
+                                    {{ __('notification.liked your post') }}
                                 @elseif ($notification->typeOf()->get()->first()->name == 'repost')
-                                    ha reposteado tu post.
+                                    {{ __('notification.reposted your post') }}
                                 @elseif ($notification->typeOf()->get()->first()->name == 'comment')
-                                    ha comentado tu post.
+                                    {{ __('notification.comment your post') }}
                                 @elseif ($notification->typeOf()->get()->first()->name == 'mention')
-                                    te ha mencionado en un post.
+                                    {{ __('notification.mentions you') }}
                                 @elseif ($notification->typeOf()->get()->first()->name == 'follow')
-                                    te ha empezado a seguir.
+                                    {{ __('notification.starting follow you') }}
                                 @endif
                             </h3>
                             <p class="notification__date">{{ $notification->created_at->format('M-d') }}</p>
