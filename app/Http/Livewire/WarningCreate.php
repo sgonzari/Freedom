@@ -32,6 +32,10 @@ class WarningCreate extends Component
             $warning->reason = $this->message ;
 
             if ($warning->save()) {
+                if ($this->user->warnings()->count() >= 3) {
+                    $this->user->banned = 1 ;
+                    $this->user->save() ;
+                }
                 $this->reset(['message']) ;
             }
         }

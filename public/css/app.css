@@ -770,6 +770,18 @@ a:visited {
     background-position: 0;
   }
 }
+.banned {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banned__text {
+  text-shadow: 1px 1px 1px #000;
+  font-size: 24px;
+  font-weight: 700;
+  color: red;
+}
+
 body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -1354,6 +1366,9 @@ body {
 }
 .header__profile--container:hover {
   background-color: rgba(15, 20, 25, 0.1);
+}
+.header--banned {
+  justify-content: flex-end;
 }
 
 .image {
@@ -2731,6 +2746,17 @@ body {
 }
 .warning__view--modal .warning__view--container .warning__container--body .warning__main--body .warning__body--reason {
   overflow-wrap: anywhere;
+}
+.warning__view--modal .warning__view--container .warning__container--body .banned {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.warning__view--modal .warning__view--container .warning__container--body .banned__text {
+  text-shadow: 1px 1px 1px #000;
+  font-size: 24px;
+  font-weight: 700;
+  color: red;
 }
 .warning__view--modal .warning__view--container .warning__container--footer {
   display: flex;

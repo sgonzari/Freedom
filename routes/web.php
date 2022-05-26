@@ -18,12 +18,13 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', [AuthenticatedSessionController::class, 'create'])->middleware('guest')->name("index") ;
 
-Route::get('/home', [UserController::class, "home"])->middleware('auth')->name("home") ;
-Route::view('/notification', "notification")->middleware('auth')->name("notification") ;
-Route::view('/bookmark', "bookmark")->middleware('auth')->name("bookmark") ;
-Route::get('/{username}/post/{id_post}', [UserController::class, "post"])->middleware('auth')->name("post") ;
-Route::view('/admin', "admin")->middleware(['auth', 'admin'])->name("admin") ;
+Route::get('/home', [UserController::class, "home"])->middleware(['banned', 'auth'])->name("home") ;
+Route::view('/notification', "notification")->middleware(['banned', 'auth'])->name("notification") ;
+Route::view('/bookmark', "bookmark")->middleware(['banned', 'auth'])->name("bookmark") ;
+Route::get('/{username}/post/{id_post}', [UserController::class, "post"])->middleware(['banned', 'auth'])->name("post") ;
+Route::view('/admin', "admin")->middleware(['banned', 'auth', 'admin'])->name("admin") ;
+Route::view('/banned', "banned")->middleware(['auth'])->name("banned") ;
 require __DIR__.'/auth.php';
-Route::get('/{username}', [UserController::class, "profile"])->middleware('auth')->name("profile") ;
-Route::get('/{username}/reposts', [UserController::class, "profileReposts"])->middleware('auth')->name("profile-reposts") ;
-Route::get('/{username}/likes', [UserController::class, "profileLikes"])->middleware('auth')->name("profile-likes") ;
+Route::get('/{username}', [UserController::class, "profile"])->middleware(['banned', 'auth'])->name("profile") ;
+Route::get('/{username}/reposts', [UserController::class, "profileReposts"])->middleware(['banned', 'auth'])->name("profile-reposts") ;
+Route::get('/{username}/likes', [UserController::class, "profileLikes"])->middleware(['banned', 'auth'])->name("profile-likes") ;

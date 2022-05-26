@@ -17,6 +17,9 @@ return [
     'Send' => 'Send',
     'Confirmation' => 'Confirmation',
     'Delete' => 'Delete',
+    
+    'Banned text' => 'Your account have been banned.',
+    'Banned' => 'Banned',
 
     'Reports' => 'Reports',
     'Report by' => 'Report by',

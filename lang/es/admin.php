@@ -17,6 +17,9 @@ return [
     'Send' => 'Enviar',
     'Confirmation' => 'Confirmación',
     'Delete' => 'Eliminar',
+    
+    'Banned text' => 'Tu cuenta ha sido baneada.',
+    'Banned' => 'Baneado',
 
     'Reports' => 'Reportes',
     'Report by' => 'Reportado por',

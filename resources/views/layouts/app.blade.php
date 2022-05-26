@@ -26,11 +26,13 @@
             @livewire('warning-view-user', ['user' => Auth::user()])
         @endif
         <div class="body__app">
-            <header class="header"> 
-                <div class="header__top">
-                    <x-application-logo :class="'header__logo'" href="{{ route('home') }}"/>
-                    <x-application-nav class="header__nav"/>
-                </div>
+            <header class="header @if (Auth::user()->banned) header--banned @endif"> 
+                @if (!Auth::user()->banned)
+                    <div class="header__top">
+                        <x-application-logo :class="'header__logo'" href="{{ route('home') }}"/>
+                        <x-application-nav class="header__nav"/>
+                    </div>
+                @endif
                 <div class="header__bottom">
                     <livewire:application-profile />
                 </div>
@@ -43,9 +45,11 @@
                     {{ $slot }}
                 </div>
             </main>
-            <section class="widgets">
-                <livewire:search/>
-            </section>
+            @if (!Auth::user()->banned)
+                <section class="widgets">
+                    <livewire:search/>
+                </section>
+            @endif
         </div>
 
         @livewireScripts

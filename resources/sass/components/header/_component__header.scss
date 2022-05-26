@@ -220,4 +220,8 @@
             }
         }
     }
+
+    &--banned {
+        justify-content: flex-end;
+    }
 }
