@@ -34,29 +34,18 @@
                     .language__form--body {
                         display: flex;
                         align-items: center;
+                        justify-content: center;
 
                         .language__body {
 
-                            &--image {
-                                margin: 0 12px 0 0;
-                                height: $image__height;
-                                width: $image__width;
-                                overflow: hidden;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                border-radius: 9999px;
-
-                                .language__image {
-                                    height: $image__height;
-                                }
-                            }
-                            &--input {
-                                flex: 1;
-                                margin: 0 0 0 20px;
-                                font-size: 20px;
-                                border: none;
-                                outline: none;
+                            &--options {
+                                cursor: pointer;
+                                width: 250px;
+                                height: 40px;
+                                border: 1px solid $border__color;
+                                border-radius: 16px;
+                                text-align: center;
+                                font-size: 15px;
                             }
                         }
                     }
@@ -86,13 +75,13 @@
                                 background-color: $background__color--hover;
                             }
                         }
-                        &--report {
-                            background-color: red;
+                        &--main {
+                            background-color: $main__color;
                         }
                     }
                     .disabled {
                         cursor: auto;
-                        background-color: $background__color--red;
+                        background-color: $main__color--disable;
                     }
                 }
             }

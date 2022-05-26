@@ -1438,26 +1438,16 @@ body {
 .language__modal--main .language__modal--container .language__container--form .language__form--body {
   display: flex;
   align-items: center;
-}
-.language__modal--main .language__modal--container .language__container--form .language__form--body .language__body--image {
-  margin: 0 12px 0 0;
-  height: 48px;
-  width: 48px;
-  overflow: hidden;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  border-radius: 9999px;
 }
-.language__modal--main .language__modal--container .language__container--form .language__form--body .language__body--image .language__image {
-  height: 48px;
-}
-.language__modal--main .language__modal--container .language__container--form .language__form--body .language__body--input {
-  flex: 1;
-  margin: 0 0 0 20px;
-  font-size: 20px;
-  border: none;
-  outline: none;
+.language__modal--main .language__modal--container .language__container--form .language__form--body .language__body--options {
+  cursor: pointer;
+  width: 250px;
+  height: 40px;
+  border: 1px solid rgb(239, 243, 244);
+  border-radius: 16px;
+  text-align: center;
+  font-size: 15px;
 }
 .language__modal--main .language__modal--container .language__container--options {
   display: flex;
@@ -1482,12 +1472,12 @@ body {
 .language__modal--main .language__modal--container .language__container--options .language__option--cancel:hover {
   background-color: rgba(15, 20, 25, 0.25);
 }
-.language__modal--main .language__modal--container .language__container--options .language__option--report {
-  background-color: red;
+.language__modal--main .language__modal--container .language__container--options .language__option--main {
+  background-color: rgb(29, 155, 240);
 }
 .language__modal--main .language__modal--container .language__container--options .disabled {
   cursor: auto;
-  background-color: rgba(249, 24, 128, 0.1);
+  background-color: rgba(29, 155, 240, 0.5);
 }
 .language__modal--main .language__modal--close {
   cursor: auto;
