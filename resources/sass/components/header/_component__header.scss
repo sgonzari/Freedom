@@ -21,6 +21,9 @@
         &--svg {
             height: 2.5rem;
         }
+        &--path {
+            fill: $main__color;
+        }
         &:hover {
             background-color: $background__color;
         }

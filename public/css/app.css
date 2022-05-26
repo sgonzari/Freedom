@@ -795,6 +795,9 @@ body {
 .card__logo--svg {
   height: 6em;
 }
+.card__logo--path {
+  fill: rgb(29, 155, 240);
+}
 .card__error {
   padding: 16px 0;
   color: red;
@@ -1157,6 +1160,9 @@ body {
 }
 .header__logo--svg {
   height: 2.5rem;
+}
+.header__logo--path {
+  fill: rgb(29, 155, 240);
 }
 .header__logo:hover {
   background-color: rgba(15, 20, 25, 0.1);

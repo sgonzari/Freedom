@@ -12,6 +12,9 @@
         &--svg {
             height: 6em;
         }
+        &--path {
+            fill: $main__color;
+        }
     }
     &__error {
         padding: 16px 0;
