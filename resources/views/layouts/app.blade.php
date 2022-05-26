@@ -32,7 +32,7 @@
                     <x-application-nav class="header__nav"/>
                 </div>
                 <div class="header__bottom">
-                    @livewire('header-profile')
+                    <livewire:application-profile />
                 </div>
             </header>
             <main class="main" id="main">

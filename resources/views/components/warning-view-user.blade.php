@@ -3,11 +3,11 @@
     <div class="warning__view--modal">
         <div class="warning__view--container">
             <div class="warning__container--header">
-                <h2 class="warning__header--title">Warning <span class="warning__count--{{ Auth::user()->warnings()->count() }}">{{ Auth::user()->warnings()->count() }}</span>/3</h2>
+                <h2 class="warning__header--title">{{ __('app.Warning') }} <span class="warning__count--{{ Auth::user()->warnings()->count() }}">{{ Auth::user()->warnings()->count() }}</span>/3</h2>
                 @if (Auth::user()->warnings()->where('opened', false)->count() > 1)
-                    <p class="warning__header--description">Has sido advertido por un administrador por las siguientes razones:</p>
+                    <p class="warning__header--description">{{ __('app.You have been advice by administrator for the next reasons') }}:</p>
                 @else
-                    <p class="warning__header--description">Has sido advertido por un administrador por la siguiente razón:</p>
+                    <p class="warning__header--description">{{ __('app.You have been advice by administrator for the next reason') }}:</p>
                 @endif
             </div>
             <div class="warning__container--body">
@@ -28,7 +28,7 @@
                 @endforeach
             </div>
             <div class="warning__container--footer">
-                <button class="warning__option--element" wire:click="warningsOpened">Confirm</button>
+                <button class="warning__option--element" wire:click="warningsOpened">{{ __('app.Confirm') }}</button>
             </div>
         </div>
     </div>

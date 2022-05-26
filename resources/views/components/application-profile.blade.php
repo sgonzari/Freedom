@@ -7,7 +7,7 @@
                     </path>
                 </g>
             </svg>
-            <a class="header__option--logout" href="{{ route('logout') }}"> Log out {{ __('@') }}{{ Auth::user()->username }}</a>
+            <a class="header__option--logout" href="{{ route('logout') }}">{{ __('app.Log out') }} {{ __('@') }}{{ Auth::user()->username }}</a>
         </div>
     </div>
 

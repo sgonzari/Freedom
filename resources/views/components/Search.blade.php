@@ -2,7 +2,7 @@
     <div class="search__main">
         <form class="search__main--form" wire:submit.prevent="search">
             <span class="search__form--icon material-symbols-rounded"> search </span>
-            <input class="search__form--input" type="text" placeholder="search Freedom" wire:model="query">
+            <input class="search__form--input" type="text" placeholder="{{ __('app.search Freedom') }}" wire:model="query">
         </form>
     </div>
     
@@ -12,7 +12,7 @@
                 @foreach ($results as $result) 
                     <a class="search__result" href="{{ route('profile', $result->username) }}">
                         <div class="search__result--image">
-                            <img class="search__image" src="http://localhost/freedom/public/storage/{{ $result->profile_image }}"/>
+                            <img class="search__image" src="http://localhost/freedom/public/storage/{{ $result->profile_image }}" alt="{{ __('image.Profiles image') }}" />
                         </div>
                         <div class="search__result--info">
                             <h3 class="search__info--name">{{ $result->name }}</h3>

@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class HeaderProfile extends Component
+class ApplicationProfile extends Component
 {
     protected $listeners = ['renderHeaderProfile' => 'render'] ;
 
