@@ -1,5 +1,5 @@
 <div class="follower">
-    <button class="profile__count--element" wire:click="$set('interfaceFollower', true)"><span class="profile__element--count">{{ $user->followers()->count() }}</span> follower</button>
+    <button class="profile__count--element" wire:click="$set('interfaceFollower', true)"><span class="profile__element--count">{{ $user->followers()->count() }}</span> {{ __('profile.Followers') }}</button>
 
     @if ($interfaceFollower)
     <div class="follower__modal">
