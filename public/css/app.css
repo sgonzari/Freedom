@@ -798,6 +798,11 @@ body {
 .card__logo--path {
   fill: rgb(29, 155, 240);
 }
+.card__description {
+  padding: 0 16px 16px 16px;
+  text-align: center;
+  font-style: italic;
+}
 .card__error {
   padding: 16px 0;
   color: red;
@@ -821,6 +826,7 @@ body {
   margin: 0 0 6px 0;
 }
 .card__main--form .card__form--element .card__element--input {
+  width: 220px;
   border-radius: 9999px;
   border: none;
   outline: none;
@@ -861,6 +867,12 @@ body {
   background-color: rgba(29, 155, 240, 0.5);
 }
 .card__main--form .card__form--buttons .card__button--login:hover {
+  background-color: rgb(29, 155, 240);
+}
+.card__main--form .card__form--buttons .card__button--send {
+  background-color: rgba(29, 155, 240, 0.5);
+}
+.card__main--form .card__form--buttons .card__button--send:hover {
   background-color: rgb(29, 155, 240);
 }
 .card__main--form .card__form--buttons .card__button--back {

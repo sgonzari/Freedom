@@ -31,6 +31,8 @@ return [
     'email' => 'email@dominio.es',
     'Confirm Email' => 'Confirmar Email',
     'Confirm Password' => 'Confirmar Contraseña',
-    'Back' => 'Volver'
+    'Back' => 'Volver',
+
+    'Send' => 'Enviar'
 
 ];

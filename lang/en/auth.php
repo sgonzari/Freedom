@@ -32,5 +32,8 @@ return [
     'email' => 'email@domain.com',
     'Confirm Email' => 'Confirm Email',
     'Confirm Password' => 'Confirm Password',
-    'Back' => 'Back'
+    'Back' => 'Back',
+
+    'Forgot Password Text' => 'Write your email account to send you a reset password link.',
+    'Send' => 'Send'
 ];

@@ -16,6 +16,11 @@
             fill: $main__color;
         }
     }
+    &__description {
+        padding:0 16px 16px 16px;
+        text-align: center;
+        font-style: italic;
+    }
     &__error {
         padding: 16px 0;
         color: red;
@@ -45,6 +50,7 @@
                             margin: 0 0 6px 0;
                         }
                         &--input {
+                            width: 220px;
                             border-radius: 9999px;
                             border: none;
                             outline: none;
@@ -82,6 +88,13 @@
                             }
                         }
                         &--login {
+                            background-color: $main__color--disable;
+
+                            &:hover {
+                                background-color: $main__color;
+                            }
+                        }
+                        &--send {
                             background-color: $main__color--disable;
 
                             &:hover {

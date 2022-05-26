@@ -1,5 +1,5 @@
 <div class="card">
-<x-application-logo :class="'card__logo'" href="{{ route('home') }}"/>
+<x-application-logo :class="'card__logo'"/>
     <!-- Validation Errors -->
     <x-auth-validation-errors class="card__error" :errors="$errors" />
     <div class="card__main">
