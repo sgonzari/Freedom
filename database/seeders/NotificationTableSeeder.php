@@ -17,7 +17,7 @@ class NotificationTableSeeder extends Seeder
     {
         $faker = \Faker\Factory::create() ;
 
-        for ($i = 1 ; $i <= 5; $i++):
+        for ($i = 2 ; $i <= 5; $i++):
             DB::table("notifications")->insert([
                 "fk_user" => $i,
                 "fk_notifier" => 1,
