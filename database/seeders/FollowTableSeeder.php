@@ -17,7 +17,7 @@ class FollowTableSeeder extends Seeder
     {
         $faker = \Faker\Factory::create() ;
 
-        for ($i = 2 ; $i <= 5; $i++):
+        for ($i = 2 ; $i <= 10; $i++):
             DB::table("follows")->insert([
                 "fk_user" => 1,
                 "fk_follow" => $i,

@@ -10,41 +10,45 @@ use Livewire\Component;
 
 class HomeComponent extends Component
 {
+    public $loadAmount = 10 ;
+
     protected $listeners = ['render' => 'render'] ;
 
     public function render() {
-        $posts = [] ;
+        $posts = collect([]) ;
 
         // Post de usuarios a los que sigue
         $followers = User::find(Auth::user()->id_user)->followings()->get() ;
         foreach ($followers as $follower) {
             foreach ($follower->posts()->get() as $followerPost) {
-                array_push($posts, $followerPost) ;
+                $posts->add($followerPost) ;
             }
         }
         // Repost de usuarios a los que sigue
         foreach ($followers as $follower) {
             foreach ($follower->reposts()->get() as $followerPost) {
-                array_push($posts, $followerPost) ;
+                $posts->add($followerPost) ;
             }
         }
         // Likes de usuarios a los que sigue
         foreach ($followers as $follower) {
             foreach ($follower->likes()->get() as $followerPost) {
-                array_push($posts, $followerPost) ;
+                $posts->add($followerPost) ;
             }
         }
 
         // Posts propios
-        $userPosts = User::find(Auth::user()->id_user)->posts()->orderBy('created_at')->get() ;
+        $userPosts = User::find(Auth::user()->id_user)->posts()->get() ;
         foreach ($userPosts as $userPost) {
-            array_push($posts, $userPost) ;
+            $posts->add($userPost) ;
         }
-        
-        usort($posts, function($x, $y) {
-            return $x['created_at'] < $y['created_at'];
-        });
+
+        $posts = $posts->sortByDesc('created_at')->take($this->loadAmount) ;
 
         return view('components.home-component', compact('posts'));
+    }
+
+    public function incrementLoadAmount () {
+        $this->loadAmount += 10 ;
     }
 }
