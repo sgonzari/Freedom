@@ -33,6 +33,8 @@ return [
     'Confirm Password' => 'Confirmar Contraseña',
     'Back' => 'Volver',
 
+    'Forgot Password Text' => 'Escribe tu email para resetear tu contraseña.',
+    'Confirm Forgot Password Sent' => 'Email enviado correctamente.',
     'Send' => 'Enviar'
 
 ];

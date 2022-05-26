@@ -35,5 +35,6 @@ return [
     'Back' => 'Back',
 
     'Forgot Password Text' => 'Write your email account to send you a reset password link.',
+    'Confirm Forgot Password Sent' => 'We have emailed your password reset link.',
     'Send' => 'Send'
 ];
