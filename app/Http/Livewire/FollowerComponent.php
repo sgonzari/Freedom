@@ -10,6 +10,8 @@ class FollowerComponent extends Component
     public $user ;
     public $interfaceFollower = false ;
 
+    protected $listeners = ['renderFollower' => 'render'] ;
+
     public function mount (User $user) {
         $this->user = $user ;
     }
@@ -18,5 +20,11 @@ class FollowerComponent extends Component
     {
         $user = $this->user ;
         return view('components.follower-component', compact(['user']));
+    }
+
+    public function closeFollowerModal () {
+        $this->reset('interfaceFollower') ;
+        $this->emit('renderFollowing') ;
+        $this->emit('renderFollower') ;
     }
 }
