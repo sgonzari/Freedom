@@ -13,7 +13,7 @@
                         </g>
                     </svg>
                 </div>
-                <h2 class="following__header--title">Followings</h2>
+                <h2 class="following__header--title">{{ __('profile.Followings') }}</h2>
             </div>
             <div class="following__container--body">
                 @foreach ($user->followings()->get() as $following) 

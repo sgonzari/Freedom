@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-slot name="title">{{ __('Profile') }}</x-slot>
+    <x-slot name="title">{{ __('profile.Profile') }}</x-slot>
 
     <x-slot name="header">
         <a class="main__header--back" href="{{ route('home') }}">
@@ -10,7 +10,7 @@
                 </g>
             </svg>
         </a>
-        <h2 class="main__header--title">{{ __('Profile') }}</h2>
+        <h2 class="main__header--title">{{ __('profile.Profile') }}</h2>
     </x-slot>
 
     <livewire:profile-component :user="$user" :option="$option" />

@@ -1,7 +1,7 @@
 <div>
     <div class="post">
         <a class="post__from" href="{{ route('post', ['username' => $post->user()->first()->username, 'id_post' => $post->id_post]) }}">
-            <span class="post__from--content post__from--pin"><span class=" post__modal--icon material-symbols-rounded"> push_pin </span> Mensaje pineado</span>
+            <span class="post__from--content post__from--pin"><span class=" post__modal--icon material-symbols-rounded"> push_pin </span>{{ __('profile.Pinned post') }}</span>
         </a>
         <div class="post__container">
             <a class="post__profile" href="{{ route('profile', ['username' => $post->user()->first()->username]) }}">

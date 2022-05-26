@@ -1,5 +1,5 @@
 <div class="profile__modal">
-    <button class="profile__button--element" wire:click="$set('profileModal', true)">{{ __('Edit Profile') }}</button>
+    <button class="profile__button--element" wire:click="$set('profileModal', true)">{{ __('profile.Edit profile') }}</button>
 
     @if ($profileModal)
         <div class="profile__modal--main">
@@ -15,7 +15,7 @@
                     </div>
                     <div class="profile__header--info">
                         <h2 class="profile__header--title">
-                            Edit Profile
+                            {{ __('profile.Edit profile') }}
                         </h2>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                     <div class="profile__body--info">
                         <div class="profile__info--image">
                             @if ($image)
-                                <img class="profile__image" src="{{ $image->temporaryUrl() }}" alt="{{ __('image.Profiles image') }}">
+                                <img class="profile__image" src="{{ $image->temporaryUrl() }}" alt="{{ __('image.Uploaded image') }}">
                             @else
                                 <img class="profile__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="{{ __('image.Profiles image') }}">
                             @endif
@@ -43,16 +43,16 @@
                         </div>
                     </div>
                     <div class="profile__body--element">
-                        <label class="profile__body--label" for="description">Description:</label>
+                        <label class="profile__body--label" for="description">{{ __('profile.Description') }}:</label>
                         <textarea class="profile__body--input" id="description" name="description" wire:model="user.description"></textarea>
                     </div>
                     <div class="profile__body--element">
-                        <label class="profile__body--label" for="birthday">Birthday:</label>
+                        <label class="profile__body--label" for="birthday">{{ __('profile.Birthday') }}:</label>
                         <input class="profile__body--input profile__body--birthday" type="date" id="birthday" name="birthday" wire:model="user.birthday" />
                     </div>
                 </form>
                 <div class="profile__container--footer">
-                    <button class="profile__footer--element" wire:click="store">Guardar</button>
+                    <button class="profile__footer--element" wire:click="store">{{ __('profile.Save') }}</button>
                 </div>
             </div>
             <div class="profile__modal--close" wire:click="$set('profileModal', false)"></div>

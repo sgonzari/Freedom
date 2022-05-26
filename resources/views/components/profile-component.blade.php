@@ -1,6 +1,6 @@
 <div>
     @if (is_null($user))
-        <h1>La cuenta no existe</h1>
+        <h1>{{ __('profile.This account doesnt exist') }}</h1>
     @else
         @livewire('profile-info', ['user' => $user, 'option' => $option])
 
@@ -13,7 +13,7 @@
                 @livewire('post-component', ['post' => $post], key($post->id_post))
             @endforeach
         @else
-            <h1>No tiene posts</h1>
+            <h1>{{ __('profile.This account hasnt post') }}</h1>
         @endif
     @endif
 </div>

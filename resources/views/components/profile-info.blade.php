@@ -1,7 +1,7 @@
 <div class="profile">
     <div class="profile__header">
         <div class="profile__header--image">
-            <img class="profile__image" src="http://localhost/freedom/public/storage/{{ $user->profile_image }}" />
+            <img class="profile__image" src="http://localhost/freedom/public/storage/{{ $user->profile_image }}" alt="{{ __('image.Profiles image') }}" />
         </div>
         <div class="profile__header--text">
             <div class="profile__text--name">
@@ -41,8 +41,8 @@
         </div>
     </div>
     <div class="profile__footer">
-        <a class="profile__footer--element @if ($option == 'posts') active @endif" href="{{ route('profile', $user->username) }}">Posts</a>
-        <a class="profile__footer--element @if ($option == 'reposts') active @endif" href="{{ route('profile-reposts', ['username' => $user->username]) }}">Reposts</a>
-        <a class="profile__footer--element @if ($option == 'likes') active @endif" href="{{ route('profile-likes', ['username' => $user->username]) }}">Likes</a>
+        <a class="profile__footer--element @if ($option == 'posts') active @endif" href="{{ route('profile', $user->username) }}">{{ __('profile.Posts') }}</a>
+        <a class="profile__footer--element @if ($option == 'reposts') active @endif" href="{{ route('profile-reposts', ['username' => $user->username]) }}">{{ __('profile.Reposts') }}</a>
+        <a class="profile__footer--element @if ($option == 'likes') active @endif" href="{{ route('profile-likes', ['username' => $user->username]) }}">{{ __('profile.Likes') }}</a>
     </div>
 </div>
