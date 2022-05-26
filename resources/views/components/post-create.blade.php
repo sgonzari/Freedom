@@ -2,14 +2,14 @@
     <form class="main__input--form" wire:submit.prevent="store">
         <div class="main__form">
             <div class="main__form--image">
-                <img class="form__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Image profile"/>
+                <img class="form__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="{{ __('image.Profiles image') }}"/>
             </div>
             <div class="main__form--container">
                 <textarea class="main__container--input" name="content" id="content" placeholder="{{ __('home.Whats happening?') }}" wire:model="content"></textarea>
                 @if ($image)
                     <div class="main__container--image">
                         <span class="main__icon material-symbols-rounded" wire:click="$set('image', null)"> close </span>
-                        <img class="main__image" src="{{ $image->temporaryUrl() }}" alt="Imagen subida">
+                        <img class="main__image" src="{{ $image->temporaryUrl() }}" alt="{{ __('image.Uploaded image') }}">
                     </div>
                 @endif
             </div>

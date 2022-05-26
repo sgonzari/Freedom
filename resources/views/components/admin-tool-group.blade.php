@@ -7,7 +7,7 @@
             <div class="admin__group--main">
                 <div class="admin__main--profile">
                     <a class="admin__profile--image" href="{{ route('profile', $user->username) }}" target="_blank">
-                        <img class="admin__image" src="http://localhost/freedom/public/storage/{{ $user->profile_image }}" alt="Profile Image" />
+                        <img class="admin__image" src="http://localhost/freedom/public/storage/{{ $user->profile_image }}" alt="{{ __('image.Profiles image') }}" />
                     </a>
                     <div class="admin__profile--text">
                         <a class="admin__text--name" href="{{ route('profile', $user->username) }}" target="_blank">{{ $user->name }}</a>

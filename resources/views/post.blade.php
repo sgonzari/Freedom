@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-slot name="title">{{ __('Post') }}</x-slot>
+    <x-slot name="title">{{ __('post.Post') }}</x-slot>
     <x-slot name="header">
         <a class="main__header--back" href="{{ route('home') }}">
             <svg class="main__header--icon" viewBox="0 0 24 24" aria-hidden="true" class="r-18jsvk2 r-4qtqp9 r-yyyyoo r-z80fyv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03">
@@ -9,7 +9,7 @@
                 </g>
             </svg>
         </a>
-        <h2 class="main__header--title">{{ __('Post') }}</h2>
+        <h2 class="main__header--title">{{ __('post.Post') }}</h2>
     </x-slot>
 
     <livewire:post-view :post="$post" :user="$user"/>

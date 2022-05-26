@@ -9,7 +9,7 @@
                 </div>
                 <div class="warning__modal--body">
                     <a class="warning__container--profile" href="{{ route('profile', $warning->reportedBy()->first()->username) }}" target="_blank">
-                        <img class="warning__image" src="http://localhost/freedom/public/storage/{{ $warning->reportedBy()->first()->profile_image }}" alt="Profile Image" />
+                        <img class="warning__image" src="http://localhost/freedom/public/storage/{{ $warning->reportedBy()->first()->profile_image }}" alt="{{ __('image.Profiles image') }}" />
                     </a>
                     <div class="warning__container--main">
                         <div class="warning__container--header">

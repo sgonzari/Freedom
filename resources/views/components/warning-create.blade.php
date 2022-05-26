@@ -13,7 +13,7 @@
                         <div class="warning__list--element">
                             <div class="warning__element--container">
                                 <a class="warning__container--profile" href="{{ route('profile', $warning->reportedBy()->first()->username) }}" target="_blank">
-                                    <img class="warning__image" src="http://localhost/freedom/public/storage/{{ $warning->reportedBy()->first()->profile_image }}" alt="Profile Image" />
+                                    <img class="warning__image" src="http://localhost/freedom/public/storage/{{ $warning->reportedBy()->first()->profile_image }}" alt="{{ __('image.Profiles image') }}" />
                                 </a>
                                 <div class="warning__container--main">
                                     <div class="warning__container--header">
@@ -38,7 +38,7 @@
                 @if ($user->warnings()->count() < 3)
                     <form class="warning__form" wire:submit.prevent="storeWarning">
                         <div class="warning__form--image">
-                            <img class="warning__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Profile Image"/>
+                            <img class="warning__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="{{ __('image.Profiles image') }}"/>
                         </div>
                         <input class="warning__form--input" placeholder="{{ __('admin.Write your warning') }}" name="message" wire:model="message" type="text" autofocus/>
                     </form>

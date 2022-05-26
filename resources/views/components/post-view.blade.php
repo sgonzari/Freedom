@@ -4,7 +4,7 @@
             @if (!$fromPost->trashed())
                 @livewire('post-component', ['post' => $fromPost], key($fromPost->id_post))
             @else
-                Este post fue eliminado.
+                <h1>{{ __('post.Post deleted') }}</h1>
             @endif
         @endforeach
     </div>
@@ -13,7 +13,7 @@
         <div class="comment" id="comment">
             <div class="comment__profile">
                 <a href="{{ route('profile', ['username' => $post->user()->first()->username]) }}" class="comment__profile--image">
-                    <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="Imagen de perfil" class="comment__image">
+                    <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="{{ __('image.Profiles image') }}" class="comment__image">
                 </a>
                 <a href="{{ route('profile', ['username' => $post->user()->first()->username]) }}" class="comment__profile--info">
                     <h2 class="comment__info--name">{{ $user->name }}</h2>
@@ -28,7 +28,7 @@
                     </div>
                     @if (!is_null($post->image))
                         <div class="comment__body--image">
-                            <img class="comment__image" src="http://localhost/freedom/public/storage/{{ $post->image }}" alt="Imagen del post">
+                            <img class="comment__image" src="http://localhost/freedom/public/storage/{{ $post->image }}" alt="{{ __('image.Posts image') }}">
                         </div>
                     @endif
                 </div>
@@ -45,14 +45,14 @@
             <form class="comment__create--form" wire:submit.prevent="store">
                 <div class="comment__form--body">
                     <a class="comment__body--image" href="{{ route('profile', ['username' => Auth::user()->username]) }}">
-                        <img src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Imagen de perfil" class="comment__image" />
+                        <img src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="{{ __('image.Profiles image') }}" class="comment__image" />
                     </a>
                     <div class="comment__body--container">
-                        <textarea class="comment__container--input" name="commentText" id="commentText" placeholder="What's happening?" wire:model="commentText"></textarea>                    
+                        <textarea class="comment__container--input" name="commentText" id="commentText" placeholder="{{ __('post.Whats happening?') }}" wire:model="commentText"></textarea>                    
                         @if ($commentImage)
                             <div class="comment__container--image">
                                 <span class="container__icon material-symbols-rounded" wire:click="$set('commentImage', null)"> close </span>
-                                <img class="container__image" src="{{ $commentImage->temporaryUrl() }}" alt="Imagen subida">
+                                <img class="container__image" src="{{ $commentImage->temporaryUrl() }}" alt="{{ __('image.Uploaded image') }}">
                             </div>
                         @endif
                     </div>
@@ -67,7 +67,7 @@
                             <p>{{ $message }}</p>
                         @enderror
                     </div>
-                    <button class="comment__footer--submit @if ((!$commentText) AND (!$commentImage)) disabled @endif" type="submit" @if ((!$commentText) AND (!$commentImage)) disabled @endif>Reply</button>
+                    <button class="comment__footer--submit @if ((!$commentText) AND (!$commentImage)) disabled @endif" type="submit" @if ((!$commentText) AND (!$commentImage)) disabled @endif>{{ __('post.Reply') }}</button>
                 </div>
             </form>
         </div>
@@ -78,6 +78,6 @@
             @endforeach
         </div>
     @else
-        Este post fue eliminado.
+        <h1>{{ __('post.Post deleted') }}</h1>        
     @endif
 </div>

@@ -13,7 +13,7 @@
                     @endif
                     <div class="post__container">
                         <a class="post__profile" href="{{ route('profile', ['username' => $post->user()->first()->username]) }}">
-                            <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="Imagen de perfil" class="post__profile--image" />
+                            <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="{{ __('image.Profiles image') }}" class="post__profile--image" />
                         </a>
                         <div class="post__main">
                             <div class="post__main--header">
@@ -22,7 +22,6 @@
                                         <span class="post__header--name">{{ $post->user()->first()->name }}</span>
                                         <span class="post__header--username">{{ __('@') }}{{ $post->user()->first()->username }}</span>
                                     </a>
-                                    @livewire('post-modal', ['post' => $post])
                                 </div>
                             </div>
                             <div class="post__main--body">
@@ -30,7 +29,7 @@
                                     <p class="post__content--text">{{ $post->content }}</p>
                                 </a>
                                 @if (!is_null($post->image))
-                                    <div>
+                                    <div class="post__body--image">
                                         {{ $post->image }}
                                     </div>
                                 @endif
@@ -42,14 +41,14 @@
                     <form class="main__input--form" wire:submit.prevent="store">
                         <div class="main__form">
                             <div class="main__form--image">
-                                <img class="form__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Image profile"/>
+                                <img class="form__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="{{ __('image.Profiles image') }}"/>
                             </div>
                             <div class="main__form--container">
-                                <textarea class="main__container--input" name="contentComment" id="contentComment" placeholder="What's happening?" wire:model="contentComment"></textarea>
+                                <textarea class="main__container--input" name="contentComment" id="contentComment" placeholder="{{ __('post.Whats happening?') }}" wire:model="contentComment"></textarea>
                                 @if ($imageComment)
                                     <div class="main__container--image">
                                         <span class="main__icon material-symbols-rounded" wire:click="$set('imageComment', null)"> close </span>
-                                        <img class="main__image" src="{{ $imageComment->temporaryUrl() }}" alt="Imagen subida">
+                                        <img class="main__image" src="{{ $imageComment->temporaryUrl() }}" alt="{{ __('image.Uploaded image') }}">
                                     </div>
                                 @endif
                             </div>
@@ -64,7 +63,7 @@
                                     <p>{{ $message }}</p>
                                 @enderror
                             </div>
-                            <button class="main__button--submit @if ((!$contentComment) AND (!$imageComment)) disabled @endif" type="submit" @if ((!$contentComment) AND (!$imageComment)) disabled @endif >Postear</button>
+                            <button class="main__button--submit @if ((!$contentComment) AND (!$imageComment)) disabled @endif" type="submit" @if ((!$contentComment) AND (!$imageComment)) disabled @endif >{{ __('post.Post') }}</button>
                         </div>
                     </form>
                 </div>

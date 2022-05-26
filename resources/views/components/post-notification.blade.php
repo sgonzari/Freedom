@@ -20,7 +20,7 @@
                 <div class="notification__main">
                     <div class="notification__main--header">
                         <a class="notification__header--image" href="{{ route('profile', ['username' => $notification->user()->first()->username]) }}">
-                            <img class="notification__image" src="http://localhost/freedom/public/storage/{{ $notification->user()->first()->profile_image }}" alt="Imagen de perfil"/>
+                            <img class="notification__image" src="http://localhost/freedom/public/storage/{{ $notification->user()->first()->profile_image }}" alt="{{ __('image.Profiles image') }}"/>
                         </a>
                         <div class="notification__header--text">
                             <h3 class="notification__text">

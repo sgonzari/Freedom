@@ -7,7 +7,7 @@
             <div class="admin__repost--main">
                 <div class="admin__main--profile">
                     <a class="admin__profile--image" href="{{ route('profile', $report->user()->first()->username) }}" target="_blank">
-                        <img class="admin__image" src="http://localhost/freedom/public/storage/{{ $report->user()->first()->profile_image }}" alt="Profile Image" />
+                        <img class="admin__image" src="http://localhost/freedom/public/storage/{{ $report->user()->first()->profile_image }}" alt="{{ __('image.Profiles image') }}" />
                     </a>
                     <div class="admin__profile--text">
                         <a class="admin__text--name" href="{{ route('profile', $report->user()->first()->username) }}" target="_blank">{{ $report->user()->first()->name }}</a>

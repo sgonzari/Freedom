@@ -3,13 +3,13 @@
         @if (request()->routeIs('home'))
             @if (!is_null($post->fk_post))
             <a class="post__from" href="{{ route('post', ['username' => App\Models\Post::withTrashed()->where('id_post', $post->fk_post)->first()->user()->first()->username, 'id_post' => App\Models\Post::withTrashed()->where('id_post', $post->fk_post)->first()->id_post]) }}">
-                <span class="post__from--content">replied to {{ App\Models\Post::withTrashed()->where('id_post', $post->fk_post)->first()->user()->first()->username }}</span>
+                <span class="post__from--content">{{ __('post.replied to') }} {{ App\Models\Post::withTrashed()->where('id_post', $post->fk_post)->first()->user()->first()->username }}</span>
             </a>
             @endif
         @endif
         <div class="post__container">
             <a class="post__profile" href="{{ route('profile', ['username' => $post->user()->first()->username]) }}">
-                <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="Imagen de perfil" class="post__profile--image" />
+                <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="{{ __('image.Profiles image') }}" class="post__profile--image" />
             </a>
             <div class="post__main">
                 <div class="post__main--header">

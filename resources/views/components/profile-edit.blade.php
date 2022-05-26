@@ -23,9 +23,9 @@
                     <div class="profile__body--info">
                         <div class="profile__info--image">
                             @if ($image)
-                                <img class="profile__image" src="{{ $image->temporaryUrl() }}" alt="Imagen de perfil">
+                                <img class="profile__image" src="{{ $image->temporaryUrl() }}" alt="{{ __('image.Profiles image') }}">
                             @else
-                                <img class="profile__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="Imagen de perfil">
+                                <img class="profile__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="{{ __('image.Profiles image') }}">
                             @endif
                             <label class="profile__image--label" for="image">
                                 <span class="profile__image--icon material-symbols-rounded">add_a_photo</span>
