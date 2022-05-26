@@ -21,6 +21,7 @@ class LanguageSelect extends Component
         if (array_key_exists($this->selectedLanguage, Config::get('languages'))) {
             Session::put('applocale', $this->selectedLanguage);
         }
+        $this->reset('interfaceLanguage') ;
         return redirect(url()->previous());
     }
 }
