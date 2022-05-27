@@ -9,11 +9,13 @@ use Livewire\Component;
 
 class AdminToolWarning extends Component
 {
+    public $query ;
+
     protected $listeners = ['render' => 'render'] ;
 
     public function render()
     {
-        $users = User::all()->sortBy('username') ;
+        $users = User::where('username', 'like', '%'. $this->query. '%')->orWhere('name', 'like', '%'. $this->query. '%')->orderBy('username')->get() ;
 
         return view('components.admin-tool-warning', compact(['users']));
     }

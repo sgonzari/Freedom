@@ -109,15 +109,44 @@ a:visited {
 .admin__tool--element {
   flex: 1;
   padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .admin__tool--element .admin__element--header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   text-align: center;
   font-size: 20px;
   font-weight: 700;
-  padding: 0 0 6px 0;
-  margin: 0 0 6px 0;
-  border-bottom: 1px solid rgb(239, 243, 244);
+  width: 80%;
+  background-color: rgb(239, 243, 244);
+  border-radius: 16px;
+  padding: 8px;
 }
+.admin__tool--element .admin__element--header .admin__header--icon {
+  color: gray;
+  margin: 0 6px 0 0;
+}
+.admin__tool--element .admin__element--header .admin__header--close {
+  cursor: pointer;
+  border-radius: 9999px;
+}
+.admin__tool--element .admin__element--header .admin__header--close:hover {
+  background-color: rgba(15, 20, 25, 0.1);
+}
+.admin__tool--element .admin__element--header .admin__header--input {
+  font-size: 14px;
+  background-color: rgb(239, 243, 244);
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.admin__tool--element .admin__element--main {
+  width: 100%;
+}
+
 .admin__tool--element .admin__group--main {
   display: flex;
   justify-content: space-between;
@@ -2618,6 +2647,13 @@ body {
 .search__main--form .search__form--icon {
   color: gray;
 }
+.search__main--form .search__form--close {
+  cursor: pointer;
+  border-radius: 9999px;
+}
+.search__main--form .search__form--close:hover {
+  background-color: rgba(15, 20, 25, 0.1);
+}
 .search__main--form .search__form--input {
   border: none;
   background-color: rgb(239, 243, 244);
@@ -2634,7 +2670,7 @@ body {
   position: absolute;
   box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
   width: 374px;
-  height: 216px;
+  max-height: 216px;
   overflow-y: scroll;
 }
 .search__main--results .search__results .search__result {

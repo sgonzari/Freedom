@@ -15,6 +15,14 @@
                 &--icon {
                     color: gray;
                 }
+                &--close {
+                    cursor: pointer;
+                    border-radius: 9999px;
+
+                    &:hover {
+                        background-color: $background__color;
+                    }
+                }
                 &--input {
                     border: none;
                     background-color: $border__color;
@@ -34,7 +42,7 @@
             position: absolute;
             box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
             width: 374px;
-            height: 216px;
+            max-height: 216px;
             overflow-y: scroll;
 
             .search__result {

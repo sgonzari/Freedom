@@ -17,6 +17,7 @@ return [
     'Send' => 'Send',
     'Confirmation' => 'Confirmation',
     'Delete' => 'Delete',
+    'search User' => 'search User',
     
     'Banned text' => 'Your account have been banned.',
     'Banned' => 'Banned',
@@ -25,6 +26,7 @@ return [
     'Report by' => 'Report by',
     'Uncompleted' => 'Uncompleted',
     'Completed' => 'Completed',
+    'search Reports' => 'search Reports',
 
     'Stat' => 'Statistic',
     'Stats' => 'Statistics',

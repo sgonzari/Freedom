@@ -1,6 +1,10 @@
 <div class="admin__tool--element">
     <div class="admin__element--header">
-        <h1>{{ __('admin.Groups') }}</h1>
+        <span class="admin__header--icon material-symbols-rounded"> search </span>
+        <input class="admin__header--input" type="text" wire:model="query" placeholder="{{ __('admin.search User') }}" />
+        @if ($query)
+            <span class="admin__header--icon admin__header--close material-symbols-rounded" wire:click="$set('query', '')"> close </span>
+        @endif
     </div>
     <div class="admin__element--main">
         @foreach ($users as $user)

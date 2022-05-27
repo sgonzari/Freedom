@@ -3,6 +3,9 @@
         <form class="search__main--form" wire:submit.prevent="search">
             <span class="search__form--icon material-symbols-rounded"> search </span>
             <input class="search__form--input" type="text" placeholder="{{ __('app.search Freedom') }}" wire:model="query">
+            @if ($query)
+                <span class="search__form--icon search__form--close material-symbols-rounded" wire:click="$set('query', '')"> close </span>
+            @endif
         </form>
     </div>
     
