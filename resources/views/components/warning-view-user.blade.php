@@ -26,11 +26,13 @@
                     </div>
                 </div> 
                 @endforeach
-                <div class="banned">
-                    <h1 class="banned__text">
-                        {{ __('admin.Banned text') }}
-                    </h1>
-                </div>
+                @if (Auth::user()->warnings()->count() >= 3)
+                    <div class="banned">
+                        <h1 class="banned__text">
+                            {{ __('admin.Banned text') }}
+                        </h1>
+                    </div>
+                @endif
             </div>
             <div class="warning__container--footer">
                 <button class="warning__option--element" wire:click="warningsOpened">{{ __('app.Confirm') }}</button>
