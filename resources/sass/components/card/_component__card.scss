@@ -1,5 +1,5 @@
 .card {
-    background-color: $background__color--reverse;
+    background-color: rgba(255, 255, 255, .5);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -57,6 +57,7 @@
                             font-size: 15px;
                             padding: 12px;
                             font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                            text-align: center;
                         }
                         &--confirm {
                             color: green;

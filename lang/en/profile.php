@@ -2,7 +2,7 @@
 
 return [
     'Profile' => 'Profile',
-    'This account doesnt exit' => 'This account doesn\'t exist.',
+    'This account doesnt exist' => 'This account doesn\'t exist.',
     'This account hasnt post' => 'This account hasn\'t post.',
     'Posts' => 'Posts',
     'Reposts' => 'Reposts',

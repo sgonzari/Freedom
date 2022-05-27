@@ -151,8 +151,14 @@
                 box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
 
                 &--logout {
+                    cursor: pointer;
                     display: flex;
                     padding: 12px 16px;
+                    font-size: 16px;
+                    border: none;
+                    outline: none;
+                    width: 100%;
+                    background: none;
                     
                     &:hover {
                         background-color: $background__color;

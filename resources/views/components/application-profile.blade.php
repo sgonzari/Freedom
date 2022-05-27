@@ -7,7 +7,10 @@
                     </path>
                 </g>
             </svg>
-            <a class="header__option--logout" href="{{ route('logout') }}">{{ __('app.Log out') }} {{ __('@') }}{{ Auth::user()->username }}</a>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <input type="submit" class="header__option--logout" value="{{ __('app.Log out') }} {{ __('@') }}{{ Auth::user()->username }}" />
+            </form>
         </div>
     </div>
 

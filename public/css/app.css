@@ -851,7 +851,7 @@ body {
 }
 
 .card {
-  background-color: rgba(240, 235, 230, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -901,6 +901,7 @@ body {
   font-size: 15px;
   padding: 12px;
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 .card__main--form .card__form--element .card__element--confirm {
   color: green;
@@ -1372,8 +1373,14 @@ body {
   box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
 }
 .header__profile--options .header__option--logout {
+  cursor: pointer;
   display: flex;
   padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  width: 100%;
+  background: none;
 }
 .header__profile--options .header__option--logout:hover {
   background-color: rgba(15, 20, 25, 0.1);

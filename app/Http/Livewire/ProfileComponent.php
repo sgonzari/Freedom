@@ -19,19 +19,21 @@ class ProfileComponent extends Component
         $option = $this->option ;
         $posts = [] ;
 
-        switch ($this->option) {
-            case "posts":
-                $posts = $this->user->posts()->orderBy('created_at')->get() ;
-                break;
-            case "reposts":
-                $posts = $this->user->reposts()->get() ;
-                break;
-            case "likes":
-                $posts = $this->user->likes()->get() ;
-                break;
-            default:
-                $posts = [] ;
-                break;
+        if ($user) {
+            switch ($this->option) {
+                case "posts":
+                    $posts = $this->user->posts()->orderBy('created_at')->get() ;
+                    break;
+                case "reposts":
+                    $posts = $this->user->reposts()->get() ;
+                    break;
+                case "likes":
+                    $posts = $this->user->likes()->get() ;
+                    break;
+                default:
+                    $posts = [] ;
+                    break;
+            }
         }
 
         return view('components.profile-component', compact(["posts", "user", "option"]));
