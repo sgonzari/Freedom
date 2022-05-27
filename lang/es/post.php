@@ -9,7 +9,7 @@ return [
     'Pin post' => 'Marcar post',
     'Unpin post' => 'Desmarcar post',
     'Do you want pin this post?' => '¿Desea marcar este post?',
-    'Pin Advice' => 'texto',
+    'Pin Advice' => 'Esto aparecerá en la parte superior de su perfil y reemplazará cualquier Post previamente anclado.',
     'Cancel' => 'Cancelar',
     'Pin' => 'Marcar',
 
@@ -20,7 +20,7 @@ return [
 
     'Delete post' => 'Eliminar post',
     'Do you want delete this post?' => '¿Desea eliminar este post?',
-    'Delete Advice' => 'texto',
+    'Delete Advice' => 'Esto no se puede deshacer y se eliminará de su perfil, la línea de tiempo de cualquier cuenta que lo siga y de los resultados de búsqueda de Freedom.',
     'Delete' => 'Eliminar',
 
     'replied to' => 'respondido a',
