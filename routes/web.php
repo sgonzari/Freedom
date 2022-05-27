@@ -18,7 +18,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', [AuthenticatedSessionController::class, 'create'])->middleware('guest')->name("index") ;
 
-Route::get('/home', [UserController::class, "home"])->middleware(['banned', 'auth'])->name("home") ;
+Route::view('/home', "home")->middleware(['banned', 'auth'])->name("home") ;
 Route::view('/notification', "notification")->middleware(['banned', 'auth'])->name("notification") ;
 Route::view('/bookmark', "bookmark")->middleware(['banned', 'auth'])->name("bookmark") ;
 Route::get('/{username}/post/{id_post}', [UserController::class, "post"])->middleware(['banned', 'auth'])->name("post") ;
