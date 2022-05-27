@@ -2969,14 +2969,17 @@ var HeaderNavMore = function HeaderNavMore() {
   var modal = document.getElementById("navMore");
   var modal2 = document.getElementById("navMore2");
   var btn = document.getElementById('navButton');
-  btn.addEventListener("click", function () {
-    modal.style.display = "block";
-  });
-  window.addEventListener("click", function (event) {
-    if (event.target == modal || event.target == modal2) {
-      modal.style.display = "none";
-    }
-  });
+
+  if (modal != null && modal2 != null && btn != null) {
+    btn.addEventListener("click", function () {
+      modal.style.display = "block";
+    });
+    window.addEventListener("click", function (event) {
+      if (event.target == modal || event.target == modal2) {
+        modal.style.display = "none";
+      }
+    });
+  }
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderNavMore);
@@ -2997,14 +3000,17 @@ __webpack_require__.r(__webpack_exports__);
 var HeaderProfileButton = function HeaderProfileButton() {
   var modal = document.getElementById("profileOptions");
   var btn = document.getElementById('profileButton');
-  btn.addEventListener("click", function () {
-    modal.style.display = "block";
-  });
-  window.addEventListener("click", function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  });
+
+  if (modal != null && btn != null) {
+    btn.addEventListener("click", function () {
+      modal.style.display = "block";
+    });
+    window.addEventListener("click", function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderProfileButton);
@@ -3034,6 +3040,23 @@ var ScrollToComment = function ScrollToComment() {
 
 /***/ }),
 
+/***/ "./resources/js/components/authBackgroundVideo.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/authBackgroundVideo.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var authBackgroundVideo = function authBackgroundVideo() {};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (authBackgroundVideo);
+
+/***/ }),
+
 /***/ "./resources/js/main.js":
 /*!******************************!*\
   !*** ./resources/js/main.js ***!
@@ -3045,15 +3068,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/HeaderNavMore */ "./resources/js/components/HeaderNavMore.js");
 /* harmony import */ var _components_HeaderProfileButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/HeaderProfileButton */ "./resources/js/components/HeaderProfileButton.js");
 /* harmony import */ var _components_ScrollToComment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ScrollToComment */ "./resources/js/components/ScrollToComment.js");
+/* harmony import */ var _components_authBackgroundVideo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/authBackgroundVideo */ "./resources/js/components/authBackgroundVideo.js");
+
 
 
 
 
 window.onload = function () {
+  (0,_components_authBackgroundVideo__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_components_HeaderProfileButton__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_components_ScrollToComment__WEBPACK_IMPORTED_MODULE_2__["default"])();
   document.addEventListener('turbolinks:load', function () {
+    (0,_components_authBackgroundVideo__WEBPACK_IMPORTED_MODULE_3__["default"])();
     (0,_components_HeaderProfileButton__WEBPACK_IMPORTED_MODULE_1__["default"])();
     (0,_components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__["default"])();
     (0,_components_ScrollToComment__WEBPACK_IMPORTED_MODULE_2__["default"])();

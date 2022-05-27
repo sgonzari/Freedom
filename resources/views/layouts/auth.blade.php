@@ -17,9 +17,18 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+
+        <!-- Ajax -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="auth__container">
+            <div class="auth__container--background">
+                <video id="authBackgroundVideo" class="auth__background--video" autoplay muted loop>
+                    <source src="http://localhost/Freedom/public/storage/background_video.mp4" type="video/mp4" />
+                    {{ __('auth.problem Video') }}
+                </video>
+            </div>
             {{ $slot }}
         </div>
         
