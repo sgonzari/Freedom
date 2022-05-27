@@ -5,7 +5,7 @@
     </button>
     @else
     <button class="post__modal--element post__modal--pin" wire:click="$set('interfaceUnpin', true)">
-        <span class=" post__modal--icon material-symbols-rounded"> unpin </span> {{ __('post.Unpin post') }}
+        <span class=" post__modal--icon material-symbols-rounded"> clear </span> {{ __('post.Unpin post') }}
     </button>
     @endif
 
