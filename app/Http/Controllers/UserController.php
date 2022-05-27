@@ -8,8 +8,14 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function home () {
-        return view("home") ;
+    public function post (string $username, int $id_post) {
+        $user = User::where('username', $username)->withTrashed()->first() ;
+        $post = $user->posts()->withTrashed()->find($id_post) ;
+
+        return view("post", [
+            "user" => $user,
+            "post" => $post
+        ]) ;
     }
 
     public function profile (string $username) {
@@ -37,13 +43,5 @@ class UserController extends Controller
         ]) ;
     }
 
-    public function post (string $username, int $id_post) {
-        $user = User::where('username', $username)->withTrashed()->first() ;
-        $post = $user->posts()->withTrashed()->find($id_post) ;
-
-        return view("post", [
-            "user" => $user,
-            "post" => $post
-        ]) ;
-    }
+    
 }

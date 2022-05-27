@@ -9,6 +9,8 @@ use Livewire\Component;
 
 class AdminTools extends Component
 {
+    public $option = "report" ;
+
     public function render()
     {
         $users = User::all() ;

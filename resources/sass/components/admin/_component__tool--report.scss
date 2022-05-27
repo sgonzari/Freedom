@@ -13,7 +13,7 @@
                 &--profile{
                     display: flex;
                     align-items: center;
-                    width: 200px;
+                    width: 20%;
                     margin: 0 12px 0 0;
 
                     .admin__profile {
@@ -37,6 +37,11 @@
                             }
                         }
                         &--text {
+                            display: flex;
+                            align-items: flex-start;
+                            justify-content: center;
+                            flex-direction: column;
+                            
                             .admin__text {
 
                                 &--name {

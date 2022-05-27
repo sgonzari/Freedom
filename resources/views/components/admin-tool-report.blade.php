@@ -1,4 +1,4 @@
-<div class="admin__tool--element admin__tool--report">
+<div class="admin__tool--element">
     <div class="admin__element--header">
         <h1>{{ __('admin.Reports') }}</h1>
     </div>

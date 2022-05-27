@@ -24,5 +24,9 @@ return [
     'Reports' => 'Reports',
     'Report by' => 'Report by',
     'Uncompleted' => 'Uncompleted',
-    'Completed' => 'Completed'
+    'Completed' => 'Completed',
+
+    'Stat' => 'Statistic',
+    'Stats' => 'Statistics',
+
 ];
