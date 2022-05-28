@@ -50,5 +50,6 @@ class HomeComponent extends Component
 
     public function incrementLoadAmount () {
         $this->loadAmount += 10 ;
+        $this->emit('paginateHome') ;
     }
 }

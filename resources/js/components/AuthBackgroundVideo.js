@@ -1,5 +1,6 @@
 const authBackgroundVideo = () => {
-    if (video = document.getElementById("authBackgroundVideo")) {
+    var video = document.getElementById("authBackgroundVideo");
+    if (video != null) {
         video.play();
     }
 }
