@@ -85,6 +85,17 @@
                         outline: none;
                         width: 100%;
                     }
+                    &--select {
+                        font-size: 17px;
+                        background-color: $border__color;
+                        border: none;
+                        outline: none;
+                        height: 100%;
+                        width: 100%;
+                        cursor: pointer;
+                        text-align: center;
+                        font-weight: 600;
+                    }
                 }
             }
             &--main {

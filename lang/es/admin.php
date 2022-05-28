@@ -30,4 +30,7 @@ return [
 
     'Stat' => 'Estadística',
     'Stats' => 'Estadísticas',
+    'select Option' => 'Seleccione una opción',
+    'users' => 'Usuarios',
+    'posts' => 'Posts'
 ];

@@ -3107,6 +3107,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ScrollToComment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ScrollToComment */ "./resources/js/components/ScrollToComment.js");
 /* harmony import */ var _components_authBackgroundVideo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/authBackgroundVideo */ "./resources/js/components/authBackgroundVideo.js");
 /* harmony import */ var _components_LikeClickSound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/LikeClickSound */ "./resources/js/components/LikeClickSound.js");
+/* harmony import */ var _components_GraphsStatisticsLoader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/GraphsStatisticsLoader */ "./resources/js/components/GraphsStatisticsLoader");
+
 
 
 
@@ -3124,10 +3126,14 @@ var components = function components() {
 window.onload = function () {
   components();
   document.addEventListener('turbolinks:load', function () {
+    console.log('turbolinks');
     components();
   });
   Livewire.on('paginateHome', function () {
     (0,_components_LikeClickSound__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  });
+  Livewire.on('graphLoader', function (props) {
+    (0,_components_GraphsStatisticsLoader__WEBPACK_IMPORTED_MODULE_5__["default"])(props);
   });
 };
 
@@ -3162,6 +3168,25 @@ Copyright © 2018 Basecamp, LLC
 		(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
 		__WEBPACK_AMD_DEFINE_FACTORY__),
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))}).call(this);
+
+/***/ }),
+
+/***/ "./resources/js/components/GraphsStatisticsLoader":
+/*!********************************************************!*\
+  !*** ./resources/js/components/GraphsStatisticsLoader ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const GraphsStatisticsLoader = props => {
+    console.log(props);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GraphsStatisticsLoader);
 
 /***/ })
 

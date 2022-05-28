@@ -146,6 +146,17 @@ a:visited {
   outline: none;
   width: 100%;
 }
+.admin__tool--element .admin__element--header .admin__header--select {
+  font-size: 17px;
+  background-color: rgb(239, 243, 244);
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+}
 .admin__tool--element .admin__element--main {
   width: 100%;
 }

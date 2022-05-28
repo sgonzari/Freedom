@@ -20,6 +20,9 @@
 
         <!-- Ajax -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Canvas JS -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
         @if (Auth::user()->warnings()->where('opened', false)->count() > 0)

@@ -24,6 +24,9 @@
             @case('warning')
                 @livewire('admin-tool-warning')
                 @break
+            @case('stat')
+                @livewire('admin-tool-statistic')
+                @break
         @endswitch
     </div>
 </div>
