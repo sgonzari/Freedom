@@ -10,6 +10,7 @@ class AdminToolStatistic extends Component
 {
     public $optionSelected ;
     public $options = ['users', 'posts'] ;
+    public $year ;
 
     public function render()
     {
@@ -17,12 +18,14 @@ class AdminToolStatistic extends Component
     }
 
     public function updatedOptionSelected () {
+        $year = ($this->year) ? $this->year : date("Y") ;
+
         switch ($this->optionSelected) {
             case 'users':
-                $info = User::all() ;
+                $info = ['type' => 'User', 'data' => User::whereYear('created_at', $year)->get()] ;
                 break;
             case 'posts':
-                $info = Post::all() ;
+                $info = ['type' => 'Post', 'data' => Post::whereYear('created_at', $year)->get()] ;
                 break;
             default:
                 $info = [] ;

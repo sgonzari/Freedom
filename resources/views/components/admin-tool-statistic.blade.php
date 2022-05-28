@@ -10,7 +10,7 @@
     </div>
     <div class="admin__element--main">
         <div class="admin__statistic--main">
-            <div id="canvasStatistic" class="admin__statistic--canvas"></div>
+            <canvas id="canvasStatistic" class="admin__statistic--canvas"></canvas>
         </div>
     </div>
 </div>
