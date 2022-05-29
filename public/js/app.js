@@ -2979,16 +2979,19 @@ var GraphsStatisticsLoader = function GraphsStatisticsLoader(props) {
    */
 
 
-  var data = _.groupBy(props.data, function (prop) {
-    var propMonth = new Date(prop.created_at).getMonth();
-    return propMonth;
-  });
+  var data = [];
+  Object.entries(props).forEach(function (key) {
+    data[key[0]] = new Array(_.groupBy(key[1]['data'], function (prop) {
+      var propMonth = new Date(prop.created_at).getMonth();
+      return propMonth;
+    }));
+  }); // console.log(data);
+
   /**
    * Devuelve la longitud mas larga del array de objeto.
    * @param data 
    * @returns integer
    */
-
 
   var getHigherData = function getHigherData(data) {
     var counter = 0;
@@ -3002,27 +3005,38 @@ var GraphsStatisticsLoader = function GraphsStatisticsLoader(props) {
     return counter;
   };
 
-  var maxStadistic = getHigherData(data);
+  var maxStadistic = [];
+  Object.entries(data).forEach(function (element) {
+    maxStadistic[element[0]] = getHigherData(element[1][0]);
+  }); // console.log(maxStadistic);
+
   /**
    * Almaceno en un array los arrays del objeto por orden y por %.
    */
 
   var stadistic = [];
+  Object.entries(data).forEach(function (key) {
+    stadistic[key[0]] = [];
 
-  for (var i = 0; i <= 11; i++) {
-    stadistic.push(data[i] !== undefined ? data[i].length * 100 / maxStadistic : 0);
-  } // CANVAS
-
+    for (var i = 0; i <= 11; i++) {
+      stadistic[key[0]].push(key[1][0][i] ? key[1][0][i].length * 100 / maxStadistic[key[0]] : 0);
+    }
+  }); // console.log(stadistic);
+  // CANVAS
 
   var labels = ['January', 'February', 'March', 'April', 'May', 'June', 'Jule', 'August', 'September', 'Octuber', 'November', 'December'];
+  var datasets = [];
+  Object.entries(props).forEach(function (key) {
+    datasets.push({
+      label: key[0],
+      backgroundColor: key[1]['color'],
+      borderColor: key[1]['color'],
+      data: stadistic[key[0]]
+    });
+  });
   var dataCanvas = {
     labels: labels,
-    datasets: [{
-      label: props.type + '\'s Creation',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: stadistic
-    }]
+    datasets: datasets
   };
   var config = {
     type: 'line',
@@ -3208,7 +3222,6 @@ var components = function components() {
 window.onload = function () {
   components();
   document.addEventListener('turbolinks:load', function () {
-    console.log('turbolinks');
     components();
   });
   Livewire.on('paginateHome', function () {

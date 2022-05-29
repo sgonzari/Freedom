@@ -17,7 +17,6 @@ window.onload = () => {
     components();
     
     document.addEventListener('turbolinks:load', () => {
-        console.log('turbolinks');
         components();
     });
 

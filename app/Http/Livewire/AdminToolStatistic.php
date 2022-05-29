@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Notification;
 use App\Models\User;
 use App\Models\Post;
+use App\Models\Warning;
 use Livewire\Component;
 
 class AdminToolStatistic extends Component
@@ -22,10 +24,12 @@ class AdminToolStatistic extends Component
 
         switch ($this->optionSelected) {
             case 'users':
-                $info = ['type' => 'User', 'data' => User::whereYear('created_at', $year)->get()] ;
+                $info = [   'users' => ['data' => User::whereYear('created_at', $year)->get(), 'color' => '#ff0000'], 
+                            'notificatons' => ['data' => Notification::whereYear('created_at', $year)->get(), 'color' => '#00ff00'], 
+                            'warnings' => ['data' => Notification::whereYear('created_at', $year)->get(), 'color' => '#0000ff']] ;
                 break;
             case 'posts':
-                $info = ['type' => 'Post', 'data' => Post::whereYear('created_at', $year)->get()] ;
+                $info = [ 'posts' => ['data' => Post::whereYear('created_at', $year)->get(), 'color' => '#ff0000']] ;
                 break;
             default:
                 $info = [] ;
