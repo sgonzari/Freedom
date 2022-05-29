@@ -2954,6 +2954,88 @@ Turbolinks.start();
 
 /***/ }),
 
+/***/ "./resources/js/components/GraphsStatisticsLoader.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/GraphsStatisticsLoader.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var chart;
+
+var GraphsStatisticsLoader = function GraphsStatisticsLoader(props) {
+  var ctx = document.getElementById('canvasStatistic').getContext('2d');
+
+  if (chart) {
+    chart.destroy();
+  }
+  /**
+   * Recoge en una variable un objeto de arrays ordenado
+   * por los meses del años.
+   */
+
+
+  var data = _.groupBy(props.data, function (prop) {
+    var propMonth = new Date(prop.created_at).getMonth();
+    return propMonth;
+  });
+  /**
+   * Devuelve la longitud mas larga del array de objeto.
+   * @param data 
+   * @returns integer
+   */
+
+
+  var getHigherData = function getHigherData(data) {
+    var counter = 0;
+
+    for (var property in data) {
+      if (data.hasOwnProperty(property)) {
+        counter = data[property].length > counter ? data[property].length : counter;
+      }
+    }
+
+    return counter;
+  };
+
+  var maxStadistic = getHigherData(data);
+  /**
+   * Almaceno en un array los arrays del objeto por orden y por %.
+   */
+
+  var stadistic = [];
+
+  for (var i = 0; i <= 11; i++) {
+    stadistic.push(data[i] !== undefined ? data[i].length * 100 / maxStadistic : 0);
+  } // CANVAS
+
+
+  var labels = ['January', 'February', 'March', 'April', 'May', 'June', 'Jule', 'August', 'September', 'Octuber', 'November', 'December'];
+  var dataCanvas = {
+    labels: labels,
+    datasets: [{
+      label: props.type + '\'s Creation',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: stadistic
+    }]
+  };
+  var config = {
+    type: 'line',
+    data: dataCanvas,
+    options: {}
+  };
+  chart = new Chart(ctx, config);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GraphsStatisticsLoader);
+
+/***/ }),
+
 /***/ "./resources/js/components/HeaderNavMore.js":
 /*!**************************************************!*\
   !*** ./resources/js/components/HeaderNavMore.js ***!
@@ -3107,7 +3189,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ScrollToComment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ScrollToComment */ "./resources/js/components/ScrollToComment.js");
 /* harmony import */ var _components_authBackgroundVideo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/authBackgroundVideo */ "./resources/js/components/authBackgroundVideo.js");
 /* harmony import */ var _components_LikeClickSound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/LikeClickSound */ "./resources/js/components/LikeClickSound.js");
-/* harmony import */ var _components_GraphsStatisticsLoader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/GraphsStatisticsLoader */ "./resources/js/components/GraphsStatisticsLoader");
+/* harmony import */ var _components_GraphsStatisticsLoader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/GraphsStatisticsLoader */ "./resources/js/components/GraphsStatisticsLoader.js");
 
 
 
@@ -3168,100 +3250,6 @@ Copyright © 2018 Basecamp, LLC
 		(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
 		__WEBPACK_AMD_DEFINE_FACTORY__),
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))}).call(this);
-
-/***/ }),
-
-/***/ "./resources/js/components/GraphsStatisticsLoader":
-/*!********************************************************!*\
-  !*** ./resources/js/components/GraphsStatisticsLoader ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-let chart;
-
-const GraphsStatisticsLoader = props => {
-    const ctx = document.getElementById('canvasStatistic').getContext('2d');
-
-    if (chart) {
-        chart.destroy();
-    }
-
-    /**
-     * Recoge en una variable un objeto de arrays ordenado
-     * por los meses del años.
-     */
-    const data = _.groupBy(props.data, prop => {
-        var propMonth = new Date(prop.created_at).getMonth();
-
-        return propMonth;
-    });
-
-    /**
-     * Devuelve la longitud mas larga del array de objeto.
-     * @param data 
-     * @returns integer
-     */
-    const getHigherData = data => {
-        var counter = 0;
-        for (let property in data) {
-            if (data.hasOwnProperty(property)) {
-                counter = data[property].length > counter ? data[property].length : counter
-            }
-        }
-        return counter
-    };
-    const maxStadistic = getHigherData(data);
-
-    /**
-     * Almaceno en un array los arrays del objeto por orden y por %.
-     */
-    const stadistic = [];
-    for (let i = 0; i <= 11; i++) {
-        stadistic.push((data[i] !== undefined) ? (data[i].length * 100) / maxStadistic : 0);
-    }
-
-    // CANVAS
-    const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'Jule',
-        'August',
-        'September',
-        'Octuber',
-        'November',
-        'December',
-    ];
-    const dataCanvas = {
-        labels: labels,
-        datasets: [{
-            label: props.type + '\'s Creation',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: stadistic,
-        }]
-    };
-    const config = {
-        type: 'line',
-        data: dataCanvas,
-        options: {}
-    };
-
-    chart = new Chart(
-        ctx,
-        config
-    );
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GraphsStatisticsLoader);
 
 /***/ })
 
