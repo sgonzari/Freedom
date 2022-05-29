@@ -85,7 +85,7 @@ a:visited {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid gray;
+  border: 1px solid rgb(239, 243, 244);
 }
 .admin__tool--nav .admin__nav--text {
   font-size: 18px;
