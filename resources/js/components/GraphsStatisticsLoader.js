@@ -1,17 +1,33 @@
+/* VARIABLES */
 let chart;
+const data = [];
+const maxStadistic = [];
+const stadistic = [];
+const labels = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'Jule',
+    'August',
+    'September',
+    'Octuber',
+    'November',
+    'December',
+];
+const datasets = [];
 
-const GraphsStatisticsLoader = props => {
-    const ctx = document.getElementById('canvasStatistic').getContext('2d');
 
+/* FUNCTIONS */
+const deleteChartIfExists = () => {
     if (chart) {
         chart.destroy();
     }
+};
 
-    /**
-     * Recoge en una variable un objeto de arrays ordenado
-     * por los meses del años.
-     */
-    const data = [];
+const orderValuesByMonths = props => {
     Object.entries(props).forEach(key => {
         data[key[0]] = new Array(_.groupBy(key[1]['data'], prop => {
             var propMonth = new Date(prop.created_at).getMonth();
@@ -19,58 +35,35 @@ const GraphsStatisticsLoader = props => {
             return propMonth;
         }));
     });
-    // console.log(data);
+};
 
-    /**
-     * Devuelve la longitud mas larga del array de objeto.
-     * @param data 
-     * @returns integer
-     */
-    const getHigherData = data => {
-        var counter = 0;
-        for (let property in data) {
-            if (data.hasOwnProperty(property)) {
-                counter = data[property].length > counter ? data[property].length : counter
-            }
-        }
-        return counter
-    };
-    const maxStadistic = [];
+const getMaxValueInMonths = () => {
     Object.entries(data).forEach(element => {
         maxStadistic[element[0]] = getHigherData(element[1][0])
     });
-    // console.log(maxStadistic);
+};
 
-    /**
-     * Almaceno en un array los arrays del objeto por orden y por %.
-     */
-    const stadistic = [];
+const orderValesInAllMonths = () => {
     Object.entries(data).forEach(key => {
         stadistic[key[0]] = [];
         for (let i = 0 ; i <= 11 ; i++) {
             stadistic[key[0]].push((key[1][0][i]) ? (key[1][0][i].length * 100) / maxStadistic[key[0]] : 0);
         }
     });
-    // console.log(stadistic);
+};
 
-    // CANVAS
-    const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'Jule',
-        'August',
-        'September',
-        'Octuber',
-        'November',
-        'December',
-    ];
-    const datasets = [];
+ const getHigherData = data => {
+    var counter = 0;
+    for (let property in data) {
+        if (data.hasOwnProperty(property)) {
+            counter = data[property].length > counter ? data[property].length : counter
+        }
+    }
+    return counter
+};
+
+const getValuesToDatasets = props => {
     Object.entries(props).forEach(key => {
-
         datasets.push({
             label: key[0],
             backgroundColor: key[1]['color'],
@@ -78,7 +71,9 @@ const GraphsStatisticsLoader = props => {
             data: stadistic[key[0]],
         });
     });
+};
 
+const printChart = ctx => {
     const dataCanvas = {
         labels: labels,
         datasets: datasets
@@ -93,6 +88,25 @@ const GraphsStatisticsLoader = props => {
         ctx,
         config
     );
+};
+
+
+/* MAIN */
+const GraphsStatisticsLoader = props => {
+    const ctx = document.getElementById('canvasStatistic').getContext('2d');
+
+    deleteChartIfExists();
+
+    orderValuesByMonths(props);
+
+    getMaxValueInMonths();
+
+    orderValesInAllMonths();
+
+    // Canvas
+    getValuesToDatasets(props);
+
+    printChart(ctx);
 }
 
 export default GraphsStatisticsLoader;

@@ -2965,67 +2965,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* VARIABLES */
 var chart;
+var data = [];
+var maxStadistic = [];
+var stadistic = [];
+var labels = ['January', 'February', 'March', 'April', 'May', 'June', 'Jule', 'August', 'September', 'Octuber', 'November', 'December'];
+var datasets = [];
+/* FUNCTIONS */
 
-var GraphsStatisticsLoader = function GraphsStatisticsLoader(props) {
-  var ctx = document.getElementById('canvasStatistic').getContext('2d');
-
+var deleteChartIfExists = function deleteChartIfExists() {
   if (chart) {
     chart.destroy();
   }
-  /**
-   * Recoge en una variable un objeto de arrays ordenado
-   * por los meses del años.
-   */
+};
 
-
-  var data = [];
+var orderValuesByMonths = function orderValuesByMonths(props) {
   Object.entries(props).forEach(function (key) {
     data[key[0]] = new Array(_.groupBy(key[1]['data'], function (prop) {
       var propMonth = new Date(prop.created_at).getMonth();
       return propMonth;
     }));
-  }); // console.log(data);
+  });
+};
 
-  /**
-   * Devuelve la longitud mas larga del array de objeto.
-   * @param data 
-   * @returns integer
-   */
-
-  var getHigherData = function getHigherData(data) {
-    var counter = 0;
-
-    for (var property in data) {
-      if (data.hasOwnProperty(property)) {
-        counter = data[property].length > counter ? data[property].length : counter;
-      }
-    }
-
-    return counter;
-  };
-
-  var maxStadistic = [];
+var getMaxValueInMonths = function getMaxValueInMonths() {
   Object.entries(data).forEach(function (element) {
     maxStadistic[element[0]] = getHigherData(element[1][0]);
-  }); // console.log(maxStadistic);
+  });
+};
 
-  /**
-   * Almaceno en un array los arrays del objeto por orden y por %.
-   */
-
-  var stadistic = [];
+var orderValesInAllMonths = function orderValesInAllMonths() {
   Object.entries(data).forEach(function (key) {
     stadistic[key[0]] = [];
 
     for (var i = 0; i <= 11; i++) {
       stadistic[key[0]].push(key[1][0][i] ? key[1][0][i].length * 100 / maxStadistic[key[0]] : 0);
     }
-  }); // console.log(stadistic);
-  // CANVAS
+  });
+};
 
-  var labels = ['January', 'February', 'March', 'April', 'May', 'June', 'Jule', 'August', 'September', 'Octuber', 'November', 'December'];
-  var datasets = [];
+var getHigherData = function getHigherData(data) {
+  var counter = 0;
+
+  for (var property in data) {
+    if (data.hasOwnProperty(property)) {
+      counter = data[property].length > counter ? data[property].length : counter;
+    }
+  }
+
+  return counter;
+};
+
+var getValuesToDatasets = function getValuesToDatasets(props) {
   Object.entries(props).forEach(function (key) {
     datasets.push({
       label: key[0],
@@ -3034,6 +3026,9 @@ var GraphsStatisticsLoader = function GraphsStatisticsLoader(props) {
       data: stadistic[key[0]]
     });
   });
+};
+
+var printChart = function printChart(ctx) {
   var dataCanvas = {
     labels: labels,
     datasets: datasets
@@ -3044,6 +3039,19 @@ var GraphsStatisticsLoader = function GraphsStatisticsLoader(props) {
     options: {}
   };
   chart = new Chart(ctx, config);
+};
+/* MAIN */
+
+
+var GraphsStatisticsLoader = function GraphsStatisticsLoader(props) {
+  var ctx = document.getElementById('canvasStatistic').getContext('2d');
+  deleteChartIfExists();
+  orderValuesByMonths(props);
+  getMaxValueInMonths();
+  orderValesInAllMonths(); // Canvas
+
+  getValuesToDatasets(props);
+  printChart(ctx);
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GraphsStatisticsLoader);
