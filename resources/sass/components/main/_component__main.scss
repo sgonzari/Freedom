@@ -1,9 +1,10 @@
 .main {
-    flex: 0.5;
     border-right: 1px solid $border__color;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    max-width: 600px;
+    flex: 1;
 
     &::-webkit-scrollbar {
         display: none;
@@ -161,5 +162,11 @@
     }
     &--admin {
         flex: 1;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+        
     }
 }

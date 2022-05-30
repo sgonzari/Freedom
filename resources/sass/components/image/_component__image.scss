@@ -40,16 +40,40 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
+                    position: relative;
                     
                     .image__left {
+                        &--icon {
+                            user-select: none;
+                            cursor: pointer;
+                            position: absolute;
+                            font-size: 26px;
+                            top: 12px;
+                            left: 12px;
+                            color: white;
+                            background-color: rgba(38, 32, 33, 0.75);
+                            padding: 6px;
+                            border-radius: 9999px;
+                            backdrop-filter: blur(4px);
+                            transition: background-color .5s;
+                            z-index: 5;
+
+                            &:hover {
+                                background-color: rgba(60, 54, 55, 0.75);
+                            }
+                        }
                         &--image {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
                             z-index: 4;
                             align-self: center;
                             height: 100%;
                             overflow: hidden;
 
                             .image__image {
-                                height: 100%;
+                                max-height: 100%;
+                                max-width: 100%;
                             }
                         }
                         &--options {
@@ -67,7 +91,7 @@
                             }
                         }
                         &--close {
-                            background-color: rgba(0, 0, 0, .8);
+                            background-color: rgba(0, 0, 0, .9);
                             cursor: auto;
                             position: fixed;
                             height: 100%;
@@ -86,6 +110,14 @@
                     overflow-y: scroll;
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 949px) {
+    .image__container {
+        &--right {
+            display: none;
         }
     }
 }

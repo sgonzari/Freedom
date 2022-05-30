@@ -7,5 +7,10 @@ body {
     height: 100vh;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 10px;
+}
+
+@media only screen and (max-width: 1298px) {
+    .body__app {
+        justify-content: center;
+    }
 }

@@ -7,6 +7,7 @@
         <div class="image__interface">
             <div class="image__interface--container">
                 <div class="image__container--left">
+                    <span class="image__left--icon material-symbols-rounded" wire:click="$set('interfaceImage', false)"> close </span>
                     <div class="image__left--image">
                         <img class="image__image" src="http://localhost/freedom/public/storage/{{ $post->image }}" alt="{{ __('image.Posts image') }}">
                     </div>

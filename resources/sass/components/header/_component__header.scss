@@ -3,10 +3,9 @@
     flex-direction: column;
     justify-content: space-between;
     border-right: 1px solid $border__color;
-    flex: 0.2;
-    min-width: 250px;
-    padding: 20px;
+    padding: 0 12px;
     user-select: none;
+    min-width: 275px;
 
     &__top {
         display: flex;
@@ -179,7 +178,7 @@
             align-items: center;
             cursor: pointer;
             display: flex;
-            padding: 12px;
+            padding: 10px;
             border-radius: 9999px;
 
             .header__profile {
@@ -229,5 +228,34 @@
 
     &--banned {
         justify-content: flex-end;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        &__top {
+            align-items: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 1298px) {
+    .nav__element--text {
+        display: none;
+    }
+    .header {
+        min-width: 69px;
+        
+        &__top {
+            align-items: flex-end;
+        }
+        &__profile {
+            &--info {
+                display: none;
+            }
+            &--option {
+                display: none;
+            }
+        }
     }
 }
