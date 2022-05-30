@@ -33,7 +33,11 @@ return [
     'Email' => 'Email',
     'email' => 'email@domain.com',
     'Confirm Email' => 'Confirm Email',
+    'Invalid Email' => 'Email invalid.',
+    'Differents Emails' => 'Emails do not match.',
+    'Weak Password' => 'Your password is weak.',
     'Confirm Password' => 'Confirm Password',
+    'Differents Passwords' => 'Passwords do not match.',
     'Back' => 'Back',
 
     'Forgot Password Text' => 'Write your email account to send you a reset password link.',

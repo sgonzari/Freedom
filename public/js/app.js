@@ -3175,6 +3175,161 @@ var ScrollToComment = function ScrollToComment() {
 
 /***/ }),
 
+/***/ "./resources/js/components/ValidationData.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/ValidationData.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* VARIABLES */
+var regexEmail = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+var regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+/* FUNCTIONS */
+
+var validateEmail = function validateEmail(email) {
+  email.addEventListener('focusout', function () {
+    if (email.value) {
+      if (!regexEmail.test(email.value)) {
+        email.classList.add('card__element--invalidValidate');
+        document.getElementById('invalidEmail').style.display = 'block';
+      } else {
+        email.classList.remove('card__element--invalidValidate');
+        document.getElementById('invalidEmail').style.display = 'none';
+      }
+    } else {
+      email.classList.remove('card__element--invalidValidate');
+      document.getElementById('invalidEmail').style.display = 'none';
+    }
+  });
+};
+
+var validateConfirmEmail = function validateConfirmEmail(email) {
+  email.addEventListener('focusout', function () {
+    if (email.value) {
+      if (!regexEmail.test(email.value)) {
+        email.classList.add('card__element--invalidValidate');
+        document.getElementById('invalidConfirmEmail').style.display = 'block';
+      } else {
+        email.classList.remove('card__element--invalidValidate');
+        document.getElementById('invalidConfirmEmail').style.display = 'none';
+      }
+    } else {
+      email.classList.remove('card__element--invalidValidate');
+      document.getElementById('invalidConfirmEmail').style.display = 'none';
+    }
+  });
+};
+
+var comprobationEmail = function comprobationEmail(email, confirmEmail) {
+  if (email.value && confirmEmail.value) {
+    if (email.value != confirmEmail.value) {
+      email.classList.add('card__element--invalidComprobation');
+      confirmEmail.classList.add('card__element--invalidComprobation');
+      document.getElementById('notSameEmails').style.display = 'block';
+    } else {
+      email.classList.remove('card__element--invalidComprobation');
+      confirmEmail.classList.remove('card__element--invalidComprobation');
+      document.getElementById('notSameEmails').style.display = 'none';
+    }
+  } else {
+    email.classList.remove('card__element--invalidComprobation');
+    confirmEmail.classList.remove('card__element--invalidComprobation');
+    document.getElementById('notSameEmails').style.display = 'none';
+  }
+};
+
+var validateEmails = function validateEmails(email, confirmEmail) {
+  email.addEventListener('focusout', function () {
+    comprobationEmail(email, confirmEmail);
+  });
+  confirmEmail.addEventListener('focusout', function () {
+    comprobationEmail(email, confirmEmail);
+  });
+};
+
+var validatePassword = function validatePassword(password) {
+  password.addEventListener('focusout', function () {
+    if (password.value) {
+      if (!regexPassword.test(password.value)) {
+        password.classList.add('card__element--invalidValidate');
+        document.getElementById('weakPassword').style.display = 'block';
+      } else {
+        password.classList.remove('card__element--invalidValidate');
+        document.getElementById('weakPassword').style.display = 'none';
+      }
+    } else {
+      password.classList.remove('card__element--invalidValidate');
+      document.getElementById('weakPassword').style.display = 'none';
+    }
+  });
+};
+
+var validateConfirmPassword = function validateConfirmPassword(password) {
+  password.addEventListener('focusout', function () {
+    if (password.value) {
+      if (!regexPassword.test(password.value)) {
+        password.classList.add('card__element--invalidValidate');
+        document.getElementById('weakConfirmPassword').style.display = 'block';
+      } else {
+        password.classList.remove('card__element--invalidValidate');
+        document.getElementById('weakConfirmPassword').style.display = 'none';
+      }
+    } else {
+      password.classList.remove('card__element--invalidValidate');
+      document.getElementById('weakConfirmPassword').style.display = 'none';
+    }
+  });
+};
+
+var comprobationPassword = function comprobationPassword(password, confirmPassword) {
+  if (password.value && confirmPassword.value) {
+    if (password.value != confirmPassword.value) {
+      password.classList.add('card__element--invalidComprobation');
+      confirmPassword.classList.add('card__element--invalidComprobation');
+      document.getElementById('notSamePasswords').style.display = 'block';
+    } else {
+      password.classList.remove('card__element--invalidComprobation');
+      confirmPassword.classList.remove('card__element--invalidComprobation');
+      document.getElementById('notSamePasswords').style.display = 'none';
+    }
+  } else {
+    password.classList.remove('card__element--invalidComprobation');
+    confirmPassword.classList.remove('card__element--invalidComprobation');
+    document.getElementById('notSamePasswords').style.display = 'none';
+  }
+};
+
+var validatePasswords = function validatePasswords(password, confirmPassword) {
+  password.addEventListener('focusout', function () {
+    comprobationPassword(password, confirmPassword);
+  });
+  confirmPassword.addEventListener('focusout', function () {
+    comprobationPassword(password, confirmPassword);
+  });
+};
+/* MAIN */
+
+
+var ValidationData = function ValidationData() {
+  if (document.getElementById('authRegister')) {
+    validateEmail(document.getElementById('email'));
+    validateConfirmEmail(document.getElementById('email_confirmation'));
+    validateEmails(document.getElementById('email'), document.getElementById('email_confirmation'));
+    validatePassword(document.getElementById('password'));
+    validateConfirmPassword(document.getElementById('password_confirmation'));
+    validatePasswords(document.getElementById('password'), document.getElementById('password_confirmation'));
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ValidationData);
+
+/***/ }),
+
 /***/ "./resources/js/components/authBackgroundVideo.js":
 /*!********************************************************!*\
   !*** ./resources/js/components/authBackgroundVideo.js ***!
@@ -3212,6 +3367,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_authBackgroundVideo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/authBackgroundVideo */ "./resources/js/components/authBackgroundVideo.js");
 /* harmony import */ var _components_LikeClickSound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/LikeClickSound */ "./resources/js/components/LikeClickSound.js");
 /* harmony import */ var _components_GraphsStatisticsLoader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/GraphsStatisticsLoader */ "./resources/js/components/GraphsStatisticsLoader.js");
+/* harmony import */ var _components_ValidationData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ValidationData */ "./resources/js/components/ValidationData.js");
+
 
 
 
@@ -3225,6 +3382,7 @@ var components = function components() {
   (0,_components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_components_ScrollToComment__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_components_LikeClickSound__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,_components_ValidationData__WEBPACK_IMPORTED_MODULE_6__["default"])();
 };
 
 window.onload = function () {

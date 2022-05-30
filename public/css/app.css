@@ -917,10 +917,24 @@ body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   text-align: center;
 }
+.card__main--form .card__form--element .card__element--invalidValidate {
+  color: red;
+}
+.card__main--form .card__form--element .card__element--invalidComprobation {
+  color: red;
+}
 .card__main--form .card__form--element .card__element--confirm {
   color: green;
   font-size: 15px;
   font-weight: 700;
+}
+.card__main--form .card__form--element .card__element--error {
+  display: none;
+  margin: 6px 0 0 0;
+  color: red;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
 }
 .card__main--form .card__form--buttons {
   color: black;

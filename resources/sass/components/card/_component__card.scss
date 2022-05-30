@@ -59,10 +59,26 @@
                             font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
                             text-align: center;
                         }
+                        &--invalid {
+                            &Validate {
+                                color: red;
+                            }
+                            &Comprobation {
+                                color: red;
+                            }
+                        }
                         &--confirm {
                             color: green;
                             font-size: 15px;
                             font-weight: 700;
+                        }
+                        &--error {
+                            display: none;
+                            margin: 6px 0 0 0;
+                            color: red;
+                            font-weight: 700;
+                            text-align: center;
+                            width: 100%;
                         }
                     }
                 }

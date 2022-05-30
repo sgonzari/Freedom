@@ -4,6 +4,7 @@ import ScrollToComment from './components/ScrollToComment';
 import authBackgroundVideo from './components/authBackgroundVideo';
 import LikeClickSound from './components/LikeClickSound';
 import GraphsStatisticsLoader from './components/GraphsStatisticsLoader';
+import ValidationData from './components/ValidationData';
 
 const components = () => {
     authBackgroundVideo();
@@ -11,6 +12,7 @@ const components = () => {
     HeaderNavMore();
     ScrollToComment();
     LikeClickSound();
+    ValidationData();
 };
 
 window.onload = () => {

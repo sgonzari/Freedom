@@ -32,8 +32,13 @@ return [
     'Email' => 'Email',
     'email' => 'email@dominio.es',
     'Confirm Email' => 'Confirmar Email',
+    'Invalid Email' => 'Email no válido.',
+    'Differents Emails' => 'Los emails no coinciden.',
+    'Weak Password' => 'Tu contraseña es poco segura.',
     'Confirm Password' => 'Confirmar Contraseña',
+    'Differents Passwords' => 'Las contraseñas no coinciden.',
     'Back' => 'Volver',
+
 
     'Forgot Password Text' => 'Escribe tu email para resetear tu contraseña.',
     'Confirm Forgot Password Sent' => 'Email enviado correctamente.',
