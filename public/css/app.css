@@ -1184,6 +1184,17 @@ body {
   height: 666px;
 }
 
+.empty {
+  width: 100%;
+  padding: 12px 16px;
+  box-sizing: border-box;
+}
+.empty__text {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
 .follow {
   display: flex;
   align-items: center;

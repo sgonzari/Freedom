@@ -1,5 +1,5 @@
 <div>
-    @if (!empty($notifications))
+    @if ($notifications->count() > 0)
         @foreach ($notifications as $notification)
         <div class="notification">
                 @if ($notification->fk_typeNot != 5)
@@ -63,6 +63,8 @@
             </div>
         @endforeach
     @else
-        <h1 class="notification--not">No tienes notificaciones.</h1>
+        <div class="empty">
+            <h1 class="empty__text">{{ __('notification.You havent notification') }}</h1>
+        </div>
     @endif
 </div>

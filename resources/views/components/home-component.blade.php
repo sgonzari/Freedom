@@ -1,5 +1,5 @@
 <div class="main__container--posts">
-    @if (!empty($posts))
+    @if ($posts->count() > 0)
         @foreach ($posts as $post)
             @livewire('post-component', ['post' => $post], key($post->id_post))
         @endforeach
@@ -23,6 +23,8 @@
             x-init="checkScroll"
         ></div>
     @else
-        <h1>{{ __('home.There isnt post') }}</h1>
+        <div class="empty">
+            <h1 class="empty__text">{{ __('home.There isnt post') }}</h1>
+        </div>
     @endif
 </div>

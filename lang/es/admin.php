@@ -27,6 +27,7 @@ return [
     'Uncompleted' => 'No Completado',
     'Completed' => 'Completado',
     'search Reports' => 'Buscar un reporte',
+    'There isnt report' => 'No hay más reportes.',
 
     'Stat' => 'Estadística',
     'Stats' => 'Estadísticas',

@@ -1,6 +1,8 @@
 <div>
     @if (is_null($user))
-        <h1>{{ __('profile.This account doesnt exist') }}</h1>
+        <div class="empty">
+            <h1 class="empty__text">{{ __('profile.This account doesnt exist') }}</h1>
+        </div>
     @else
         @livewire('profile-info', ['user' => $user, 'option' => $option])
 
@@ -8,12 +10,14 @@
             @livewire('profile-pin', ['user' => $user])
         @endif
 
-        @if (!empty($posts))
+        @if ($posts->count() > 0)
             @foreach ($posts as $post)
                 @livewire('post-component', ['post' => $post], key($post->id_post))
             @endforeach
         @else
-            <h1>{{ __('profile.This account hasnt post') }}</h1>
+        <div class="empty">
+            <h1 class="empty__text">{{ __('profile.This account hasnt post') }}</h1>
+        </div>
         @endif
     @endif
 </div>

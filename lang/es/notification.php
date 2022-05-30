@@ -6,5 +6,6 @@ return [
     'reposted your post' => 'reposteó tu post',
     'comment your post' => 'comentó en tu post',
     'mentions you' => 'te ha mencionado',
-    'starting follow you' => 'te siguió'
+    'starting follow you' => 'te siguió',
+    'You havent notification' => 'No tienes notificaciones.',
 ];

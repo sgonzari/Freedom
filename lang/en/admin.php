@@ -27,6 +27,7 @@ return [
     'Uncompleted' => 'Uncompleted',
     'Completed' => 'Completed',
     'search Reports' => 'search Reports',
+    'There isnt report' => 'There isn\'t report.',
 
     'Stat' => 'Statistic',
     'Stats' => 'Statistics',
