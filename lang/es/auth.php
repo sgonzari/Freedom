@@ -31,6 +31,7 @@ return [
     'Birthday' => 'Cumpleaños',
     'Email' => 'Email',
     'email' => 'email@dominio.es',
+    'Invalid Username' => 'Usuario no válido.',
     'Confirm Email' => 'Confirmar Email',
     'Invalid Email' => 'Email no válido.',
     'Differents Emails' => 'Los emails no coinciden.',

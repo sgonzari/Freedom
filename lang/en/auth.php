@@ -32,6 +32,7 @@ return [
     'Birthday' => 'Birthday',
     'Email' => 'Email',
     'email' => 'email@domain.com',
+    'Invalid Username' => 'Username invalid.',
     'Confirm Email' => 'Confirm Email',
     'Invalid Email' => 'Email invalid.',
     'Differents Emails' => 'Emails do not match.',

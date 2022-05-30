@@ -12,6 +12,7 @@
             <div class="card__form--element">
                 <label class="card__element--label" for="username">*{{ __('auth.Username') }}: </label>
                 <input class="card__element--input" id="username" name="username" type="text" placeholder="{{ __('auth.username') }}" required />
+                <span id="invalidUsername" class="card__element--error">{{ __('auth.Invalid Username') }}</span>
             </div>
             <div class="card__form--element">
                 <label class="card__element--label" for="birthday">{{ __('auth.Birthday') }}: </label>

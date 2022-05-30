@@ -3187,9 +3187,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* VARIABLES */
+var regexUsername = /^[a-z0-9]+$/;
 var regexEmail = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 var regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 /* FUNCTIONS */
+
+var validateUsername = function validateUsername(username) {
+  username.addEventListener('focusout', function () {
+    if (username.value) {
+      if (!regexUsername.test(username.value)) {
+        username.classList.add('card__element--invalidValidate');
+        document.getElementById('invalidUsername').style.display = 'block';
+      } else {
+        username.classList.remove('card__element--invalidValidate');
+        document.getElementById('invalidUsername').style.display = 'none';
+      }
+    } else {
+      username.classList.remove('card__element--invalidValidate');
+      document.getElementById('invalidUsername').style.display = 'none';
+    }
+  });
+};
 
 var validateEmail = function validateEmail(email) {
   email.addEventListener('focusout', function () {
@@ -3317,6 +3335,7 @@ var validatePasswords = function validatePasswords(password, confirmPassword) {
 
 var ValidationData = function ValidationData() {
   if (document.getElementById('authRegister')) {
+    validateUsername(document.getElementById('username'));
     validateEmail(document.getElementById('email'));
     validateConfirmEmail(document.getElementById('email_confirmation'));
     validateEmails(document.getElementById('email'), document.getElementById('email_confirmation'));
