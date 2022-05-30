@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     border-right: 1px solid $border__color;
-    padding: 0 12px;
+    padding: 0 12px 12px 12px;
     user-select: none;
     min-width: 275px;
 
@@ -141,7 +141,7 @@
 
             .header__option {
                 bottom: 86px;
-                left: 323px;
+                left: 306.5px;
                 position: absolute;
                 width: 250px;
                 padding: 12px 0;
