@@ -1688,9 +1688,13 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 9999px;
+  transition: 0.1s;
 }
 .main__container--input .main__input--form .main__form--image .form__image {
   height: 48px;
+}
+.main__container--input .main__input--form .main__form--image:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .main__container--input .main__input--form .main__form--container {
   flex: 1;

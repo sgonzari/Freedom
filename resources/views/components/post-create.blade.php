@@ -1,9 +1,9 @@
 <div class="main__container--input">
     <form class="main__input--form" wire:submit.prevent="store">
         <div class="main__form">
-            <div class="main__form--image">
+            <a class="main__form--image" href="{{ route('profile', ['username' => Auth::user()->username]) }}">
                 <img class="form__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="{{ __('image.Profiles image') }}"/>
-            </div>
+            </a>
             <div class="main__form--container">
                 <textarea class="main__container--input" name="content" id="content" placeholder="{{ __('home.Whats happening?') }}" wire:model="content"></textarea>
                 @if ($image)
