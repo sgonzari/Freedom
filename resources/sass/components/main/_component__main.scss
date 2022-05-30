@@ -161,12 +161,6 @@
         }
     }
     &--admin {
-        flex: 1;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .main {
-        
+        max-width: 100%;
     }
 }
