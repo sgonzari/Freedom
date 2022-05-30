@@ -6,7 +6,7 @@ const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$
 
 /* FUNCTIONS */
 const validateUsername = username => {
-    username.addEventListener('focusout', () => {
+    username.addEventListener('change', () => {
         if (username.value) {
             if (!regexUsername.test(username.value)) {
                 username.classList.add('invalid');

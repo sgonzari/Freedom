@@ -2387,7 +2387,7 @@ body {
 }
 .profile__modal--main .profile__modal--container .profile__container--body .profile__body--info {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin: 0 0 16px 0;
 }
 .profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--image {
@@ -2428,43 +2428,35 @@ body {
 .profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--image:hover .profile__image--icon {
   display: block;
 }
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--up {
+  margin: 0 0 20px 0;
+}
 .profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text {
   flex: 1;
   text-align: left;
-}
-.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--name {
-  border: 1px solid rgb(207, 217, 222);
-  margin: 12px 0;
-  border-radius: 6px;
-}
-.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--name .profile__name--input {
-  border: none;
-  border-radius: 6px;
-  outline: none;
-  font-weight: 700;
-  font-size: 24px;
-  width: 100%;
 }
 .profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--username {
   display: flex;
   align-items: center;
   border: 1px solid rgb(207, 217, 222);
-  margin: 12px 0;
   border-radius: 6px;
+  padding: 12px 16px;
 }
 .profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--username .profile__username--label {
   font-weight: 600;
   color: gray;
-  font-size: 20px;
+  font-size: 15px;
 }
 .profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--username .profile__username--input {
+  padding: 0;
   border: none;
   border-radius: 6px;
   outline: none;
   font-weight: 600;
   color: gray;
-  font-size: 20px;
+  font-size: 15px;
   width: 100%;
+  box-sizing: border-box;
 }
 .profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--username .invalid {
   color: red;
@@ -2477,32 +2469,30 @@ body {
   text-align: center;
   width: 100%;
 }
-.profile__modal--main .profile__modal--container .profile__container--body .profile__body--element {
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--element {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
 }
-.profile__modal--main .profile__modal--container .profile__container--body .profile__body--element .profile__body--label {
-  margin: 0 0 6px 0;
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--element .profile__body--label {
+  margin: 0 0 3px 0;
   font-weight: 700;
   font-size: 15px;
 }
-.profile__modal--main .profile__modal--container .profile__container--body .profile__body--element .profile__body--input {
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--element .profile__body--input {
   resize: none;
   align-self: center;
-  width: 75%;
+  width: 100%;
   border: 1px solid rgb(207, 217, 222);
   outline: none;
   border-radius: 6px;
   font-size: 15px;
   padding: 12px 16px;
+  box-sizing: border-box;
 }
-.profile__modal--main .profile__modal--container .profile__container--body .profile__body--element .profile__body--birthday {
-  width: 25%;
-}
-.profile__modal--main .profile__modal--container .profile__container--body .profile__body--element:nth-last-child(1) {
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--element:nth-last-child(1) {
   margin: 0;
 }
 .profile__modal--main .profile__modal--container .profile__container--footer {

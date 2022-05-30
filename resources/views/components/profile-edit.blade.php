@@ -33,23 +33,28 @@
                             <input class="profile__image--input" type="file" id="image" name="image" wire:model="image" />
                         </div>
                         <div class="profile__info--text">
-                            <div class="profile__text--name">
-                                <input class="profile__name--input" id="name" name="name" wire:model="user.name" />
+                            <div class="profile__info--up">
+                                <div class="profile__text--element">
+                                    <label class="profile__body--label" for="name">{{ __('profile.Name') }}:</label>
+                                    <input class="profile__body--input" id="name" name="name" wire:model="user.name" />
+                                </div>
+                                <div class="profile__text--username">
+                                    <label class="profile__username--label" for="username">{{ __('@') }}</label>
+                                    <input class="profile__username--input" id="username" name="username" value="{{ $user->username }}" wire:model="user.username" />
+                                </div>
+                                <span id="invalidUsername" class="profile__text--error">{{ __('auth.Invalid Username') }}</span>
                             </div>
-                            <div class="profile__text--username">
-                                <label class="profile__username--label" for="username">{{ __('@') }}</label>
-                                <input class="profile__username--input" id="username" name="username" value="{{ $user->username }}" wire:model="user.username" />
+                            <div class="profile__info--down">
+                                <div class="profile__text--element">
+                                    <label class="profile__body--label" for="description">{{ __('profile.Description') }}:</label>
+                                    <textarea class="profile__body--input" id="description" name="description" wire:model="user.description"></textarea>
+                                </div>
+                                <div class="profile__text--element">
+                                    <label class="profile__body--label" for="birthday">{{ __('profile.Birthday') }}:</label>
+                                    <input class="profile__body--input" type="date" id="birthday" name="birthday" wire:model="user.birthday" />
+                                </div>
                             </div>
-                            <span id="invalidUsername" class="profile__text--error">{{ __('auth.Invalid Username') }}</span>
                         </div>
-                    </div>
-                    <div class="profile__body--element">
-                        <label class="profile__body--label" for="description">{{ __('profile.Description') }}:</label>
-                        <textarea class="profile__body--input" id="description" name="description" wire:model="user.description"></textarea>
-                    </div>
-                    <div class="profile__body--element">
-                        <label class="profile__body--label" for="birthday">{{ __('profile.Birthday') }}:</label>
-                        <input class="profile__body--input profile__body--birthday" type="date" id="birthday" name="birthday" wire:model="user.birthday" />
                     </div>
                 </form>
                 <div class="profile__container--footer">
