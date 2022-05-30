@@ -9,14 +9,14 @@ const validateUsername = username => {
     username.addEventListener('focusout', () => {
         if (username.value) {
             if (!regexUsername.test(username.value)) {
-                username.classList.add('card__element--invalidValidate');
+                username.classList.add('invalid');
                 document.getElementById('invalidUsername').style.display = 'block';
             } else {
-                username.classList.remove('card__element--invalidValidate');
+                username.classList.remove('invalid');
                 document.getElementById('invalidUsername').style.display = 'none';
             }
         } else {
-            username.classList.remove('card__element--invalidValidate');
+            username.classList.remove('invalid');
             document.getElementById('invalidUsername').style.display = 'none';
         }
     });
@@ -26,14 +26,14 @@ const validateEmail = email => {
     email.addEventListener('focusout', () => {
         if (email.value) {
             if (!regexEmail.test(email.value)) {
-                email.classList.add('card__element--invalidValidate');
+                email.classList.add('invalid');
                 document.getElementById('invalidEmail').style.display = 'block';
             } else {
-                email.classList.remove('card__element--invalidValidate');
+                email.classList.remove('invalid');
                 document.getElementById('invalidEmail').style.display = 'none';
             }
         } else {
-            email.classList.remove('card__element--invalidValidate');
+            email.classList.remove('invalid');
             document.getElementById('invalidEmail').style.display = 'none';
         }
     });
@@ -42,14 +42,14 @@ const validateConfirmEmail = email => {
     email.addEventListener('focusout', () => {
         if (email.value) {
             if (!regexEmail.test(email.value)) {
-                email.classList.add('card__element--invalidValidate');
+                email.classList.add('invalid');
                 document.getElementById('invalidConfirmEmail').style.display = 'block';
             } else {
-                email.classList.remove('card__element--invalidValidate');
+                email.classList.remove('invalid');
                 document.getElementById('invalidConfirmEmail').style.display = 'none';
             }
         } else {
-            email.classList.remove('card__element--invalidValidate');
+            email.classList.remove('invalid');
             document.getElementById('invalidConfirmEmail').style.display = 'none';
         }
     });
@@ -57,12 +57,12 @@ const validateConfirmEmail = email => {
 const comprobationEmail = (email, confirmEmail) => {
     if ((email.value) && (confirmEmail.value)) {
         if (email.value != confirmEmail.value) {
-            email.classList.add('card__element--invalidComprobation');
-            confirmEmail.classList.add('card__element--invalidComprobation');
+            email.classList.add('invalid');
+            confirmEmail.classList.add('invalid');
             document.getElementById('notSameEmails').style.display = 'block';
         } else {
-            email.classList.remove('card__element--invalidComprobation');
-            confirmEmail.classList.remove('card__element--invalidComprobation');
+            email.classList.remove('invalid');
+            confirmEmail.classList.remove('invalid');
             document.getElementById('notSameEmails').style.display = 'none';
         }
     } else {
@@ -84,14 +84,14 @@ const validatePassword = password => {
     password.addEventListener('focusout', () => {
         if (password.value) {
             if (!regexPassword.test(password.value)) {
-                password.classList.add('card__element--invalidValidate');
+                password.classList.add('invalid');
                 document.getElementById('weakPassword').style.display = 'block';
             } else {
-                password.classList.remove('card__element--invalidValidate');
+                password.classList.remove('invalid');
                 document.getElementById('weakPassword').style.display = 'none';
             }
         } else {
-            password.classList.remove('card__element--invalidValidate');
+            password.classList.remove('invalid');
             document.getElementById('weakPassword').style.display = 'none';
         }
     });
@@ -100,14 +100,14 @@ const validateConfirmPassword = password => {
     password.addEventListener('focusout', () => {
         if (password.value) {
             if (!regexPassword.test(password.value)) {
-                password.classList.add('card__element--invalidValidate');
+                password.classList.add('invalid');
                 document.getElementById('weakConfirmPassword').style.display = 'block';
             } else {
-                password.classList.remove('card__element--invalidValidate');
+                password.classList.remove('invalid');
                 document.getElementById('weakConfirmPassword').style.display = 'none';
             }
         } else {
-            password.classList.remove('card__element--invalidValidate');
+            password.classList.remove('invalid');
             document.getElementById('weakConfirmPassword').style.display = 'none';
         }
     });
@@ -115,17 +115,17 @@ const validateConfirmPassword = password => {
 const comprobationPassword = (password, confirmPassword) => {
     if ((password.value) && (confirmPassword.value)) {
         if (password.value != confirmPassword.value) {
-            password.classList.add('card__element--invalidComprobation');
-            confirmPassword.classList.add('card__element--invalidComprobation');
+            password.classList.add('invalid');
+            confirmPassword.classList.add('invalid');
             document.getElementById('notSamePasswords').style.display = 'block';
         } else {
-            password.classList.remove('card__element--invalidComprobation');
-            confirmPassword.classList.remove('card__element--invalidComprobation');
+            password.classList.remove('invalid');
+            confirmPassword.classList.remove('invalid');
             document.getElementById('notSamePasswords').style.display = 'none';
         }
     } else {
-        password.classList.remove('card__element--invalidComprobation');
-        confirmPassword.classList.remove('card__element--invalidComprobation');
+        password.classList.remove('invalid');
+        confirmPassword.classList.remove('invalid');
         document.getElementById('notSamePasswords').style.display = 'none';
     }
 };
@@ -150,6 +150,10 @@ const ValidationData = () => {
         validatePassword(document.getElementById('password'));
         validateConfirmPassword(document.getElementById('password_confirmation'));
         validatePasswords(document.getElementById('password'), document.getElementById('password_confirmation'));
+    }
+
+    if(document.getElementById('profileEdit')) {
+        validateUsername(document.getElementById('username'));
     }
 };
 

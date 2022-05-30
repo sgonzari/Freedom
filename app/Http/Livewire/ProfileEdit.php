@@ -32,6 +32,11 @@ class ProfileEdit extends Component
         return view('components.profile-edit');
     }
 
+    public function showProfileModal () {
+        $this->profileModal = 'true' ;
+        $this->emit('validateProfileEdit') ;
+    }
+
     public function store () {
         if ($this->image) $this->user->profile_image = $this->image->store('users') ;
 

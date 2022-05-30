@@ -58,12 +58,8 @@
                             padding: 12px;
                             font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
                             text-align: center;
-                        }
-                        &--invalid {
-                            &Validate {
-                                color: red;
-                            }
-                            &Comprobation {
+
+                            &.invalid {
                                 color: red;
                             }
                         }

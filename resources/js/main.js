@@ -26,6 +26,10 @@ window.onload = () => {
         LikeClickSound();
     });
 
+    Livewire.on('validateProfileEdit', () => {
+        ValidationData();
+    });
+
     Livewire.on('graphLoader', props => {
         GraphsStatisticsLoader(props);
     });

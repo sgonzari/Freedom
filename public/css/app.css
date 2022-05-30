@@ -917,10 +917,7 @@ body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   text-align: center;
 }
-.card__main--form .card__form--element .card__element--invalidValidate {
-  color: red;
-}
-.card__main--form .card__form--element .card__element--invalidComprobation {
+.card__main--form .card__form--element .card__element--input.invalid {
   color: red;
 }
 .card__main--form .card__form--element .card__element--confirm {
@@ -2446,6 +2443,7 @@ body {
   outline: none;
   font-weight: 700;
   font-size: 24px;
+  width: 100%;
 }
 .profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--username {
   display: flex;
@@ -2466,6 +2464,18 @@ body {
   font-weight: 600;
   color: gray;
   font-size: 20px;
+  width: 100%;
+}
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--username .invalid {
+  color: red;
+}
+.profile__modal--main .profile__modal--container .profile__container--body .profile__body--info .profile__info--text .profile__text--error {
+  display: none;
+  margin: 6px 0 0 0;
+  color: red;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
 }
 .profile__modal--main .profile__modal--container .profile__container--body .profile__body--element {
   display: flex;

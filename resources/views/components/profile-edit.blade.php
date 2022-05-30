@@ -1,8 +1,8 @@
 <div class="profile__modal">
-    <button class="profile__button--element" wire:click="$set('profileModal', true)">{{ __('profile.Edit profile') }}</button>
+    <button class="profile__button--element" wire:click="showProfileModal">{{ __('profile.Edit profile') }}</button>
 
     @if ($profileModal)
-        <div class="profile__modal--main">
+        <div id="profileEdit" class="profile__modal--main">
             <div class="profile__modal--container">
                 <div class="profile__container--header">
                     <div class="profile__header--back" wire:click="$set('profileModal', false)">
@@ -38,8 +38,9 @@
                             </div>
                             <div class="profile__text--username">
                                 <label class="profile__username--label" for="username">{{ __('@') }}</label>
-                                <input class="profile__username--input" id="username" name="username" wire:model="user.username" />
+                                <input class="profile__username--input" id="username" name="username" value="{{ $user->username }}" wire:model="user.username" />
                             </div>
+                            <span id="invalidUsername" class="profile__text--error">{{ __('auth.Invalid Username') }}</span>
                         </div>
                     </div>
                     <div class="profile__body--element">
