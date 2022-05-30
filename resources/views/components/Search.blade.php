@@ -9,7 +9,7 @@
         </form>
     </div>
     
-    @if (!empty($query))
+    @if ((!empty($query)) AND ($results->count() > 0))
         <div class="search__main--results">
             <div class="search__results">
                 @foreach ($results as $result) 
