@@ -16,7 +16,19 @@
             @endforeach
         @else
         <div class="empty">
-            <h1 class="empty__text">{{ __('profile.This account hasnt post') }}</h1>
+            <h1 class="empty__text">
+            @switch ($option)
+                @case('posts')
+                    {{ __('profile.This account hasnt post') }}
+                    @break
+                @case('reposts')
+                    {{ __('profile.This account hasnt repost') }}
+                    @break
+                @case('likes')
+                    {{ __('profile.This account hasnt likes') }}
+                    @break
+            @endswitch
+            </h1>
         </div>
         @endif
     @endif
