@@ -33,5 +33,7 @@ return [
     'Stats' => 'Statistics',
     'select Option' => 'select an Option',
     'users' => 'Users',
-    'posts' => 'Posts'
+    'posts' => 'Posts',
+    'users Statistics' => 'User\'s Statistics',
+    'posts Statistics' => 'Post\'s Statistics',
 ];

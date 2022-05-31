@@ -1,0 +1,13 @@
+.admin__statistic {
+    &--main {
+
+        .admin__statistic {
+            &--title {
+                font-weight: 700;
+                font-size: 24px;
+                text-align: center;
+                margin: 0 0 16px 0;
+            }
+        }
+    }
+}

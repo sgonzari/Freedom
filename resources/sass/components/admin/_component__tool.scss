@@ -52,6 +52,31 @@
         align-items: center;
 
         .admin__element {
+            &--container {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 100%;
+            }
+            &--button {
+                background: none;
+                border: none;
+                border-radius: 9999px;
+                outline: none;
+                cursor: pointer;
+
+                .admin__button {
+                    &--icon {
+                        padding: 8px;
+                        border-radius: 9999px;
+
+                        &:hover {
+                            background-color: $background__color--hover;
+                        }
+                    }
+                }
+
+            }
             &--header {
                 display: flex;
                 align-items: center;
