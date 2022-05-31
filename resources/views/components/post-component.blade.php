@@ -23,7 +23,7 @@
                 </div>
                 <div class="post__main--body">
                     <a class="post__body--content" href="{{ route('post', ['username' => $post->user()->first()->username, 'id_post' => $post->id_post]) }}">
-                        <p class="post__content--text">{{ $post->content }}</p>
+                        <p class="post__content--text">{!!  nl2br(e($post->content)) !!}</p>
                     </a>
                     @if (!is_null($post->image))
                         @livewire('image-component', ['post' => $post])

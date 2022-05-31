@@ -24,7 +24,7 @@
             <div class="comment__main">
                 <div class="comment__main--body">
                     <div class="comment__body--content">
-                        <p class="comment__content--text">{{ $post->content }}</p>
+                        <p class="comment__content--text">{!!  nl2br(e($post->content)) !!}</p>
                     </div>
                     @if (!is_null($post->image))
                         @livewire('image-component', ['post' => $post])

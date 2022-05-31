@@ -23,7 +23,7 @@
     </div>
     <div class="profile__main">
         <div class="profile__main--description">
-            <p class="profile__description">{{ $user->description }}</p>
+            <p class="profile__description">{!!  nl2br(e($user->description)) !!}</p>
         </div>
         <div class="profile__main--info">
             <div class="profile__info--element">

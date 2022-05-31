@@ -47,7 +47,7 @@
                     @if ($notification->fk_typeNot != 5)
                         <a href="{{ route('post', ['username' => $notification->post()->get()->first()->user()->get()->first()->username, 'id_post' => $notification->post()->get()->first()->id_post]) }}">
                             <div class="notification__main--body">
-                                <p class="notification__body--text">{{ $notification->post()->first()->content }}</p>
+                                <p class="notification__body--text">{!! nl2br(e($notification->post()->first()->content)) !!}</p>
                                 @if ($notification->post()->first()->image)
                                     @livewire('image-component', ['post' => $notification->post()->first()], key($notification->post()->first()->id_post))
                                 @endif
