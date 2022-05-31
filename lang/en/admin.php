@@ -36,4 +36,8 @@ return [
     'posts' => 'Posts',
     'users Statistics' => 'User\'s Statistics',
     'posts Statistics' => 'Post\'s Statistics',
+
+    'Bugs' => 'Bugs',
+    'search bugs' => 'search Bug',
+    'There isnt bug' => 'There isn\'t bug.'
 ];

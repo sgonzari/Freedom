@@ -1,5 +1,8 @@
 <div class="admin__tool">
     <div class="admin__tool--nav">
+    <div class="admin__nav--element @if ($option === 'bug') active @else not-active @endif" wire:click="$set('option', 'bug')">
+            <h2 class="admin__nav--text">{{ __('admin.Bugs') }}</h2>
+        </div>
         <div class="admin__nav--element @if ($option === 'report') active @else not-active @endif" wire:click="$set('option', 'report')">
             <h2 class="admin__nav--text">{{ __('admin.Reports') }}</h2>
         </div>
@@ -15,6 +18,9 @@
     </div>
     <div class="admin__tool--container">
         @switch ($option)
+            @case('bug')
+                @livewire('admin-tool-bug')
+                @break
             @case('report')
                 @livewire('admin-tool-report')
                 @break

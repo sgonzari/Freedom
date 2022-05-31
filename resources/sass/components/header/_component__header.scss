@@ -35,10 +35,10 @@
 
             .nav__element--alert {
                 position: absolute;
-                top: 15px;
-                left: 32px;
+                top: 12px;
+                left: 38px;
                 background-color: $main__color;
-                padding: 2px;
+                padding: 4px;
                 border-radius: 9999px;
                 display: flex;
                 align-items: center;
@@ -102,6 +102,7 @@
                     background: none;
                     border: none;
                     outline: none;
+                    width: 100%;
                     
                     .header__element {
                         &--icon {
@@ -111,9 +112,6 @@
                     &:hover {
                         background-color: $background__color;
                     }
-                }
-                &--language {
-                    width: 100%;
                 }
                 &--signal {
                     position: absolute;

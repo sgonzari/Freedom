@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class AdminTool extends Component
 {
-    public $option = "report" ;
+    public $option = "bug" ;
 
     public function render()
     {

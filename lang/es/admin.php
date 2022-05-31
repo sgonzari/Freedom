@@ -27,7 +27,7 @@ return [
     'Uncompleted' => 'No Completado',
     'Completed' => 'Completado',
     'search Reports' => 'Buscar un reporte',
-    'There isnt report' => 'No hay más reportes.',
+    'There isnt report' => 'No hay mas reportes.',
 
     'Stat' => 'Estadística',
     'Stats' => 'Estadísticas',
@@ -36,4 +36,8 @@ return [
     'posts' => 'Posts',
     'users Statistics' => 'Estadísticas de Usuarios',
     'posts Statistics' => 'Estadísticas de Posts',
+
+    'Bugs' => 'Fallos',
+    'search bugs' => 'Buscar un fallo',
+    'There isnt bug' => 'No hay mas fallos.'
 ];

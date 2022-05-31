@@ -11,6 +11,7 @@
                 <a id="navMore2" class="header__more--element" href="{{ route('admin') }}"><span class="header__element--icon material-symbols-rounded">admin_panel_settings</span> {{ __('admin.adminPanel') }}</a>
             @endif
             @livewire('language-component')
+            @livewire('bug-component')
         </div>
     </div>
 

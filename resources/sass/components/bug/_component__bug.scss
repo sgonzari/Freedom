@@ -1,0 +1,132 @@
+.bug__modal--main {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .bug__modal {
+        &--container {
+            position: relative;
+            max-width: 600px;
+            cursor: auto;
+            z-index: 3;
+            width: 100%;
+            padding: 12px 0;
+            border-radius: 16px;
+            background-color: white;
+            box-shadow: rgb(101 119 134 / 20%) 0px 0px 15px, rgb(101 119 134 / 15%) 0px 0px 3px 1px;
+
+            .bug__container {
+                &--header {
+                    text-align: center;
+                    font-weight: 700;
+                    font-size: 20px;
+                    margin: 0 0 16px 0;
+                }
+                &--form {
+                    padding: 20px;
+
+                    .bug__form--body {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+
+                        .bug__body {
+                            &--image {
+                                cursor: pointer;
+                                height: $image__height;
+                                width: $image__width;
+                                overflow: hidden;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                border-radius: 9999px;
+                                transition: 0.1s;
+
+                                .bug--image {
+                                    height: $image__height;
+                                }
+                                &:hover {
+                                    background-color: rgba(0, 0, 0, .1);
+                                }
+                            }
+                            &--main {
+                                flex: 1;
+                                margin: 0 0 0 20px;
+
+                                .bug__main {
+                                    &--text {
+                                        resize: none;
+                                        flex: 1;
+                                        font-size: 20px;
+                                        border: none;
+                                        outline: none;
+                                        width: 100%;
+                                        box-sizing: border-box;
+                                    }
+                                    &--text {
+
+                                        .bug__text {
+                                            &--description {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &--options {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    .bug__option {
+                        &--element {
+                            cursor: pointer;
+                            border: none;
+                            color: white;
+                            font-weight: 900;
+                            border-radius: 30px;
+                            width: 80px;
+                            height: 40px;
+                            margin: 0 8px;
+                        }
+                        &--cancel {
+                            transition: 1s;
+                            color: black;
+                            background-color: $background__color;
+
+                            &:hover {
+                                background-color: $background__color--hover;
+                            }
+                        }
+                        &--main {
+                            background-color: $main__color;
+                        }
+                    }
+                    .disabled {
+                        cursor: auto;
+                        background-color: $main__color--disable;
+                    }
+                }
+            }
+        }
+        &--close {
+            cursor: auto;
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, .25);
+        }
+    }
+}
