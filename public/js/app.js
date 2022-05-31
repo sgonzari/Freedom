@@ -3152,6 +3152,52 @@ var LikeClickSound = function LikeClickSound() {
 
 /***/ }),
 
+/***/ "./resources/js/components/ResponsiveModal.js":
+/*!****************************************************!*\
+  !*** ./resources/js/components/ResponsiveModal.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var responsiveProfileOption = function responsiveProfileOption(props) {
+  if (window.matchMedia("(max-width: 1021px)").matches) {
+    if (window.matchMedia("(min-width: 722px)").matches) {
+      props.style.left = 150.328 - (1021 - window.innerWidth) * 0.5 + 'px';
+    } else {
+      props.style.left = 12 + 'px';
+    }
+  } else if (window.matchMedia("(max-width: 1111px)").matches) {
+    props.style.left = 55 - (1111 - window.innerWidth) * 0.5 + 'px';
+  } else if (window.matchMedia("(max-width: 1298px)").matches) {
+    props.style.left = 113.5 - (1298 - window.innerWidth) * 0.5 + 'px';
+  } else if (window.matchMedia("(max-width: 1306px)").matches) {
+    props.style.left = 24 - (1306 - window.innerWidth) * 0.5 + 'px';
+  } else {
+    props.style.left = 306.5 - (1920 - window.innerWidth) * 0.5 + 'px';
+  }
+};
+
+var ResponsiveModal = function ResponsiveModal() {
+  var profileOption = document.getElementById('profileOptionModal');
+  var navMore = document.getElementById("navMoreModal");
+
+  if (profileOption) {
+    responsiveProfileOption(profileOption);
+  }
+
+  if (navMore) {
+    responsiveProfileOption(navMore);
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ResponsiveModal);
+
+/***/ }),
+
 /***/ "./resources/js/components/ScrollToComment.js":
 /*!****************************************************!*\
   !*** ./resources/js/components/ScrollToComment.js ***!
@@ -3391,6 +3437,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_LikeClickSound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/LikeClickSound */ "./resources/js/components/LikeClickSound.js");
 /* harmony import */ var _components_GraphsStatisticsLoader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/GraphsStatisticsLoader */ "./resources/js/components/GraphsStatisticsLoader.js");
 /* harmony import */ var _components_ValidationData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ValidationData */ "./resources/js/components/ValidationData.js");
+/* harmony import */ var _components_ResponsiveModal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ResponsiveModal */ "./resources/js/components/ResponsiveModal.js");
+
 
 
 
@@ -3406,6 +3454,7 @@ var components = function components() {
   (0,_components_ScrollToComment__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_components_LikeClickSound__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_components_ValidationData__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  (0,_components_ResponsiveModal__WEBPACK_IMPORTED_MODULE_7__["default"])();
 };
 
 window.onload = function () {
@@ -3423,21 +3472,7 @@ window.onload = function () {
     (0,_components_GraphsStatisticsLoader__WEBPACK_IMPORTED_MODULE_5__["default"])(props);
   });
   window.addEventListener('resize', function () {
-    if (window.matchMedia("(max-width: 1021px)").matches) {
-      if (window.matchMedia("(min-width: 720px)").matches) {
-        document.getElementById('profileOptionModal').style.left = 117.328 - (1021 - window.innerWidth) * 0.328 + 'px';
-      } else {
-        document.getElementById('profileOptionModal').style.left = 12 + 'px';
-      }
-    } else if (window.matchMedia("(max-width: 1111px)").matches) {
-      document.getElementById('profileOptionModal').style.left = 55 - (1111 - window.innerWidth) * 0.5 + 'px';
-    } else if (window.matchMedia("(max-width: 1298px)").matches) {
-      document.getElementById('profileOptionModal').style.left = 113.5 - (1298 - window.innerWidth) * 0.5 + 'px';
-    } else if (window.matchMedia("(max-width: 1306px)").matches) {
-      document.getElementById('profileOptionModal').style.left = 24 - (1306 - window.innerWidth) * 0.5 + 'px';
-    } else {
-      document.getElementById('profileOptionModal').style.left = 306.5 - (1920 - window.innerWidth) * 0.5 + 'px';
-    }
+    (0,_components_ResponsiveModal__WEBPACK_IMPORTED_MODULE_7__["default"])();
   });
 };
 
