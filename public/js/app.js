@@ -3040,7 +3040,27 @@ var printChart = function printChart(ctx) {
   var config = {
     type: 'line',
     data: dataCanvas,
-    options: {}
+    options: {
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'Months'
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: '%'
+          },
+          min: 0,
+          max: 100,
+          ticks: {
+            stepSize: 10
+          }
+        }
+      }
+    }
   };
   chart = new Chart(ctx, config);
 };
