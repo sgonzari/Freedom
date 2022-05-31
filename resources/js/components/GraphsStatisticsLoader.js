@@ -1,8 +1,8 @@
 /* VARIABLES */
 let chart;
-const data = [];
-const maxStadistic = [];
-const stadistic = [];
+let data = [];
+let maxStadistic = [];
+let stadistic = [];
 const labels = [
     'January',
     'February',
@@ -17,12 +17,16 @@ const labels = [
     'November',
     'December',
 ];
-const datasets = [];
+let datasets = [];
 
 
 /* FUNCTIONS */
 const deleteChartIfExists = () => {
     if (chart) {
+        data = [];
+        maxStadistic = [];
+        stadistic = [];
+        datasets = [];
         chart.destroy();
     }
 };

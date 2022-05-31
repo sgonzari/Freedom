@@ -2976,6 +2976,10 @@ var datasets = [];
 
 var deleteChartIfExists = function deleteChartIfExists() {
   if (chart) {
+    data = [];
+    maxStadistic = [];
+    stadistic = [];
+    datasets = [];
     chart.destroy();
   }
 };
