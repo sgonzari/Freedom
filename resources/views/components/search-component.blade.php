@@ -15,7 +15,7 @@
                 @foreach ($results as $result) 
                     <a class="search__result" href="{{ route('profile', $result->username) }}">
                         <div class="search__result--image">
-                            <img class="search__image" src="http://localhost/freedom/public/storage/{{ $result->profile_image }}" alt="{{ __('image.Profiles image') }}" />
+                            <img loading="lazy" class="search__image" src="{{ asset('storage/'.$result->profile_image) }}" alt="{{ __('image.Profiles image') }}" />
                         </div>
                         <div class="search__result--info">
                             <h3 class="search__info--name">{{ $result->name }}</h3>

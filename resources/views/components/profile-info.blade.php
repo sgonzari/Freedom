@@ -1,7 +1,7 @@
 <div class="profile">
     <div class="profile__header">
         <div class="profile__header--image">
-            <img class="profile__image" src="http://localhost/freedom/public/storage/{{ $user->profile_image }}" alt="{{ __('image.Profiles image') }}" />
+            <img loading="lazy" class="profile__image" src="{{ asset('storage/'.$user->profile_image) }}" alt="{{ __('image.Profiles image') }}" />
         </div>
         <div class="profile__header--text">
             <div class="profile__text--name">

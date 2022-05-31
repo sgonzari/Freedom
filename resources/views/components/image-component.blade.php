@@ -1,6 +1,6 @@
 <div class="image">
     <div class="image__post" wire:click="$set('interfaceImage', true)">
-       <img class="post__image" src="http://localhost/freedom/public/storage/{{ $post->image }}" alt="{{ __('image.Posts image') }}">
+       <img loading="lazy" class="post__image" src="{{ asset('storage/'.$post->image) }}" alt="{{ __('image.Posts image') }}">
     </div>
 
     @if ($interfaceImage)
@@ -9,7 +9,7 @@
                 <div class="image__container--left">
                     <span class="image__left--icon material-symbols-rounded" wire:click="$set('interfaceImage', false)"> close </span>
                     <div class="image__left--image">
-                        <img class="image__image" src="http://localhost/freedom/public/storage/{{ $post->image }}" alt="{{ __('image.Posts image') }}">
+                        <img loading="lazy" class="image__image" src="{{ asset('storage/'.$post->image) }}" alt="{{ __('image.Posts image') }}">
                     </div>
                     <div class="image__left--options">
                         @livewire('post-modal-comment', ['post' => $post])

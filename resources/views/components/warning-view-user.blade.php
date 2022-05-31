@@ -14,7 +14,7 @@
                 @foreach (Auth::user()->warnings()->where('opened', false)->get() as $warning)
                 <div class="warning">
                     <div class="warning__profile">
-                        <img class="warning__profile--image" src="http://localhost/freedom/public/storage/{{ $warning->reportedBy()->first()->profile_image }}" alt="{{ __('image.Profiles image') }}" />
+                        <img loading="lazy" class="warning__profile--image" src="{{ asset('storage/'.$warning->reportedBy()->first()->profile_image) }}" alt="{{ __('image.Profiles image') }}" />
                     </div>
                     <div class="warning__main">
                         <div class="warning__main--header">

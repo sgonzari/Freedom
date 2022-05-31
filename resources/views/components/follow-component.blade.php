@@ -1,6 +1,6 @@
 <div class="follow">
     <a class="follow__image" href="{{ route('profile', ['username' => $user->username]) }}">
-        <img class="follow__image--image" src="http://localhost/freedom/public/storage/{{ $user->profile_image }}" alt="{{ __('image.Profiles image') }}">
+        <img loading="lazy" class="follow__image--image" src="{{ asset('storage/'.$user->profile_image) }}" alt="{{ __('image.Profiles image') }}">
     </a>
     <a class="follow__info" href="{{ route('profile', ['username' => $user->username]) }}">
         <h2 class="follow__info--name">{{ $user->name }}</h2>

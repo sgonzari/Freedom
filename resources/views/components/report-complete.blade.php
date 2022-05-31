@@ -10,7 +10,7 @@
                 <div class="report__main--body">
                     <div class="report__body--post">
                         <a class="report__post--image" href="{{ route('profile', $post->user()->first()->username) }}" target="_blank">
-                            <img class="report__image" src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="{{ __('image.Profiles image') }}">
+                            <img loading="lazy" class="report__image" src="{{ asset('storage/'.$post->user()->first()->profile_image) }}" alt="{{ __('image.Profiles image') }}">
                         </a>
                         <div class="report__post--main">
                             <div class="report__post--profile">
@@ -23,7 +23,7 @@
                                 <p class="report__content--text">{{ $post->content }}</p>
                                 @if ($post->image)
                                 <div class="report__content--image">
-                                    <img class="content__image" src="http://localhost/freedom/public/storage/{{ $post->image }}" />
+                                    <img loading="lazy" class="content__image" src="{{ asset('storage/'.$post->image) }}" alt="{{ __('image.Posts image') }}"/>
                                 </div>
                                 @endif
                             </div>

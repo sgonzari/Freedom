@@ -12,7 +12,7 @@
                 <form class="post__container--form" wire:submit.prevent="reportPost">
                     <div class="post__form--body">
                         <div class="post__body--image">
-                            <img class="post__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="{{ __('image.Profiles image') }}" />
+                            <img loading="lazy" class="post__image" src="{{ asset('storage/'.Auth::user()->profile_image) }}" alt="{{ __('image.Profiles image') }}" />
                         </div>
                         <input class="post__body--input" placeholder="{{ __('post.Write your report') }}" name="message" wire:model="reason" type="text" autofocus>
                     </div>

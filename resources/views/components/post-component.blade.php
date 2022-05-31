@@ -9,7 +9,7 @@
         @endif
         <div class="post__container">
             <a class="post__profile" href="{{ route('profile', ['username' => $post->user()->first()->username]) }}">
-                <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="{{ __('image.Profiles image') }}" class="post__profile--image" />
+                <img loading="lazy" src="{{ asset('storage/'.$post->user()->first()->profile_image) }}" alt="{{ __('image.Profiles image') }}" class="post__profile--image" />
             </a>
             <div class="post__main">
                 <div class="post__main--header">

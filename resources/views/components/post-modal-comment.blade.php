@@ -13,7 +13,7 @@
                     @endif
                     <div class="post__container">
                         <a class="post__profile" href="{{ route('profile', ['username' => $post->user()->first()->username]) }}">
-                            <img src="http://localhost/freedom/public/storage/{{ $post->user()->first()->profile_image }}" alt="{{ __('image.Profiles image') }}" class="post__profile--image" />
+                            <img loading="lazy" src="{{ asset('storage/'.$post->user()->first()->profile_image) }}" alt="{{ __('image.Profiles image') }}" class="post__profile--image" />
                         </a>
                         <div class="post__main">
                             <div class="post__main--header">
@@ -41,14 +41,14 @@
                     <form class="main__input--form" wire:submit.prevent="store">
                         <div class="main__form">
                             <div class="main__form--image">
-                                <img class="form__image" src="http://localhost/freedom/public/storage/{{ Auth::user()->profile_image }}" alt="{{ __('image.Profiles image') }}"/>
+                                <img loading="lazy" class="form__image" src="{{ asset('storage/'.Auth::user()->profile_image) }}" alt="{{ __('image.Profiles image') }}"/>
                             </div>
                             <div class="main__form--container">
                                 <textarea class="main__container--input" name="contentComment" id="contentComment" placeholder="{{ __('post.Whats happening?') }}" wire:model="contentComment"></textarea>
                                 @if ($imageComment)
                                     <div class="main__container--image">
                                         <span class="main__icon material-symbols-rounded" wire:click="$set('imageComment', null)"> close </span>
-                                        <img class="main__image" src="{{ $imageComment->temporaryUrl() }}" alt="{{ __('image.Uploaded image') }}">
+                                        <img loading="lazy" class="main__image" src="{{ $imageComment->temporaryUrl() }}" alt="{{ __('image.Uploaded image') }}">
                                     </div>
                                 @endif
                             </div>
