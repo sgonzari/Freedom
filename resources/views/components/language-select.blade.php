@@ -10,10 +10,10 @@
                 <form class="language__container--form" wire:submit.prevent="changeLanguage">
                     <div class="language__form--body">
                         <select class="language__body--options" name="selectedLanguage" id="selectedLanguage" wire:model="selectedLanguage">
-                            <option value="" hidden>---- {{ __('language.Language') }} ----</option>
                             @foreach (Config::get('languages') as $lang => $language)
                                 <option class="language__options--element" value="{{ $lang }}">{{ $language }}</option>
                             @endforeach
+
                         </select>
                     </div>
                 </form>

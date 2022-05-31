@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 use Livewire\Component;
@@ -11,6 +12,10 @@ class LanguageSelect extends Component
     public $interfaceLanguage = false ;
 
     public $selectedLanguage ;
+
+    public function mount () {
+        $this->selectedLanguage = Session::get('applocale') ;
+    }
 
     public function render()
     {
