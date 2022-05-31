@@ -12,10 +12,10 @@
     .language__modal {
         &--container {
             position: relative;
-            min-width: 600px;
+            max-width: 600px;
             cursor: auto;
             z-index: 3;
-            width: 250px;
+            width: 100%;
             padding: 12px 0;
             border-radius: 16px;
             background-color: white;

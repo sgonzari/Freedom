@@ -9,7 +9,7 @@
     <div class="admin__element--main">
         @if ($reports->where('completed', false)->count() > 0)
             @foreach ($reports->where('completed', false) as $report)
-                <div class="admin__repost--main">
+                <div class="admin__report--main">
                     <div class="admin__main--profile">
                         <a class="admin__profile--image" href="{{ route('profile', $report->user()->first()->username) }}" target="_blank">
                             <img class="admin__image" src="http://localhost/freedom/public/storage/{{ $report->user()->first()->profile_image }}" alt="{{ __('image.Profiles image') }}" />
