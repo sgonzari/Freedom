@@ -27,9 +27,7 @@
                         <p class="comment__content--text">{{ $post->content }}</p>
                     </div>
                     @if (!is_null($post->image))
-                        <div class="comment__body--image">
-                            <img class="comment__image" src="http://localhost/freedom/public/storage/{{ $post->image }}" alt="{{ __('image.Posts image') }}">
-                        </div>
+                        @livewire('image-view', ['post' => $post])
                     @endif
                 </div>
                 <div class="comment__main--footer">

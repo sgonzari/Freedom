@@ -2455,10 +2455,10 @@ body {
   text-align: left;
 }
 .profile__modal--main .profile__modal--container {
-  min-width: 600px;
+  max-width: 600px;
   cursor: auto;
   z-index: 3;
-  width: 250px;
+  width: 90%;
   padding: 12px 0;
   border-radius: 16px;
   background-color: white;
@@ -2644,6 +2644,7 @@ body {
   align-items: center;
 }
 .following__modal {
+  overflow-y: scroll;
   z-index: 1;
   position: fixed;
   top: 0;
@@ -2706,6 +2707,7 @@ body {
   align-items: center;
 }
 .follower__modal {
+  overflow-y: scroll;
   z-index: 1;
   position: fixed;
   top: 0;
@@ -2896,10 +2898,10 @@ body {
   justify-content: center;
 }
 .warning__view--modal .warning__view--container {
-  min-width: 600px;
+  max-width: 600px;
   cursor: auto;
   z-index: 3;
-  width: 250px;
+  width: 90%;
   padding: 12px 0;
   border-radius: 16px;
   background-color: white;

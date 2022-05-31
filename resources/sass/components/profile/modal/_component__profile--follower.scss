@@ -4,6 +4,7 @@
     align-items: center;
     
     &__modal {
+        overflow-y: scroll;
         z-index: 1;
         position: fixed;
         top: 0;
