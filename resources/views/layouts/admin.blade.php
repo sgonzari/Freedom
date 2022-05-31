@@ -8,6 +8,9 @@
 
         <title>{{ config('app.name', 'Freedom') }} - {{ $title }}</title>
 
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="{{ asset('storage/favicon.ico') }}">
+
         <!-- Google Fonts -->
         <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 

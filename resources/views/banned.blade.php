@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-ban-layout>
     <x-slot name="title">{{ __('admin.Banned') }}</x-slot>
     
     <x-slot name="header">
@@ -8,4 +8,4 @@
     <div class="banned">
         <h1 class="banned__text">{{ __('admin.Banned text') }}</h1>
     </div>
-</x-app-layout>
+</x-ban-layout>
