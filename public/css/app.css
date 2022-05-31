@@ -2805,7 +2805,7 @@ body {
   border-radius: 8px;
   position: absolute;
   box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
-  width: 374px;
+  width: 330px;
   max-height: 216px;
   overflow-y: scroll;
 }
@@ -2848,6 +2848,11 @@ body {
   overflow: hidden;
 }
 
+@media only screen and (max-width: 1111px) {
+  .search__main--results .search__results {
+    width: 270px;
+  }
+}
 .button__action {
   align-items: center;
   background: none;
