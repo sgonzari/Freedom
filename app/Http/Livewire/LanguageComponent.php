@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 
-class LanguageSelect extends Component
+class LanguageComponent extends Component
 {
     public $interfaceLanguage = false ;
 
@@ -19,7 +19,7 @@ class LanguageSelect extends Component
 
     public function render()
     {
-        return view('components.language-select');
+        return view('components.language-component');
     }
 
     public function changeLanguage () {

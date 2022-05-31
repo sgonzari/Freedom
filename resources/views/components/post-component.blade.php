@@ -26,7 +26,7 @@
                         <p class="post__content--text">{{ $post->content }}</p>
                     </a>
                     @if (!is_null($post->image))
-                        @livewire('image-view', ['post' => $post])
+                        @livewire('image-component', ['post' => $post])
                     @endif
                 </div>
                 <div class="post__main--footer">

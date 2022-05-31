@@ -7,7 +7,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class AdminTools extends Component
+class AdminTool extends Component
 {
     public $option = "report" ;
 
@@ -15,6 +15,6 @@ class AdminTools extends Component
     {
         $users = User::all() ;
 
-        return view('components.admin-tools', compact(["users"]));
+        return view('components.admin-tool', compact(["users"]));
     }
 }

@@ -33,7 +33,7 @@
                 </div>
             </div>
 
-            <livewire:search/>
+            <livewire:search-component/>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">

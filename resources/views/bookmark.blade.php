@@ -6,5 +6,5 @@
 
     </x-slot>
 
-    <livewire:post-bookmark/>
+    <livewire:bookmark-component/>
 </x-app-layout>

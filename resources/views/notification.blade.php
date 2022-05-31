@@ -5,5 +5,5 @@
         <h2 class="main__header--title">{{ __('notification.Notifications') }}</h2>
     </x-slot>
 
-    <livewire:post-notification/>
+    <livewire:notification-component/>
 </x-app-layout>

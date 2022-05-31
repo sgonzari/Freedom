@@ -47,7 +47,7 @@
             </main>
             @if (!Auth::user()->banned)
                 <section class="widgets">
-                    <livewire:search/>
+                    <livewire:search-component/>
                 </section>
             @endif
         </div>

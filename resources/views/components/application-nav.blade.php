@@ -10,7 +10,7 @@
             @if (Auth::user()->fk_rol > 1)
                 <a id="navMore2" class="header__more--element" href="{{ route('admin') }}"><span class="header__element--icon material-symbols-rounded">admin_panel_settings</span> {{ __('admin.adminPanel') }}</a>
             @endif
-            @livewire('language-select')
+            @livewire('language-component')
         </div>
     </div>
 

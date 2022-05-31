@@ -7,7 +7,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class PostNotification extends Component
+class NotificationComponent extends Component
 {
     public function render()
     {
@@ -18,6 +18,6 @@ class PostNotification extends Component
             $notification->save() ;
         }
 
-        return view('components.post-notification', compact("notifications"));
+        return view('components.notification-component', compact("notifications"));
     }
 }

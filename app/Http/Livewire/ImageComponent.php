@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class ImageView extends Component
+class ImageComponent extends Component
 {
     public $interfaceImage = false ;
     public $post ;
@@ -14,6 +14,6 @@ class ImageView extends Component
         $post = $this->post ;
         $user = $post->user()->first() ;
         
-        return view('components.image-view', compact(['post', 'user']));
+        return view('components.image-component', compact(['post', 'user']));
     }
 }

@@ -27,7 +27,7 @@
                         <p class="comment__content--text">{{ $post->content }}</p>
                     </div>
                     @if (!is_null($post->image))
-                        @livewire('image-view', ['post' => $post])
+                        @livewire('image-component', ['post' => $post])
                     @endif
                 </div>
                 <div class="comment__main--footer">

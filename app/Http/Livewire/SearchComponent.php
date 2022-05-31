@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class Search extends Component
+class SearchComponent extends Component
 {
     public $query ;
 
@@ -14,7 +14,7 @@ class Search extends Component
     {
         $results = User::where('username', 'like', '%' . $this->query . '%')->orWhere('name', 'like', '%' . $this->query . '%')->get() ;
 
-        return view('components.search', compact('results'));
+        return view('components.search-component', compact('results'));
     }
 
     public function search () {

@@ -7,7 +7,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class PostBookmark extends Component
+class BookmarkComponent extends Component
 {
     protected $listeners = ['render' => 'render'] ;
 
@@ -15,6 +15,6 @@ class PostBookmark extends Component
     {
         $bookmarks = User::find(Auth::user()->id_user)->bookmarks()->get() ;
 
-        return view('components.post-bookmark', compact("bookmarks"));
+        return view('components.bookmark-component', compact("bookmarks"));
     }
 }
