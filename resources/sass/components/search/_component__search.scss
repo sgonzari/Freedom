@@ -52,8 +52,8 @@
 
                 &--image {
                     margin: 0 12px 0 0;
-                    height: $image__height;
-                    width: $image__width;
+                    min-height: $image__height;
+                    min-width: $image__width;
                     overflow: hidden;
                     display: flex;
                     justify-content: center;
@@ -67,6 +67,8 @@
                 &--info {
                     font-size: 16px;
                     overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
 
                     .search__info {
                         &--name {
@@ -74,16 +76,21 @@
                             white-space: nowrap;
                             text-overflow: ellipsis;
                             overflow: hidden;
+                            padding: 0 0 2px 0;
                         }
                         &--username {
                             color: $secundary__color;
                             white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            padding: 0 0 2px 0;
                         }
                         &--description {
                             color: $secundary__color;
                             white-space: nowrap;
                             text-overflow: ellipsis;
                             overflow: hidden;
+                            padding: 0 0 2px 0;
                         }
                     }
                 }

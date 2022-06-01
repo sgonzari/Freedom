@@ -178,12 +178,13 @@
             display: flex;
             padding: 10px;
             border-radius: 9999px;
+            max-width: 250px;
 
             .header__profile {
 
                 &--image {
-                    height: $image__height;
-                    width: $image__width;
+                    min-height: $image__height;
+                    min-width: $image__width;
                     overflow: hidden;
                     display: flex;
                     justify-content: center;
@@ -196,14 +197,25 @@
                 }
                 &--info {
                     margin: 0 12px;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
 
                     .header__info {
                         &--name {
                             font-weight: 700;
                             font-size: 15px;
+                            text-overflow: ellipsis;
+                            padding: 0 0 2px 0;
+                            overflow: hidden;
+                            white-space: nowrap;
                         }
                         &--username {
                             color: $secundary__color;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
                         }
                     }
                 }

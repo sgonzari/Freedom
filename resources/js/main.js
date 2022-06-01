@@ -26,7 +26,7 @@ window.onload = () => {
         components();
     });
 
-    Livewire.on('paginateHome', () => {
+    Livewire.on('likeSound', () => {
         LikeClickSound();
     });
 
@@ -39,7 +39,6 @@ window.onload = () => {
     });
 
     Livewire.on('AutoresizeTextarea', () => {
-        console.log('a');
         AutosizeTextArea();
     });
 

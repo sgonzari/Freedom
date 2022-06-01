@@ -6,7 +6,7 @@
     @else
         @livewire('profile-info', ['user' => $user, 'option' => $option])
 
-        @if (Auth::user()->posts()->where('pinged', 1)->first())
+        @if ($user->posts()->where('pinged', 1)->first())
             @livewire('profile-pin', ['user' => $user])
         @endif
 

@@ -55,11 +55,23 @@
 
                         .notification {
                             &__text {
+                                display: flex;
+                                overflow: hidden;
+                                padding: 0 0 2px 0;
+
                                 &--username {
                                     font-weight: 700;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    max-width: 250px;
+                                    margin: 0 5px 0 0;
 
-                                    &:hover {
-                                        text-decoration: underline;
+                                    span {
+                                        
+                                        &:hover {
+                                            text-decoration: underline;
+                                        }
                                     }
                                 }
                             }

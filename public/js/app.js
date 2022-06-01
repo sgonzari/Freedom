@@ -3513,7 +3513,7 @@ window.onload = function () {
   document.addEventListener('turbolinks:load', function () {
     components();
   });
-  Livewire.on('paginateHome', function () {
+  Livewire.on('likeSound', function () {
     (0,_components_LikeClickSound__WEBPACK_IMPORTED_MODULE_4__["default"])();
   });
   Livewire.on('validateProfileEdit', function () {
@@ -3523,7 +3523,6 @@ window.onload = function () {
     (0,_components_GraphsStatisticsLoader__WEBPACK_IMPORTED_MODULE_5__["default"])(props);
   });
   Livewire.on('AutoresizeTextarea', function () {
-    console.log('a');
     (0,_components_AutosizeTextArea__WEBPACK_IMPORTED_MODULE_8__["default"])();
   });
   window.addEventListener('resize', function () {

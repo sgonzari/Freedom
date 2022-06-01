@@ -41,11 +41,18 @@
                             align-items: flex-start;
                             justify-content: center;
                             flex-direction: column;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
                             
                             .admin__text {
 
                                 &--name {
                                     font-weight: 700;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    width: 100%;
 
                                     &:hover {
                                         text-decoration: underline;
@@ -53,6 +60,10 @@
                                 }
                                 &--username {
                                     color: $secundary__color;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    width: 100%;
                                 }
                             }
                         }

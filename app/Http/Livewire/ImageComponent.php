@@ -16,4 +16,14 @@ class ImageComponent extends Component
         
         return view('components.image-component', compact(['post', 'user']));
     }
+
+    public function openModalImage () {
+        $this->interfaceImage = true ;
+        $this->emit('likeSound') ;
+    }
+
+    public function closeModalImage () {
+        $this->interfaceImage = false ;
+        $this->emit('renderLike') ;
+    }
 }

@@ -11,6 +11,8 @@ class LikeStatus extends Component
 {
     public $post ;
 
+    protected $listeners = ['renderLike' => 'render'] ;
+
     public function render()
     {
         return view('components.like-status');

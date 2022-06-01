@@ -40,9 +40,9 @@
                                 </div>
                                 <div class="profile__text--username">
                                     <label class="profile__username--label" for="username">{{ __('@') }}</label>
-                                    <input class="profile__username--input" id="username" name="username" value="{{ $user->username }}" wire:model="user.username" />
+                                    <input class="profile__username--input" id="username" name="username" value="{{ $user->username }}" wire:model="user.username" wire:ignore />
                                 </div>
-                                <span id="invalidUsername" class="profile__text--error">{{ __('auth.Invalid Username') }}</span>
+                                <span id="invalidUsername" class="profile__text--error" wire:ignore>{{ __('auth.Invalid Username') }}</span>
                             </div>
                             <div class="profile__info--down">
                                 <div class="profile__text--element">

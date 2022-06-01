@@ -4,12 +4,8 @@
             <img loading="lazy" class="profile__image" src="{{ asset('storage/'.$user->profile_image) }}" alt="{{ __('image.Profiles image') }}" />
         </div>
         <div class="profile__header--text">
-            <div class="profile__text--name">
-                <span>{{ $user->name }}</span>
-            </div>
-            <div class="profile__text--username">
-                <span>{{ __('@') }}{{ $user->username }}</span>
-            </div>
+            <div class="profile__text--name">{{ $user->name }}</div>
+            <div class="profile__text--username">{{ __('@') }}{{ $user->username }}</div>
         </div>
         <div class="profile__header--buttons">
             <div class="profile__button">

@@ -24,10 +24,8 @@
                         </a>
                         <div class="notification__header--text">
                             <h3 class="notification__text">
-                                <a href="{{ route('profile', ['username' => $notification->user()->first()->username]) }}">
-                                    <span class="notification__text--username">
-                                        {{ $notification->user()->get()->first()->name }} 
-                                    </span>
+                                <a class="notification__text--username" href="{{ route('profile', ['username' => $notification->user()->first()->username]) }}">
+                                    <span>{{ $notification->user()->get()->first()->name }}</span>
                                 </a>
                                 @if ($notification->typeOf()->get()->first()->name == 'like')
                                     {{ __('notification.liked your post') }}

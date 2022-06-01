@@ -30,8 +30,8 @@
         .post {
             &__profile {
                 margin: 0 12px 0 0;
-                height: $image__height;
-                width: $image__width;
+                min-height: $image__height;
+                min-width: $image__width;
                 overflow: hidden;
                 display: flex;
                 justify-content: center;
@@ -54,10 +54,22 @@
                         display: flex;
                         justify-content: space-between;
         
+                        &--info {
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            max-width: 300px;
+                        }
                         &--name {
                             font-weight: 700;
                             font-size: 15px;
-                            margin: 0 0 5px 0;
+                            padding: 0 6px 2px 0;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
 
                             &:hover {
                                 text-decoration: underline;
@@ -67,6 +79,10 @@
                             font-weight: 600;
                             font-size: 12px;
                             color: gray;
+                            padding: 0 0 2px 0;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
                         }
                         &--icon {
                             cursor: pointer;

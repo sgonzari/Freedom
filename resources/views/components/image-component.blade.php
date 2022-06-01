@@ -1,5 +1,5 @@
 <div class="image">
-    <div class="image__post" wire:click="$set('interfaceImage', true)">
+    <div class="image__post" wire:click="openModalImage">
        <img loading="lazy" class="post__image" src="{{ asset('storage/'.$post->image) }}" alt="{{ __('image.Posts image') }}">
     </div>
 
@@ -7,7 +7,7 @@
         <div class="image__interface">
             <div class="image__interface--container">
                 <div class="image__container--left">
-                    <span class="image__left--icon material-symbols-rounded" wire:click="$set('interfaceImage', false)"> close </span>
+                    <span class="image__left--icon material-symbols-rounded" wire:click="closeModalImage"> close </span>
                     <div class="image__left--image">
                         <img loading="lazy" class="image__image" src="{{ asset('storage/'.$post->image) }}" alt="{{ __('image.Posts image') }}">
                     </div>
@@ -17,7 +17,7 @@
                         @livewire('like-status', ['post' => $post])
                         @livewire('post-modal-publish', ['post' => $post])
                     </div>
-                    <div class="image__left--close" wire:click="$set('interfaceImage', false)"></div>
+                    <div class="image__left--close" wire:click="closeModalImage"></div>
                 </div>
                 <div class="image__container--right">
                     <livewire:post-view :post="$post" :user="$user"/>
