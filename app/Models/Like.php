@@ -23,4 +23,8 @@ class Like extends Model
     protected $hidden = [
         'id_like'
     ] ;
+
+    public function user () {
+        return $this->hasMany("App\Models\User", "id_user", "fk_user") ;
+    }
 }

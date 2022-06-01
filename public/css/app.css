@@ -3067,7 +3067,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 16px 6px;
+  padding: 16px 12px;
 }
 .warning__view--modal .warning__view--container .warning__container--body .warning__profile {
   margin: 0 12px 0 0;

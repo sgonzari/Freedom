@@ -23,5 +23,7 @@ return [
     'Delete Advice' => 'Esto no se puede deshacer y se eliminará de su perfil, la línea de tiempo de cualquier cuenta que lo siga y de los resultados de búsqueda de Freedom.',
     'Delete' => 'Eliminar',
 
+    'repost by' => 'reposteado por',
+    'liked by' => 'me gusta por',
     'replied to' => 'respondido a',
 ];

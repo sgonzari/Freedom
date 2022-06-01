@@ -23,5 +23,7 @@ return [
     'Delete Advice' => 'This can’t be undone and it will be removed from your profile, the timeline of any accounts that follow you, and from Freedom search results. ',
     'Delete' => 'Delete',
 
+    'repost by' => 'repost by',
+    'liked by' => 'liked by',
     'replied to' => 'replied to',
 ];

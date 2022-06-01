@@ -16,36 +16,32 @@ class HomeComponent extends Component
 
     public function render() {
         $posts = collect([]) ;
+        $infoPost = [] ;
 
-        // Post de usuarios a los que sigue
-        $followers = User::find(Auth::user()->id_user)->followings()->get() ;
-        foreach ($followers as $follower) {
-            foreach ($follower->posts()->get() as $followerPost) {
-                $posts->add($followerPost) ;
+        $followings = Auth::user()->followings()->get() ;
+        foreach ($followings as $following) {
+            foreach ($following->reposts()->get() as $followingRepost) {
+                $posts->add($followingRepost) ;
+                $infoPost[$followingRepost->id_post] = 'repost' ;
             }
-        }
-        // Repost de usuarios a los que sigue
-        foreach ($followers as $follower) {
-            foreach ($follower->reposts()->get() as $followerPost) {
-                $posts->add($followerPost) ;
+            foreach ($following->likes()->get() as $followingLike) {
+                if (!$posts->contains('id_post', $followingLike->id_post)) {
+                    $posts->add($followingLike) ;
+                    $infoPost[$followingLike->id_post] = 'like' ;
+                }
             }
-        }
-        // Likes de usuarios a los que sigue
-        foreach ($followers as $follower) {
-            foreach ($follower->likes()->get() as $followerPost) {
-                $posts->add($followerPost) ;
+            foreach ($following->posts()->get() as $followingPost) {
+                if (!$posts->contains('id_post', $followingPost->id_post)) $posts->add($followingPost) ;
             }
         }
 
-        // Posts propios
-        $userPosts = User::find(Auth::user()->id_user)->posts()->get() ;
-        foreach ($userPosts as $userPost) {
-            $posts->add($userPost) ;
+        foreach (Auth::user()->posts()->get() as $userPost) {
+            if (!$posts->contains('id_post', $userPost->id_post)) $posts->add($userPost) ;
         }
 
         $posts = $posts->sortByDesc('created_at')->take($this->loadAmount) ;
 
-        return view('components.home-component', compact('posts'));
+        return view('components.home-component', compact(['posts', 'infoPost']));
     }
 
     public function incrementLoadAmount () {

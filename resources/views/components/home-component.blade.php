@@ -1,7 +1,7 @@
 <div class="main__container--posts">
     @if ($posts->count() > 0)
         @foreach ($posts as $post)
-            @livewire('post-component', ['post' => $post], key($post->id_post))
+            @livewire('post-component', ['post' => $post, 'infoPost' => $infoPost], key($post->id_post))
         @endforeach
         <div 
             x-data="{

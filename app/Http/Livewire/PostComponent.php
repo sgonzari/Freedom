@@ -9,12 +9,15 @@ use Livewire\Component;
 class PostComponent extends Component
 {
     public $post ;
+    public $infoPost ;
 
     protected $listeners = ['renderPost' => 'render'] ;
 
     public function render()
     {
         $post = $this->post ;
-        return view('components.post-component', compact(['post']));
+        $infoPost = $this->infoPost ;
+        
+        return view('components.post-component', compact(['post', 'infoPost']));
     }
 }
