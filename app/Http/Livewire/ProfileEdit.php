@@ -17,9 +17,9 @@ class ProfileEdit extends Component
 
     protected $rules = [
         'image' => 'image|max:2048',
-        'user.name' => 'required',
-        'user.username' => 'required',
-        'user.description' => 'required',
+        'user.name' => 'required|max:50',
+        'user.username' => 'required|max:50',
+        'user.description' => 'required|max:255',
         'user.birthday' => 'required',
     ] ;
 

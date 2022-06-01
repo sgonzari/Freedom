@@ -40,7 +40,7 @@
                         <div class="warning__form--image">
                             <img loading="lazy" class="warning__image" src="{{ asset('storage/'.Auth::user()->profile_image) }}" alt="{{ __('image.Profiles image') }}"/>
                         </div>
-                        <textarea class="warning__form--input" placeholder="{{ __('admin.Write your warning') }}" name="message" wire:model="message" wire:ignore></textarea>
+                        <textarea class="warning__form--input" placeholder="{{ __('admin.Write your warning') }}" name="message" maxlength="255" wire:model="message" wire:ignore></textarea>
                     </form>
                 @endif
             </div>

@@ -36,18 +36,18 @@
                             <div class="profile__info--up">
                                 <div class="profile__text--element">
                                     <label class="profile__body--label" for="name">{{ __('profile.Name') }}:</label>
-                                    <input class="profile__body--input" id="name" name="name" wire:model="user.name" />
+                                    <input class="profile__body--input" id="name" name="name" wire:model="user.name" maxlength="50" wire:ignore/>
                                 </div>
                                 <div class="profile__text--username">
                                     <label class="profile__username--label" for="username">{{ __('@') }}</label>
-                                    <input class="profile__username--input" id="username" name="username" value="{{ $user->username }}" wire:model="user.username" wire:ignore />
+                                    <input class="profile__username--input" id="username" name="username" value="{{ $user->username }}" maxlength="50" wire:model="user.username" wire:ignore />
                                 </div>
                                 <span id="invalidUsername" class="profile__text--error" wire:ignore>{{ __('auth.Invalid Username') }}</span>
                             </div>
                             <div class="profile__info--down">
                                 <div class="profile__text--element">
                                     <label class="profile__body--label" for="description">{{ __('profile.Description') }}:</label>
-                                    <textarea class="profile__body--input" id="description" name="description" wire:model="user.description" wire:ignore></textarea>
+                                    <textarea class="profile__body--input" id="description" name="description" maxlength="255" wire:model="user.description" wire:ignore></textarea>
                                 </div>
                                 <div class="profile__text--element">
                                     <label class="profile__body--label" for="birthday">{{ __('profile.Birthday') }}:</label>

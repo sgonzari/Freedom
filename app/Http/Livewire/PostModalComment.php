@@ -19,6 +19,7 @@ class PostModalComment extends Component
     protected $listeners = ['renderComment' => 'render'] ;
 
     protected $rules = [
+        'contentComment' => 'max:255',
         'imageComment' => 'required|image|max:2048'
     ] ;
 

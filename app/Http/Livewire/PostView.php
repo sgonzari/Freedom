@@ -20,6 +20,7 @@ class PostView extends Component
     protected $listeners = ['render' => 'render'] ;
 
     protected $rules = [
+        'commentText' => 'max:255',
         'commentImage' => 'required|image|max:2048'
     ] ;
 

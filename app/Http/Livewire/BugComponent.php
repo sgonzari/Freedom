@@ -11,6 +11,10 @@ class BugComponent extends Component
     public $interfaceBug = false ;
     public $textBug ;
 
+    protected $rules = [
+        'textBug' => 'max:255'
+    ] ;
+
     public function render()
     {
         return view('components.bug-component');

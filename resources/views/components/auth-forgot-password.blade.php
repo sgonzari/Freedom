@@ -13,7 +13,7 @@
                 @csrf
                 <div class="card__form--element">
                     <label class="card__element--label" for="email">{{ __('auth.Email') }}: </label>
-                    <input class="card__element--input" id="email" name="email" type="email" placeholder="{{ __('auth.Email') }}" required autofocus />
+                    <input class="card__element--input" id="email" name="email" type="email" placeholder="{{ __('auth.Email') }}" maxlength="255" required autofocus />
                 </div>
             @else
                 <div class="card__form--element">

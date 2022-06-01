@@ -13,6 +13,10 @@ class PostModalReport extends Component
     public $post ;
     public $reason ;
 
+    protected $rules = [
+        'reason' => 'max:255'
+    ] ;
+
     public function mount (Post $post) {
         $this->post = $post ;
     }

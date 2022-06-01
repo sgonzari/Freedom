@@ -4,8 +4,8 @@
             <a class="main__form--image" href="{{ route('profile', ['username' => Auth::user()->username]) }}">
                 <img loading="lazy" class="form__image" src="{{ asset('storage/'.Auth::user()->profile_image) }}" alt="{{ __('image.Profiles image') }}"/>
             </a>
-            <div class="main__form--container">
-                <textarea class="main__container--input" name="content" id="content" placeholder="{{ __('home.Whats happening?') }}" wire:model="content" wire:ignore></textarea>
+            <div class="main__form--container" @error($content) {{$message}} @enderror>
+                <textarea class="main__container--input" name="content" id="content" placeholder="{{ __('home.Whats happening?') }}" maxlength="255" wire:model="content" wire:ignore ></textarea>
                 @if ($image)
                     <div class="main__container--image" wire:ignore>
                         <span class="main__icon material-symbols-rounded" wire:click="$set('image', null)"> close </span>

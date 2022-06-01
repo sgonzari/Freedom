@@ -13,7 +13,7 @@
                             <img loading="lazy" class="bug--image" src="{{ asset('storage/'.Auth::user()->profile_image) }}" alt="{{ __('image.Profiles image') }}">
                         </div>
                         <div class="bug__body--main">
-                            <textarea class="bug__main--text" type="text" placeholder="{{ __('bug.Write bug') }}" wire:model="textBug" wire:ignore></textarea>
+                            <textarea class="bug__main--text" type="text" placeholder="{{ __('bug.Write bug') }}" maxlength="255" wire:model="textBug" wire:ignore></textarea>
                         </div>
                     </div>
                 </form>

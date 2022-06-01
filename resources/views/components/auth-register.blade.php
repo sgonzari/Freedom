@@ -7,11 +7,11 @@
             @csrf
             <div class="card__form--element">
                 <label class="card__element--label" for="name">*{{ __('auth.Name') }}: </label>
-                <input class="card__element--input" id="name" name="name" type="text" placeholder="{{ __('auth.name') }}" required />
+                <input class="card__element--input" id="name" name="name" type="text" placeholder="{{ __('auth.name') }}" maxlength="50" required />
             </div>
             <div class="card__form--element">
                 <label class="card__element--label" for="username">*{{ __('auth.Username') }}: </label>
-                <input class="card__element--input" id="username" name="username" type="text" placeholder="{{ __('auth.username') }}" required />
+                <input class="card__element--input" id="username" name="username" type="text" placeholder="{{ __('auth.username') }}" maxlength="50" required />
                 <span id="invalidUsername" class="card__element--error">{{ __('auth.Invalid Username') }}</span>
             </div>
             <div class="card__form--element">

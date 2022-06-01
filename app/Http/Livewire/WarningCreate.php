@@ -14,6 +14,10 @@ class WarningCreate extends Component
 
     protected $listeners = ['renderWarning' => 'render'] ;
 
+    protected $rules = [
+        'message' => 'max:255'
+    ] ;
+
     public function mount (User $user) {
         $this->user = $user ;
     }

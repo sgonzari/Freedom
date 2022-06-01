@@ -46,7 +46,7 @@
                         <img loading="lazy" src="{{ asset('storage/'.Auth::user()->profile_image) }}" alt="{{ __('image.Profiles image') }}" class="comment__image" />
                     </a>
                     <div class="comment__body--container">
-                        <textarea class="comment__container--input" name="commentText" id="commentText" placeholder="{{ __('post.Whats happening?') }}" wire:model="commentText" wire:ignore></textarea>                    
+                        <textarea class="comment__container--input" name="commentText" id="commentText" placeholder="{{ __('post.Whats happening?') }}" maxlength="255" wire:model="commentText" wire:ignore></textarea>                    
                         @if ($commentImage)
                             <div class="comment__container--image" wire:ignore>
                                 <span class="container__icon material-symbols-rounded" wire:click="$set('commentImage', null)"> close </span>

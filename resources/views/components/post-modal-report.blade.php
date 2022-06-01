@@ -14,7 +14,7 @@
                         <div class="post__body--image">
                             <img loading="lazy" class="post__image" src="{{ asset('storage/'.Auth::user()->profile_image) }}" alt="{{ __('image.Profiles image') }}" />
                         </div>
-                        <textarea class="post__body--input" placeholder="{{ __('post.Write your report') }}" name="message" wire:model="reason" wire:ignore></textarea>
+                        <textarea class="post__body--input" placeholder="{{ __('post.Write your report') }}" name="message" maxlength="255" wire:model="reason" wire:ignore></textarea>
                     </div>
                 </form>
                 <div class="post__container--options">
