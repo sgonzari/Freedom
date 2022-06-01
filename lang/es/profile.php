@@ -11,6 +11,7 @@ return [
     'Likes' => 'Me gustas',
 
     'Edit profile' => 'Editar perfil',
+    'Name' => 'Nombre',
     'Description' => 'Descripción',
     'Birthday' => 'Cumpleaños',
     'Save' => 'Guardar',

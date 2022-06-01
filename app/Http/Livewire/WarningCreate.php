@@ -14,9 +14,9 @@ class WarningCreate extends Component
 
     protected $listeners = ['renderWarning' => 'render'] ;
 
-    protected $rules = [
-        'message' => 'max:255'
-    ] ;
+    public function updated ($field) {
+        $this->validateOnly($field, [   'message' => 'max:255']) ;
+    }
 
     public function mount (User $user) {
         $this->user = $user ;
@@ -35,6 +35,8 @@ class WarningCreate extends Component
 
     public function storeWarning () {
         if ((!is_null($this->message)) AND ($this->user->warnings()->count() < 3)) {
+            $this->validate(['message' => 'max:255']) ;
+
             $warning = new Warning() ;
             $warning->fk_admin = Auth::user()->id_user ;
             $warning->fk_user = $this->user->id_user ;

@@ -11,9 +11,9 @@ class BugComponent extends Component
     public $interfaceBug = false ;
     public $textBug ;
 
-    protected $rules = [
-        'textBug' => 'max:255'
-    ] ;
+    public function updated ($field) {
+        $this->validateOnly($field, ['textBug' => 'max:255']) ;
+    }
 
     public function render()
     {
@@ -27,6 +27,8 @@ class BugComponent extends Component
 
     public function store () {
         if ($this->textBug) {
+            $this->validate(['textBug' => 'max:255']) ;
+
             $bug = new Bug() ;
             $bug->fk_user = Auth::user()->id_user ;
             $bug->text = $this->textBug ;

@@ -15,10 +15,10 @@ class PostCreate extends Component
 
     public $content, $image ;
 
-    protected $rules = [
-        'content' => 'max:255',
-        'image' => 'image|max:2048'
-    ] ;
+    public function updated ($field) {
+        $this->validateOnly($field, [   'content' => 'max:255',
+                                        'image' => 'nullable|image|max:2048']) ;
+    }
     
     public function render()
     {
@@ -27,6 +27,9 @@ class PostCreate extends Component
 
     public function store () {
         if ((!is_null($this->content)) OR (!is_null($this->image))) {
+            $this->validate(['content' => 'max:255']) ;
+            $this->validate(['image' => 'nullable|image|max:2048']) ;
+
             $post = new Post() ;
             $post->fk_user = Auth::user()->id_user ;
             if ($this->content) $post->content = $this->content ;

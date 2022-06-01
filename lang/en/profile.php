@@ -11,6 +11,7 @@ return [
     'Likes' => 'Likes',
 
     'Edit profile' => 'Edit profile',
+    'Name' => 'Name',
     'Description' => 'Description',
     'Birthday' => 'Birthday',
     'Save' => 'Save',

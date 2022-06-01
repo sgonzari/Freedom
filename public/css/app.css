@@ -1391,6 +1391,16 @@ body {
   text-align: center;
 }
 
+.error {
+  width: 100%;
+}
+.error__text {
+  text-align: center;
+  color: red;
+  font-weight: 700;
+  font-size: 18px;
+}
+
 .follow {
   display: flex;
   align-items: center;
@@ -2381,6 +2391,7 @@ body {
   height: 48px;
 }
 .post__modal--main .post__modal--container .post__container--form .post__form--body .post__body--input {
+  width: 100%;
   margin: 0 0 0 20px;
   font-size: 20px;
   border: none;

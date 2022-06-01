@@ -42,6 +42,11 @@
                         </div>
                         <textarea class="warning__form--input" placeholder="{{ __('admin.Write your warning') }}" name="message" maxlength="255" wire:model="message" wire:ignore></textarea>
                     </form>
+                    @if($errors->any())
+                        <div class="error">
+                            {!! implode('', $errors->all('<p class="error__text">:message</p>')) !!}
+                        </div>
+                    @endif
                 @endif
             </div>
             <div class="warning__main--footer">

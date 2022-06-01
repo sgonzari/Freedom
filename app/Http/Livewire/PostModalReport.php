@@ -13,9 +13,9 @@ class PostModalReport extends Component
     public $post ;
     public $reason ;
 
-    protected $rules = [
-        'reason' => 'max:255'
-    ] ;
+    public function updated ($field) {
+        $this->validateOnly($field, [   'reason' => 'max:255']) ;
+    }
 
     public function mount (Post $post) {
         $this->post = $post ;
@@ -34,6 +34,9 @@ class PostModalReport extends Component
 
     public function reportPost () {
         if ($this->reason) {
+            $this->validate(['reason' => 'max:255']) ;
+
+
             $report = new Report () ;
             $report->fk_user = Auth::user()->id_user ;
             $report->fk_post = $this->post->id_post ;

@@ -55,15 +55,17 @@
                         @endif
                     </div>
                 </div>
+                @if($errors->any())
+                    <div class="error">
+                        {!! implode('', $errors->all('<p class="error__text">:message</p>')) !!}
+                    </div>
+                @endif
                 <div class="comment__form--footer">
                     <div class="comment__footer--container">
                         <label for="uploadImageComment">
                             <span class="main__button--icon material-symbols-rounded">image</span>
                         </label>
-                        <input class="main__button--element main__button--image" id="uploadImageComment" type="file" wire:model="commentImage" />
-                        @error($commentImage)
-                            <p>{{ $message }}</p>
-                        @enderror
+                        <input class="main__button--element main__button--image" id="uploadImageComment" type="file" accept="image/*" wire:model="commentImage" />
                     </div>
                     <button class="comment__footer--submit @if ((!$commentText) AND (!$commentImage)) disabled @endif" type="submit" @if ((!$commentText) AND (!$commentImage)) disabled @endif>{{ __('post.Reply') }}</button>
                 </div>

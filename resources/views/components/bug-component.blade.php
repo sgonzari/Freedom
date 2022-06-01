@@ -17,6 +17,11 @@
                         </div>
                     </div>
                 </form>
+                @if($errors->any())
+                    <div class="error">
+                        {!! implode('', $errors->all('<p class="error__text">:message</p>')) !!}
+                    </div>
+                @endif
                 <div class="bug__container--options">
                     <button class="bug__option--element bug__option--cancel" wire:click="$set('interfaceBug', false)">{{ __('bug.Back') }}</button>
                     <button class="bug__option--element bug__option--main @if (!$textBug) disabled @endif" @if (!$textBug) disabled @endif wire:click="store">{{ __('bug.Send') }}</button>

@@ -30,7 +30,7 @@
                             <label class="profile__image--label" for="image">
                                 <span class="profile__image--icon material-symbols-rounded">add_a_photo</span>
                             </label>
-                            <input class="profile__image--input" type="file" id="image" name="image" wire:model="image" />
+                            <input class="profile__image--input" type="file" accept="image/*" id="image" name="image" wire:model="image" />
                         </div>
                         <div class="profile__info--text">
                             <div class="profile__info--up">
@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="profile__text--username">
                                     <label class="profile__username--label" for="username">{{ __('@') }}</label>
-                                    <input class="profile__username--input" id="username" name="username" value="{{ $user->username }}" maxlength="50" wire:model="user.username" wire:ignore />
+                                    <input class="profile__username--input" id="username" name="username" value="{{ $user->username }}" maxlength="15" wire:model="user.username" wire:ignore />
                                 </div>
                                 <span id="invalidUsername" class="profile__text--error" wire:ignore>{{ __('auth.Invalid Username') }}</span>
                             </div>
@@ -57,6 +57,11 @@
                         </div>
                     </div>
                 </form>
+                @if($errors->any())
+                    <div class="error">
+                        {!! implode('', $errors->all('<p class="error__text">:message</p>')) !!}
+                    </div>
+                @endif
                 <div class="profile__container--footer">
                     <button class="profile__footer--element" wire:click="store">{{ __('profile.Save') }}</button>
                 </div>

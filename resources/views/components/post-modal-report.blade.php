@@ -17,6 +17,11 @@
                         <textarea class="post__body--input" placeholder="{{ __('post.Write your report') }}" name="message" maxlength="255" wire:model="reason" wire:ignore></textarea>
                     </div>
                 </form>
+                @if($errors->any())
+                    <div class="error">
+                        {!! implode('', $errors->all('<p class="error__text">:message</p>')) !!}
+                    </div>
+                @endif
                 <div class="post__container--options">
                     <button class="post__option--element post__option--cancel" wire:click="$set('interfaceReport', false)">{{ __('post.Cancel') }}</button>
                     <button class="post__option--element post__option--report @if (!$reason) disabled @endif" wire:click="reportPost" @if (!$reason) disabled @endif>{{ __('post.Report') }}</button>

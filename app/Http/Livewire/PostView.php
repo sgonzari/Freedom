@@ -19,10 +19,10 @@ class PostView extends Component
 
     protected $listeners = ['render' => 'render'] ;
 
-    protected $rules = [
-        'commentText' => 'max:255',
-        'commentImage' => 'required|image|max:2048'
-    ] ;
+    public function updated ($field) {
+        $this->validateOnly($field, [   'commentText' => 'max:255',
+                                        'commentImage' => 'nullable|image|max:2048']) ;
+    }
 
     public function render()
     {
@@ -49,6 +49,9 @@ class PostView extends Component
 
     public function store () {
         if ((!is_null($this->commentText)) OR (!is_null($this->commentImage))) {
+            $this->validate(['commentText' => 'max:255']) ;
+            $this->validate(['commentImage' => 'nullable|image|max:2048']) ;
+
             $post = new Post() ;
             $post->fk_user = Auth::user()->id_user ;
             if ($this->commentText) $post->content = $this->commentText ;

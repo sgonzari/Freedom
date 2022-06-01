@@ -18,10 +18,10 @@ class PostModalComment extends Component
 
     protected $listeners = ['renderComment' => 'render'] ;
 
-    protected $rules = [
-        'contentComment' => 'max:255',
-        'imageComment' => 'required|image|max:2048'
-    ] ;
+    public function updated ($field) {
+        $this->validateOnly($field, [   'contentComment' => 'max:255',
+                                        'imageComment' => 'nullable|image|max:2048']) ;
+    }
 
     public function openModalComment () {
         $this->opened = true ;
@@ -36,6 +36,9 @@ class PostModalComment extends Component
 
     public function store () {
         if ((!is_null($this->contentComment)) OR (!is_null($this->imageComment))) {
+            $this->validate(['content' => 'max:255']) ;
+            $this->validate(['image' => 'nullable|image|max:2048']) ;
+
             $post = new Post() ;
             $post->fk_user = Auth::user()->id_user ;
             if ($this->contentComment) $post->content = $this->contentComment ;
