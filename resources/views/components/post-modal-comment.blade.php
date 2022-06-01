@@ -46,7 +46,7 @@
                             <div class="main__form--container">
                                 <textarea class="main__container--input" name="contentComment" id="contentComment" placeholder="{{ __('post.Whats happening?') }}" wire:model="contentComment"></textarea>
                                 @if ($imageComment)
-                                    <div class="main__container--image">
+                                    <div class="main__container--image" wire:ignore>
                                         <span class="main__icon material-symbols-rounded" wire:click="$set('imageComment', null)"> close </span>
                                         <img loading="lazy" class="main__image" src="{{ $imageComment->temporaryUrl() }}" alt="{{ __('image.Uploaded image') }}">
                                     </div>

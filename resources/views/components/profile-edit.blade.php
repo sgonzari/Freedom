@@ -23,7 +23,7 @@
                     <div class="profile__body--info">
                         <div class="profile__info--image">
                             @if ($image)
-                                <img loading="lazy" class="profile__image" src="{{ $image->temporaryUrl() }}" alt="{{ __('image.Uploaded image') }}">
+                                <img loading="lazy" class="profile__image" src="{{ $image->temporaryUrl() }}" alt="{{ __('image.Uploaded image') }}" wire:ignore>
                             @else
                                 <img loading="lazy" class="profile__image" src="{{ asset('storage/'.Auth::user()->profile_image) }}" alt="{{ __('image.Profiles image') }}">
                             @endif
