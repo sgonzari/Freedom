@@ -1,5 +1,5 @@
 <div>
-    <button class="admin__option--element" wire:click="$set('interfaceWarning', true)"><span class="admin__element--icon material-symbols-rounded">warning</span></button>
+    <button class="admin__option--element" wire:click="openModalWarning"><span class="admin__element--icon material-symbols-rounded">warning</span></button>
 
     @if ($interfaceWarning)
     <div class="warning__modal--main">
@@ -24,7 +24,7 @@
                                     </div>
                                     <div class="warning__container--body">
                                         <div class="warning__body--content">
-                                            <p class="warning__content--text">{{ $warning->reason }}</p>
+                                            <p class="warning__content--text">{!! nl2br(e($warning->reason)) !!}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -40,7 +40,7 @@
                         <div class="warning__form--image">
                             <img loading="lazy" class="warning__image" src="{{ asset('storage/'.Auth::user()->profile_image) }}" alt="{{ __('image.Profiles image') }}"/>
                         </div>
-                        <input class="warning__form--input" placeholder="{{ __('admin.Write your warning') }}" name="message" wire:model="message" type="text" autofocus/>
+                        <textarea class="warning__form--input" placeholder="{{ __('admin.Write your warning') }}" name="message" wire:model="message" wire:ignore></textarea>
                     </form>
                 @endif
             </div>

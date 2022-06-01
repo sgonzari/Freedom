@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="admin__main--reason">
-                        <p class="admin__reason--text">{{ $bug->text }}</p>
+                        <p class="admin__reason--text">{!! nl2br(e($bug->text)) !!}</p>
                     </div>
                     <div class="admin__main--options">
                         @livewire('bug-complete', ['bug' => $bug], key($bug->id_bug))

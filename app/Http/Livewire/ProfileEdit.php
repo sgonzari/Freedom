@@ -34,6 +34,7 @@ class ProfileEdit extends Component
 
     public function showProfileModal () {
         $this->profileModal = 'true' ;
+        $this->emit('AutoresizeTextarea') ;
         $this->emit('validateProfileEdit') ;
     }
 

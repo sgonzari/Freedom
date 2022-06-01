@@ -1,5 +1,5 @@
 <div>
-    <button class="header__more--element header__more--bug" wire:click="$set('interfaceBug', true)"><span class="header__element--icon material-symbols-rounded">bug_report</span> {{ __('bug.Report Bug') }}</button>
+    <button class="header__more--element header__more--bug" wire:click="openModalBug"><span class="header__element--icon material-symbols-rounded">bug_report</span> {{ __('bug.Report Bug') }}</button>
 
     @if ($interfaceBug)
     <div class="bug__modal--main">
@@ -13,7 +13,7 @@
                             <img loading="lazy" class="bug--image" src="{{ asset('storage/'.Auth::user()->profile_image) }}" alt="{{ __('image.Profiles image') }}">
                         </div>
                         <div class="bug__body--main">
-                            <input class="bug__main--text" type="text" placeholder="{{ __('bug.Write bug') }}" wire:model="textBug"/>
+                            <textarea class="bug__main--text" type="text" placeholder="{{ __('bug.Write bug') }}" wire:model="textBug" wire:ignore></textarea>
                         </div>
                     </div>
                 </form>

@@ -16,6 +16,11 @@ class BugComponent extends Component
         return view('components.bug-component');
     }
 
+    public function openModalBug () {
+        $this->interfaceBug = true ;
+        $this->emit('AutoresizeTextarea') ;
+    }
+
     public function store () {
         if ($this->textBug) {
             $bug = new Bug() ;

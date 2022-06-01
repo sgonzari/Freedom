@@ -6,6 +6,7 @@ import LikeClickSound from './components/LikeClickSound';
 import GraphsStatisticsLoader from './components/GraphsStatisticsLoader';
 import ValidationData from './components/ValidationData';
 import ResponsiveModal from './components/ResponsiveModal';
+import AutosizeTextArea from './components/AutosizeTextArea';
 
 const components = () => {
     authBackgroundVideo();
@@ -15,6 +16,7 @@ const components = () => {
     LikeClickSound();
     ValidationData();
     ResponsiveModal();
+    AutosizeTextArea();
 };
 
 window.onload = () => {
@@ -34,6 +36,11 @@ window.onload = () => {
 
     Livewire.on('graphLoader', props => {
         GraphsStatisticsLoader(props);
+    });
+
+    Livewire.on('AutoresizeTextarea', () => {
+        console.log('a');
+        AutosizeTextArea();
     });
 
     window.addEventListener('resize', () => {

@@ -47,7 +47,7 @@
                             <div class="profile__info--down">
                                 <div class="profile__text--element">
                                     <label class="profile__body--label" for="description">{{ __('profile.Description') }}:</label>
-                                    <textarea class="profile__body--input" id="description" name="description" wire:model="user.description"></textarea>
+                                    <textarea class="profile__body--input" id="description" name="description" wire:model="user.description" wire:ignore></textarea>
                                 </div>
                                 <div class="profile__text--element">
                                     <label class="profile__body--label" for="birthday">{{ __('profile.Birthday') }}:</label>

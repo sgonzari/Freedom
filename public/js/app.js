@@ -2954,6 +2954,30 @@ Turbolinks.start();
 
 /***/ }),
 
+/***/ "./resources/js/components/AutosizeTextArea.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/AutosizeTextArea.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var AutosizeTextArea = function AutosizeTextArea() {
+  $("textarea").each(function () {
+    this.setAttribute("style", "height:" + this.scrollHeight + "px;overflow-y:hidden;");
+  }).on("input", function () {
+    this.style.height = "auto";
+    this.style.height = this.scrollHeight + "px";
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AutosizeTextArea);
+
+/***/ }),
+
 /***/ "./resources/js/components/GraphsStatisticsLoader.js":
 /*!***********************************************************!*\
   !*** ./resources/js/components/GraphsStatisticsLoader.js ***!
@@ -3462,6 +3486,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_GraphsStatisticsLoader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/GraphsStatisticsLoader */ "./resources/js/components/GraphsStatisticsLoader.js");
 /* harmony import */ var _components_ValidationData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ValidationData */ "./resources/js/components/ValidationData.js");
 /* harmony import */ var _components_ResponsiveModal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ResponsiveModal */ "./resources/js/components/ResponsiveModal.js");
+/* harmony import */ var _components_AutosizeTextArea__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/AutosizeTextArea */ "./resources/js/components/AutosizeTextArea.js");
+
 
 
 
@@ -3479,6 +3505,7 @@ var components = function components() {
   (0,_components_LikeClickSound__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_components_ValidationData__WEBPACK_IMPORTED_MODULE_6__["default"])();
   (0,_components_ResponsiveModal__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  (0,_components_AutosizeTextArea__WEBPACK_IMPORTED_MODULE_8__["default"])();
 };
 
 window.onload = function () {
@@ -3494,6 +3521,10 @@ window.onload = function () {
   });
   Livewire.on('graphLoader', function (props) {
     (0,_components_GraphsStatisticsLoader__WEBPACK_IMPORTED_MODULE_5__["default"])(props);
+  });
+  Livewire.on('AutoresizeTextarea', function () {
+    console.log('a');
+    (0,_components_AutosizeTextArea__WEBPACK_IMPORTED_MODULE_8__["default"])();
   });
   window.addEventListener('resize', function () {
     (0,_components_ResponsiveModal__WEBPACK_IMPORTED_MODULE_7__["default"])();

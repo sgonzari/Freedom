@@ -22,6 +22,11 @@ class PostModalComment extends Component
         'imageComment' => 'required|image|max:2048'
     ] ;
 
+    public function openModalComment () {
+        $this->opened = true ;
+        $this->emit('AutoresizeTextarea') ;
+    }
+
     public function render()
     {
         $post = $this->post ;

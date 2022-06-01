@@ -1,5 +1,5 @@
 <div class="post__modal--report">
-    <button class="post__modal--element post__modal--delete" wire:click="$set('interfaceReport', true)">
+    <button class="post__modal--element post__modal--delete" wire:click="openModalReport">
         <span class=" post__modal--icon material-symbols-rounded"> report </span> {{ __('post.Report post') }}
     </button>
 
@@ -14,7 +14,7 @@
                         <div class="post__body--image">
                             <img loading="lazy" class="post__image" src="{{ asset('storage/'.Auth::user()->profile_image) }}" alt="{{ __('image.Profiles image') }}" />
                         </div>
-                        <input class="post__body--input" placeholder="{{ __('post.Write your report') }}" name="message" wire:model="reason" type="text" autofocus>
+                        <textarea class="post__body--input" placeholder="{{ __('post.Write your report') }}" name="message" wire:model="reason" wire:ignore></textarea>
                     </div>
                 </form>
                 <div class="post__container--options">

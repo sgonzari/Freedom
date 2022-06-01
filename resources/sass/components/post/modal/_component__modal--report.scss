@@ -40,7 +40,7 @@
 
                     .post__form--body {
                         display: flex;
-                        align-items: center;
+                        align-items: flex-start;
 
                         .post__body {
 
@@ -59,11 +59,11 @@
                                 }
                             }
                             &--input {
-                                flex: 1;
                                 margin: 0 0 0 20px;
                                 font-size: 20px;
                                 border: none;
                                 outline: none;
+                                resize: none;
                             }
                         }
                     }

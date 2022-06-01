@@ -23,6 +23,11 @@ class PostModalReport extends Component
         return view('components.post-modal-report', compact(['post']));
     }
 
+    public function openModalReport () {
+        $this->interfaceReport = true ;
+        $this->emit('AutoresizeTextarea') ;
+    }
+
     public function reportPost () {
         if ($this->reason) {
             $report = new Report () ;

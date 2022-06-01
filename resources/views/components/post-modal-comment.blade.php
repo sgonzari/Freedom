@@ -1,5 +1,5 @@
 <div class="post__modal--comment">
-    <span class="button__action--icon button__action--default material-symbols-rounded" wire:click="$set('opened', true)"> chat_bubble </span>
+    <span class="button__action--icon button__action--default material-symbols-rounded" wire:click="openModalComment"> chat_bubble </span>
     <span class="button__action--count"> {{ $post->comments()->count() }} </span>
 
     @if ($opened)

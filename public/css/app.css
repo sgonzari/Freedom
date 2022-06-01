@@ -683,11 +683,11 @@ a:visited {
   height: 48px;
 }
 .warning__modal--main .warning__modal--container .warning__main--body .warning__form--input {
-  flex: 1;
   margin: 0 0 0 20px;
   font-size: 20px;
   border: none;
   outline: none;
+  resize: none;
 }
 .warning__modal--main .warning__modal--container .warning__main--footer {
   display: flex;
@@ -1278,7 +1278,6 @@ body {
   flex-direction: column;
 }
 .comment__create--form .comment__form--body .comment__body--container .comment__container--input {
-  flex: 1;
   font-size: 20px;
   border: none;
   outline: none;
@@ -1946,10 +1945,10 @@ body {
 }
 .main__container--input .main__input--form .main__form--container .main__container--input {
   resize: none;
-  flex: 1;
   font-size: 20px;
   border: none;
   outline: none;
+  padding: 0;
 }
 .main__container--input .main__input--form .main__form--container .main__container--image {
   position: relative;
@@ -2305,7 +2304,7 @@ body {
 }
 .post__modal--main .post__modal--container .post__container--form .post__form--body {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 .post__modal--main .post__modal--container .post__container--form .post__form--body .post__body--image {
   margin: 0 12px 0 0;
@@ -2321,11 +2320,11 @@ body {
   height: 48px;
 }
 .post__modal--main .post__modal--container .post__container--form .post__form--body .post__body--input {
-  flex: 1;
   margin: 0 0 0 20px;
   font-size: 20px;
   border: none;
   outline: none;
+  resize: none;
 }
 .post__modal--main .post__modal--container .post__container--options {
   display: flex;

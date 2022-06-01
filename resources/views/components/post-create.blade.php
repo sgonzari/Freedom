@@ -5,7 +5,7 @@
                 <img loading="lazy" class="form__image" src="{{ asset('storage/'.Auth::user()->profile_image) }}" alt="{{ __('image.Profiles image') }}"/>
             </a>
             <div class="main__form--container">
-                <textarea class="main__container--input" name="content" id="content" placeholder="{{ __('home.Whats happening?') }}" wire:model="content"></textarea>
+                <textarea class="main__container--input" name="content" id="content" placeholder="{{ __('home.Whats happening?') }}" wire:model="content" wire:ignore></textarea>
                 @if ($image)
                     <div class="main__container--image">
                         <span class="main__icon material-symbols-rounded" wire:click="$set('image', null)"> close </span>

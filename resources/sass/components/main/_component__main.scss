@@ -80,10 +80,10 @@
                             .main__container {
                                 &--input {
                                     resize: none;
-                                    flex: 1;
                                     font-size: 20px;
                                     border: none;
                                     outline: none;
+                                    padding: 0;
                                 }
                                 &--image {
                                     position: relative;

@@ -24,6 +24,11 @@ class WarningCreate extends Component
         return view('components.warning-create', compact(['user']));
     }
 
+    public function openModalWarning () {
+        $this->interfaceWarning = true ;
+        $this->emit('AutoresizeTextarea') ;
+    }
+
     public function storeWarning () {
         if ((!is_null($this->message)) AND ($this->user->warnings()->count() < 3)) {
             $warning = new Warning() ;
