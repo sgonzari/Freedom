@@ -21,7 +21,7 @@
                             <h2 class="warning__header--name">{{ $warning->reportedBy()->first()->name }} <span class="warning__header--username">{{ __('@') }}{{ $warning->reportedBy()->first()->username }}</span></h2>
                         </div>
                         <div class="warning__main--body">
-                            <p class="warning__body--reason">{{ $warning->reason }}</p>
+                            <p class="warning__body--reason">{!! nl2br(e($warning->reason)) !!}</p>
                         </div>
                     </div>
                 </div> 
