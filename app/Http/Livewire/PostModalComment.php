@@ -36,8 +36,8 @@ class PostModalComment extends Component
 
     public function store () {
         if ((!is_null($this->contentComment)) OR (!is_null($this->imageComment))) {
-            $this->validate(['content' => 'max:255']) ;
-            $this->validate(['image' => 'nullable|image|max:2048']) ;
+            $this->validate(['contentComment' => 'max:255']) ;
+            $this->validate(['imageComment' => 'nullable|image|max:2048']) ;
 
             $post = new Post() ;
             $post->fk_user = Auth::user()->id_user ;
