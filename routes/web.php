@@ -20,7 +20,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 Route::get('/', [AuthenticatedSessionController::class, 'create'])->middleware('guest')->name("index") ;
 
 /* BAN ROUTE */
-Route::view('/banned', "banned")->middleware(['auth'])->name("banned") ;
+Route::view('/banned', "banned")->middleware(['only_ban', 'auth'])->name("banned") ;
 
 /* HOME ROUTE */
 Route::view('/home', "home")->middleware(['banned', 'auth'])->name("home") ;
