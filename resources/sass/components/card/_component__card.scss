@@ -42,12 +42,14 @@
                 &--element {
                     display: flex;
                     flex-direction: column;
-                    margin: 0 0 16px 0;
+                    margin: 16px 0 0 0;
+                    align-items: center;
 
                     .card__element {
                         &--label {
                             font-weight: 700;
                             margin: 0 0 6px 0;
+                            align-self: flex-start;
                         }
                         &--input {
                             width: 220px;
@@ -68,22 +70,21 @@
                             font-size: 15px;
                             font-weight: 700;
                         }
-                        &--error {
-                            display: none;
-                            margin: 6px 0 0 0;
-                            color: red;
-                            font-weight: 700;
-                            text-align: center;
-                            width: 100%;
-                        }
                     }
+                }
+                &--error {
+                    display: none;
+                    color: red;
+                    font-weight: 700;
+                    text-align: center;
+                    width: 100%;
                 }
                 &--buttons {
                     color: black;
                     display: flex;
                     align-items: center;
                     justify-content: space-around;
-                    margin: 0 0 16px 0;
+                    margin: 16px 0;
 
                     .card__button {
                         user-select: none;

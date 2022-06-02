@@ -5,6 +5,17 @@ const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$
 
 
 /* FUNCTIONS */
+const validateName = name => {
+    name.addEventListener('change', () => {
+        if (name.value.length > 15) {
+            name.classList.add('invalid');
+            document.getElementById('maxLengthName').style.display = 'block';
+        } else {
+            name.classList.remove('invalid');
+            document.getElementById('maxLengthName').style.display = 'none';
+        }
+    });
+};
 const validateUsername = username => {
     username.addEventListener('change', () => {
         if (username.value) {
@@ -12,12 +23,18 @@ const validateUsername = username => {
                 username.classList.add('invalid');
                 document.getElementById('invalidUsername').style.display = 'block';
             } else {
-                username.classList.remove('invalid');
-                document.getElementById('invalidUsername').style.display = 'none';
+                if (username.value.length > 15) {
+                    username.classList.add('invalid');
+                    document.getElementById('maxLengthUsername').style.display = 'block';
+                } else {
+                    username.classList.remove('invalid');
+                    document.getElementById('maxLengthUsername').style.display = 'none';
+                }
             }
         } else {
             username.classList.remove('invalid');
             document.getElementById('invalidUsername').style.display = 'none';
+            document.getElementById('maxLengthName').style.display = 'none';
         }
     });
 };
@@ -141,6 +158,7 @@ const validatePasswords = (password, confirmPassword) => {
 /* MAIN */
 const ValidationData = () => {
     if (document.getElementById('authRegister')) {
+        validateUsername(document.getElementById('username'));
         validateUsername(document.getElementById('username'));
 
         validateEmail(document.getElementById('email'));

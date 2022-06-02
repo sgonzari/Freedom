@@ -1098,11 +1098,13 @@ body {
 .card__main--form .card__form--element {
   display: flex;
   flex-direction: column;
-  margin: 0 0 16px 0;
+  margin: 16px 0 0 0;
+  align-items: center;
 }
 .card__main--form .card__form--element .card__element--label {
   font-weight: 700;
   margin: 0 0 6px 0;
+  align-self: flex-start;
 }
 .card__main--form .card__form--element .card__element--input {
   width: 220px;
@@ -1122,9 +1124,8 @@ body {
   font-size: 15px;
   font-weight: 700;
 }
-.card__main--form .card__form--element .card__element--error {
+.card__main--form .card__form--error {
   display: none;
-  margin: 6px 0 0 0;
   color: red;
   font-weight: 700;
   text-align: center;
@@ -1135,7 +1136,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 0 0 16px 0;
+  margin: 16px 0;
 }
 .card__main--form .card__form--buttons .card__button {
   -webkit-user-select: none;

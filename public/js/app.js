@@ -3286,6 +3286,18 @@ var regexEmail = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 var regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 /* FUNCTIONS */
 
+var validateName = function validateName(name) {
+  name.addEventListener('change', function () {
+    if (name.value.length > 15) {
+      name.classList.add('invalid');
+      document.getElementById('maxLengthName').style.display = 'block';
+    } else {
+      name.classList.remove('invalid');
+      document.getElementById('maxLengthName').style.display = 'none';
+    }
+  });
+};
+
 var validateUsername = function validateUsername(username) {
   username.addEventListener('change', function () {
     if (username.value) {
@@ -3293,12 +3305,18 @@ var validateUsername = function validateUsername(username) {
         username.classList.add('invalid');
         document.getElementById('invalidUsername').style.display = 'block';
       } else {
-        username.classList.remove('invalid');
-        document.getElementById('invalidUsername').style.display = 'none';
+        if (username.value.length > 15) {
+          username.classList.add('invalid');
+          document.getElementById('maxLengthUsername').style.display = 'block';
+        } else {
+          username.classList.remove('invalid');
+          document.getElementById('maxLengthUsername').style.display = 'none';
+        }
       }
     } else {
       username.classList.remove('invalid');
       document.getElementById('invalidUsername').style.display = 'none';
+      document.getElementById('maxLengthName').style.display = 'none';
     }
   });
 };
@@ -3429,6 +3447,7 @@ var validatePasswords = function validatePasswords(password, confirmPassword) {
 
 var ValidationData = function ValidationData() {
   if (document.getElementById('authRegister')) {
+    validateUsername(document.getElementById('username'));
     validateUsername(document.getElementById('username'));
     validateEmail(document.getElementById('email'));
     validateConfirmEmail(document.getElementById('email_confirmation'));
