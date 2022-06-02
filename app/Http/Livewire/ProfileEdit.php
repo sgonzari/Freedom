@@ -47,7 +47,7 @@ class ProfileEdit extends Component
 
     public function store () {
         if ($this->image) {
-            $this->validate(['image' => 'iamge|max:2048']) ;
+            $this->validate(['image' => 'image|max:2048']) ;
 
             $this->user->profile_image = $this->image->store('users') ;
         }
