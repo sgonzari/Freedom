@@ -1,5 +1,5 @@
 <div id="likePost">
-    <audio id="likeSound" src="http://localhost/freedom/public/storage/like_sound.mp3"></audio>
+    <audio id="likeSound" src="{{ asset('storage/like_sound.mp3') }}"></audio>
     @if (!Auth::user()->likes()->find($this->post->id_post))
         <button class="button__action" wire:click="addLike">
             <span class="button__action--icon button__action--like notLiked material-symbols-rounded"> favorite_border </span> 

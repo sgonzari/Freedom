@@ -1,22 +1,22 @@
 import HeaderNavMore from './components/HeaderNavMore';
 import HeaderProfileButton from './components/HeaderProfileButton';
 import ScrollToComment from './components/ScrollToComment';
-import authBackgroundVideo from './components/authBackgroundVideo';
+import AuthBackgroundVideo from './components/AuthBackgroundVideo';
 import LikeClickSound from './components/LikeClickSound';
 import GraphsStatisticsLoader from './components/GraphsStatisticsLoader';
 import ValidationData from './components/ValidationData';
 import ResponsiveModal from './components/ResponsiveModal';
-import AutosizeTextArea from './components/AutosizeTextArea';
+import AutosizeTextarea from './components/AutosizeTextarea';
 
 const components = () => {
-    authBackgroundVideo();
+    AuthBackgroundVideo();
     HeaderProfileButton();
     HeaderNavMore();
     ScrollToComment();
     LikeClickSound();
     ValidationData();
     ResponsiveModal();
-    AutosizeTextArea();
+    AutosizeTextarea();
 };
 
 window.onload = () => {
@@ -39,7 +39,7 @@ window.onload = () => {
     });
 
     Livewire.on('AutoresizeTextarea', () => {
-        AutosizeTextArea();
+        AutosizeTextarea();
     });
 
     window.addEventListener('resize', () => {

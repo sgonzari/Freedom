@@ -28,7 +28,7 @@
         <div class="auth__container">
             <div class="auth__container--background">
                 <video id="authBackgroundVideo" class="auth__background--video" autoplay muted loop>
-                    <source src="http://localhost/Freedom/public/storage/background_video.mp4" type="video/mp4" />
+                    <source src="{{ asset('storage/background_video.mp4') }}" type="video/mp4" />
                     {{ __('auth.problem Video') }}
                 </video>
             </div>

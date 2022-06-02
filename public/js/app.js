@@ -2954,9 +2954,32 @@ Turbolinks.start();
 
 /***/ }),
 
-/***/ "./resources/js/components/AutosizeTextArea.js":
+/***/ "./resources/js/components/AuthBackgroundVideo.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/AuthBackgroundVideo.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var authBackgroundVideo = function authBackgroundVideo() {
+  var video = document.getElementById("authBackgroundVideo");
+
+  if (video != null) {
+    video.play();
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (authBackgroundVideo);
+
+/***/ }),
+
+/***/ "./resources/js/components/AutosizeTextarea.js":
 /*!*****************************************************!*\
-  !*** ./resources/js/components/AutosizeTextArea.js ***!
+  !*** ./resources/js/components/AutosizeTextarea.js ***!
   \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -3119,15 +3142,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var HeaderNavMore = function HeaderNavMore() {
   var modal = document.getElementById("navMore");
-  var modal2 = document.getElementById("navMore2");
   var btn = document.getElementById('navButton');
 
-  if (modal != null && modal2 != null && btn != null) {
+  if (modal != null && btn != null) {
     btn.addEventListener("click", function () {
       modal.style.display = "block";
     });
     window.addEventListener("click", function (event) {
-      if (event.target == modal || event.target == modal2) {
+      if (event.target == modal) {
         modal.style.display = "none";
       }
     });
@@ -3466,29 +3488,6 @@ var ValidationData = function ValidationData() {
 
 /***/ }),
 
-/***/ "./resources/js/components/authBackgroundVideo.js":
-/*!********************************************************!*\
-  !*** ./resources/js/components/authBackgroundVideo.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var authBackgroundVideo = function authBackgroundVideo() {
-  var video = document.getElementById("authBackgroundVideo");
-
-  if (video != null) {
-    video.play();
-  }
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (authBackgroundVideo);
-
-/***/ }),
-
 /***/ "./resources/js/main.js":
 /*!******************************!*\
   !*** ./resources/js/main.js ***!
@@ -3500,12 +3499,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/HeaderNavMore */ "./resources/js/components/HeaderNavMore.js");
 /* harmony import */ var _components_HeaderProfileButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/HeaderProfileButton */ "./resources/js/components/HeaderProfileButton.js");
 /* harmony import */ var _components_ScrollToComment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/ScrollToComment */ "./resources/js/components/ScrollToComment.js");
-/* harmony import */ var _components_authBackgroundVideo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/authBackgroundVideo */ "./resources/js/components/authBackgroundVideo.js");
+/* harmony import */ var _components_AuthBackgroundVideo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/AuthBackgroundVideo */ "./resources/js/components/AuthBackgroundVideo.js");
 /* harmony import */ var _components_LikeClickSound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/LikeClickSound */ "./resources/js/components/LikeClickSound.js");
 /* harmony import */ var _components_GraphsStatisticsLoader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/GraphsStatisticsLoader */ "./resources/js/components/GraphsStatisticsLoader.js");
 /* harmony import */ var _components_ValidationData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ValidationData */ "./resources/js/components/ValidationData.js");
 /* harmony import */ var _components_ResponsiveModal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ResponsiveModal */ "./resources/js/components/ResponsiveModal.js");
-/* harmony import */ var _components_AutosizeTextArea__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/AutosizeTextArea */ "./resources/js/components/AutosizeTextArea.js");
+/* harmony import */ var _components_AutosizeTextarea__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/AutosizeTextarea */ "./resources/js/components/AutosizeTextarea.js");
 
 
 
@@ -3517,14 +3516,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var components = function components() {
-  (0,_components_authBackgroundVideo__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_components_AuthBackgroundVideo__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_components_HeaderProfileButton__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_components_HeaderNavMore__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_components_ScrollToComment__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_components_LikeClickSound__WEBPACK_IMPORTED_MODULE_4__["default"])();
   (0,_components_ValidationData__WEBPACK_IMPORTED_MODULE_6__["default"])();
   (0,_components_ResponsiveModal__WEBPACK_IMPORTED_MODULE_7__["default"])();
-  (0,_components_AutosizeTextArea__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  (0,_components_AutosizeTextarea__WEBPACK_IMPORTED_MODULE_8__["default"])();
 };
 
 window.onload = function () {
@@ -3542,7 +3541,7 @@ window.onload = function () {
     (0,_components_GraphsStatisticsLoader__WEBPACK_IMPORTED_MODULE_5__["default"])(props);
   });
   Livewire.on('AutoresizeTextarea', function () {
-    (0,_components_AutosizeTextArea__WEBPACK_IMPORTED_MODULE_8__["default"])();
+    (0,_components_AutosizeTextarea__WEBPACK_IMPORTED_MODULE_8__["default"])();
   });
   window.addEventListener('resize', function () {
     (0,_components_ResponsiveModal__WEBPACK_IMPORTED_MODULE_7__["default"])();

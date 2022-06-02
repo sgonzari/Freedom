@@ -1,6 +1,6 @@
 const HeaderProfileButton = () => {
-    var modal = document.getElementById("profileOptions");
-    var btn = document.getElementById('profileButton');
+    const modal = document.getElementById("profileOptions");
+    const btn = document.getElementById('profileButton');
 
     if ((modal != null) && (btn != null)) {
         btn.addEventListener("click", () => {
