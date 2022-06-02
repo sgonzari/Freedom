@@ -3,7 +3,7 @@
 @if ($errors->any())
     <div {{ $attributes }}>
         <div class="card__error--title">
-            {{ __('Whoops! Something went wrong.') }}
+            {{ __('auth.Error') }}
         </div>
 
         <ul class="card_error--list">

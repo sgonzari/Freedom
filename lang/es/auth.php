@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'Error' => 'Error',
     'failed' => 'Usuario/Contraseña no válido.',
     'throttle' => 'Demasiados intentos de acceso. Por favor inténtelo de nuevo en :seconds segundos.',
 
