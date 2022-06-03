@@ -1979,7 +1979,7 @@ body {
 }
 .main__container--input .main__input--form .main__form--image {
   height: 48px;
-  width: 48px;
+  min-width: 48px;
   overflow: hidden;
   display: flex;
   justify-content: center;

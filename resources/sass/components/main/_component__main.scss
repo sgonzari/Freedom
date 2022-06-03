@@ -56,7 +56,7 @@
     
                         &--image {
                             height: $image__height;
-                            width: $image__width;
+                            min-width: $image__width;
                             overflow: hidden;
                             display: flex;
                             justify-content: center;
