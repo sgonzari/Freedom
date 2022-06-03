@@ -33,6 +33,10 @@ class RepostStatus extends Component
     public function deleteRepost () {
         if (Auth::user()->reposts()->find($this->post->id_post)) {
             Auth::user()->reposts()->detach($this->post) ;
+
+            if (Notification::where('fk_post', $this->post->id_post)->where('fk_user', Auth::user()->id_user)->where('fk_typeNot', 3)->count() > 0) {
+                Notification::where('fk_post', $this->post->id_post)->where('fk_user', Auth::user()->id_user)->where('fk_typeNot', 3)->delete() ;
+            }
         }
     }
 }

@@ -35,6 +35,10 @@ class LikeStatus extends Component
     public function deleteLike () {
         if (Auth::user()->likes()->find($this->post->id_post)) {
             Auth::user()->likes()->detach($this->post) ;
+
+            if (Notification::where('fk_post', $this->post->id_post)->where('fk_user', Auth::user()->id_user)->where('fk_typeNot', 4)->count() > 0) {
+                Notification::where('fk_post', $this->post->id_post)->where('fk_user', Auth::user()->id_user)->where('fk_typeNot', 4)->delete() ;
+            }
         }
     }
 }
