@@ -2912,6 +2912,10 @@ body {
   font-weight: 700;
   font-size: 20px;
 }
+.following__modal--container .following__container--body {
+  max-height: 420px;
+  overflow-y: scroll;
+}
 .following__modal--close {
   cursor: auto;
   position: fixed;
@@ -2974,6 +2978,10 @@ body {
   text-align: center;
   font-weight: 700;
   font-size: 20px;
+}
+.follower__modal--container .follower__container--body {
+  max-height: 420px;
+  overflow-y: scroll;
 }
 .follower__modal--close {
   cursor: auto;
