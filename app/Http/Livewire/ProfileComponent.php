@@ -22,7 +22,7 @@ class ProfileComponent extends Component
         if ($user) {
             switch ($this->option) {
                 case "posts":
-                    $posts = $this->user->posts()->orderBy('created_at', 'desc')->get() ;
+                    $posts = $this->user->posts()->where('fk_post', null)->orderBy('created_at', 'desc')->get() ;
                     break;
                 case "reposts":
                     $posts = $this->user->reposts()->get() ;
