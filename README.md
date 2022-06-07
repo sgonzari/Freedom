@@ -1,11 +1,19 @@
 # Freedom
 
-## Temática & Objetivos
 __Freedom__ es una red social de tipo publicación con el fin de llegar al máximo número de personas. __Freedom__ pretende ser una red social con la que las personas se sientan comodas y puedan expresar su opiniones y/o sentimientos hacia algo y/o alguien. __Freedom__ tiene el objetivo de mostrar a todos sus usuarios las publicaciones del resto de usuarios sin ningún tipo de tabú. __Freedom__ tiene de compromiso que el usuario se sienta cómodo y seguro en dicha red social.
 
 
+## Tabla de Contenidos
+- [Tecnologías](#tecnologies)
+    - [Front-End](#frontend)
+
+<a name="tecnologies"/>
+
 ## Tecnologías
 Las tecnologías que se van a usar para desarrollar __Freedom__ serán:
+
+
+<a name="frontend"/>
 
 ### Front-End
   - HTML5
