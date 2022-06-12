@@ -26,7 +26,7 @@ __Freedom__ es una red social de tipo publicación con el fin de llegar al máxi
 
 <a name="user_manual" />
     
-### [Manual de Usuario]()
+### [Manual de Usuario](https://docs.google.com/document/d/1-TbHv-dwTOvzNe30dgETKjwZFIQK8zpLaE5a6SwnqQU/edit?usp=sharing)
     
 <br/>
 <br/>    
