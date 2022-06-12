@@ -8,7 +8,7 @@ __Freedom__ es una red social de tipo publicación con el fin de llegar al máxi
 
 ## Tabla de Contenidos
 - [Contenido de Usuario](#user)
-    - [Tutorial de Uso](#user_tutorial)
+    - [Manual de Usuario](#user_manual)
 - [Contenido de Desarrollador](#developer)
     - [Descripción](#developer_description)
     - [Tecnologías](#developer_tecnologies)
@@ -24,9 +24,9 @@ __Freedom__ es una red social de tipo publicación con el fin de llegar al máxi
     
 ## Contenido de Usuario
 
-<a name="user_tutorial" />
+<a name="user_manual" />
     
-### [Tutorial de uso]()
+### [Manual de Usuario]()
     
 <br/>
 <br/>    
