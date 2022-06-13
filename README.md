@@ -54,17 +54,23 @@ Freedom, al ser una aplicación web, su tecnología se divide en diferentes part
 <a name="tecnologies_frontend" />
 
 #### Front-End
-    - HTML5
-    - SASS _(CSS3)_
-    - Jquery & AJAX _(JavaScript)_
-    - Blade
+<p align="center">
+    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/languages/html.svg" />
+    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/languages/css3.svg" />
+    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/languages/sass.svg" />
+    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/languages/js.svg" />
+    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/frameworks/jquery.svg" />
+</p>
 
 
 <a name="tecnologies_backend" />
 
 #### Back-End
-    - Laravel _(php 8.0)_
-    - MariaDB _(mysql)_
+<p align="center">
+    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/languages/php.svg" />
+    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/frameworks/laravel.svg" />
+    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/services/aws.svg" />
+</p>
 
 ##### Base de Datos
 <p align="center">
