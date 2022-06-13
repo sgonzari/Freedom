@@ -69,7 +69,6 @@ Freedom, al ser una aplicación web, su tecnología se divide en diferentes part
 <p align="center">
     <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/languages/php.svg" />
     <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/frameworks/laravel.svg" />
-    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/services/aws.svg" />
 </p>
 
 ##### Base de Datos
@@ -81,7 +80,10 @@ Freedom, al ser una aplicación web, su tecnología se divide en diferentes part
 <a name="tecnologies_deploy"/>
 
 #### Despliegue Web
-La aplicación web se desplegará en __AWS__ mediante el uso de máquinas virtuales EC2. La aplicación web constará de 2 servidores en los cuales en uno estará la aplicación web (FontEnd & BackEnd) y en el otro estará la base de datos. Esto se hará para aumentar la seguridad y privacidad de la información de __Freedom__.
+La aplicación web se desplegará AWS. La estructura contará con una máquina EC2 (donde se alojará la aplicación web [Front-End & Back-End]) y un RDS donde estará alojada la Base de Datos. Al servidor solo se podrá acceder mediante SSH y con un llave privado mientras que al RDS solo se tendrá acceso desde la IP del mismo servidor, haciendo así que aumente la seguridad y privacidad de toda la información de __Freedom__.
+<p align="center">
+    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/services/aws.svg" />
+</p>
 
 <br />
     
