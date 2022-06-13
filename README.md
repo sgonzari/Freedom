@@ -17,6 +17,7 @@ __Freedom__ es una red social de tipo publicación con el fin de llegar al máxi
         - [Despliegue Web](#tecnologies_deploy)
     - [ToDo List](#developer_todo)
     - [Checkpoint - 13/05/22](#developer_checkpoint)
+    - [Bibliografías](#developer_bibliography)
 
 <br/>
 
@@ -87,3 +88,14 @@ La aplicación web se desplegará en __AWS__ mediante el uso de máquinas virtua
 <a name="developer_checkpoint" />
 
 ### [Checkpoint - 13/05/22](https://youtu.be/-D9dt_9zRuU)
+
+<br />
+
+<a name="developer_bibliography" />
+
+### Bibliografías
+
+- [Documentación Laravel](https://laravel.com/docs/9.x)
+- [Documentación Livewire](https://laravel-livewire.com/docs/2.x/quickstart)
+- [Empezando con Livewire](https://www.youtube.com/watch?v=Ax4pT8XDR-0&list=PLZ2ovOgdI-kWqCet33O0WezN14KShkwER)
+- [Desplegando en AWS](https://www.youtube.com/watch?v=W2fQFbkEQo0)
