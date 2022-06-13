@@ -15,7 +15,7 @@ __Freedom__ es una red social de tipo publicación con el fin de llegar al máxi
         - [Front-End](#tecnologies_frontend)
         - [Back-End](#tecnologies_backend)
         - [Despliegue Web](#tecnologies_deploy)
-    - [ToDo List](#developer_todo)
+    - [ToDo - List](#developer_todo)
     - [Checkpoint - 13/05/22](#developer_checkpoint)
     - [Bibliografías](#developer_bibliography)
 
@@ -87,7 +87,7 @@ La aplicación web se desplegará en __AWS__ mediante el uso de máquinas virtua
     
 <a name="developer_todo" />
     
-### [ToDo-List](https://trello.com/b/bPHRfRvK/freedom)
+### [ToDo - List](https://trello.com/b/bPHRfRvK/freedom)
 
 <br />
 
