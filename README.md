@@ -8,7 +8,7 @@ __Freedom__ es una red social de tipo publicación con el fin de llegar al máxi
 
 ## Tabla de Contenidos
 - [Contenido de Usuario](#user)
-    - [Manual de Usuario](#user_manual)
+    - [Manual de Usuario](https://github.com/SrCbas/Freedom/blob/main/Freedom%20-%20Manual%20de%20Usuario.pdf)
 - [Contenido de Desarrollador](#developer)
     - [Descripción](#developer_description)
     - [Tecnologías](#developer_tecnologies)
