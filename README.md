@@ -17,6 +17,7 @@ __Freedom__ es una red social de tipo publicación con el fin de llegar al máxi
         - [Despliegue Web](#tecnologies_deploy)
     - [ToDo - List](#developer_todo)
     - [Checkpoint - 13/05/22](#developer_checkpoint)
+    - [Presentación - Final](https://youtu.be/tRVNmPYEKsM)
     - [Bibliografías](#developer_bibliography)
 
 <br/>
@@ -96,6 +97,10 @@ La aplicación web se desplegará AWS. La estructura contará con una máquina E
 <a name="developer_checkpoint" />
 
 ### [Checkpoint - 13/05/22](https://youtu.be/-D9dt_9zRuU)
+
+<br />
+
+### [Presentación - Final](https://youtu.be/tRVNmPYEKsM)
 
 <br />
 
