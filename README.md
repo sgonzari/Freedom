@@ -74,7 +74,7 @@ Freedom, al ser una aplicación web, su tecnología se divide en diferentes part
 
 ##### Base de Datos
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/45594459/164092891-8c8b1108-2734-4800-a7b1-1d117ffab372.png">
+    <img src="https://user-images.githubusercontent.com/45594459/175290895-c87e1a2d-a885-45a3-aa8f-2858eb7b0ef7.png">
 </p>
 
 
